@@ -11,6 +11,8 @@ docs/ApiKeyPatchRequest.md
 docs/ApiKeyRevokeResponse.md
 docs/ApiKeyRotateResponse.md
 docs/ApiKeysApi.md
+docs/ApiRequestLogOut.md
+docs/ApiRequestLogsListResponse.md
 docs/AuditEventOut.md
 docs/AuditEventResponse.md
 docs/AuditEventsListResponse.md
@@ -138,6 +140,7 @@ docs/JobProgressOut.md
 docs/JobResponse.md
 docs/JobsApi.md
 docs/LocationInner.md
+docs/LogsApi.md
 docs/Money.md
 docs/MoneyOut.md
 docs/NumberingSequenceCreateRequest.md
@@ -164,6 +167,11 @@ docs/RecurringInvoicesListResponse.md
 docs/ReferenceApi.md
 docs/RendersApi.md
 docs/SimpleBoolResponse.md
+docs/StatsApi.md
+docs/StatsCounts.md
+docs/StatsOverview.md
+docs/StatsRecentInvoice.md
+docs/StatsResponse.md
 docs/TaxRateCreateRequest.md
 docs/TaxRateOut.md
 docs/TaxRatePatchRequest.md
@@ -229,11 +237,13 @@ invoicepdfs/api/imports_api.py
 invoicepdfs/api/invoice_attachments_api.py
 invoicepdfs/api/invoices_api.py
 invoicepdfs/api/jobs_api.py
+invoicepdfs/api/logs_api.py
 invoicepdfs/api/numbering_sequences_api.py
 invoicepdfs/api/payments_api.py
 invoicepdfs/api/recurring_invoices_api.py
 invoicepdfs/api/reference_api.py
 invoicepdfs/api/renders_api.py
+invoicepdfs/api/stats_api.py
 invoicepdfs/api/tax_rates_api.py
 invoicepdfs/api/template_versions_api.py
 invoicepdfs/api/templates_api.py
@@ -254,6 +264,8 @@ invoicepdfs/models/api_key_list_response.py
 invoicepdfs/models/api_key_patch_request.py
 invoicepdfs/models/api_key_revoke_response.py
 invoicepdfs/models/api_key_rotate_response.py
+invoicepdfs/models/api_request_log_out.py
+invoicepdfs/models/api_request_logs_list_response.py
 invoicepdfs/models/audit_event_out.py
 invoicepdfs/models/audit_event_response.py
 invoicepdfs/models/audit_events_list_response.py
@@ -386,6 +398,10 @@ invoicepdfs/models/recurring_invoice_patch_request.py
 invoicepdfs/models/recurring_invoice_response.py
 invoicepdfs/models/recurring_invoices_list_response.py
 invoicepdfs/models/simple_bool_response.py
+invoicepdfs/models/stats_counts.py
+invoicepdfs/models/stats_overview.py
+invoicepdfs/models/stats_recent_invoice.py
+invoicepdfs/models/stats_response.py
 invoicepdfs/models/tax_rate_create_request.py
 invoicepdfs/models/tax_rate_out.py
 invoicepdfs/models/tax_rate_patch_request.py
@@ -433,4 +449,12 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_api_request_log_out.py
+test/test_api_request_logs_list_response.py
+test/test_logs_api.py
+test/test_stats_api.py
+test/test_stats_counts.py
+test/test_stats_overview.py
+test/test_stats_recent_invoice.py
+test/test_stats_response.py
 tox.ini

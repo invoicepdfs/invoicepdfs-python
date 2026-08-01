@@ -18,11 +18,13 @@ from invoicepdfs.api.imports_api import ImportsApi
 from invoicepdfs.api.invoice_attachments_api import InvoiceAttachmentsApi
 from invoicepdfs.api.invoices_api import InvoicesApi
 from invoicepdfs.api.jobs_api import JobsApi
+from invoicepdfs.api.logs_api import LogsApi
 from invoicepdfs.api.numbering_sequences_api import NumberingSequencesApi
 from invoicepdfs.api.payments_api import PaymentsApi
 from invoicepdfs.api.recurring_invoices_api import RecurringInvoicesApi
 from invoicepdfs.api.reference_api import ReferenceApi
 from invoicepdfs.api.renders_api import RendersApi
+from invoicepdfs.api.stats_api import StatsApi
 from invoicepdfs.api.tax_rates_api import TaxRatesApi
 from invoicepdfs.api.template_versions_api import TemplateVersionsApi
 from invoicepdfs.api.templates_api import TemplatesApi

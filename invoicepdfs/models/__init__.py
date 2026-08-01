@@ -23,6 +23,8 @@ from invoicepdfs.models.api_key_list_response import ApiKeyListResponse
 from invoicepdfs.models.api_key_patch_request import ApiKeyPatchRequest
 from invoicepdfs.models.api_key_revoke_response import ApiKeyRevokeResponse
 from invoicepdfs.models.api_key_rotate_response import ApiKeyRotateResponse
+from invoicepdfs.models.api_request_log_out import ApiRequestLogOut
+from invoicepdfs.models.api_request_logs_list_response import ApiRequestLogsListResponse
 from invoicepdfs.models.audit_event_out import AuditEventOut
 from invoicepdfs.models.audit_event_response import AuditEventResponse
 from invoicepdfs.models.audit_events_list_response import AuditEventsListResponse
@@ -155,6 +157,10 @@ from invoicepdfs.models.recurring_invoice_patch_request import RecurringInvoiceP
 from invoicepdfs.models.recurring_invoice_response import RecurringInvoiceResponse
 from invoicepdfs.models.recurring_invoices_list_response import RecurringInvoicesListResponse
 from invoicepdfs.models.simple_bool_response import SimpleBoolResponse
+from invoicepdfs.models.stats_counts import StatsCounts
+from invoicepdfs.models.stats_overview import StatsOverview
+from invoicepdfs.models.stats_recent_invoice import StatsRecentInvoice
+from invoicepdfs.models.stats_response import StatsResponse
 from invoicepdfs.models.tax_rate_create_request import TaxRateCreateRequest
 from invoicepdfs.models.tax_rate_out import TaxRateOut
 from invoicepdfs.models.tax_rate_patch_request import TaxRatePatchRequest

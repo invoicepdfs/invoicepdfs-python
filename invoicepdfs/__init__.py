@@ -34,11 +34,13 @@ from invoicepdfs.api.imports_api import ImportsApi
 from invoicepdfs.api.invoice_attachments_api import InvoiceAttachmentsApi
 from invoicepdfs.api.invoices_api import InvoicesApi
 from invoicepdfs.api.jobs_api import JobsApi
+from invoicepdfs.api.logs_api import LogsApi
 from invoicepdfs.api.numbering_sequences_api import NumberingSequencesApi
 from invoicepdfs.api.payments_api import PaymentsApi
 from invoicepdfs.api.recurring_invoices_api import RecurringInvoicesApi
 from invoicepdfs.api.reference_api import ReferenceApi
 from invoicepdfs.api.renders_api import RendersApi
+from invoicepdfs.api.stats_api import StatsApi
 from invoicepdfs.api.tax_rates_api import TaxRatesApi
 from invoicepdfs.api.template_versions_api import TemplateVersionsApi
 from invoicepdfs.api.templates_api import TemplatesApi
@@ -67,6 +69,8 @@ from invoicepdfs.models.api_key_list_response import ApiKeyListResponse
 from invoicepdfs.models.api_key_patch_request import ApiKeyPatchRequest
 from invoicepdfs.models.api_key_revoke_response import ApiKeyRevokeResponse
 from invoicepdfs.models.api_key_rotate_response import ApiKeyRotateResponse
+from invoicepdfs.models.api_request_log_out import ApiRequestLogOut
+from invoicepdfs.models.api_request_logs_list_response import ApiRequestLogsListResponse
 from invoicepdfs.models.audit_event_out import AuditEventOut
 from invoicepdfs.models.audit_event_response import AuditEventResponse
 from invoicepdfs.models.audit_events_list_response import AuditEventsListResponse
@@ -199,6 +203,10 @@ from invoicepdfs.models.recurring_invoice_patch_request import RecurringInvoiceP
 from invoicepdfs.models.recurring_invoice_response import RecurringInvoiceResponse
 from invoicepdfs.models.recurring_invoices_list_response import RecurringInvoicesListResponse
 from invoicepdfs.models.simple_bool_response import SimpleBoolResponse
+from invoicepdfs.models.stats_counts import StatsCounts
+from invoicepdfs.models.stats_overview import StatsOverview
+from invoicepdfs.models.stats_recent_invoice import StatsRecentInvoice
+from invoicepdfs.models.stats_response import StatsResponse
 from invoicepdfs.models.tax_rate_create_request import TaxRateCreateRequest
 from invoicepdfs.models.tax_rate_out import TaxRateOut
 from invoicepdfs.models.tax_rate_patch_request import TaxRatePatchRequest
