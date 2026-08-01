@@ -441,14 +441,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_app_documents_schemas_document_render_request.py
-test/test_app_schemas_v1_document_render_request.py
-test/test_document_create_request.py
-test/test_document_out.py
-test/test_document_patch_request.py
-test/test_document_response.py
-test/test_documents_list_response.py
-test/test_line_item_discount_input.py
-test/test_line_item_tax_input.py
-test/test_standard_line_item_input.py
 tox.ini
