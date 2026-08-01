@@ -637,7 +637,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **preview_template_api_v1_templates_template_id_preview_post**
-> object preview_template_api_v1_templates_template_id_preview_post(template_id, document_render_request, idempotency_key=idempotency_key)
+> object preview_template_api_v1_templates_template_id_preview_post(template_id, app_schemas_v1_document_render_request, idempotency_key=idempotency_key)
 
 Preview Template
 
@@ -647,7 +647,7 @@ Preview Template
 
 ```python
 import invoicepdfs
-from invoicepdfs.models.document_render_request import DocumentRenderRequest
+from invoicepdfs.models.app_schemas_v1_document_render_request import AppSchemasV1DocumentRenderRequest
 from invoicepdfs.rest import ApiException
 from pprint import pprint
 
@@ -672,12 +672,12 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = invoicepdfs.TemplatesApi(api_client)
     template_id = 'template_id_example' # str | 
-    document_render_request = invoicepdfs.DocumentRenderRequest() # DocumentRenderRequest | 
+    app_schemas_v1_document_render_request = invoicepdfs.AppSchemasV1DocumentRenderRequest() # AppSchemasV1DocumentRenderRequest | 
     idempotency_key = 'idempotency_key_example' # str |  (optional)
 
     try:
         # Preview Template
-        api_response = api_instance.preview_template_api_v1_templates_template_id_preview_post(template_id, document_render_request, idempotency_key=idempotency_key)
+        api_response = api_instance.preview_template_api_v1_templates_template_id_preview_post(template_id, app_schemas_v1_document_render_request, idempotency_key=idempotency_key)
         print("The response of TemplatesApi->preview_template_api_v1_templates_template_id_preview_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -692,7 +692,7 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **template_id** | **str**|  | 
- **document_render_request** | [**DocumentRenderRequest**](DocumentRenderRequest.md)|  | 
+ **app_schemas_v1_document_render_request** | [**AppSchemasV1DocumentRenderRequest**](AppSchemasV1DocumentRenderRequest.md)|  | 
  **idempotency_key** | **str**|  | [optional] 
 
 ### Return type

@@ -4,15 +4,15 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_payment_api_v1_invoices_invoice_id_payments_post**](PaymentsApi.md#create_payment_api_v1_invoices_invoice_id_payments_post) | **POST** /api/v1/invoices/{invoice_id}/payments | Create Payment
+[**create_payment_api_v1_documents_invoice_id_payments_post**](PaymentsApi.md#create_payment_api_v1_documents_invoice_id_payments_post) | **POST** /api/v1/documents/{invoice_id}/payments | Create Payment
 [**delete_payment_api_v1_payments_payment_id_delete**](PaymentsApi.md#delete_payment_api_v1_payments_payment_id_delete) | **DELETE** /api/v1/payments/{payment_id} | Delete Payment
 [**get_payment_api_v1_payments_payment_id_get**](PaymentsApi.md#get_payment_api_v1_payments_payment_id_get) | **GET** /api/v1/payments/{payment_id} | Get Payment
-[**list_invoice_payments_api_v1_invoices_invoice_id_payments_get**](PaymentsApi.md#list_invoice_payments_api_v1_invoices_invoice_id_payments_get) | **GET** /api/v1/invoices/{invoice_id}/payments | List Invoice Payments
+[**list_invoice_payments_api_v1_documents_invoice_id_payments_get**](PaymentsApi.md#list_invoice_payments_api_v1_documents_invoice_id_payments_get) | **GET** /api/v1/documents/{invoice_id}/payments | List Invoice Payments
 [**update_payment_api_v1_payments_payment_id_patch**](PaymentsApi.md#update_payment_api_v1_payments_payment_id_patch) | **PATCH** /api/v1/payments/{payment_id} | Update Payment
 
 
-# **create_payment_api_v1_invoices_invoice_id_payments_post**
-> PaymentResponse create_payment_api_v1_invoices_invoice_id_payments_post(invoice_id, payment_create_request)
+# **create_payment_api_v1_documents_invoice_id_payments_post**
+> PaymentResponse create_payment_api_v1_documents_invoice_id_payments_post(invoice_id, payment_create_request)
 
 Create Payment
 
@@ -52,11 +52,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Create Payment
-        api_response = api_instance.create_payment_api_v1_invoices_invoice_id_payments_post(invoice_id, payment_create_request)
-        print("The response of PaymentsApi->create_payment_api_v1_invoices_invoice_id_payments_post:\n")
+        api_response = api_instance.create_payment_api_v1_documents_invoice_id_payments_post(invoice_id, payment_create_request)
+        print("The response of PaymentsApi->create_payment_api_v1_documents_invoice_id_payments_post:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PaymentsApi->create_payment_api_v1_invoices_invoice_id_payments_post: %s\n" % e)
+        print("Exception when calling PaymentsApi->create_payment_api_v1_documents_invoice_id_payments_post: %s\n" % e)
 ```
 
 
@@ -245,8 +245,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_invoice_payments_api_v1_invoices_invoice_id_payments_get**
-> PaymentsListResponse list_invoice_payments_api_v1_invoices_invoice_id_payments_get(invoice_id, limit=limit, cursor=cursor)
+# **list_invoice_payments_api_v1_documents_invoice_id_payments_get**
+> PaymentsListResponse list_invoice_payments_api_v1_documents_invoice_id_payments_get(invoice_id, limit=limit, cursor=cursor)
 
 List Invoice Payments
 
@@ -286,11 +286,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # List Invoice Payments
-        api_response = api_instance.list_invoice_payments_api_v1_invoices_invoice_id_payments_get(invoice_id, limit=limit, cursor=cursor)
-        print("The response of PaymentsApi->list_invoice_payments_api_v1_invoices_invoice_id_payments_get:\n")
+        api_response = api_instance.list_invoice_payments_api_v1_documents_invoice_id_payments_get(invoice_id, limit=limit, cursor=cursor)
+        print("The response of PaymentsApi->list_invoice_payments_api_v1_documents_invoice_id_payments_get:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PaymentsApi->list_invoice_payments_api_v1_invoices_invoice_id_payments_get: %s\n" % e)
+        print("Exception when calling PaymentsApi->list_invoice_payments_api_v1_documents_invoice_id_payments_get: %s\n" % e)
 ```
 
 
