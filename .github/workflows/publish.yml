@@ -49,7 +49,7 @@ jobs:
           docker run --rm -v "${{ github.workspace }}:/local" \
             openapitools/openapi-generator-cli:v7.7.0 generate \
             -i /local/openapi.json -g python -o /local/dist-src \
-            --additional-properties=packageName=invoicepdfs,projectName=invoicepdfs,packageVersion=${{ steps.v.outputs.version }}
+            --additional-properties=packageName=invoicepdfs,projectName=invoicepdfs,packageUrl=https://github.com/invoicepdfs/invoicepdfs-python,packageVersion=${{ steps.v.outputs.version }}
 
       - uses: actions/setup-python@v5
         with:
