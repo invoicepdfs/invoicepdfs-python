@@ -449,6 +449,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_billing_plan.py
-test/test_billing_plans_list_response.py
 tox.ini
