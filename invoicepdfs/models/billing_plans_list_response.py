@@ -17,22 +17,18 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict
+from typing import Any, ClassVar, Dict, List
+from invoicepdfs.models.billing_plan import BillingPlan
 from typing import Optional, Set
 from typing_extensions import Self
 
-class BillingSubscriptionData(BaseModel):
+class BillingPlansListResponse(BaseModel):
     """
-    BillingSubscriptionData
+    BillingPlansListResponse
     """ # noqa: E501
-    subscription_id: Optional[StrictStr] = None
-    status: Optional[StrictStr] = None
-    plan_id: StrictStr
-    plan_name: StrictStr
-    stripe_configured: Optional[StrictBool] = False
-    has_billing_account: Optional[StrictBool] = False
-    __properties: ClassVar[List[str]] = ["subscription_id", "status", "plan_id", "plan_name", "stripe_configured", "has_billing_account"]
+    data: List[BillingPlan]
+    __properties: ClassVar[List[str]] = ["data"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -52,7 +48,7 @@ class BillingSubscriptionData(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of BillingSubscriptionData from a JSON string"""
+        """Create an instance of BillingPlansListResponse from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -73,21 +69,18 @@ class BillingSubscriptionData(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if subscription_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.subscription_id is None and "subscription_id" in self.model_fields_set:
-            _dict['subscription_id'] = None
-
-        # set to None if status (nullable) is None
-        # and model_fields_set contains the field
-        if self.status is None and "status" in self.model_fields_set:
-            _dict['status'] = None
-
+        # override the default output from pydantic by calling `to_dict()` of each item in data (list)
+        _items = []
+        if self.data:
+            for _item in self.data:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['data'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of BillingSubscriptionData from a dict"""
+        """Create an instance of BillingPlansListResponse from a dict"""
         if obj is None:
             return None
 
@@ -95,12 +88,7 @@ class BillingSubscriptionData(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "subscription_id": obj.get("subscription_id"),
-            "status": obj.get("status"),
-            "plan_id": obj.get("plan_id"),
-            "plan_name": obj.get("plan_name"),
-            "stripe_configured": obj.get("stripe_configured") if obj.get("stripe_configured") is not None else False,
-            "has_billing_account": obj.get("has_billing_account") if obj.get("has_billing_account") is not None else False
+            "data": [BillingPlan.from_dict(_item) for _item in obj["data"]] if obj.get("data") is not None else None
         })
         return _obj
 

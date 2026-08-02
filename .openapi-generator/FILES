@@ -48,6 +48,8 @@ docs/BillingApi.md
 docs/BillingCheckoutData.md
 docs/BillingCheckoutRequest.md
 docs/BillingCheckoutResponse.md
+docs/BillingPlan.md
+docs/BillingPlansListResponse.md
 docs/BillingPortalData.md
 docs/BillingPortalResponse.md
 docs/BillingSubscriptionData.md
@@ -293,6 +295,8 @@ invoicepdfs/models/batches_list_response.py
 invoicepdfs/models/billing_checkout_data.py
 invoicepdfs/models/billing_checkout_request.py
 invoicepdfs/models/billing_checkout_response.py
+invoicepdfs/models/billing_plan.py
+invoicepdfs/models/billing_plans_list_response.py
 invoicepdfs/models/billing_portal_data.py
 invoicepdfs/models/billing_portal_response.py
 invoicepdfs/models/billing_subscription_data.py
@@ -445,4 +449,6 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_billing_plan.py
+test/test_billing_plans_list_response.py
 tox.ini

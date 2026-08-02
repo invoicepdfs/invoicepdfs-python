@@ -100,6 +100,8 @@ from invoicepdfs.models.batches_list_response import BatchesListResponse
 from invoicepdfs.models.billing_checkout_data import BillingCheckoutData
 from invoicepdfs.models.billing_checkout_request import BillingCheckoutRequest
 from invoicepdfs.models.billing_checkout_response import BillingCheckoutResponse
+from invoicepdfs.models.billing_plan import BillingPlan
+from invoicepdfs.models.billing_plans_list_response import BillingPlansListResponse
 from invoicepdfs.models.billing_portal_data import BillingPortalData
 from invoicepdfs.models.billing_portal_response import BillingPortalResponse
 from invoicepdfs.models.billing_subscription_data import BillingSubscriptionData

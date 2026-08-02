@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **status** | **str** |  | [optional] 
 **plan_id** | **str** |  | 
 **plan_name** | **str** |  | 
+**stripe_configured** | **bool** |  | [optional] [default to False]
+**has_billing_account** | **bool** |  | [optional] [default to False]
 
 ## Example
 
