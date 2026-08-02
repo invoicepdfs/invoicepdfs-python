@@ -445,10 +445,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_branding_profile_create_request.py
-test/test_branding_profile_out.py
-test/test_branding_profile_patch_request.py
-test/test_branding_profile_response.py
-test/test_branding_profiles_api.py
-test/test_branding_profiles_list_response.py
 tox.ini
