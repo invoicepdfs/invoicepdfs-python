@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **custom_fields** | [**List[InvoiceCustomFieldInput]**](InvoiceCustomFieldInput.md) |  | [optional] 
 **payment** | [**InvoicePaymentInput**](InvoicePaymentInput.md) |  | [optional] 
 **branding** | [**InvoiceBrandingInput**](InvoiceBrandingInput.md) |  | [optional] 
+**branding_profile_id** | **str** |  | [optional] 
 
 ## Example
 

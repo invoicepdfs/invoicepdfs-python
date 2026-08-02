@@ -56,7 +56,8 @@ class DocumentCreateRequest(BaseModel):
     custom_fields: Optional[List[InvoiceCustomFieldInput]] = None
     payment: Optional[InvoicePaymentInput] = None
     branding: Optional[InvoiceBrandingInput] = None
-    __properties: ClassVar[List[str]] = ["document_type", "number", "issue_date", "due_date", "currency", "locale", "business_profile_id", "customer_id", "source_document_id", "reason", "ship_to", "line_items", "discounts", "shipping", "notes", "terms", "custom_fields", "payment", "branding"]
+    branding_profile_id: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["document_type", "number", "issue_date", "due_date", "currency", "locale", "business_profile_id", "customer_id", "source_document_id", "reason", "ship_to", "line_items", "discounts", "shipping", "notes", "terms", "custom_fields", "payment", "branding", "branding_profile_id"]
 
     @field_validator('document_type')
     def document_type_validate_enum(cls, value):
@@ -194,6 +195,11 @@ class DocumentCreateRequest(BaseModel):
         if self.branding is None and "branding" in self.model_fields_set:
             _dict['branding'] = None
 
+        # set to None if branding_profile_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.branding_profile_id is None and "branding_profile_id" in self.model_fields_set:
+            _dict['branding_profile_id'] = None
+
         return _dict
 
     @classmethod
@@ -224,7 +230,8 @@ class DocumentCreateRequest(BaseModel):
             "terms": [InvoiceTermInput.from_dict(_item) for _item in obj["terms"]] if obj.get("terms") is not None else None,
             "custom_fields": [InvoiceCustomFieldInput.from_dict(_item) for _item in obj["custom_fields"]] if obj.get("custom_fields") is not None else None,
             "payment": InvoicePaymentInput.from_dict(obj["payment"]) if obj.get("payment") is not None else None,
-            "branding": InvoiceBrandingInput.from_dict(obj["branding"]) if obj.get("branding") is not None else None
+            "branding": InvoiceBrandingInput.from_dict(obj["branding"]) if obj.get("branding") is not None else None,
+            "branding_profile_id": obj.get("branding_profile_id")
         })
         return _obj
 

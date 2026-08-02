@@ -22,7 +22,7 @@ from invoicepdfs.api.audit_log_api import AuditLogApi
 from invoicepdfs.api.auth_api import AuthApi
 from invoicepdfs.api.batches_api import BatchesApi
 from invoicepdfs.api.billing_api import BillingApi
-from invoicepdfs.api.branding_api import BrandingApi
+from invoicepdfs.api.branding_profiles_api import BrandingProfilesApi
 from invoicepdfs.api.business_profiles_api import BusinessProfilesApi
 from invoicepdfs.api.customers_api import CustomersApi
 from invoicepdfs.api.deliveries_api import DeliveriesApi
@@ -104,9 +104,11 @@ from invoicepdfs.models.billing_portal_data import BillingPortalData
 from invoicepdfs.models.billing_portal_response import BillingPortalResponse
 from invoicepdfs.models.billing_subscription_data import BillingSubscriptionData
 from invoicepdfs.models.billing_subscription_response import BillingSubscriptionResponse
-from invoicepdfs.models.branding_out import BrandingOut
-from invoicepdfs.models.branding_response import BrandingResponse
-from invoicepdfs.models.branding_update_request import BrandingUpdateRequest
+from invoicepdfs.models.branding_profile_create_request import BrandingProfileCreateRequest
+from invoicepdfs.models.branding_profile_out import BrandingProfileOut
+from invoicepdfs.models.branding_profile_patch_request import BrandingProfilePatchRequest
+from invoicepdfs.models.branding_profile_response import BrandingProfileResponse
+from invoicepdfs.models.branding_profiles_list_response import BrandingProfilesListResponse
 from invoicepdfs.models.business_profile_create import BusinessProfileCreate
 from invoicepdfs.models.business_profile_out import BusinessProfileOut
 from invoicepdfs.models.business_profile_patch import BusinessProfilePatch

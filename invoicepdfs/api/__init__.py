@@ -6,7 +6,7 @@ from invoicepdfs.api.audit_log_api import AuditLogApi
 from invoicepdfs.api.auth_api import AuthApi
 from invoicepdfs.api.batches_api import BatchesApi
 from invoicepdfs.api.billing_api import BillingApi
-from invoicepdfs.api.branding_api import BrandingApi
+from invoicepdfs.api.branding_profiles_api import BrandingProfilesApi
 from invoicepdfs.api.business_profiles_api import BusinessProfilesApi
 from invoicepdfs.api.customers_api import CustomersApi
 from invoicepdfs.api.deliveries_api import DeliveriesApi
