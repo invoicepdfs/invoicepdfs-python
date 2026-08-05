@@ -534,6 +534,7 @@ class ReferenceApi:
     ) -> Dict[str, object]:
         """List Document Types
 
+        List every supported document type with the metadata a client needs to build a type-aware create form: the number prefix, whether it is payable / takes a source document / supports a reason, which line-item shape it uses (``standard`` = priced, ``shipped`` = quantities only), and the lifecycle actions available to it.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -596,6 +597,7 @@ class ReferenceApi:
     ) -> ApiResponse[Dict[str, object]]:
         """List Document Types
 
+        List every supported document type with the metadata a client needs to build a type-aware create form: the number prefix, whether it is payable / takes a source document / supports a reason, which line-item shape it uses (``standard`` = priced, ``shipped`` = quantities only), and the lifecycle actions available to it.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -658,6 +660,7 @@ class ReferenceApi:
     ) -> RESTResponseType:
         """List Document Types
 
+        List every supported document type with the metadata a client needs to build a type-aware create form: the number prefix, whether it is payable / takes a source document / supports a reason, which line-item shape it uses (``standard`` = priced, ``shipped`` = quantities only), and the lifecycle actions available to it.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
