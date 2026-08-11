@@ -42,6 +42,12 @@ jobs:
             -i /local/openapi.json -g python -o /local/.gen \
             --additional-properties="packageName=invoicepdfs,projectName=invoicepdfs"
 
+          # The container writes as root, so the runner cannot delete what it
+          # produced — take ownership first (publish.yml does the same). Without
+          # this the cleanup below fails with "Permission denied"; the previous
+          # in-place workflow never hit it because it never deleted anything.
+          sudo chown -R "$(id -u):$(id -g)" .gen
+
           # Generate into .gen, then replace the tree wholesale. Generating in place
           # and running `git add -A` stages additions and edits but can never remove
           # a file the generator stopped emitting, so dropped tags (Invoices,
