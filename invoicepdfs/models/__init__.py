@@ -27,8 +27,6 @@ from invoicepdfs.models.api_key_revoke_response import ApiKeyRevokeResponse
 from invoicepdfs.models.api_key_rotate_response import ApiKeyRotateResponse
 from invoicepdfs.models.api_request_log_out import ApiRequestLogOut
 from invoicepdfs.models.api_request_logs_list_response import ApiRequestLogsListResponse
-from invoicepdfs.models.app_documents_schemas_document_render_request import AppDocumentsSchemasDocumentRenderRequest
-from invoicepdfs.models.app_schemas_v1_document_render_request import AppSchemasV1DocumentRenderRequest
 from invoicepdfs.models.audit_event_out import AuditEventOut
 from invoicepdfs.models.audit_event_response import AuditEventResponse
 from invoicepdfs.models.audit_events_list_response import AuditEventsListResponse
@@ -102,6 +100,8 @@ from invoicepdfs.models.document_output_options import DocumentOutputOptions
 from invoicepdfs.models.document_party_input import DocumentPartyInput
 from invoicepdfs.models.document_patch_request import DocumentPatchRequest
 from invoicepdfs.models.document_payment_input import DocumentPaymentInput
+from invoicepdfs.models.document_render_options import DocumentRenderOptions
+from invoicepdfs.models.document_render_request import DocumentRenderRequest
 from invoicepdfs.models.document_response import DocumentResponse
 from invoicepdfs.models.document_shipping_input import DocumentShippingInput
 from invoicepdfs.models.document_template_ref import DocumentTemplateRef

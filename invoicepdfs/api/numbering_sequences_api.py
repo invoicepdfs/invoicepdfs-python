@@ -45,7 +45,7 @@ class NumberingSequencesApi:
 
 
     @validate_call
-    def consume_next_api_v1_numbering_sequences_sequence_id_next_post(
+    def consume_sequence_number(
         self,
         sequence_id: StrictStr,
         _request_timeout: Union[
@@ -61,7 +61,7 @@ class NumberingSequencesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> NumberingSequenceResponse:
-        """Consume Next
+        """Consume Sequence Number
 
         Consume and return the next number, incrementing the counter.
 
@@ -89,7 +89,7 @@ class NumberingSequencesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._consume_next_api_v1_numbering_sequences_sequence_id_next_post_serialize(
+        _param = self._consume_sequence_number_serialize(
             sequence_id=sequence_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -113,7 +113,7 @@ class NumberingSequencesApi:
 
 
     @validate_call
-    def consume_next_api_v1_numbering_sequences_sequence_id_next_post_with_http_info(
+    def consume_sequence_number_with_http_info(
         self,
         sequence_id: StrictStr,
         _request_timeout: Union[
@@ -129,7 +129,7 @@ class NumberingSequencesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[NumberingSequenceResponse]:
-        """Consume Next
+        """Consume Sequence Number
 
         Consume and return the next number, incrementing the counter.
 
@@ -157,7 +157,7 @@ class NumberingSequencesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._consume_next_api_v1_numbering_sequences_sequence_id_next_post_serialize(
+        _param = self._consume_sequence_number_serialize(
             sequence_id=sequence_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -181,7 +181,7 @@ class NumberingSequencesApi:
 
 
     @validate_call
-    def consume_next_api_v1_numbering_sequences_sequence_id_next_post_without_preload_content(
+    def consume_sequence_number_without_preload_content(
         self,
         sequence_id: StrictStr,
         _request_timeout: Union[
@@ -197,7 +197,7 @@ class NumberingSequencesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Consume Next
+        """Consume Sequence Number
 
         Consume and return the next number, incrementing the counter.
 
@@ -225,7 +225,7 @@ class NumberingSequencesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._consume_next_api_v1_numbering_sequences_sequence_id_next_post_serialize(
+        _param = self._consume_sequence_number_serialize(
             sequence_id=sequence_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -244,7 +244,7 @@ class NumberingSequencesApi:
         return response_data.response
 
 
-    def _consume_next_api_v1_numbering_sequences_sequence_id_next_post_serialize(
+    def _consume_sequence_number_serialize(
         self,
         sequence_id,
         _request_auth,
@@ -307,7 +307,7 @@ class NumberingSequencesApi:
 
 
     @validate_call
-    def create_sequence_api_v1_numbering_sequences_post(
+    def create_sequence(
         self,
         numbering_sequence_create_request: NumberingSequenceCreateRequest,
         _request_timeout: Union[
@@ -350,7 +350,7 @@ class NumberingSequencesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_sequence_api_v1_numbering_sequences_post_serialize(
+        _param = self._create_sequence_serialize(
             numbering_sequence_create_request=numbering_sequence_create_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -374,7 +374,7 @@ class NumberingSequencesApi:
 
 
     @validate_call
-    def create_sequence_api_v1_numbering_sequences_post_with_http_info(
+    def create_sequence_with_http_info(
         self,
         numbering_sequence_create_request: NumberingSequenceCreateRequest,
         _request_timeout: Union[
@@ -417,7 +417,7 @@ class NumberingSequencesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_sequence_api_v1_numbering_sequences_post_serialize(
+        _param = self._create_sequence_serialize(
             numbering_sequence_create_request=numbering_sequence_create_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -441,7 +441,7 @@ class NumberingSequencesApi:
 
 
     @validate_call
-    def create_sequence_api_v1_numbering_sequences_post_without_preload_content(
+    def create_sequence_without_preload_content(
         self,
         numbering_sequence_create_request: NumberingSequenceCreateRequest,
         _request_timeout: Union[
@@ -484,7 +484,7 @@ class NumberingSequencesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_sequence_api_v1_numbering_sequences_post_serialize(
+        _param = self._create_sequence_serialize(
             numbering_sequence_create_request=numbering_sequence_create_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -503,7 +503,7 @@ class NumberingSequencesApi:
         return response_data.response
 
 
-    def _create_sequence_api_v1_numbering_sequences_post_serialize(
+    def _create_sequence_serialize(
         self,
         numbering_sequence_create_request,
         _request_auth,
@@ -579,7 +579,7 @@ class NumberingSequencesApi:
 
 
     @validate_call
-    def delete_sequence_api_v1_numbering_sequences_sequence_id_delete(
+    def delete_sequence(
         self,
         sequence_id: StrictStr,
         _request_timeout: Union[
@@ -622,7 +622,7 @@ class NumberingSequencesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_sequence_api_v1_numbering_sequences_sequence_id_delete_serialize(
+        _param = self._delete_sequence_serialize(
             sequence_id=sequence_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -646,7 +646,7 @@ class NumberingSequencesApi:
 
 
     @validate_call
-    def delete_sequence_api_v1_numbering_sequences_sequence_id_delete_with_http_info(
+    def delete_sequence_with_http_info(
         self,
         sequence_id: StrictStr,
         _request_timeout: Union[
@@ -689,7 +689,7 @@ class NumberingSequencesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_sequence_api_v1_numbering_sequences_sequence_id_delete_serialize(
+        _param = self._delete_sequence_serialize(
             sequence_id=sequence_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -713,7 +713,7 @@ class NumberingSequencesApi:
 
 
     @validate_call
-    def delete_sequence_api_v1_numbering_sequences_sequence_id_delete_without_preload_content(
+    def delete_sequence_without_preload_content(
         self,
         sequence_id: StrictStr,
         _request_timeout: Union[
@@ -756,7 +756,7 @@ class NumberingSequencesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_sequence_api_v1_numbering_sequences_sequence_id_delete_serialize(
+        _param = self._delete_sequence_serialize(
             sequence_id=sequence_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -775,7 +775,7 @@ class NumberingSequencesApi:
         return response_data.response
 
 
-    def _delete_sequence_api_v1_numbering_sequences_sequence_id_delete_serialize(
+    def _delete_sequence_serialize(
         self,
         sequence_id,
         _request_auth,
@@ -838,7 +838,7 @@ class NumberingSequencesApi:
 
 
     @validate_call
-    def get_sequence_api_v1_numbering_sequences_sequence_id_get(
+    def get_sequence(
         self,
         sequence_id: StrictStr,
         _request_timeout: Union[
@@ -881,7 +881,7 @@ class NumberingSequencesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_sequence_api_v1_numbering_sequences_sequence_id_get_serialize(
+        _param = self._get_sequence_serialize(
             sequence_id=sequence_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -905,7 +905,7 @@ class NumberingSequencesApi:
 
 
     @validate_call
-    def get_sequence_api_v1_numbering_sequences_sequence_id_get_with_http_info(
+    def get_sequence_with_http_info(
         self,
         sequence_id: StrictStr,
         _request_timeout: Union[
@@ -948,7 +948,7 @@ class NumberingSequencesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_sequence_api_v1_numbering_sequences_sequence_id_get_serialize(
+        _param = self._get_sequence_serialize(
             sequence_id=sequence_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -972,7 +972,7 @@ class NumberingSequencesApi:
 
 
     @validate_call
-    def get_sequence_api_v1_numbering_sequences_sequence_id_get_without_preload_content(
+    def get_sequence_without_preload_content(
         self,
         sequence_id: StrictStr,
         _request_timeout: Union[
@@ -1015,7 +1015,7 @@ class NumberingSequencesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_sequence_api_v1_numbering_sequences_sequence_id_get_serialize(
+        _param = self._get_sequence_serialize(
             sequence_id=sequence_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1034,7 +1034,7 @@ class NumberingSequencesApi:
         return response_data.response
 
 
-    def _get_sequence_api_v1_numbering_sequences_sequence_id_get_serialize(
+    def _get_sequence_serialize(
         self,
         sequence_id,
         _request_auth,
@@ -1097,7 +1097,7 @@ class NumberingSequencesApi:
 
 
     @validate_call
-    def list_sequences_api_v1_numbering_sequences_get(
+    def list_sequences(
         self,
         limit: Optional[Annotated[int, Field(le=100, strict=True, ge=1)]] = None,
         cursor: Optional[StrictStr] = None,
@@ -1143,7 +1143,7 @@ class NumberingSequencesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_sequences_api_v1_numbering_sequences_get_serialize(
+        _param = self._list_sequences_serialize(
             limit=limit,
             cursor=cursor,
             _request_auth=_request_auth,
@@ -1168,7 +1168,7 @@ class NumberingSequencesApi:
 
 
     @validate_call
-    def list_sequences_api_v1_numbering_sequences_get_with_http_info(
+    def list_sequences_with_http_info(
         self,
         limit: Optional[Annotated[int, Field(le=100, strict=True, ge=1)]] = None,
         cursor: Optional[StrictStr] = None,
@@ -1214,7 +1214,7 @@ class NumberingSequencesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_sequences_api_v1_numbering_sequences_get_serialize(
+        _param = self._list_sequences_serialize(
             limit=limit,
             cursor=cursor,
             _request_auth=_request_auth,
@@ -1239,7 +1239,7 @@ class NumberingSequencesApi:
 
 
     @validate_call
-    def list_sequences_api_v1_numbering_sequences_get_without_preload_content(
+    def list_sequences_without_preload_content(
         self,
         limit: Optional[Annotated[int, Field(le=100, strict=True, ge=1)]] = None,
         cursor: Optional[StrictStr] = None,
@@ -1285,7 +1285,7 @@ class NumberingSequencesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_sequences_api_v1_numbering_sequences_get_serialize(
+        _param = self._list_sequences_serialize(
             limit=limit,
             cursor=cursor,
             _request_auth=_request_auth,
@@ -1305,7 +1305,7 @@ class NumberingSequencesApi:
         return response_data.response
 
 
-    def _list_sequences_api_v1_numbering_sequences_get_serialize(
+    def _list_sequences_serialize(
         self,
         limit,
         cursor,
@@ -1375,7 +1375,7 @@ class NumberingSequencesApi:
 
 
     @validate_call
-    def preview_sequence_api_v1_numbering_sequences_sequence_id_preview_post(
+    def preview_sequence(
         self,
         sequence_id: StrictStr,
         _request_timeout: Union[
@@ -1418,7 +1418,7 @@ class NumberingSequencesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._preview_sequence_api_v1_numbering_sequences_sequence_id_preview_post_serialize(
+        _param = self._preview_sequence_serialize(
             sequence_id=sequence_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1442,7 +1442,7 @@ class NumberingSequencesApi:
 
 
     @validate_call
-    def preview_sequence_api_v1_numbering_sequences_sequence_id_preview_post_with_http_info(
+    def preview_sequence_with_http_info(
         self,
         sequence_id: StrictStr,
         _request_timeout: Union[
@@ -1485,7 +1485,7 @@ class NumberingSequencesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._preview_sequence_api_v1_numbering_sequences_sequence_id_preview_post_serialize(
+        _param = self._preview_sequence_serialize(
             sequence_id=sequence_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1509,7 +1509,7 @@ class NumberingSequencesApi:
 
 
     @validate_call
-    def preview_sequence_api_v1_numbering_sequences_sequence_id_preview_post_without_preload_content(
+    def preview_sequence_without_preload_content(
         self,
         sequence_id: StrictStr,
         _request_timeout: Union[
@@ -1552,7 +1552,7 @@ class NumberingSequencesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._preview_sequence_api_v1_numbering_sequences_sequence_id_preview_post_serialize(
+        _param = self._preview_sequence_serialize(
             sequence_id=sequence_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1571,7 +1571,7 @@ class NumberingSequencesApi:
         return response_data.response
 
 
-    def _preview_sequence_api_v1_numbering_sequences_sequence_id_preview_post_serialize(
+    def _preview_sequence_serialize(
         self,
         sequence_id,
         _request_auth,
@@ -1634,7 +1634,7 @@ class NumberingSequencesApi:
 
 
     @validate_call
-    def update_sequence_api_v1_numbering_sequences_sequence_id_patch(
+    def update_sequence(
         self,
         sequence_id: StrictStr,
         numbering_sequence_patch_request: NumberingSequencePatchRequest,
@@ -1680,7 +1680,7 @@ class NumberingSequencesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_sequence_api_v1_numbering_sequences_sequence_id_patch_serialize(
+        _param = self._update_sequence_serialize(
             sequence_id=sequence_id,
             numbering_sequence_patch_request=numbering_sequence_patch_request,
             _request_auth=_request_auth,
@@ -1705,7 +1705,7 @@ class NumberingSequencesApi:
 
 
     @validate_call
-    def update_sequence_api_v1_numbering_sequences_sequence_id_patch_with_http_info(
+    def update_sequence_with_http_info(
         self,
         sequence_id: StrictStr,
         numbering_sequence_patch_request: NumberingSequencePatchRequest,
@@ -1751,7 +1751,7 @@ class NumberingSequencesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_sequence_api_v1_numbering_sequences_sequence_id_patch_serialize(
+        _param = self._update_sequence_serialize(
             sequence_id=sequence_id,
             numbering_sequence_patch_request=numbering_sequence_patch_request,
             _request_auth=_request_auth,
@@ -1776,7 +1776,7 @@ class NumberingSequencesApi:
 
 
     @validate_call
-    def update_sequence_api_v1_numbering_sequences_sequence_id_patch_without_preload_content(
+    def update_sequence_without_preload_content(
         self,
         sequence_id: StrictStr,
         numbering_sequence_patch_request: NumberingSequencePatchRequest,
@@ -1822,7 +1822,7 @@ class NumberingSequencesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_sequence_api_v1_numbering_sequences_sequence_id_patch_serialize(
+        _param = self._update_sequence_serialize(
             sequence_id=sequence_id,
             numbering_sequence_patch_request=numbering_sequence_patch_request,
             _request_auth=_request_auth,
@@ -1842,7 +1842,7 @@ class NumberingSequencesApi:
         return response_data.response
 
 
-    def _update_sequence_api_v1_numbering_sequences_sequence_id_patch_serialize(
+    def _update_sequence_serialize(
         self,
         sequence_id,
         numbering_sequence_patch_request,

@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**delete_file_api_v1_files_file_id_delete**](FilesApi.md#delete_file_api_v1_files_file_id_delete) | **DELETE** /api/v1/files/{file_id} | Delete File
-[**get_file_api_v1_files_file_id_get**](FilesApi.md#get_file_api_v1_files_file_id_get) | **GET** /api/v1/files/{file_id} | Get File
-[**upload_file_api_v1_files_post**](FilesApi.md#upload_file_api_v1_files_post) | **POST** /api/v1/files | Upload File
+[**delete_file**](FilesApi.md#delete_file) | **DELETE** /api/v1/files/{file_id} | Delete File
+[**get_file**](FilesApi.md#get_file) | **GET** /api/v1/files/{file_id} | Get File
+[**upload_file**](FilesApi.md#upload_file) | **POST** /api/v1/files | Upload File
 
 
-# **delete_file_api_v1_files_file_id_delete**
-> SimpleBoolResponse delete_file_api_v1_files_file_id_delete(file_id)
+# **delete_file**
+> SimpleBoolResponse delete_file(file_id)
 
 Delete File
 
@@ -48,11 +48,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Delete File
-        api_response = api_instance.delete_file_api_v1_files_file_id_delete(file_id)
-        print("The response of FilesApi->delete_file_api_v1_files_file_id_delete:\n")
+        api_response = api_instance.delete_file(file_id)
+        print("The response of FilesApi->delete_file:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling FilesApi->delete_file_api_v1_files_file_id_delete: %s\n" % e)
+        print("Exception when calling FilesApi->delete_file: %s\n" % e)
 ```
 
 
@@ -86,8 +86,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_file_api_v1_files_file_id_get**
-> FileResponse get_file_api_v1_files_file_id_get(file_id)
+# **get_file**
+> FileResponse get_file(file_id)
 
 Get File
 
@@ -125,11 +125,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Get File
-        api_response = api_instance.get_file_api_v1_files_file_id_get(file_id)
-        print("The response of FilesApi->get_file_api_v1_files_file_id_get:\n")
+        api_response = api_instance.get_file(file_id)
+        print("The response of FilesApi->get_file:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling FilesApi->get_file_api_v1_files_file_id_get: %s\n" % e)
+        print("Exception when calling FilesApi->get_file: %s\n" % e)
 ```
 
 
@@ -163,8 +163,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **upload_file_api_v1_files_post**
-> FileResponse upload_file_api_v1_files_post(file, idempotency_key=idempotency_key)
+# **upload_file**
+> FileResponse upload_file(file, idempotency_key=idempotency_key)
 
 Upload File
 
@@ -203,11 +203,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Upload File
-        api_response = api_instance.upload_file_api_v1_files_post(file, idempotency_key=idempotency_key)
-        print("The response of FilesApi->upload_file_api_v1_files_post:\n")
+        api_response = api_instance.upload_file(file, idempotency_key=idempotency_key)
+        print("The response of FilesApi->upload_file:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling FilesApi->upload_file_api_v1_files_post: %s\n" % e)
+        print("Exception when calling FilesApi->upload_file: %s\n" % e)
 ```
 
 

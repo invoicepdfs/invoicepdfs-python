@@ -4,21 +4,21 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_template_api_v1_templates_custom_post**](TemplatesApi.md#create_template_api_v1_templates_custom_post) | **POST** /api/v1/templates/custom | Create Template
-[**delete_template_api_v1_templates_custom_template_id_delete**](TemplatesApi.md#delete_template_api_v1_templates_custom_template_id_delete) | **DELETE** /api/v1/templates/custom/{template_id} | Delete Template
-[**duplicate_template_api_v1_templates_custom_template_id_duplicate_post**](TemplatesApi.md#duplicate_template_api_v1_templates_custom_template_id_duplicate_post) | **POST** /api/v1/templates/custom/{template_id}/duplicate | Duplicate Template
-[**get_builtin_template_api_v1_templates_builtin_template_id_get**](TemplatesApi.md#get_builtin_template_api_v1_templates_builtin_template_id_get) | **GET** /api/v1/templates/builtin/{template_id} | Get Builtin Template
-[**get_custom_template_api_v1_templates_custom_template_id_get**](TemplatesApi.md#get_custom_template_api_v1_templates_custom_template_id_get) | **GET** /api/v1/templates/custom/{template_id} | Get Custom Template
-[**get_template_api_v1_templates_template_id_get**](TemplatesApi.md#get_template_api_v1_templates_template_id_get) | **GET** /api/v1/templates/{template_id} | Get Template
-[**list_custom_templates_api_v1_templates_custom_get**](TemplatesApi.md#list_custom_templates_api_v1_templates_custom_get) | **GET** /api/v1/templates/custom | List Custom Templates
-[**patch_template_api_v1_templates_custom_template_id_patch**](TemplatesApi.md#patch_template_api_v1_templates_custom_template_id_patch) | **PATCH** /api/v1/templates/custom/{template_id} | Patch Template
-[**preview_template_api_v1_templates_template_id_preview_post**](TemplatesApi.md#preview_template_api_v1_templates_template_id_preview_post) | **POST** /api/v1/templates/{template_id}/preview | Preview Template
-[**publish_template_api_v1_templates_custom_template_id_publish_post**](TemplatesApi.md#publish_template_api_v1_templates_custom_template_id_publish_post) | **POST** /api/v1/templates/custom/{template_id}/publish | Publish Template
-[**templates_api_v1_templates_get**](TemplatesApi.md#templates_api_v1_templates_get) | **GET** /api/v1/templates | Templates
+[**create_template**](TemplatesApi.md#create_template) | **POST** /api/v1/templates/custom | Create Template
+[**delete_template**](TemplatesApi.md#delete_template) | **DELETE** /api/v1/templates/custom/{template_id} | Delete Template
+[**duplicate_template**](TemplatesApi.md#duplicate_template) | **POST** /api/v1/templates/custom/{template_id}/duplicate | Duplicate Template
+[**get_builtin_template**](TemplatesApi.md#get_builtin_template) | **GET** /api/v1/templates/builtin/{template_id} | Get Builtin Template
+[**get_custom_template**](TemplatesApi.md#get_custom_template) | **GET** /api/v1/templates/custom/{template_id} | Get Custom Template
+[**get_template**](TemplatesApi.md#get_template) | **GET** /api/v1/templates/{template_id} | Get Template
+[**list_custom_templates**](TemplatesApi.md#list_custom_templates) | **GET** /api/v1/templates/custom | List Custom Templates
+[**list_templates**](TemplatesApi.md#list_templates) | **GET** /api/v1/templates | List Templates
+[**preview_template**](TemplatesApi.md#preview_template) | **POST** /api/v1/templates/{template_id}/preview | Preview Template
+[**publish_template**](TemplatesApi.md#publish_template) | **POST** /api/v1/templates/custom/{template_id}/publish | Publish Template
+[**update_template**](TemplatesApi.md#update_template) | **PATCH** /api/v1/templates/custom/{template_id} | Update Template
 
 
-# **create_template_api_v1_templates_custom_post**
-> CustomTemplateResponse create_template_api_v1_templates_custom_post(template_create_request)
+# **create_template**
+> CustomTemplateResponse create_template(template_create_request)
 
 Create Template
 
@@ -57,11 +57,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Create Template
-        api_response = api_instance.create_template_api_v1_templates_custom_post(template_create_request)
-        print("The response of TemplatesApi->create_template_api_v1_templates_custom_post:\n")
+        api_response = api_instance.create_template(template_create_request)
+        print("The response of TemplatesApi->create_template:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TemplatesApi->create_template_api_v1_templates_custom_post: %s\n" % e)
+        print("Exception when calling TemplatesApi->create_template: %s\n" % e)
 ```
 
 
@@ -95,8 +95,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_template_api_v1_templates_custom_template_id_delete**
-> delete_template_api_v1_templates_custom_template_id_delete(template_id)
+# **delete_template**
+> delete_template(template_id)
 
 Delete Template
 
@@ -133,9 +133,9 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Delete Template
-        api_instance.delete_template_api_v1_templates_custom_template_id_delete(template_id)
+        api_instance.delete_template(template_id)
     except Exception as e:
-        print("Exception when calling TemplatesApi->delete_template_api_v1_templates_custom_template_id_delete: %s\n" % e)
+        print("Exception when calling TemplatesApi->delete_template: %s\n" % e)
 ```
 
 
@@ -169,8 +169,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **duplicate_template_api_v1_templates_custom_template_id_duplicate_post**
-> CustomTemplateResponse duplicate_template_api_v1_templates_custom_template_id_duplicate_post(template_id)
+# **duplicate_template**
+> CustomTemplateResponse duplicate_template(template_id)
 
 Duplicate Template
 
@@ -208,11 +208,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Duplicate Template
-        api_response = api_instance.duplicate_template_api_v1_templates_custom_template_id_duplicate_post(template_id)
-        print("The response of TemplatesApi->duplicate_template_api_v1_templates_custom_template_id_duplicate_post:\n")
+        api_response = api_instance.duplicate_template(template_id)
+        print("The response of TemplatesApi->duplicate_template:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TemplatesApi->duplicate_template_api_v1_templates_custom_template_id_duplicate_post: %s\n" % e)
+        print("Exception when calling TemplatesApi->duplicate_template: %s\n" % e)
 ```
 
 
@@ -246,8 +246,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_builtin_template_api_v1_templates_builtin_template_id_get**
-> TemplateDetailResponse get_builtin_template_api_v1_templates_builtin_template_id_get(template_id)
+# **get_builtin_template**
+> TemplateDetailResponse get_builtin_template(template_id)
 
 Get Builtin Template
 
@@ -285,11 +285,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Get Builtin Template
-        api_response = api_instance.get_builtin_template_api_v1_templates_builtin_template_id_get(template_id)
-        print("The response of TemplatesApi->get_builtin_template_api_v1_templates_builtin_template_id_get:\n")
+        api_response = api_instance.get_builtin_template(template_id)
+        print("The response of TemplatesApi->get_builtin_template:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TemplatesApi->get_builtin_template_api_v1_templates_builtin_template_id_get: %s\n" % e)
+        print("Exception when calling TemplatesApi->get_builtin_template: %s\n" % e)
 ```
 
 
@@ -323,8 +323,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_custom_template_api_v1_templates_custom_template_id_get**
-> CustomTemplateResponse get_custom_template_api_v1_templates_custom_template_id_get(template_id)
+# **get_custom_template**
+> CustomTemplateResponse get_custom_template(template_id)
 
 Get Custom Template
 
@@ -362,11 +362,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Get Custom Template
-        api_response = api_instance.get_custom_template_api_v1_templates_custom_template_id_get(template_id)
-        print("The response of TemplatesApi->get_custom_template_api_v1_templates_custom_template_id_get:\n")
+        api_response = api_instance.get_custom_template(template_id)
+        print("The response of TemplatesApi->get_custom_template:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TemplatesApi->get_custom_template_api_v1_templates_custom_template_id_get: %s\n" % e)
+        print("Exception when calling TemplatesApi->get_custom_template: %s\n" % e)
 ```
 
 
@@ -400,8 +400,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_template_api_v1_templates_template_id_get**
-> TemplateDetailResponse get_template_api_v1_templates_template_id_get(template_id)
+# **get_template**
+> TemplateDetailResponse get_template(template_id)
 
 Get Template
 
@@ -439,11 +439,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Get Template
-        api_response = api_instance.get_template_api_v1_templates_template_id_get(template_id)
-        print("The response of TemplatesApi->get_template_api_v1_templates_template_id_get:\n")
+        api_response = api_instance.get_template(template_id)
+        print("The response of TemplatesApi->get_template:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TemplatesApi->get_template_api_v1_templates_template_id_get: %s\n" % e)
+        print("Exception when calling TemplatesApi->get_template: %s\n" % e)
 ```
 
 
@@ -477,8 +477,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_custom_templates_api_v1_templates_custom_get**
-> CustomTemplatesListResponse list_custom_templates_api_v1_templates_custom_get(limit=limit, cursor=cursor)
+# **list_custom_templates**
+> CustomTemplatesListResponse list_custom_templates(limit=limit, cursor=cursor)
 
 List Custom Templates
 
@@ -517,11 +517,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # List Custom Templates
-        api_response = api_instance.list_custom_templates_api_v1_templates_custom_get(limit=limit, cursor=cursor)
-        print("The response of TemplatesApi->list_custom_templates_api_v1_templates_custom_get:\n")
+        api_response = api_instance.list_custom_templates(limit=limit, cursor=cursor)
+        print("The response of TemplatesApi->list_custom_templates:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TemplatesApi->list_custom_templates_api_v1_templates_custom_get: %s\n" % e)
+        print("Exception when calling TemplatesApi->list_custom_templates: %s\n" % e)
 ```
 
 
@@ -556,10 +556,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **patch_template_api_v1_templates_custom_template_id_patch**
-> CustomTemplateResponse patch_template_api_v1_templates_custom_template_id_patch(template_id, template_patch_request)
+# **list_templates**
+> TemplatesListResponse list_templates()
 
-Patch Template
+List Templates
 
 ### Example
 
@@ -567,8 +567,7 @@ Patch Template
 
 ```python
 import invoicepdfs
-from invoicepdfs.models.custom_template_response import CustomTemplateResponse
-from invoicepdfs.models.template_patch_request import TemplatePatchRequest
+from invoicepdfs.models.templates_list_response import TemplatesListResponse
 from invoicepdfs.rest import ApiException
 from pprint import pprint
 
@@ -592,31 +591,25 @@ configuration = invoicepdfs.Configuration(
 with invoicepdfs.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = invoicepdfs.TemplatesApi(api_client)
-    template_id = 'template_id_example' # str | 
-    template_patch_request = invoicepdfs.TemplatePatchRequest() # TemplatePatchRequest | 
 
     try:
-        # Patch Template
-        api_response = api_instance.patch_template_api_v1_templates_custom_template_id_patch(template_id, template_patch_request)
-        print("The response of TemplatesApi->patch_template_api_v1_templates_custom_template_id_patch:\n")
+        # List Templates
+        api_response = api_instance.list_templates()
+        print("The response of TemplatesApi->list_templates:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TemplatesApi->patch_template_api_v1_templates_custom_template_id_patch: %s\n" % e)
+        print("Exception when calling TemplatesApi->list_templates: %s\n" % e)
 ```
 
 
 
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **template_id** | **str**|  | 
- **template_patch_request** | [**TemplatePatchRequest**](TemplatePatchRequest.md)|  | 
+This endpoint does not need any parameter.
 
 ### Return type
 
-[**CustomTemplateResponse**](CustomTemplateResponse.md)
+[**TemplatesListResponse**](TemplatesListResponse.md)
 
 ### Authorization
 
@@ -624,7 +617,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details
@@ -632,12 +625,11 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successful Response |  -  |
-**422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **preview_template_api_v1_templates_template_id_preview_post**
-> object preview_template_api_v1_templates_template_id_preview_post(template_id, app_schemas_v1_document_render_request, idempotency_key=idempotency_key)
+# **preview_template**
+> object preview_template(template_id, document_render_request, idempotency_key=idempotency_key)
 
 Preview Template
 
@@ -647,7 +639,7 @@ Preview Template
 
 ```python
 import invoicepdfs
-from invoicepdfs.models.app_schemas_v1_document_render_request import AppSchemasV1DocumentRenderRequest
+from invoicepdfs.models.document_render_request import DocumentRenderRequest
 from invoicepdfs.rest import ApiException
 from pprint import pprint
 
@@ -672,16 +664,16 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = invoicepdfs.TemplatesApi(api_client)
     template_id = 'template_id_example' # str | 
-    app_schemas_v1_document_render_request = invoicepdfs.AppSchemasV1DocumentRenderRequest() # AppSchemasV1DocumentRenderRequest | 
+    document_render_request = invoicepdfs.DocumentRenderRequest() # DocumentRenderRequest | 
     idempotency_key = 'idempotency_key_example' # str |  (optional)
 
     try:
         # Preview Template
-        api_response = api_instance.preview_template_api_v1_templates_template_id_preview_post(template_id, app_schemas_v1_document_render_request, idempotency_key=idempotency_key)
-        print("The response of TemplatesApi->preview_template_api_v1_templates_template_id_preview_post:\n")
+        api_response = api_instance.preview_template(template_id, document_render_request, idempotency_key=idempotency_key)
+        print("The response of TemplatesApi->preview_template:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TemplatesApi->preview_template_api_v1_templates_template_id_preview_post: %s\n" % e)
+        print("Exception when calling TemplatesApi->preview_template: %s\n" % e)
 ```
 
 
@@ -692,7 +684,7 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **template_id** | **str**|  | 
- **app_schemas_v1_document_render_request** | [**AppSchemasV1DocumentRenderRequest**](AppSchemasV1DocumentRenderRequest.md)|  | 
+ **document_render_request** | [**DocumentRenderRequest**](DocumentRenderRequest.md)|  | 
  **idempotency_key** | **str**|  | [optional] 
 
 ### Return type
@@ -717,8 +709,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **publish_template_api_v1_templates_custom_template_id_publish_post**
-> CustomTemplateResponse publish_template_api_v1_templates_custom_template_id_publish_post(template_id)
+# **publish_template**
+> CustomTemplateResponse publish_template(template_id)
 
 Publish Template
 
@@ -756,11 +748,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Publish Template
-        api_response = api_instance.publish_template_api_v1_templates_custom_template_id_publish_post(template_id)
-        print("The response of TemplatesApi->publish_template_api_v1_templates_custom_template_id_publish_post:\n")
+        api_response = api_instance.publish_template(template_id)
+        print("The response of TemplatesApi->publish_template:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TemplatesApi->publish_template_api_v1_templates_custom_template_id_publish_post: %s\n" % e)
+        print("Exception when calling TemplatesApi->publish_template: %s\n" % e)
 ```
 
 
@@ -794,10 +786,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **templates_api_v1_templates_get**
-> TemplatesListResponse templates_api_v1_templates_get()
+# **update_template**
+> CustomTemplateResponse update_template(template_id, template_patch_request)
 
-Templates
+Update Template
 
 ### Example
 
@@ -805,7 +797,8 @@ Templates
 
 ```python
 import invoicepdfs
-from invoicepdfs.models.templates_list_response import TemplatesListResponse
+from invoicepdfs.models.custom_template_response import CustomTemplateResponse
+from invoicepdfs.models.template_patch_request import TemplatePatchRequest
 from invoicepdfs.rest import ApiException
 from pprint import pprint
 
@@ -829,25 +822,31 @@ configuration = invoicepdfs.Configuration(
 with invoicepdfs.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = invoicepdfs.TemplatesApi(api_client)
+    template_id = 'template_id_example' # str | 
+    template_patch_request = invoicepdfs.TemplatePatchRequest() # TemplatePatchRequest | 
 
     try:
-        # Templates
-        api_response = api_instance.templates_api_v1_templates_get()
-        print("The response of TemplatesApi->templates_api_v1_templates_get:\n")
+        # Update Template
+        api_response = api_instance.update_template(template_id, template_patch_request)
+        print("The response of TemplatesApi->update_template:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TemplatesApi->templates_api_v1_templates_get: %s\n" % e)
+        print("Exception when calling TemplatesApi->update_template: %s\n" % e)
 ```
 
 
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **template_id** | **str**|  | 
+ **template_patch_request** | [**TemplatePatchRequest**](TemplatePatchRequest.md)|  | 
 
 ### Return type
 
-[**TemplatesListResponse**](TemplatesListResponse.md)
+[**CustomTemplateResponse**](CustomTemplateResponse.md)
 
 ### Authorization
 
@@ -855,7 +854,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -863,6 +862,7 @@ This endpoint does not need any parameter.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successful Response |  -  |
+**422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -4,12 +4,12 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_delivery_api_v1_deliveries_delivery_id_get**](DeliveriesApi.md#get_delivery_api_v1_deliveries_delivery_id_get) | **GET** /api/v1/deliveries/{delivery_id} | Get Delivery
-[**retry_delivery_api_v1_deliveries_delivery_id_retry_post**](DeliveriesApi.md#retry_delivery_api_v1_deliveries_delivery_id_retry_post) | **POST** /api/v1/deliveries/{delivery_id}/retry | Retry Delivery
+[**get_delivery**](DeliveriesApi.md#get_delivery) | **GET** /api/v1/deliveries/{delivery_id} | Get Delivery
+[**retry_delivery**](DeliveriesApi.md#retry_delivery) | **POST** /api/v1/deliveries/{delivery_id}/retry | Retry Delivery
 
 
-# **get_delivery_api_v1_deliveries_delivery_id_get**
-> DeliveryResponse get_delivery_api_v1_deliveries_delivery_id_get(delivery_id)
+# **get_delivery**
+> DeliveryResponse get_delivery(delivery_id)
 
 Get Delivery
 
@@ -47,11 +47,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Get Delivery
-        api_response = api_instance.get_delivery_api_v1_deliveries_delivery_id_get(delivery_id)
-        print("The response of DeliveriesApi->get_delivery_api_v1_deliveries_delivery_id_get:\n")
+        api_response = api_instance.get_delivery(delivery_id)
+        print("The response of DeliveriesApi->get_delivery:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DeliveriesApi->get_delivery_api_v1_deliveries_delivery_id_get: %s\n" % e)
+        print("Exception when calling DeliveriesApi->get_delivery: %s\n" % e)
 ```
 
 
@@ -85,8 +85,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **retry_delivery_api_v1_deliveries_delivery_id_retry_post**
-> DeliveryResponse retry_delivery_api_v1_deliveries_delivery_id_retry_post(delivery_id)
+# **retry_delivery**
+> DeliveryResponse retry_delivery(delivery_id)
 
 Retry Delivery
 
@@ -124,11 +124,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Retry Delivery
-        api_response = api_instance.retry_delivery_api_v1_deliveries_delivery_id_retry_post(delivery_id)
-        print("The response of DeliveriesApi->retry_delivery_api_v1_deliveries_delivery_id_retry_post:\n")
+        api_response = api_instance.retry_delivery(delivery_id)
+        print("The response of DeliveriesApi->retry_delivery:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DeliveriesApi->retry_delivery_api_v1_deliveries_delivery_id_retry_post: %s\n" % e)
+        print("Exception when calling DeliveriesApi->retry_delivery: %s\n" % e)
 ```
 
 

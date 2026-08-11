@@ -47,9 +47,9 @@ class AuthApi:
 
 
     @validate_call
-    def forgot_password_api_v1_auth_forgot_password_post(
+    def exchange_auth_token(
         self,
-        auth_forgot_password_request: AuthForgotPasswordRequest,
+        auth_token_request: AuthTokenRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -62,13 +62,13 @@ class AuthApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> AuthMessageResponse:
-        """Forgot Password
+    ) -> AuthTokenResponse:
+        """Exchange Auth Token
 
-        Send a password reset email via Firebase.
+        Exchange a Firebase ID token for account info.  Use this on login: the client authenticates with Firebase, sends the ID token here, and receives the InvoicePDFs account details. The Firebase token itself is used as the Bearer token for subsequent API calls.
 
-        :param auth_forgot_password_request: (required)
-        :type auth_forgot_password_request: AuthForgotPasswordRequest
+        :param auth_token_request: (required)
+        :type auth_token_request: AuthTokenRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -91,8 +91,8 @@ class AuthApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._forgot_password_api_v1_auth_forgot_password_post_serialize(
-            auth_forgot_password_request=auth_forgot_password_request,
+        _param = self._exchange_auth_token_serialize(
+            auth_token_request=auth_token_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -100,7 +100,7 @@ class AuthApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AuthMessageResponse",
+            '200': "AuthTokenResponse",
             '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -115,9 +115,9 @@ class AuthApi:
 
 
     @validate_call
-    def forgot_password_api_v1_auth_forgot_password_post_with_http_info(
+    def exchange_auth_token_with_http_info(
         self,
-        auth_forgot_password_request: AuthForgotPasswordRequest,
+        auth_token_request: AuthTokenRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -130,13 +130,13 @@ class AuthApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AuthMessageResponse]:
-        """Forgot Password
+    ) -> ApiResponse[AuthTokenResponse]:
+        """Exchange Auth Token
 
-        Send a password reset email via Firebase.
+        Exchange a Firebase ID token for account info.  Use this on login: the client authenticates with Firebase, sends the ID token here, and receives the InvoicePDFs account details. The Firebase token itself is used as the Bearer token for subsequent API calls.
 
-        :param auth_forgot_password_request: (required)
-        :type auth_forgot_password_request: AuthForgotPasswordRequest
+        :param auth_token_request: (required)
+        :type auth_token_request: AuthTokenRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -159,8 +159,8 @@ class AuthApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._forgot_password_api_v1_auth_forgot_password_post_serialize(
-            auth_forgot_password_request=auth_forgot_password_request,
+        _param = self._exchange_auth_token_serialize(
+            auth_token_request=auth_token_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -168,7 +168,7 @@ class AuthApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AuthMessageResponse",
+            '200': "AuthTokenResponse",
             '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -183,9 +183,9 @@ class AuthApi:
 
 
     @validate_call
-    def forgot_password_api_v1_auth_forgot_password_post_without_preload_content(
+    def exchange_auth_token_without_preload_content(
         self,
-        auth_forgot_password_request: AuthForgotPasswordRequest,
+        auth_token_request: AuthTokenRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -199,12 +199,12 @@ class AuthApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Forgot Password
+        """Exchange Auth Token
 
-        Send a password reset email via Firebase.
+        Exchange a Firebase ID token for account info.  Use this on login: the client authenticates with Firebase, sends the ID token here, and receives the InvoicePDFs account details. The Firebase token itself is used as the Bearer token for subsequent API calls.
 
-        :param auth_forgot_password_request: (required)
-        :type auth_forgot_password_request: AuthForgotPasswordRequest
+        :param auth_token_request: (required)
+        :type auth_token_request: AuthTokenRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -227,8 +227,8 @@ class AuthApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._forgot_password_api_v1_auth_forgot_password_post_serialize(
-            auth_forgot_password_request=auth_forgot_password_request,
+        _param = self._exchange_auth_token_serialize(
+            auth_token_request=auth_token_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -236,7 +236,7 @@ class AuthApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AuthMessageResponse",
+            '200': "AuthTokenResponse",
             '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -246,9 +246,9 @@ class AuthApi:
         return response_data.response
 
 
-    def _forgot_password_api_v1_auth_forgot_password_post_serialize(
+    def _exchange_auth_token_serialize(
         self,
-        auth_forgot_password_request,
+        auth_token_request,
         _request_auth,
         _content_type,
         _headers,
@@ -272,8 +272,8 @@ class AuthApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if auth_forgot_password_request is not None:
-            _body_params = auth_forgot_password_request
+        if auth_token_request is not None:
+            _body_params = auth_token_request
 
 
         # set the HTTP header `Accept`
@@ -304,7 +304,7 @@ class AuthApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/api/v1/auth/forgot-password',
+            resource_path='/api/v1/auth/token',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -321,251 +321,7 @@ class AuthApi:
 
 
     @validate_call
-    def logout_api_v1_auth_logout_post(
-        self,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> AuthMessageResponse:
-        """Logout
-
-        Revoke all Firebase refresh tokens for the authenticated user.
-
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._logout_api_v1_auth_logout_post_serialize(
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AuthMessageResponse",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def logout_api_v1_auth_logout_post_with_http_info(
-        self,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AuthMessageResponse]:
-        """Logout
-
-        Revoke all Firebase refresh tokens for the authenticated user.
-
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._logout_api_v1_auth_logout_post_serialize(
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AuthMessageResponse",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def logout_api_v1_auth_logout_post_without_preload_content(
-        self,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Logout
-
-        Revoke all Firebase refresh tokens for the authenticated user.
-
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._logout_api_v1_auth_logout_post_serialize(
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AuthMessageResponse",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _logout_api_v1_auth_logout_post_serialize(
-        self,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'HTTPBearer'
-        ]
-
-        return self.api_client.param_serialize(
-            method='POST',
-            resource_path='/api/v1/auth/logout',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def me_api_v1_auth_me_get(
+    def get_current_user(
         self,
         _request_timeout: Union[
             None,
@@ -580,7 +336,7 @@ class AuthApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AuthMeResponse:
-        """Me
+        """Get Current User
 
 
         :param _request_timeout: timeout setting for this request. If one
@@ -605,7 +361,7 @@ class AuthApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._me_api_v1_auth_me_get_serialize(
+        _param = self._get_current_user_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -627,7 +383,7 @@ class AuthApi:
 
 
     @validate_call
-    def me_api_v1_auth_me_get_with_http_info(
+    def get_current_user_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -642,7 +398,7 @@ class AuthApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AuthMeResponse]:
-        """Me
+        """Get Current User
 
 
         :param _request_timeout: timeout setting for this request. If one
@@ -667,7 +423,7 @@ class AuthApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._me_api_v1_auth_me_get_serialize(
+        _param = self._get_current_user_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -689,7 +445,7 @@ class AuthApi:
 
 
     @validate_call
-    def me_api_v1_auth_me_get_without_preload_content(
+    def get_current_user_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -704,7 +460,7 @@ class AuthApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Me
+        """Get Current User
 
 
         :param _request_timeout: timeout setting for this request. If one
@@ -729,7 +485,7 @@ class AuthApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._me_api_v1_auth_me_get_serialize(
+        _param = self._get_current_user_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -746,7 +502,7 @@ class AuthApi:
         return response_data.response
 
 
-    def _me_api_v1_auth_me_get_serialize(
+    def _get_current_user_serialize(
         self,
         _request_auth,
         _content_type,
@@ -806,9 +562,8 @@ class AuthApi:
 
 
     @validate_call
-    def patch_me_api_v1_auth_me_patch(
+    def logout(
         self,
-        auth_me_patch_request: AuthMePatchRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -821,13 +576,11 @@ class AuthApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> AuthMeResponse:
-        """Patch Me
+    ) -> AuthMessageResponse:
+        """Logout
 
-        Update the authenticated account's name or email.
+        Revoke all Firebase refresh tokens for the authenticated user.
 
-        :param auth_me_patch_request: (required)
-        :type auth_me_patch_request: AuthMePatchRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -850,8 +603,7 @@ class AuthApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._patch_me_api_v1_auth_me_patch_serialize(
-            auth_me_patch_request=auth_me_patch_request,
+        _param = self._logout_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -859,8 +611,7 @@ class AuthApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AuthMeResponse",
-            '422': "ApiErrorResponse",
+            '200': "AuthMessageResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -874,9 +625,8 @@ class AuthApi:
 
 
     @validate_call
-    def patch_me_api_v1_auth_me_patch_with_http_info(
+    def logout_with_http_info(
         self,
-        auth_me_patch_request: AuthMePatchRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -889,13 +639,11 @@ class AuthApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AuthMeResponse]:
-        """Patch Me
+    ) -> ApiResponse[AuthMessageResponse]:
+        """Logout
 
-        Update the authenticated account's name or email.
+        Revoke all Firebase refresh tokens for the authenticated user.
 
-        :param auth_me_patch_request: (required)
-        :type auth_me_patch_request: AuthMePatchRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -918,8 +666,7 @@ class AuthApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._patch_me_api_v1_auth_me_patch_serialize(
-            auth_me_patch_request=auth_me_patch_request,
+        _param = self._logout_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -927,8 +674,7 @@ class AuthApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AuthMeResponse",
-            '422': "ApiErrorResponse",
+            '200': "AuthMessageResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -942,9 +688,8 @@ class AuthApi:
 
 
     @validate_call
-    def patch_me_api_v1_auth_me_patch_without_preload_content(
+    def logout_without_preload_content(
         self,
-        auth_me_patch_request: AuthMePatchRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -958,12 +703,10 @@ class AuthApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Patch Me
+        """Logout
 
-        Update the authenticated account's name or email.
+        Revoke all Firebase refresh tokens for the authenticated user.
 
-        :param auth_me_patch_request: (required)
-        :type auth_me_patch_request: AuthMePatchRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -986,8 +729,7 @@ class AuthApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._patch_me_api_v1_auth_me_patch_serialize(
-            auth_me_patch_request=auth_me_patch_request,
+        _param = self._logout_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -995,8 +737,7 @@ class AuthApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AuthMeResponse",
-            '422': "ApiErrorResponse",
+            '200': "AuthMessageResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1005,9 +746,8 @@ class AuthApi:
         return response_data.response
 
 
-    def _patch_me_api_v1_auth_me_patch_serialize(
+    def _logout_serialize(
         self,
-        auth_me_patch_request,
         _request_auth,
         _content_type,
         _headers,
@@ -1031,8 +771,6 @@ class AuthApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if auth_me_patch_request is not None:
-            _body_params = auth_me_patch_request
 
 
         # set the HTTP header `Accept`
@@ -1043,19 +781,6 @@ class AuthApi:
                 ]
             )
 
-        # set the HTTP header `Content-Type`
-        if _content_type:
-            _header_params['Content-Type'] = _content_type
-        else:
-            _default_content_type = (
-                self.api_client.select_header_content_type(
-                    [
-                        'application/json'
-                    ]
-                )
-            )
-            if _default_content_type is not None:
-                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [
@@ -1063,8 +788,8 @@ class AuthApi:
         ]
 
         return self.api_client.param_serialize(
-            method='PATCH',
-            resource_path='/api/v1/auth/me',
+            method='POST',
+            resource_path='/api/v1/auth/logout',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1081,7 +806,7 @@ class AuthApi:
 
 
     @validate_call
-    def refresh_api_v1_auth_refresh_post(
+    def refresh_access_token(
         self,
         auth_refresh_request: AuthRefreshRequest,
         _request_timeout: Union[
@@ -1097,7 +822,7 @@ class AuthApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AuthRefreshResponse:
-        """Refresh
+        """Refresh Access Token
 
         Exchange a Firebase refresh token for a new ID token.
 
@@ -1125,7 +850,7 @@ class AuthApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._refresh_api_v1_auth_refresh_post_serialize(
+        _param = self._refresh_access_token_serialize(
             auth_refresh_request=auth_refresh_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1149,7 +874,7 @@ class AuthApi:
 
 
     @validate_call
-    def refresh_api_v1_auth_refresh_post_with_http_info(
+    def refresh_access_token_with_http_info(
         self,
         auth_refresh_request: AuthRefreshRequest,
         _request_timeout: Union[
@@ -1165,7 +890,7 @@ class AuthApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AuthRefreshResponse]:
-        """Refresh
+        """Refresh Access Token
 
         Exchange a Firebase refresh token for a new ID token.
 
@@ -1193,7 +918,7 @@ class AuthApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._refresh_api_v1_auth_refresh_post_serialize(
+        _param = self._refresh_access_token_serialize(
             auth_refresh_request=auth_refresh_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1217,7 +942,7 @@ class AuthApi:
 
 
     @validate_call
-    def refresh_api_v1_auth_refresh_post_without_preload_content(
+    def refresh_access_token_without_preload_content(
         self,
         auth_refresh_request: AuthRefreshRequest,
         _request_timeout: Union[
@@ -1233,7 +958,7 @@ class AuthApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Refresh
+        """Refresh Access Token
 
         Exchange a Firebase refresh token for a new ID token.
 
@@ -1261,7 +986,7 @@ class AuthApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._refresh_api_v1_auth_refresh_post_serialize(
+        _param = self._refresh_access_token_serialize(
             auth_refresh_request=auth_refresh_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1280,7 +1005,7 @@ class AuthApi:
         return response_data.response
 
 
-    def _refresh_api_v1_auth_refresh_post_serialize(
+    def _refresh_access_token_serialize(
         self,
         auth_refresh_request,
         _request_auth,
@@ -1355,7 +1080,7 @@ class AuthApi:
 
 
     @validate_call
-    def register_api_v1_auth_register_post(
+    def register(
         self,
         auth_register_request: AuthRegisterRequest,
         _request_timeout: Union[
@@ -1399,7 +1124,7 @@ class AuthApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._register_api_v1_auth_register_post_serialize(
+        _param = self._register_serialize(
             auth_register_request=auth_register_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1423,7 +1148,7 @@ class AuthApi:
 
 
     @validate_call
-    def register_api_v1_auth_register_post_with_http_info(
+    def register_with_http_info(
         self,
         auth_register_request: AuthRegisterRequest,
         _request_timeout: Union[
@@ -1467,7 +1192,7 @@ class AuthApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._register_api_v1_auth_register_post_serialize(
+        _param = self._register_serialize(
             auth_register_request=auth_register_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1491,7 +1216,7 @@ class AuthApi:
 
 
     @validate_call
-    def register_api_v1_auth_register_post_without_preload_content(
+    def register_without_preload_content(
         self,
         auth_register_request: AuthRegisterRequest,
         _request_timeout: Union[
@@ -1535,7 +1260,7 @@ class AuthApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._register_api_v1_auth_register_post_serialize(
+        _param = self._register_serialize(
             auth_register_request=auth_register_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1554,7 +1279,7 @@ class AuthApi:
         return response_data.response
 
 
-    def _register_api_v1_auth_register_post_serialize(
+    def _register_serialize(
         self,
         auth_register_request,
         _request_auth,
@@ -1629,7 +1354,281 @@ class AuthApi:
 
 
     @validate_call
-    def reset_password_api_v1_auth_reset_password_post(
+    def request_password_reset(
+        self,
+        auth_forgot_password_request: AuthForgotPasswordRequest,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> AuthMessageResponse:
+        """Request Password Reset
+
+        Send a password reset email via Firebase.
+
+        :param auth_forgot_password_request: (required)
+        :type auth_forgot_password_request: AuthForgotPasswordRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._request_password_reset_serialize(
+            auth_forgot_password_request=auth_forgot_password_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AuthMessageResponse",
+            '422': "ApiErrorResponse",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def request_password_reset_with_http_info(
+        self,
+        auth_forgot_password_request: AuthForgotPasswordRequest,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[AuthMessageResponse]:
+        """Request Password Reset
+
+        Send a password reset email via Firebase.
+
+        :param auth_forgot_password_request: (required)
+        :type auth_forgot_password_request: AuthForgotPasswordRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._request_password_reset_serialize(
+            auth_forgot_password_request=auth_forgot_password_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AuthMessageResponse",
+            '422': "ApiErrorResponse",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def request_password_reset_without_preload_content(
+        self,
+        auth_forgot_password_request: AuthForgotPasswordRequest,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Request Password Reset
+
+        Send a password reset email via Firebase.
+
+        :param auth_forgot_password_request: (required)
+        :type auth_forgot_password_request: AuthForgotPasswordRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._request_password_reset_serialize(
+            auth_forgot_password_request=auth_forgot_password_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AuthMessageResponse",
+            '422': "ApiErrorResponse",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _request_password_reset_serialize(
+        self,
+        auth_forgot_password_request,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if auth_forgot_password_request is not None:
+            _body_params = auth_forgot_password_request
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/api/v1/auth/forgot-password',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def reset_password(
         self,
         auth_reset_password_request: AuthResetPasswordRequest,
         _request_timeout: Union[
@@ -1673,7 +1672,7 @@ class AuthApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._reset_password_api_v1_auth_reset_password_post_serialize(
+        _param = self._reset_password_serialize(
             auth_reset_password_request=auth_reset_password_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1697,7 +1696,7 @@ class AuthApi:
 
 
     @validate_call
-    def reset_password_api_v1_auth_reset_password_post_with_http_info(
+    def reset_password_with_http_info(
         self,
         auth_reset_password_request: AuthResetPasswordRequest,
         _request_timeout: Union[
@@ -1741,7 +1740,7 @@ class AuthApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._reset_password_api_v1_auth_reset_password_post_serialize(
+        _param = self._reset_password_serialize(
             auth_reset_password_request=auth_reset_password_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1765,7 +1764,7 @@ class AuthApi:
 
 
     @validate_call
-    def reset_password_api_v1_auth_reset_password_post_without_preload_content(
+    def reset_password_without_preload_content(
         self,
         auth_reset_password_request: AuthResetPasswordRequest,
         _request_timeout: Union[
@@ -1809,7 +1808,7 @@ class AuthApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._reset_password_api_v1_auth_reset_password_post_serialize(
+        _param = self._reset_password_serialize(
             auth_reset_password_request=auth_reset_password_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1828,7 +1827,7 @@ class AuthApi:
         return response_data.response
 
 
-    def _reset_password_api_v1_auth_reset_password_post_serialize(
+    def _reset_password_serialize(
         self,
         auth_reset_password_request,
         _request_auth,
@@ -1903,9 +1902,9 @@ class AuthApi:
 
 
     @validate_call
-    def token_exchange_api_v1_auth_token_post(
+    def update_current_user(
         self,
-        auth_token_request: AuthTokenRequest,
+        auth_me_patch_request: AuthMePatchRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1918,13 +1917,13 @@ class AuthApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> AuthTokenResponse:
-        """Token Exchange
+    ) -> AuthMeResponse:
+        """Update Current User
 
-        Exchange a Firebase ID token for account info.  Use this on login: the client authenticates with Firebase, sends the ID token here, and receives the InvoicePDFs account details. The Firebase token itself is used as the Bearer token for subsequent API calls.
+        Update the authenticated account's name or email.
 
-        :param auth_token_request: (required)
-        :type auth_token_request: AuthTokenRequest
+        :param auth_me_patch_request: (required)
+        :type auth_me_patch_request: AuthMePatchRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1947,8 +1946,8 @@ class AuthApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._token_exchange_api_v1_auth_token_post_serialize(
-            auth_token_request=auth_token_request,
+        _param = self._update_current_user_serialize(
+            auth_me_patch_request=auth_me_patch_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1956,7 +1955,7 @@ class AuthApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AuthTokenResponse",
+            '200': "AuthMeResponse",
             '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -1971,9 +1970,9 @@ class AuthApi:
 
 
     @validate_call
-    def token_exchange_api_v1_auth_token_post_with_http_info(
+    def update_current_user_with_http_info(
         self,
-        auth_token_request: AuthTokenRequest,
+        auth_me_patch_request: AuthMePatchRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1986,13 +1985,13 @@ class AuthApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AuthTokenResponse]:
-        """Token Exchange
+    ) -> ApiResponse[AuthMeResponse]:
+        """Update Current User
 
-        Exchange a Firebase ID token for account info.  Use this on login: the client authenticates with Firebase, sends the ID token here, and receives the InvoicePDFs account details. The Firebase token itself is used as the Bearer token for subsequent API calls.
+        Update the authenticated account's name or email.
 
-        :param auth_token_request: (required)
-        :type auth_token_request: AuthTokenRequest
+        :param auth_me_patch_request: (required)
+        :type auth_me_patch_request: AuthMePatchRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2015,8 +2014,8 @@ class AuthApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._token_exchange_api_v1_auth_token_post_serialize(
-            auth_token_request=auth_token_request,
+        _param = self._update_current_user_serialize(
+            auth_me_patch_request=auth_me_patch_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2024,7 +2023,7 @@ class AuthApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AuthTokenResponse",
+            '200': "AuthMeResponse",
             '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -2039,9 +2038,9 @@ class AuthApi:
 
 
     @validate_call
-    def token_exchange_api_v1_auth_token_post_without_preload_content(
+    def update_current_user_without_preload_content(
         self,
-        auth_token_request: AuthTokenRequest,
+        auth_me_patch_request: AuthMePatchRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2055,12 +2054,12 @@ class AuthApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Token Exchange
+        """Update Current User
 
-        Exchange a Firebase ID token for account info.  Use this on login: the client authenticates with Firebase, sends the ID token here, and receives the InvoicePDFs account details. The Firebase token itself is used as the Bearer token for subsequent API calls.
+        Update the authenticated account's name or email.
 
-        :param auth_token_request: (required)
-        :type auth_token_request: AuthTokenRequest
+        :param auth_me_patch_request: (required)
+        :type auth_me_patch_request: AuthMePatchRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2083,8 +2082,8 @@ class AuthApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._token_exchange_api_v1_auth_token_post_serialize(
-            auth_token_request=auth_token_request,
+        _param = self._update_current_user_serialize(
+            auth_me_patch_request=auth_me_patch_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2092,7 +2091,7 @@ class AuthApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AuthTokenResponse",
+            '200': "AuthMeResponse",
             '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -2102,9 +2101,9 @@ class AuthApi:
         return response_data.response
 
 
-    def _token_exchange_api_v1_auth_token_post_serialize(
+    def _update_current_user_serialize(
         self,
-        auth_token_request,
+        auth_me_patch_request,
         _request_auth,
         _content_type,
         _headers,
@@ -2128,8 +2127,8 @@ class AuthApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if auth_token_request is not None:
-            _body_params = auth_token_request
+        if auth_me_patch_request is not None:
+            _body_params = auth_me_patch_request
 
 
         # set the HTTP header `Accept`
@@ -2156,11 +2155,12 @@ class AuthApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'HTTPBearer'
         ]
 
         return self.api_client.param_serialize(
-            method='POST',
-            resource_path='/api/v1/auth/token',
+            method='PATCH',
+            resource_path='/api/v1/auth/me',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

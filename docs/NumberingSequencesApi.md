@@ -4,19 +4,19 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**consume_next_api_v1_numbering_sequences_sequence_id_next_post**](NumberingSequencesApi.md#consume_next_api_v1_numbering_sequences_sequence_id_next_post) | **POST** /api/v1/numbering-sequences/{sequence_id}/next | Consume Next
-[**create_sequence_api_v1_numbering_sequences_post**](NumberingSequencesApi.md#create_sequence_api_v1_numbering_sequences_post) | **POST** /api/v1/numbering-sequences | Create Sequence
-[**delete_sequence_api_v1_numbering_sequences_sequence_id_delete**](NumberingSequencesApi.md#delete_sequence_api_v1_numbering_sequences_sequence_id_delete) | **DELETE** /api/v1/numbering-sequences/{sequence_id} | Delete Sequence
-[**get_sequence_api_v1_numbering_sequences_sequence_id_get**](NumberingSequencesApi.md#get_sequence_api_v1_numbering_sequences_sequence_id_get) | **GET** /api/v1/numbering-sequences/{sequence_id} | Get Sequence
-[**list_sequences_api_v1_numbering_sequences_get**](NumberingSequencesApi.md#list_sequences_api_v1_numbering_sequences_get) | **GET** /api/v1/numbering-sequences | List Sequences
-[**preview_sequence_api_v1_numbering_sequences_sequence_id_preview_post**](NumberingSequencesApi.md#preview_sequence_api_v1_numbering_sequences_sequence_id_preview_post) | **POST** /api/v1/numbering-sequences/{sequence_id}/preview | Preview Sequence
-[**update_sequence_api_v1_numbering_sequences_sequence_id_patch**](NumberingSequencesApi.md#update_sequence_api_v1_numbering_sequences_sequence_id_patch) | **PATCH** /api/v1/numbering-sequences/{sequence_id} | Update Sequence
+[**consume_sequence_number**](NumberingSequencesApi.md#consume_sequence_number) | **POST** /api/v1/numbering-sequences/{sequence_id}/next | Consume Sequence Number
+[**create_sequence**](NumberingSequencesApi.md#create_sequence) | **POST** /api/v1/numbering-sequences | Create Sequence
+[**delete_sequence**](NumberingSequencesApi.md#delete_sequence) | **DELETE** /api/v1/numbering-sequences/{sequence_id} | Delete Sequence
+[**get_sequence**](NumberingSequencesApi.md#get_sequence) | **GET** /api/v1/numbering-sequences/{sequence_id} | Get Sequence
+[**list_sequences**](NumberingSequencesApi.md#list_sequences) | **GET** /api/v1/numbering-sequences | List Sequences
+[**preview_sequence**](NumberingSequencesApi.md#preview_sequence) | **POST** /api/v1/numbering-sequences/{sequence_id}/preview | Preview Sequence
+[**update_sequence**](NumberingSequencesApi.md#update_sequence) | **PATCH** /api/v1/numbering-sequences/{sequence_id} | Update Sequence
 
 
-# **consume_next_api_v1_numbering_sequences_sequence_id_next_post**
-> NumberingSequenceResponse consume_next_api_v1_numbering_sequences_sequence_id_next_post(sequence_id)
+# **consume_sequence_number**
+> NumberingSequenceResponse consume_sequence_number(sequence_id)
 
-Consume Next
+Consume Sequence Number
 
 Consume and return the next number, incrementing the counter.
 
@@ -53,12 +53,12 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     sequence_id = 'sequence_id_example' # str | 
 
     try:
-        # Consume Next
-        api_response = api_instance.consume_next_api_v1_numbering_sequences_sequence_id_next_post(sequence_id)
-        print("The response of NumberingSequencesApi->consume_next_api_v1_numbering_sequences_sequence_id_next_post:\n")
+        # Consume Sequence Number
+        api_response = api_instance.consume_sequence_number(sequence_id)
+        print("The response of NumberingSequencesApi->consume_sequence_number:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling NumberingSequencesApi->consume_next_api_v1_numbering_sequences_sequence_id_next_post: %s\n" % e)
+        print("Exception when calling NumberingSequencesApi->consume_sequence_number: %s\n" % e)
 ```
 
 
@@ -92,8 +92,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create_sequence_api_v1_numbering_sequences_post**
-> NumberingSequenceResponse create_sequence_api_v1_numbering_sequences_post(numbering_sequence_create_request)
+# **create_sequence**
+> NumberingSequenceResponse create_sequence(numbering_sequence_create_request)
 
 Create Sequence
 
@@ -132,11 +132,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Create Sequence
-        api_response = api_instance.create_sequence_api_v1_numbering_sequences_post(numbering_sequence_create_request)
-        print("The response of NumberingSequencesApi->create_sequence_api_v1_numbering_sequences_post:\n")
+        api_response = api_instance.create_sequence(numbering_sequence_create_request)
+        print("The response of NumberingSequencesApi->create_sequence:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling NumberingSequencesApi->create_sequence_api_v1_numbering_sequences_post: %s\n" % e)
+        print("Exception when calling NumberingSequencesApi->create_sequence: %s\n" % e)
 ```
 
 
@@ -170,8 +170,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_sequence_api_v1_numbering_sequences_sequence_id_delete**
-> SimpleBoolResponse delete_sequence_api_v1_numbering_sequences_sequence_id_delete(sequence_id)
+# **delete_sequence**
+> SimpleBoolResponse delete_sequence(sequence_id)
 
 Delete Sequence
 
@@ -209,11 +209,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Delete Sequence
-        api_response = api_instance.delete_sequence_api_v1_numbering_sequences_sequence_id_delete(sequence_id)
-        print("The response of NumberingSequencesApi->delete_sequence_api_v1_numbering_sequences_sequence_id_delete:\n")
+        api_response = api_instance.delete_sequence(sequence_id)
+        print("The response of NumberingSequencesApi->delete_sequence:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling NumberingSequencesApi->delete_sequence_api_v1_numbering_sequences_sequence_id_delete: %s\n" % e)
+        print("Exception when calling NumberingSequencesApi->delete_sequence: %s\n" % e)
 ```
 
 
@@ -247,8 +247,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_sequence_api_v1_numbering_sequences_sequence_id_get**
-> NumberingSequenceResponse get_sequence_api_v1_numbering_sequences_sequence_id_get(sequence_id)
+# **get_sequence**
+> NumberingSequenceResponse get_sequence(sequence_id)
 
 Get Sequence
 
@@ -286,11 +286,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Get Sequence
-        api_response = api_instance.get_sequence_api_v1_numbering_sequences_sequence_id_get(sequence_id)
-        print("The response of NumberingSequencesApi->get_sequence_api_v1_numbering_sequences_sequence_id_get:\n")
+        api_response = api_instance.get_sequence(sequence_id)
+        print("The response of NumberingSequencesApi->get_sequence:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling NumberingSequencesApi->get_sequence_api_v1_numbering_sequences_sequence_id_get: %s\n" % e)
+        print("Exception when calling NumberingSequencesApi->get_sequence: %s\n" % e)
 ```
 
 
@@ -324,8 +324,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_sequences_api_v1_numbering_sequences_get**
-> NumberingSequencesListResponse list_sequences_api_v1_numbering_sequences_get(limit=limit, cursor=cursor)
+# **list_sequences**
+> NumberingSequencesListResponse list_sequences(limit=limit, cursor=cursor)
 
 List Sequences
 
@@ -364,11 +364,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # List Sequences
-        api_response = api_instance.list_sequences_api_v1_numbering_sequences_get(limit=limit, cursor=cursor)
-        print("The response of NumberingSequencesApi->list_sequences_api_v1_numbering_sequences_get:\n")
+        api_response = api_instance.list_sequences(limit=limit, cursor=cursor)
+        print("The response of NumberingSequencesApi->list_sequences:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling NumberingSequencesApi->list_sequences_api_v1_numbering_sequences_get: %s\n" % e)
+        print("Exception when calling NumberingSequencesApi->list_sequences: %s\n" % e)
 ```
 
 
@@ -403,8 +403,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **preview_sequence_api_v1_numbering_sequences_sequence_id_preview_post**
-> NumberingSequencePreviewResponse preview_sequence_api_v1_numbering_sequences_sequence_id_preview_post(sequence_id)
+# **preview_sequence**
+> NumberingSequencePreviewResponse preview_sequence(sequence_id)
 
 Preview Sequence
 
@@ -442,11 +442,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Preview Sequence
-        api_response = api_instance.preview_sequence_api_v1_numbering_sequences_sequence_id_preview_post(sequence_id)
-        print("The response of NumberingSequencesApi->preview_sequence_api_v1_numbering_sequences_sequence_id_preview_post:\n")
+        api_response = api_instance.preview_sequence(sequence_id)
+        print("The response of NumberingSequencesApi->preview_sequence:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling NumberingSequencesApi->preview_sequence_api_v1_numbering_sequences_sequence_id_preview_post: %s\n" % e)
+        print("Exception when calling NumberingSequencesApi->preview_sequence: %s\n" % e)
 ```
 
 
@@ -480,8 +480,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_sequence_api_v1_numbering_sequences_sequence_id_patch**
-> NumberingSequenceResponse update_sequence_api_v1_numbering_sequences_sequence_id_patch(sequence_id, numbering_sequence_patch_request)
+# **update_sequence**
+> NumberingSequenceResponse update_sequence(sequence_id, numbering_sequence_patch_request)
 
 Update Sequence
 
@@ -521,11 +521,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Update Sequence
-        api_response = api_instance.update_sequence_api_v1_numbering_sequences_sequence_id_patch(sequence_id, numbering_sequence_patch_request)
-        print("The response of NumberingSequencesApi->update_sequence_api_v1_numbering_sequences_sequence_id_patch:\n")
+        api_response = api_instance.update_sequence(sequence_id, numbering_sequence_patch_request)
+        print("The response of NumberingSequencesApi->update_sequence:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling NumberingSequencesApi->update_sequence_api_v1_numbering_sequences_sequence_id_patch: %s\n" % e)
+        print("Exception when calling NumberingSequencesApi->update_sequence: %s\n" % e)
 ```
 
 

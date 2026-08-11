@@ -40,7 +40,7 @@ class TemplateVersionsApi:
 
 
     @validate_call
-    def create_template_version_api_v1_templates_template_id_versions_post(
+    def create_template_version(
         self,
         template_id: StrictStr,
         template_version_create_request: TemplateVersionCreateRequest,
@@ -86,7 +86,7 @@ class TemplateVersionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_template_version_api_v1_templates_template_id_versions_post_serialize(
+        _param = self._create_template_version_serialize(
             template_id=template_id,
             template_version_create_request=template_version_create_request,
             _request_auth=_request_auth,
@@ -111,7 +111,7 @@ class TemplateVersionsApi:
 
 
     @validate_call
-    def create_template_version_api_v1_templates_template_id_versions_post_with_http_info(
+    def create_template_version_with_http_info(
         self,
         template_id: StrictStr,
         template_version_create_request: TemplateVersionCreateRequest,
@@ -157,7 +157,7 @@ class TemplateVersionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_template_version_api_v1_templates_template_id_versions_post_serialize(
+        _param = self._create_template_version_serialize(
             template_id=template_id,
             template_version_create_request=template_version_create_request,
             _request_auth=_request_auth,
@@ -182,7 +182,7 @@ class TemplateVersionsApi:
 
 
     @validate_call
-    def create_template_version_api_v1_templates_template_id_versions_post_without_preload_content(
+    def create_template_version_without_preload_content(
         self,
         template_id: StrictStr,
         template_version_create_request: TemplateVersionCreateRequest,
@@ -228,7 +228,7 @@ class TemplateVersionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_template_version_api_v1_templates_template_id_versions_post_serialize(
+        _param = self._create_template_version_serialize(
             template_id=template_id,
             template_version_create_request=template_version_create_request,
             _request_auth=_request_auth,
@@ -248,7 +248,7 @@ class TemplateVersionsApi:
         return response_data.response
 
 
-    def _create_template_version_api_v1_templates_template_id_versions_post_serialize(
+    def _create_template_version_serialize(
         self,
         template_id,
         template_version_create_request,
@@ -327,7 +327,7 @@ class TemplateVersionsApi:
 
 
     @validate_call
-    def get_template_version_api_v1_templates_template_id_versions_version_get(
+    def get_template_version(
         self,
         template_id: StrictStr,
         version: StrictInt,
@@ -373,7 +373,7 @@ class TemplateVersionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_template_version_api_v1_templates_template_id_versions_version_get_serialize(
+        _param = self._get_template_version_serialize(
             template_id=template_id,
             version=version,
             _request_auth=_request_auth,
@@ -398,7 +398,7 @@ class TemplateVersionsApi:
 
 
     @validate_call
-    def get_template_version_api_v1_templates_template_id_versions_version_get_with_http_info(
+    def get_template_version_with_http_info(
         self,
         template_id: StrictStr,
         version: StrictInt,
@@ -444,7 +444,7 @@ class TemplateVersionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_template_version_api_v1_templates_template_id_versions_version_get_serialize(
+        _param = self._get_template_version_serialize(
             template_id=template_id,
             version=version,
             _request_auth=_request_auth,
@@ -469,7 +469,7 @@ class TemplateVersionsApi:
 
 
     @validate_call
-    def get_template_version_api_v1_templates_template_id_versions_version_get_without_preload_content(
+    def get_template_version_without_preload_content(
         self,
         template_id: StrictStr,
         version: StrictInt,
@@ -515,7 +515,7 @@ class TemplateVersionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_template_version_api_v1_templates_template_id_versions_version_get_serialize(
+        _param = self._get_template_version_serialize(
             template_id=template_id,
             version=version,
             _request_auth=_request_auth,
@@ -535,7 +535,7 @@ class TemplateVersionsApi:
         return response_data.response
 
 
-    def _get_template_version_api_v1_templates_template_id_versions_version_get_serialize(
+    def _get_template_version_serialize(
         self,
         template_id,
         version,
@@ -601,7 +601,7 @@ class TemplateVersionsApi:
 
 
     @validate_call
-    def list_template_versions_api_v1_templates_template_id_versions_get(
+    def list_template_versions(
         self,
         template_id: StrictStr,
         _request_timeout: Union[
@@ -644,7 +644,7 @@ class TemplateVersionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_template_versions_api_v1_templates_template_id_versions_get_serialize(
+        _param = self._list_template_versions_serialize(
             template_id=template_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -668,7 +668,7 @@ class TemplateVersionsApi:
 
 
     @validate_call
-    def list_template_versions_api_v1_templates_template_id_versions_get_with_http_info(
+    def list_template_versions_with_http_info(
         self,
         template_id: StrictStr,
         _request_timeout: Union[
@@ -711,7 +711,7 @@ class TemplateVersionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_template_versions_api_v1_templates_template_id_versions_get_serialize(
+        _param = self._list_template_versions_serialize(
             template_id=template_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -735,7 +735,7 @@ class TemplateVersionsApi:
 
 
     @validate_call
-    def list_template_versions_api_v1_templates_template_id_versions_get_without_preload_content(
+    def list_template_versions_without_preload_content(
         self,
         template_id: StrictStr,
         _request_timeout: Union[
@@ -778,7 +778,7 @@ class TemplateVersionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_template_versions_api_v1_templates_template_id_versions_get_serialize(
+        _param = self._list_template_versions_serialize(
             template_id=template_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -797,7 +797,7 @@ class TemplateVersionsApi:
         return response_data.response
 
 
-    def _list_template_versions_api_v1_templates_template_id_versions_get_serialize(
+    def _list_template_versions_serialize(
         self,
         template_id,
         _request_auth,

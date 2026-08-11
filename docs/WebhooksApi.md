@@ -4,20 +4,20 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_webhook_endpoint_api_v1_webhook_endpoints_post**](WebhooksApi.md#create_webhook_endpoint_api_v1_webhook_endpoints_post) | **POST** /api/v1/webhook-endpoints | Create Webhook Endpoint
-[**delete_webhook_endpoint_api_v1_webhook_endpoints_endpoint_id_delete**](WebhooksApi.md#delete_webhook_endpoint_api_v1_webhook_endpoints_endpoint_id_delete) | **DELETE** /api/v1/webhook-endpoints/{endpoint_id} | Delete Webhook Endpoint
-[**get_webhook_delivery_api_v1_webhook_deliveries_delivery_id_get**](WebhooksApi.md#get_webhook_delivery_api_v1_webhook_deliveries_delivery_id_get) | **GET** /api/v1/webhook-deliveries/{delivery_id} | Get Webhook Delivery
-[**get_webhook_endpoint_api_v1_webhook_endpoints_endpoint_id_get**](WebhooksApi.md#get_webhook_endpoint_api_v1_webhook_endpoints_endpoint_id_get) | **GET** /api/v1/webhook-endpoints/{endpoint_id} | Get Webhook Endpoint
-[**list_webhook_deliveries_api_v1_webhook_deliveries_get**](WebhooksApi.md#list_webhook_deliveries_api_v1_webhook_deliveries_get) | **GET** /api/v1/webhook-deliveries | List Webhook Deliveries
-[**list_webhook_endpoints_api_v1_webhook_endpoints_get**](WebhooksApi.md#list_webhook_endpoints_api_v1_webhook_endpoints_get) | **GET** /api/v1/webhook-endpoints | List Webhook Endpoints
-[**retry_webhook_delivery_api_v1_webhook_deliveries_delivery_id_retry_post**](WebhooksApi.md#retry_webhook_delivery_api_v1_webhook_deliveries_delivery_id_retry_post) | **POST** /api/v1/webhook-deliveries/{delivery_id}/retry | Retry Webhook Delivery
-[**rotate_webhook_secret_api_v1_webhook_endpoints_endpoint_id_rotate_secret_post**](WebhooksApi.md#rotate_webhook_secret_api_v1_webhook_endpoints_endpoint_id_rotate_secret_post) | **POST** /api/v1/webhook-endpoints/{endpoint_id}/rotate-secret | Rotate Webhook Secret
-[**test_webhook_endpoint_api_v1_webhook_endpoints_endpoint_id_test_post**](WebhooksApi.md#test_webhook_endpoint_api_v1_webhook_endpoints_endpoint_id_test_post) | **POST** /api/v1/webhook-endpoints/{endpoint_id}/test | Test Webhook Endpoint
-[**update_webhook_endpoint_api_v1_webhook_endpoints_endpoint_id_patch**](WebhooksApi.md#update_webhook_endpoint_api_v1_webhook_endpoints_endpoint_id_patch) | **PATCH** /api/v1/webhook-endpoints/{endpoint_id} | Update Webhook Endpoint
+[**create_webhook_endpoint**](WebhooksApi.md#create_webhook_endpoint) | **POST** /api/v1/webhook-endpoints | Create Webhook Endpoint
+[**delete_webhook_endpoint**](WebhooksApi.md#delete_webhook_endpoint) | **DELETE** /api/v1/webhook-endpoints/{endpoint_id} | Delete Webhook Endpoint
+[**get_webhook_delivery**](WebhooksApi.md#get_webhook_delivery) | **GET** /api/v1/webhook-deliveries/{delivery_id} | Get Webhook Delivery
+[**get_webhook_endpoint**](WebhooksApi.md#get_webhook_endpoint) | **GET** /api/v1/webhook-endpoints/{endpoint_id} | Get Webhook Endpoint
+[**list_webhook_deliveries**](WebhooksApi.md#list_webhook_deliveries) | **GET** /api/v1/webhook-deliveries | List Webhook Deliveries
+[**list_webhook_endpoints**](WebhooksApi.md#list_webhook_endpoints) | **GET** /api/v1/webhook-endpoints | List Webhook Endpoints
+[**retry_webhook_delivery**](WebhooksApi.md#retry_webhook_delivery) | **POST** /api/v1/webhook-deliveries/{delivery_id}/retry | Retry Webhook Delivery
+[**rotate_webhook_secret**](WebhooksApi.md#rotate_webhook_secret) | **POST** /api/v1/webhook-endpoints/{endpoint_id}/rotate-secret | Rotate Webhook Secret
+[**test_webhook_endpoint**](WebhooksApi.md#test_webhook_endpoint) | **POST** /api/v1/webhook-endpoints/{endpoint_id}/test | Test Webhook Endpoint
+[**update_webhook_endpoint**](WebhooksApi.md#update_webhook_endpoint) | **PATCH** /api/v1/webhook-endpoints/{endpoint_id} | Update Webhook Endpoint
 
 
-# **create_webhook_endpoint_api_v1_webhook_endpoints_post**
-> WebhookEndpointResponse create_webhook_endpoint_api_v1_webhook_endpoints_post(webhook_endpoint_create_request)
+# **create_webhook_endpoint**
+> WebhookEndpointResponse create_webhook_endpoint(webhook_endpoint_create_request)
 
 Create Webhook Endpoint
 
@@ -56,11 +56,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Create Webhook Endpoint
-        api_response = api_instance.create_webhook_endpoint_api_v1_webhook_endpoints_post(webhook_endpoint_create_request)
-        print("The response of WebhooksApi->create_webhook_endpoint_api_v1_webhook_endpoints_post:\n")
+        api_response = api_instance.create_webhook_endpoint(webhook_endpoint_create_request)
+        print("The response of WebhooksApi->create_webhook_endpoint:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling WebhooksApi->create_webhook_endpoint_api_v1_webhook_endpoints_post: %s\n" % e)
+        print("Exception when calling WebhooksApi->create_webhook_endpoint: %s\n" % e)
 ```
 
 
@@ -94,8 +94,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_webhook_endpoint_api_v1_webhook_endpoints_endpoint_id_delete**
-> SimpleBoolResponse delete_webhook_endpoint_api_v1_webhook_endpoints_endpoint_id_delete(endpoint_id)
+# **delete_webhook_endpoint**
+> SimpleBoolResponse delete_webhook_endpoint(endpoint_id)
 
 Delete Webhook Endpoint
 
@@ -133,11 +133,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Delete Webhook Endpoint
-        api_response = api_instance.delete_webhook_endpoint_api_v1_webhook_endpoints_endpoint_id_delete(endpoint_id)
-        print("The response of WebhooksApi->delete_webhook_endpoint_api_v1_webhook_endpoints_endpoint_id_delete:\n")
+        api_response = api_instance.delete_webhook_endpoint(endpoint_id)
+        print("The response of WebhooksApi->delete_webhook_endpoint:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling WebhooksApi->delete_webhook_endpoint_api_v1_webhook_endpoints_endpoint_id_delete: %s\n" % e)
+        print("Exception when calling WebhooksApi->delete_webhook_endpoint: %s\n" % e)
 ```
 
 
@@ -171,8 +171,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_webhook_delivery_api_v1_webhook_deliveries_delivery_id_get**
-> WebhookDeliveryResponse get_webhook_delivery_api_v1_webhook_deliveries_delivery_id_get(delivery_id)
+# **get_webhook_delivery**
+> WebhookDeliveryResponse get_webhook_delivery(delivery_id)
 
 Get Webhook Delivery
 
@@ -210,11 +210,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Get Webhook Delivery
-        api_response = api_instance.get_webhook_delivery_api_v1_webhook_deliveries_delivery_id_get(delivery_id)
-        print("The response of WebhooksApi->get_webhook_delivery_api_v1_webhook_deliveries_delivery_id_get:\n")
+        api_response = api_instance.get_webhook_delivery(delivery_id)
+        print("The response of WebhooksApi->get_webhook_delivery:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling WebhooksApi->get_webhook_delivery_api_v1_webhook_deliveries_delivery_id_get: %s\n" % e)
+        print("Exception when calling WebhooksApi->get_webhook_delivery: %s\n" % e)
 ```
 
 
@@ -248,8 +248,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_webhook_endpoint_api_v1_webhook_endpoints_endpoint_id_get**
-> WebhookEndpointResponse get_webhook_endpoint_api_v1_webhook_endpoints_endpoint_id_get(endpoint_id)
+# **get_webhook_endpoint**
+> WebhookEndpointResponse get_webhook_endpoint(endpoint_id)
 
 Get Webhook Endpoint
 
@@ -287,11 +287,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Get Webhook Endpoint
-        api_response = api_instance.get_webhook_endpoint_api_v1_webhook_endpoints_endpoint_id_get(endpoint_id)
-        print("The response of WebhooksApi->get_webhook_endpoint_api_v1_webhook_endpoints_endpoint_id_get:\n")
+        api_response = api_instance.get_webhook_endpoint(endpoint_id)
+        print("The response of WebhooksApi->get_webhook_endpoint:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling WebhooksApi->get_webhook_endpoint_api_v1_webhook_endpoints_endpoint_id_get: %s\n" % e)
+        print("Exception when calling WebhooksApi->get_webhook_endpoint: %s\n" % e)
 ```
 
 
@@ -325,8 +325,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_webhook_deliveries_api_v1_webhook_deliveries_get**
-> WebhookDeliveriesListResponse list_webhook_deliveries_api_v1_webhook_deliveries_get(limit=limit, cursor=cursor)
+# **list_webhook_deliveries**
+> WebhookDeliveriesListResponse list_webhook_deliveries(limit=limit, cursor=cursor)
 
 List Webhook Deliveries
 
@@ -365,11 +365,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # List Webhook Deliveries
-        api_response = api_instance.list_webhook_deliveries_api_v1_webhook_deliveries_get(limit=limit, cursor=cursor)
-        print("The response of WebhooksApi->list_webhook_deliveries_api_v1_webhook_deliveries_get:\n")
+        api_response = api_instance.list_webhook_deliveries(limit=limit, cursor=cursor)
+        print("The response of WebhooksApi->list_webhook_deliveries:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling WebhooksApi->list_webhook_deliveries_api_v1_webhook_deliveries_get: %s\n" % e)
+        print("Exception when calling WebhooksApi->list_webhook_deliveries: %s\n" % e)
 ```
 
 
@@ -404,8 +404,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_webhook_endpoints_api_v1_webhook_endpoints_get**
-> WebhookEndpointsListResponse list_webhook_endpoints_api_v1_webhook_endpoints_get(limit=limit, cursor=cursor)
+# **list_webhook_endpoints**
+> WebhookEndpointsListResponse list_webhook_endpoints(limit=limit, cursor=cursor)
 
 List Webhook Endpoints
 
@@ -444,11 +444,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # List Webhook Endpoints
-        api_response = api_instance.list_webhook_endpoints_api_v1_webhook_endpoints_get(limit=limit, cursor=cursor)
-        print("The response of WebhooksApi->list_webhook_endpoints_api_v1_webhook_endpoints_get:\n")
+        api_response = api_instance.list_webhook_endpoints(limit=limit, cursor=cursor)
+        print("The response of WebhooksApi->list_webhook_endpoints:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling WebhooksApi->list_webhook_endpoints_api_v1_webhook_endpoints_get: %s\n" % e)
+        print("Exception when calling WebhooksApi->list_webhook_endpoints: %s\n" % e)
 ```
 
 
@@ -483,8 +483,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **retry_webhook_delivery_api_v1_webhook_deliveries_delivery_id_retry_post**
-> WebhookDeliveryResponse retry_webhook_delivery_api_v1_webhook_deliveries_delivery_id_retry_post(delivery_id)
+# **retry_webhook_delivery**
+> WebhookDeliveryResponse retry_webhook_delivery(delivery_id)
 
 Retry Webhook Delivery
 
@@ -522,11 +522,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Retry Webhook Delivery
-        api_response = api_instance.retry_webhook_delivery_api_v1_webhook_deliveries_delivery_id_retry_post(delivery_id)
-        print("The response of WebhooksApi->retry_webhook_delivery_api_v1_webhook_deliveries_delivery_id_retry_post:\n")
+        api_response = api_instance.retry_webhook_delivery(delivery_id)
+        print("The response of WebhooksApi->retry_webhook_delivery:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling WebhooksApi->retry_webhook_delivery_api_v1_webhook_deliveries_delivery_id_retry_post: %s\n" % e)
+        print("Exception when calling WebhooksApi->retry_webhook_delivery: %s\n" % e)
 ```
 
 
@@ -560,8 +560,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **rotate_webhook_secret_api_v1_webhook_endpoints_endpoint_id_rotate_secret_post**
-> WebhookSecretResponse rotate_webhook_secret_api_v1_webhook_endpoints_endpoint_id_rotate_secret_post(endpoint_id)
+# **rotate_webhook_secret**
+> WebhookSecretResponse rotate_webhook_secret(endpoint_id)
 
 Rotate Webhook Secret
 
@@ -599,11 +599,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Rotate Webhook Secret
-        api_response = api_instance.rotate_webhook_secret_api_v1_webhook_endpoints_endpoint_id_rotate_secret_post(endpoint_id)
-        print("The response of WebhooksApi->rotate_webhook_secret_api_v1_webhook_endpoints_endpoint_id_rotate_secret_post:\n")
+        api_response = api_instance.rotate_webhook_secret(endpoint_id)
+        print("The response of WebhooksApi->rotate_webhook_secret:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling WebhooksApi->rotate_webhook_secret_api_v1_webhook_endpoints_endpoint_id_rotate_secret_post: %s\n" % e)
+        print("Exception when calling WebhooksApi->rotate_webhook_secret: %s\n" % e)
 ```
 
 
@@ -637,8 +637,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **test_webhook_endpoint_api_v1_webhook_endpoints_endpoint_id_test_post**
-> WebhookDeliveryResponse test_webhook_endpoint_api_v1_webhook_endpoints_endpoint_id_test_post(endpoint_id)
+# **test_webhook_endpoint**
+> WebhookDeliveryResponse test_webhook_endpoint(endpoint_id)
 
 Test Webhook Endpoint
 
@@ -676,11 +676,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Test Webhook Endpoint
-        api_response = api_instance.test_webhook_endpoint_api_v1_webhook_endpoints_endpoint_id_test_post(endpoint_id)
-        print("The response of WebhooksApi->test_webhook_endpoint_api_v1_webhook_endpoints_endpoint_id_test_post:\n")
+        api_response = api_instance.test_webhook_endpoint(endpoint_id)
+        print("The response of WebhooksApi->test_webhook_endpoint:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling WebhooksApi->test_webhook_endpoint_api_v1_webhook_endpoints_endpoint_id_test_post: %s\n" % e)
+        print("Exception when calling WebhooksApi->test_webhook_endpoint: %s\n" % e)
 ```
 
 
@@ -714,8 +714,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_webhook_endpoint_api_v1_webhook_endpoints_endpoint_id_patch**
-> WebhookEndpointResponse update_webhook_endpoint_api_v1_webhook_endpoints_endpoint_id_patch(endpoint_id, webhook_endpoint_patch_request)
+# **update_webhook_endpoint**
+> WebhookEndpointResponse update_webhook_endpoint(endpoint_id, webhook_endpoint_patch_request)
 
 Update Webhook Endpoint
 
@@ -755,11 +755,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Update Webhook Endpoint
-        api_response = api_instance.update_webhook_endpoint_api_v1_webhook_endpoints_endpoint_id_patch(endpoint_id, webhook_endpoint_patch_request)
-        print("The response of WebhooksApi->update_webhook_endpoint_api_v1_webhook_endpoints_endpoint_id_patch:\n")
+        api_response = api_instance.update_webhook_endpoint(endpoint_id, webhook_endpoint_patch_request)
+        print("The response of WebhooksApi->update_webhook_endpoint:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling WebhooksApi->update_webhook_endpoint_api_v1_webhook_endpoints_endpoint_id_patch: %s\n" % e)
+        print("Exception when calling WebhooksApi->update_webhook_endpoint: %s\n" % e)
 ```
 
 

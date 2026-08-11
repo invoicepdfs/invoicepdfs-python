@@ -4,12 +4,12 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_audit_event_api_v1_audit_events_audit_event_id_get**](AuditLogApi.md#get_audit_event_api_v1_audit_events_audit_event_id_get) | **GET** /api/v1/audit-events/{audit_event_id} | Get Audit Event
-[**list_audit_events_api_v1_audit_events_get**](AuditLogApi.md#list_audit_events_api_v1_audit_events_get) | **GET** /api/v1/audit-events | List Audit Events
+[**get_audit_event**](AuditLogApi.md#get_audit_event) | **GET** /api/v1/audit-events/{audit_event_id} | Get Audit Event
+[**list_audit_events**](AuditLogApi.md#list_audit_events) | **GET** /api/v1/audit-events | List Audit Events
 
 
-# **get_audit_event_api_v1_audit_events_audit_event_id_get**
-> AuditEventResponse get_audit_event_api_v1_audit_events_audit_event_id_get(audit_event_id)
+# **get_audit_event**
+> AuditEventResponse get_audit_event(audit_event_id)
 
 Get Audit Event
 
@@ -47,11 +47,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Get Audit Event
-        api_response = api_instance.get_audit_event_api_v1_audit_events_audit_event_id_get(audit_event_id)
-        print("The response of AuditLogApi->get_audit_event_api_v1_audit_events_audit_event_id_get:\n")
+        api_response = api_instance.get_audit_event(audit_event_id)
+        print("The response of AuditLogApi->get_audit_event:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AuditLogApi->get_audit_event_api_v1_audit_events_audit_event_id_get: %s\n" % e)
+        print("Exception when calling AuditLogApi->get_audit_event: %s\n" % e)
 ```
 
 
@@ -85,8 +85,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_audit_events_api_v1_audit_events_get**
-> AuditEventsListResponse list_audit_events_api_v1_audit_events_get(limit=limit, cursor=cursor, action=action, resource_type=resource_type, resource_id=resource_id)
+# **list_audit_events**
+> AuditEventsListResponse list_audit_events(limit=limit, cursor=cursor, action=action, resource_type=resource_type, resource_id=resource_id)
 
 List Audit Events
 
@@ -128,11 +128,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # List Audit Events
-        api_response = api_instance.list_audit_events_api_v1_audit_events_get(limit=limit, cursor=cursor, action=action, resource_type=resource_type, resource_id=resource_id)
-        print("The response of AuditLogApi->list_audit_events_api_v1_audit_events_get:\n")
+        api_response = api_instance.list_audit_events(limit=limit, cursor=cursor, action=action, resource_type=resource_type, resource_id=resource_id)
+        print("The response of AuditLogApi->list_audit_events:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AuditLogApi->list_audit_events_api_v1_audit_events_get: %s\n" % e)
+        print("Exception when calling AuditLogApi->list_audit_events: %s\n" % e)
 ```
 
 

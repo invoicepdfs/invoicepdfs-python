@@ -4,16 +4,16 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancel_batch_api_v1_batches_batch_id_cancel_post**](BatchesApi.md#cancel_batch_api_v1_batches_batch_id_cancel_post) | **POST** /api/v1/batches/{batch_id}/cancel | Cancel Batch
-[**create_batch_api_v1_batches_post**](BatchesApi.md#create_batch_api_v1_batches_post) | **POST** /api/v1/batches | Create Batch
-[**download_batch_api_v1_batches_batch_id_download_get**](BatchesApi.md#download_batch_api_v1_batches_batch_id_download_get) | **GET** /api/v1/batches/{batch_id}/download | Download Batch
-[**get_batch_api_v1_batches_batch_id_get**](BatchesApi.md#get_batch_api_v1_batches_batch_id_get) | **GET** /api/v1/batches/{batch_id} | Get Batch
-[**list_batch_items_api_v1_batches_batch_id_items_get**](BatchesApi.md#list_batch_items_api_v1_batches_batch_id_items_get) | **GET** /api/v1/batches/{batch_id}/items | List Batch Items
-[**list_batches_api_v1_batches_get**](BatchesApi.md#list_batches_api_v1_batches_get) | **GET** /api/v1/batches | List Batches
+[**cancel_batch**](BatchesApi.md#cancel_batch) | **POST** /api/v1/batches/{batch_id}/cancel | Cancel Batch
+[**create_batch**](BatchesApi.md#create_batch) | **POST** /api/v1/batches | Create Batch
+[**download_batch**](BatchesApi.md#download_batch) | **GET** /api/v1/batches/{batch_id}/download | Download Batch
+[**get_batch**](BatchesApi.md#get_batch) | **GET** /api/v1/batches/{batch_id} | Get Batch
+[**list_batch_items**](BatchesApi.md#list_batch_items) | **GET** /api/v1/batches/{batch_id}/items | List Batch Items
+[**list_batches**](BatchesApi.md#list_batches) | **GET** /api/v1/batches | List Batches
 
 
-# **cancel_batch_api_v1_batches_batch_id_cancel_post**
-> BatchResponse cancel_batch_api_v1_batches_batch_id_cancel_post(batch_id)
+# **cancel_batch**
+> BatchResponse cancel_batch(batch_id)
 
 Cancel Batch
 
@@ -51,11 +51,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Cancel Batch
-        api_response = api_instance.cancel_batch_api_v1_batches_batch_id_cancel_post(batch_id)
-        print("The response of BatchesApi->cancel_batch_api_v1_batches_batch_id_cancel_post:\n")
+        api_response = api_instance.cancel_batch(batch_id)
+        print("The response of BatchesApi->cancel_batch:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BatchesApi->cancel_batch_api_v1_batches_batch_id_cancel_post: %s\n" % e)
+        print("Exception when calling BatchesApi->cancel_batch: %s\n" % e)
 ```
 
 
@@ -89,8 +89,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create_batch_api_v1_batches_post**
-> BatchResponse create_batch_api_v1_batches_post(batch_create_request)
+# **create_batch**
+> BatchResponse create_batch(batch_create_request)
 
 Create Batch
 
@@ -129,11 +129,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Create Batch
-        api_response = api_instance.create_batch_api_v1_batches_post(batch_create_request)
-        print("The response of BatchesApi->create_batch_api_v1_batches_post:\n")
+        api_response = api_instance.create_batch(batch_create_request)
+        print("The response of BatchesApi->create_batch:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BatchesApi->create_batch_api_v1_batches_post: %s\n" % e)
+        print("Exception when calling BatchesApi->create_batch: %s\n" % e)
 ```
 
 
@@ -167,8 +167,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **download_batch_api_v1_batches_batch_id_download_get**
-> object download_batch_api_v1_batches_batch_id_download_get(batch_id)
+# **download_batch**
+> object download_batch(batch_id)
 
 Download Batch
 
@@ -205,11 +205,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Download Batch
-        api_response = api_instance.download_batch_api_v1_batches_batch_id_download_get(batch_id)
-        print("The response of BatchesApi->download_batch_api_v1_batches_batch_id_download_get:\n")
+        api_response = api_instance.download_batch(batch_id)
+        print("The response of BatchesApi->download_batch:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BatchesApi->download_batch_api_v1_batches_batch_id_download_get: %s\n" % e)
+        print("Exception when calling BatchesApi->download_batch: %s\n" % e)
 ```
 
 
@@ -243,8 +243,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_batch_api_v1_batches_batch_id_get**
-> BatchResponse get_batch_api_v1_batches_batch_id_get(batch_id)
+# **get_batch**
+> BatchResponse get_batch(batch_id)
 
 Get Batch
 
@@ -282,11 +282,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Get Batch
-        api_response = api_instance.get_batch_api_v1_batches_batch_id_get(batch_id)
-        print("The response of BatchesApi->get_batch_api_v1_batches_batch_id_get:\n")
+        api_response = api_instance.get_batch(batch_id)
+        print("The response of BatchesApi->get_batch:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BatchesApi->get_batch_api_v1_batches_batch_id_get: %s\n" % e)
+        print("Exception when calling BatchesApi->get_batch: %s\n" % e)
 ```
 
 
@@ -320,8 +320,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_batch_items_api_v1_batches_batch_id_items_get**
-> BatchItemsListResponse list_batch_items_api_v1_batches_batch_id_items_get(batch_id, limit=limit, cursor=cursor)
+# **list_batch_items**
+> BatchItemsListResponse list_batch_items(batch_id, limit=limit, cursor=cursor)
 
 List Batch Items
 
@@ -361,11 +361,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # List Batch Items
-        api_response = api_instance.list_batch_items_api_v1_batches_batch_id_items_get(batch_id, limit=limit, cursor=cursor)
-        print("The response of BatchesApi->list_batch_items_api_v1_batches_batch_id_items_get:\n")
+        api_response = api_instance.list_batch_items(batch_id, limit=limit, cursor=cursor)
+        print("The response of BatchesApi->list_batch_items:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BatchesApi->list_batch_items_api_v1_batches_batch_id_items_get: %s\n" % e)
+        print("Exception when calling BatchesApi->list_batch_items: %s\n" % e)
 ```
 
 
@@ -401,8 +401,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_batches_api_v1_batches_get**
-> BatchesListResponse list_batches_api_v1_batches_get(limit=limit, cursor=cursor)
+# **list_batches**
+> BatchesListResponse list_batches(limit=limit, cursor=cursor)
 
 List Batches
 
@@ -441,11 +441,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # List Batches
-        api_response = api_instance.list_batches_api_v1_batches_get(limit=limit, cursor=cursor)
-        print("The response of BatchesApi->list_batches_api_v1_batches_get:\n")
+        api_response = api_instance.list_batches(limit=limit, cursor=cursor)
+        print("The response of BatchesApi->list_batches:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BatchesApi->list_batches_api_v1_batches_get: %s\n" % e)
+        print("Exception when calling BatchesApi->list_batches: %s\n" % e)
 ```
 
 

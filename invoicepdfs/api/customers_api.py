@@ -44,7 +44,7 @@ class CustomersApi:
 
 
     @validate_call
-    def create_customer_api_v1_customers_post(
+    def create_customer(
         self,
         customer_create: CustomerCreate,
         idempotency_key: Optional[StrictStr] = None,
@@ -90,7 +90,7 @@ class CustomersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_customer_api_v1_customers_post_serialize(
+        _param = self._create_customer_serialize(
             customer_create=customer_create,
             idempotency_key=idempotency_key,
             _request_auth=_request_auth,
@@ -115,7 +115,7 @@ class CustomersApi:
 
 
     @validate_call
-    def create_customer_api_v1_customers_post_with_http_info(
+    def create_customer_with_http_info(
         self,
         customer_create: CustomerCreate,
         idempotency_key: Optional[StrictStr] = None,
@@ -161,7 +161,7 @@ class CustomersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_customer_api_v1_customers_post_serialize(
+        _param = self._create_customer_serialize(
             customer_create=customer_create,
             idempotency_key=idempotency_key,
             _request_auth=_request_auth,
@@ -186,7 +186,7 @@ class CustomersApi:
 
 
     @validate_call
-    def create_customer_api_v1_customers_post_without_preload_content(
+    def create_customer_without_preload_content(
         self,
         customer_create: CustomerCreate,
         idempotency_key: Optional[StrictStr] = None,
@@ -232,7 +232,7 @@ class CustomersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_customer_api_v1_customers_post_serialize(
+        _param = self._create_customer_serialize(
             customer_create=customer_create,
             idempotency_key=idempotency_key,
             _request_auth=_request_auth,
@@ -252,7 +252,7 @@ class CustomersApi:
         return response_data.response
 
 
-    def _create_customer_api_v1_customers_post_serialize(
+    def _create_customer_serialize(
         self,
         customer_create,
         idempotency_key,
@@ -331,7 +331,7 @@ class CustomersApi:
 
 
     @validate_call
-    def delete_customer_api_v1_customers_customer_id_delete(
+    def delete_customer(
         self,
         customer_id: StrictStr,
         _request_timeout: Union[
@@ -374,7 +374,7 @@ class CustomersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_customer_api_v1_customers_customer_id_delete_serialize(
+        _param = self._delete_customer_serialize(
             customer_id=customer_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -398,7 +398,7 @@ class CustomersApi:
 
 
     @validate_call
-    def delete_customer_api_v1_customers_customer_id_delete_with_http_info(
+    def delete_customer_with_http_info(
         self,
         customer_id: StrictStr,
         _request_timeout: Union[
@@ -441,7 +441,7 @@ class CustomersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_customer_api_v1_customers_customer_id_delete_serialize(
+        _param = self._delete_customer_serialize(
             customer_id=customer_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -465,7 +465,7 @@ class CustomersApi:
 
 
     @validate_call
-    def delete_customer_api_v1_customers_customer_id_delete_without_preload_content(
+    def delete_customer_without_preload_content(
         self,
         customer_id: StrictStr,
         _request_timeout: Union[
@@ -508,7 +508,7 @@ class CustomersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_customer_api_v1_customers_customer_id_delete_serialize(
+        _param = self._delete_customer_serialize(
             customer_id=customer_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -527,7 +527,7 @@ class CustomersApi:
         return response_data.response
 
 
-    def _delete_customer_api_v1_customers_customer_id_delete_serialize(
+    def _delete_customer_serialize(
         self,
         customer_id,
         _request_auth,
@@ -590,7 +590,7 @@ class CustomersApi:
 
 
     @validate_call
-    def get_customer_api_v1_customers_customer_id_get(
+    def get_customer(
         self,
         customer_id: StrictStr,
         _request_timeout: Union[
@@ -633,7 +633,7 @@ class CustomersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_customer_api_v1_customers_customer_id_get_serialize(
+        _param = self._get_customer_serialize(
             customer_id=customer_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -657,7 +657,7 @@ class CustomersApi:
 
 
     @validate_call
-    def get_customer_api_v1_customers_customer_id_get_with_http_info(
+    def get_customer_with_http_info(
         self,
         customer_id: StrictStr,
         _request_timeout: Union[
@@ -700,7 +700,7 @@ class CustomersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_customer_api_v1_customers_customer_id_get_serialize(
+        _param = self._get_customer_serialize(
             customer_id=customer_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -724,7 +724,7 @@ class CustomersApi:
 
 
     @validate_call
-    def get_customer_api_v1_customers_customer_id_get_without_preload_content(
+    def get_customer_without_preload_content(
         self,
         customer_id: StrictStr,
         _request_timeout: Union[
@@ -767,7 +767,7 @@ class CustomersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_customer_api_v1_customers_customer_id_get_serialize(
+        _param = self._get_customer_serialize(
             customer_id=customer_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -786,7 +786,7 @@ class CustomersApi:
         return response_data.response
 
 
-    def _get_customer_api_v1_customers_customer_id_get_serialize(
+    def _get_customer_serialize(
         self,
         customer_id,
         _request_auth,
@@ -849,7 +849,7 @@ class CustomersApi:
 
 
     @validate_call
-    def list_customers_api_v1_customers_get(
+    def list_customers(
         self,
         limit: Optional[Annotated[int, Field(le=100, strict=True, ge=1)]] = None,
         cursor: Optional[StrictStr] = None,
@@ -895,7 +895,7 @@ class CustomersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_customers_api_v1_customers_get_serialize(
+        _param = self._list_customers_serialize(
             limit=limit,
             cursor=cursor,
             _request_auth=_request_auth,
@@ -920,7 +920,7 @@ class CustomersApi:
 
 
     @validate_call
-    def list_customers_api_v1_customers_get_with_http_info(
+    def list_customers_with_http_info(
         self,
         limit: Optional[Annotated[int, Field(le=100, strict=True, ge=1)]] = None,
         cursor: Optional[StrictStr] = None,
@@ -966,7 +966,7 @@ class CustomersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_customers_api_v1_customers_get_serialize(
+        _param = self._list_customers_serialize(
             limit=limit,
             cursor=cursor,
             _request_auth=_request_auth,
@@ -991,7 +991,7 @@ class CustomersApi:
 
 
     @validate_call
-    def list_customers_api_v1_customers_get_without_preload_content(
+    def list_customers_without_preload_content(
         self,
         limit: Optional[Annotated[int, Field(le=100, strict=True, ge=1)]] = None,
         cursor: Optional[StrictStr] = None,
@@ -1037,7 +1037,7 @@ class CustomersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_customers_api_v1_customers_get_serialize(
+        _param = self._list_customers_serialize(
             limit=limit,
             cursor=cursor,
             _request_auth=_request_auth,
@@ -1057,7 +1057,7 @@ class CustomersApi:
         return response_data.response
 
 
-    def _list_customers_api_v1_customers_get_serialize(
+    def _list_customers_serialize(
         self,
         limit,
         cursor,
@@ -1127,7 +1127,7 @@ class CustomersApi:
 
 
     @validate_call
-    def patch_customer_api_v1_customers_customer_id_patch(
+    def update_customer(
         self,
         customer_id: StrictStr,
         customer_patch: CustomerPatch,
@@ -1145,7 +1145,7 @@ class CustomersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> CustomerResponse:
-        """Patch Customer
+        """Update Customer
 
 
         :param customer_id: (required)
@@ -1176,7 +1176,7 @@ class CustomersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._patch_customer_api_v1_customers_customer_id_patch_serialize(
+        _param = self._update_customer_serialize(
             customer_id=customer_id,
             customer_patch=customer_patch,
             idempotency_key=idempotency_key,
@@ -1202,7 +1202,7 @@ class CustomersApi:
 
 
     @validate_call
-    def patch_customer_api_v1_customers_customer_id_patch_with_http_info(
+    def update_customer_with_http_info(
         self,
         customer_id: StrictStr,
         customer_patch: CustomerPatch,
@@ -1220,7 +1220,7 @@ class CustomersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[CustomerResponse]:
-        """Patch Customer
+        """Update Customer
 
 
         :param customer_id: (required)
@@ -1251,7 +1251,7 @@ class CustomersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._patch_customer_api_v1_customers_customer_id_patch_serialize(
+        _param = self._update_customer_serialize(
             customer_id=customer_id,
             customer_patch=customer_patch,
             idempotency_key=idempotency_key,
@@ -1277,7 +1277,7 @@ class CustomersApi:
 
 
     @validate_call
-    def patch_customer_api_v1_customers_customer_id_patch_without_preload_content(
+    def update_customer_without_preload_content(
         self,
         customer_id: StrictStr,
         customer_patch: CustomerPatch,
@@ -1295,7 +1295,7 @@ class CustomersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Patch Customer
+        """Update Customer
 
 
         :param customer_id: (required)
@@ -1326,7 +1326,7 @@ class CustomersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._patch_customer_api_v1_customers_customer_id_patch_serialize(
+        _param = self._update_customer_serialize(
             customer_id=customer_id,
             customer_patch=customer_patch,
             idempotency_key=idempotency_key,
@@ -1347,7 +1347,7 @@ class CustomersApi:
         return response_data.response
 
 
-    def _patch_customer_api_v1_customers_customer_id_patch_serialize(
+    def _update_customer_serialize(
         self,
         customer_id,
         customer_patch,

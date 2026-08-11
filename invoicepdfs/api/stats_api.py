@@ -37,7 +37,7 @@ class StatsApi:
 
 
     @validate_call
-    def get_stats_api_v1_stats_get(
+    def get_stats(
         self,
         _request_timeout: Union[
             None,
@@ -77,7 +77,7 @@ class StatsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_stats_api_v1_stats_get_serialize(
+        _param = self._get_stats_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -99,7 +99,7 @@ class StatsApi:
 
 
     @validate_call
-    def get_stats_api_v1_stats_get_with_http_info(
+    def get_stats_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -139,7 +139,7 @@ class StatsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_stats_api_v1_stats_get_serialize(
+        _param = self._get_stats_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -161,7 +161,7 @@ class StatsApi:
 
 
     @validate_call
-    def get_stats_api_v1_stats_get_without_preload_content(
+    def get_stats_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -201,7 +201,7 @@ class StatsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_stats_api_v1_stats_get_serialize(
+        _param = self._get_stats_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -218,7 +218,7 @@ class StatsApi:
         return response_data.response
 
 
-    def _get_stats_api_v1_stats_get_serialize(
+    def _get_stats_serialize(
         self,
         _request_auth,
         _content_type,

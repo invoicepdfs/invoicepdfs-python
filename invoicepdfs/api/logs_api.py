@@ -40,7 +40,7 @@ class LogsApi:
 
 
     @validate_call
-    def list_logs_api_v1_logs_get(
+    def list_logs(
         self,
         status: Optional[Annotated[str, Field(strict=True)]] = None,
         limit: Optional[Annotated[int, Field(le=1000, strict=True, ge=1)]] = None,
@@ -86,7 +86,7 @@ class LogsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_logs_api_v1_logs_get_serialize(
+        _param = self._list_logs_serialize(
             status=status,
             limit=limit,
             _request_auth=_request_auth,
@@ -111,7 +111,7 @@ class LogsApi:
 
 
     @validate_call
-    def list_logs_api_v1_logs_get_with_http_info(
+    def list_logs_with_http_info(
         self,
         status: Optional[Annotated[str, Field(strict=True)]] = None,
         limit: Optional[Annotated[int, Field(le=1000, strict=True, ge=1)]] = None,
@@ -157,7 +157,7 @@ class LogsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_logs_api_v1_logs_get_serialize(
+        _param = self._list_logs_serialize(
             status=status,
             limit=limit,
             _request_auth=_request_auth,
@@ -182,7 +182,7 @@ class LogsApi:
 
 
     @validate_call
-    def list_logs_api_v1_logs_get_without_preload_content(
+    def list_logs_without_preload_content(
         self,
         status: Optional[Annotated[str, Field(strict=True)]] = None,
         limit: Optional[Annotated[int, Field(le=1000, strict=True, ge=1)]] = None,
@@ -228,7 +228,7 @@ class LogsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_logs_api_v1_logs_get_serialize(
+        _param = self._list_logs_serialize(
             status=status,
             limit=limit,
             _request_auth=_request_auth,
@@ -248,7 +248,7 @@ class LogsApi:
         return response_data.response
 
 
-    def _list_logs_api_v1_logs_get_serialize(
+    def _list_logs_serialize(
         self,
         status,
         limit,

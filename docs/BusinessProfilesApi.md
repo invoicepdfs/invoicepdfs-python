@@ -4,15 +4,15 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_business_profile_api_v1_business_profiles_post**](BusinessProfilesApi.md#create_business_profile_api_v1_business_profiles_post) | **POST** /api/v1/business-profiles | Create Business Profile
-[**delete_business_profile_api_v1_business_profiles_business_profile_id_delete**](BusinessProfilesApi.md#delete_business_profile_api_v1_business_profiles_business_profile_id_delete) | **DELETE** /api/v1/business-profiles/{business_profile_id} | Delete Business Profile
-[**get_business_profile_api_v1_business_profiles_business_profile_id_get**](BusinessProfilesApi.md#get_business_profile_api_v1_business_profiles_business_profile_id_get) | **GET** /api/v1/business-profiles/{business_profile_id} | Get Business Profile
-[**list_business_profiles_api_v1_business_profiles_get**](BusinessProfilesApi.md#list_business_profiles_api_v1_business_profiles_get) | **GET** /api/v1/business-profiles | List Business Profiles
-[**patch_business_profile_api_v1_business_profiles_business_profile_id_patch**](BusinessProfilesApi.md#patch_business_profile_api_v1_business_profiles_business_profile_id_patch) | **PATCH** /api/v1/business-profiles/{business_profile_id} | Patch Business Profile
+[**create_business_profile**](BusinessProfilesApi.md#create_business_profile) | **POST** /api/v1/business-profiles | Create Business Profile
+[**delete_business_profile**](BusinessProfilesApi.md#delete_business_profile) | **DELETE** /api/v1/business-profiles/{business_profile_id} | Delete Business Profile
+[**get_business_profile**](BusinessProfilesApi.md#get_business_profile) | **GET** /api/v1/business-profiles/{business_profile_id} | Get Business Profile
+[**list_business_profiles**](BusinessProfilesApi.md#list_business_profiles) | **GET** /api/v1/business-profiles | List Business Profiles
+[**update_business_profile**](BusinessProfilesApi.md#update_business_profile) | **PATCH** /api/v1/business-profiles/{business_profile_id} | Update Business Profile
 
 
-# **create_business_profile_api_v1_business_profiles_post**
-> BusinessProfileResponse create_business_profile_api_v1_business_profiles_post(business_profile_create, idempotency_key=idempotency_key)
+# **create_business_profile**
+> BusinessProfileResponse create_business_profile(business_profile_create, idempotency_key=idempotency_key)
 
 Create Business Profile
 
@@ -52,11 +52,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Create Business Profile
-        api_response = api_instance.create_business_profile_api_v1_business_profiles_post(business_profile_create, idempotency_key=idempotency_key)
-        print("The response of BusinessProfilesApi->create_business_profile_api_v1_business_profiles_post:\n")
+        api_response = api_instance.create_business_profile(business_profile_create, idempotency_key=idempotency_key)
+        print("The response of BusinessProfilesApi->create_business_profile:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BusinessProfilesApi->create_business_profile_api_v1_business_profiles_post: %s\n" % e)
+        print("Exception when calling BusinessProfilesApi->create_business_profile: %s\n" % e)
 ```
 
 
@@ -91,8 +91,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_business_profile_api_v1_business_profiles_business_profile_id_delete**
-> SimpleBoolResponse delete_business_profile_api_v1_business_profiles_business_profile_id_delete(business_profile_id)
+# **delete_business_profile**
+> SimpleBoolResponse delete_business_profile(business_profile_id)
 
 Delete Business Profile
 
@@ -130,11 +130,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Delete Business Profile
-        api_response = api_instance.delete_business_profile_api_v1_business_profiles_business_profile_id_delete(business_profile_id)
-        print("The response of BusinessProfilesApi->delete_business_profile_api_v1_business_profiles_business_profile_id_delete:\n")
+        api_response = api_instance.delete_business_profile(business_profile_id)
+        print("The response of BusinessProfilesApi->delete_business_profile:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BusinessProfilesApi->delete_business_profile_api_v1_business_profiles_business_profile_id_delete: %s\n" % e)
+        print("Exception when calling BusinessProfilesApi->delete_business_profile: %s\n" % e)
 ```
 
 
@@ -168,8 +168,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_business_profile_api_v1_business_profiles_business_profile_id_get**
-> BusinessProfileResponse get_business_profile_api_v1_business_profiles_business_profile_id_get(business_profile_id)
+# **get_business_profile**
+> BusinessProfileResponse get_business_profile(business_profile_id)
 
 Get Business Profile
 
@@ -207,11 +207,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Get Business Profile
-        api_response = api_instance.get_business_profile_api_v1_business_profiles_business_profile_id_get(business_profile_id)
-        print("The response of BusinessProfilesApi->get_business_profile_api_v1_business_profiles_business_profile_id_get:\n")
+        api_response = api_instance.get_business_profile(business_profile_id)
+        print("The response of BusinessProfilesApi->get_business_profile:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BusinessProfilesApi->get_business_profile_api_v1_business_profiles_business_profile_id_get: %s\n" % e)
+        print("Exception when calling BusinessProfilesApi->get_business_profile: %s\n" % e)
 ```
 
 
@@ -245,8 +245,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_business_profiles_api_v1_business_profiles_get**
-> BusinessProfilesListResponse list_business_profiles_api_v1_business_profiles_get(limit=limit, cursor=cursor)
+# **list_business_profiles**
+> BusinessProfilesListResponse list_business_profiles(limit=limit, cursor=cursor)
 
 List Business Profiles
 
@@ -285,11 +285,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # List Business Profiles
-        api_response = api_instance.list_business_profiles_api_v1_business_profiles_get(limit=limit, cursor=cursor)
-        print("The response of BusinessProfilesApi->list_business_profiles_api_v1_business_profiles_get:\n")
+        api_response = api_instance.list_business_profiles(limit=limit, cursor=cursor)
+        print("The response of BusinessProfilesApi->list_business_profiles:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BusinessProfilesApi->list_business_profiles_api_v1_business_profiles_get: %s\n" % e)
+        print("Exception when calling BusinessProfilesApi->list_business_profiles: %s\n" % e)
 ```
 
 
@@ -324,10 +324,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **patch_business_profile_api_v1_business_profiles_business_profile_id_patch**
-> BusinessProfileResponse patch_business_profile_api_v1_business_profiles_business_profile_id_patch(business_profile_id, business_profile_patch, idempotency_key=idempotency_key)
+# **update_business_profile**
+> BusinessProfileResponse update_business_profile(business_profile_id, business_profile_patch, idempotency_key=idempotency_key)
 
-Patch Business Profile
+Update Business Profile
 
 ### Example
 
@@ -365,12 +365,12 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     idempotency_key = 'idempotency_key_example' # str |  (optional)
 
     try:
-        # Patch Business Profile
-        api_response = api_instance.patch_business_profile_api_v1_business_profiles_business_profile_id_patch(business_profile_id, business_profile_patch, idempotency_key=idempotency_key)
-        print("The response of BusinessProfilesApi->patch_business_profile_api_v1_business_profiles_business_profile_id_patch:\n")
+        # Update Business Profile
+        api_response = api_instance.update_business_profile(business_profile_id, business_profile_patch, idempotency_key=idempotency_key)
+        print("The response of BusinessProfilesApi->update_business_profile:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BusinessProfilesApi->patch_business_profile_api_v1_business_profiles_business_profile_id_patch: %s\n" % e)
+        print("Exception when calling BusinessProfilesApi->update_business_profile: %s\n" % e)
 ```
 
 

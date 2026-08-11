@@ -31,10 +31,32 @@ jobs:
 
       - name: Generate client (python)
         run: |
+          # The generator reads .openapi-generator-ignore from its *output* dir, so
+          # seed .gen with it — otherwise generating out-of-tree would silently
+          # re-emit README.md and clobber the hand-written one on copy-back.
+          mkdir -p .gen
+          cp .openapi-generator-ignore .gen/
+
           docker run --rm -v "${{ github.workspace }}:/local" \
             openapitools/openapi-generator-cli:v7.7.0 generate \
-            -i /local/openapi.json -g python -o /local \
+            -i /local/openapi.json -g python -o /local/.gen \
             --additional-properties="packageName=invoicepdfs,projectName=invoicepdfs"
+
+          # Generate into .gen, then replace the tree wholesale. Generating in place
+          # and running `git add -A` stages additions and edits but can never remove
+          # a file the generator stopped emitting, so dropped tags (Invoices,
+          # CreditNotes, Branding) shipped as dead code for months. Everything kept
+          # below is what .openapi-generator-ignore protects, plus git/CI metadata.
+          find . -mindepth 1 -maxdepth 1 \
+            ! -name '.git' \
+            ! -name '.gen' \
+            ! -name '.github' \
+            ! -name '.openapi-generator-ignore' \
+            ! -name 'README.md' \
+            ! -name 'LICENSE' \
+            -exec rm -rf {} +
+          cp -a .gen/. ./
+          rm -rf .gen
 
       - name: Commit regenerated client
         run: |

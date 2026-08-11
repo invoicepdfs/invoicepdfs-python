@@ -39,7 +39,7 @@ class HealthApi:
 
 
     @validate_call
-    def health_health_get(
+    def get_health(
         self,
         _request_timeout: Union[
             None,
@@ -54,7 +54,7 @@ class HealthApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> HealthResponse:
-        """Health
+        """Get Health
 
 
         :param _request_timeout: timeout setting for this request. If one
@@ -79,7 +79,7 @@ class HealthApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._health_health_get_serialize(
+        _param = self._get_health_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -101,7 +101,7 @@ class HealthApi:
 
 
     @validate_call
-    def health_health_get_with_http_info(
+    def get_health_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -116,7 +116,7 @@ class HealthApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[HealthResponse]:
-        """Health
+        """Get Health
 
 
         :param _request_timeout: timeout setting for this request. If one
@@ -141,7 +141,7 @@ class HealthApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._health_health_get_serialize(
+        _param = self._get_health_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -163,7 +163,7 @@ class HealthApi:
 
 
     @validate_call
-    def health_health_get_without_preload_content(
+    def get_health_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -178,7 +178,7 @@ class HealthApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Health
+        """Get Health
 
 
         :param _request_timeout: timeout setting for this request. If one
@@ -203,7 +203,7 @@ class HealthApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._health_health_get_serialize(
+        _param = self._get_health_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -220,7 +220,7 @@ class HealthApi:
         return response_data.response
 
 
-    def _health_health_get_serialize(
+    def _get_health_serialize(
         self,
         _request_auth,
         _content_type,
@@ -279,7 +279,7 @@ class HealthApi:
 
 
     @validate_call
-    def ready_ready_get(
+    def get_readiness(
         self,
         _request_timeout: Union[
             None,
@@ -294,7 +294,7 @@ class HealthApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ReadyResponse:
-        """Ready
+        """Get Readiness
 
 
         :param _request_timeout: timeout setting for this request. If one
@@ -319,7 +319,7 @@ class HealthApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ready_ready_get_serialize(
+        _param = self._get_readiness_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -341,7 +341,7 @@ class HealthApi:
 
 
     @validate_call
-    def ready_ready_get_with_http_info(
+    def get_readiness_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -356,7 +356,7 @@ class HealthApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ReadyResponse]:
-        """Ready
+        """Get Readiness
 
 
         :param _request_timeout: timeout setting for this request. If one
@@ -381,7 +381,7 @@ class HealthApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ready_ready_get_serialize(
+        _param = self._get_readiness_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -403,7 +403,7 @@ class HealthApi:
 
 
     @validate_call
-    def ready_ready_get_without_preload_content(
+    def get_readiness_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -418,7 +418,7 @@ class HealthApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Ready
+        """Get Readiness
 
 
         :param _request_timeout: timeout setting for this request. If one
@@ -443,7 +443,7 @@ class HealthApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._ready_ready_get_serialize(
+        _param = self._get_readiness_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -460,7 +460,7 @@ class HealthApi:
         return response_data.response
 
 
-    def _ready_ready_get_serialize(
+    def _get_readiness_serialize(
         self,
         _request_auth,
         _content_type,
@@ -519,7 +519,7 @@ class HealthApi:
 
 
     @validate_call
-    def version_version_get(
+    def get_version(
         self,
         _request_timeout: Union[
             None,
@@ -534,7 +534,7 @@ class HealthApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> VersionResponse:
-        """Version
+        """Get Version
 
 
         :param _request_timeout: timeout setting for this request. If one
@@ -559,7 +559,7 @@ class HealthApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._version_version_get_serialize(
+        _param = self._get_version_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -581,7 +581,7 @@ class HealthApi:
 
 
     @validate_call
-    def version_version_get_with_http_info(
+    def get_version_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -596,7 +596,7 @@ class HealthApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[VersionResponse]:
-        """Version
+        """Get Version
 
 
         :param _request_timeout: timeout setting for this request. If one
@@ -621,7 +621,7 @@ class HealthApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._version_version_get_serialize(
+        _param = self._get_version_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -643,7 +643,7 @@ class HealthApi:
 
 
     @validate_call
-    def version_version_get_without_preload_content(
+    def get_version_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -658,7 +658,7 @@ class HealthApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Version
+        """Get Version
 
 
         :param _request_timeout: timeout setting for this request. If one
@@ -683,7 +683,7 @@ class HealthApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._version_version_get_serialize(
+        _param = self._get_version_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -700,7 +700,7 @@ class HealthApi:
         return response_data.response
 
 
-    def _version_version_get_serialize(
+    def _get_version_serialize(
         self,
         _request_auth,
         _content_type,

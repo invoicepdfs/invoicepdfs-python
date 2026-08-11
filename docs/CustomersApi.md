@@ -4,15 +4,15 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_customer_api_v1_customers_post**](CustomersApi.md#create_customer_api_v1_customers_post) | **POST** /api/v1/customers | Create Customer
-[**delete_customer_api_v1_customers_customer_id_delete**](CustomersApi.md#delete_customer_api_v1_customers_customer_id_delete) | **DELETE** /api/v1/customers/{customer_id} | Delete Customer
-[**get_customer_api_v1_customers_customer_id_get**](CustomersApi.md#get_customer_api_v1_customers_customer_id_get) | **GET** /api/v1/customers/{customer_id} | Get Customer
-[**list_customers_api_v1_customers_get**](CustomersApi.md#list_customers_api_v1_customers_get) | **GET** /api/v1/customers | List Customers
-[**patch_customer_api_v1_customers_customer_id_patch**](CustomersApi.md#patch_customer_api_v1_customers_customer_id_patch) | **PATCH** /api/v1/customers/{customer_id} | Patch Customer
+[**create_customer**](CustomersApi.md#create_customer) | **POST** /api/v1/customers | Create Customer
+[**delete_customer**](CustomersApi.md#delete_customer) | **DELETE** /api/v1/customers/{customer_id} | Delete Customer
+[**get_customer**](CustomersApi.md#get_customer) | **GET** /api/v1/customers/{customer_id} | Get Customer
+[**list_customers**](CustomersApi.md#list_customers) | **GET** /api/v1/customers | List Customers
+[**update_customer**](CustomersApi.md#update_customer) | **PATCH** /api/v1/customers/{customer_id} | Update Customer
 
 
-# **create_customer_api_v1_customers_post**
-> CustomerResponse create_customer_api_v1_customers_post(customer_create, idempotency_key=idempotency_key)
+# **create_customer**
+> CustomerResponse create_customer(customer_create, idempotency_key=idempotency_key)
 
 Create Customer
 
@@ -52,11 +52,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Create Customer
-        api_response = api_instance.create_customer_api_v1_customers_post(customer_create, idempotency_key=idempotency_key)
-        print("The response of CustomersApi->create_customer_api_v1_customers_post:\n")
+        api_response = api_instance.create_customer(customer_create, idempotency_key=idempotency_key)
+        print("The response of CustomersApi->create_customer:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CustomersApi->create_customer_api_v1_customers_post: %s\n" % e)
+        print("Exception when calling CustomersApi->create_customer: %s\n" % e)
 ```
 
 
@@ -91,8 +91,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_customer_api_v1_customers_customer_id_delete**
-> SimpleBoolResponse delete_customer_api_v1_customers_customer_id_delete(customer_id)
+# **delete_customer**
+> SimpleBoolResponse delete_customer(customer_id)
 
 Delete Customer
 
@@ -130,11 +130,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Delete Customer
-        api_response = api_instance.delete_customer_api_v1_customers_customer_id_delete(customer_id)
-        print("The response of CustomersApi->delete_customer_api_v1_customers_customer_id_delete:\n")
+        api_response = api_instance.delete_customer(customer_id)
+        print("The response of CustomersApi->delete_customer:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CustomersApi->delete_customer_api_v1_customers_customer_id_delete: %s\n" % e)
+        print("Exception when calling CustomersApi->delete_customer: %s\n" % e)
 ```
 
 
@@ -168,8 +168,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_customer_api_v1_customers_customer_id_get**
-> CustomerResponse get_customer_api_v1_customers_customer_id_get(customer_id)
+# **get_customer**
+> CustomerResponse get_customer(customer_id)
 
 Get Customer
 
@@ -207,11 +207,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Get Customer
-        api_response = api_instance.get_customer_api_v1_customers_customer_id_get(customer_id)
-        print("The response of CustomersApi->get_customer_api_v1_customers_customer_id_get:\n")
+        api_response = api_instance.get_customer(customer_id)
+        print("The response of CustomersApi->get_customer:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CustomersApi->get_customer_api_v1_customers_customer_id_get: %s\n" % e)
+        print("Exception when calling CustomersApi->get_customer: %s\n" % e)
 ```
 
 
@@ -245,8 +245,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_customers_api_v1_customers_get**
-> CustomersListResponse list_customers_api_v1_customers_get(limit=limit, cursor=cursor)
+# **list_customers**
+> CustomersListResponse list_customers(limit=limit, cursor=cursor)
 
 List Customers
 
@@ -285,11 +285,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # List Customers
-        api_response = api_instance.list_customers_api_v1_customers_get(limit=limit, cursor=cursor)
-        print("The response of CustomersApi->list_customers_api_v1_customers_get:\n")
+        api_response = api_instance.list_customers(limit=limit, cursor=cursor)
+        print("The response of CustomersApi->list_customers:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CustomersApi->list_customers_api_v1_customers_get: %s\n" % e)
+        print("Exception when calling CustomersApi->list_customers: %s\n" % e)
 ```
 
 
@@ -324,10 +324,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **patch_customer_api_v1_customers_customer_id_patch**
-> CustomerResponse patch_customer_api_v1_customers_customer_id_patch(customer_id, customer_patch, idempotency_key=idempotency_key)
+# **update_customer**
+> CustomerResponse update_customer(customer_id, customer_patch, idempotency_key=idempotency_key)
 
-Patch Customer
+Update Customer
 
 ### Example
 
@@ -365,12 +365,12 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     idempotency_key = 'idempotency_key_example' # str |  (optional)
 
     try:
-        # Patch Customer
-        api_response = api_instance.patch_customer_api_v1_customers_customer_id_patch(customer_id, customer_patch, idempotency_key=idempotency_key)
-        print("The response of CustomersApi->patch_customer_api_v1_customers_customer_id_patch:\n")
+        # Update Customer
+        api_response = api_instance.update_customer(customer_id, customer_patch, idempotency_key=idempotency_key)
+        print("The response of CustomersApi->update_customer:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CustomersApi->patch_customer_api_v1_customers_customer_id_patch: %s\n" % e)
+        print("Exception when calling CustomersApi->update_customer: %s\n" % e)
 ```
 
 

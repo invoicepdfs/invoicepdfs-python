@@ -41,7 +41,7 @@ class AuditLogApi:
 
 
     @validate_call
-    def get_audit_event_api_v1_audit_events_audit_event_id_get(
+    def get_audit_event(
         self,
         audit_event_id: StrictStr,
         _request_timeout: Union[
@@ -84,7 +84,7 @@ class AuditLogApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_audit_event_api_v1_audit_events_audit_event_id_get_serialize(
+        _param = self._get_audit_event_serialize(
             audit_event_id=audit_event_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -108,7 +108,7 @@ class AuditLogApi:
 
 
     @validate_call
-    def get_audit_event_api_v1_audit_events_audit_event_id_get_with_http_info(
+    def get_audit_event_with_http_info(
         self,
         audit_event_id: StrictStr,
         _request_timeout: Union[
@@ -151,7 +151,7 @@ class AuditLogApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_audit_event_api_v1_audit_events_audit_event_id_get_serialize(
+        _param = self._get_audit_event_serialize(
             audit_event_id=audit_event_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -175,7 +175,7 @@ class AuditLogApi:
 
 
     @validate_call
-    def get_audit_event_api_v1_audit_events_audit_event_id_get_without_preload_content(
+    def get_audit_event_without_preload_content(
         self,
         audit_event_id: StrictStr,
         _request_timeout: Union[
@@ -218,7 +218,7 @@ class AuditLogApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_audit_event_api_v1_audit_events_audit_event_id_get_serialize(
+        _param = self._get_audit_event_serialize(
             audit_event_id=audit_event_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -237,7 +237,7 @@ class AuditLogApi:
         return response_data.response
 
 
-    def _get_audit_event_api_v1_audit_events_audit_event_id_get_serialize(
+    def _get_audit_event_serialize(
         self,
         audit_event_id,
         _request_auth,
@@ -300,7 +300,7 @@ class AuditLogApi:
 
 
     @validate_call
-    def list_audit_events_api_v1_audit_events_get(
+    def list_audit_events(
         self,
         limit: Optional[Annotated[int, Field(le=100, strict=True, ge=1)]] = None,
         cursor: Optional[StrictStr] = None,
@@ -355,7 +355,7 @@ class AuditLogApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_audit_events_api_v1_audit_events_get_serialize(
+        _param = self._list_audit_events_serialize(
             limit=limit,
             cursor=cursor,
             action=action,
@@ -383,7 +383,7 @@ class AuditLogApi:
 
 
     @validate_call
-    def list_audit_events_api_v1_audit_events_get_with_http_info(
+    def list_audit_events_with_http_info(
         self,
         limit: Optional[Annotated[int, Field(le=100, strict=True, ge=1)]] = None,
         cursor: Optional[StrictStr] = None,
@@ -438,7 +438,7 @@ class AuditLogApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_audit_events_api_v1_audit_events_get_serialize(
+        _param = self._list_audit_events_serialize(
             limit=limit,
             cursor=cursor,
             action=action,
@@ -466,7 +466,7 @@ class AuditLogApi:
 
 
     @validate_call
-    def list_audit_events_api_v1_audit_events_get_without_preload_content(
+    def list_audit_events_without_preload_content(
         self,
         limit: Optional[Annotated[int, Field(le=100, strict=True, ge=1)]] = None,
         cursor: Optional[StrictStr] = None,
@@ -521,7 +521,7 @@ class AuditLogApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_audit_events_api_v1_audit_events_get_serialize(
+        _param = self._list_audit_events_serialize(
             limit=limit,
             cursor=cursor,
             action=action,
@@ -544,7 +544,7 @@ class AuditLogApi:
         return response_data.response
 
 
-    def _list_audit_events_api_v1_audit_events_get_serialize(
+    def _list_audit_events_serialize(
         self,
         limit,
         cursor,

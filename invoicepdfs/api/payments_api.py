@@ -44,9 +44,9 @@ class PaymentsApi:
 
 
     @validate_call
-    def create_payment_api_v1_documents_invoice_id_payments_post(
+    def create_document_payment(
         self,
-        invoice_id: StrictStr,
+        document_id: StrictStr,
         payment_create_request: PaymentCreateRequest,
         _request_timeout: Union[
             None,
@@ -61,11 +61,11 @@ class PaymentsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaymentResponse:
-        """Create Payment
+        """Create Document Payment
 
 
-        :param invoice_id: (required)
-        :type invoice_id: str
+        :param document_id: (required)
+        :type document_id: str
         :param payment_create_request: (required)
         :type payment_create_request: PaymentCreateRequest
         :param _request_timeout: timeout setting for this request. If one
@@ -90,8 +90,8 @@ class PaymentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_payment_api_v1_documents_invoice_id_payments_post_serialize(
-            invoice_id=invoice_id,
+        _param = self._create_document_payment_serialize(
+            document_id=document_id,
             payment_create_request=payment_create_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -115,9 +115,9 @@ class PaymentsApi:
 
 
     @validate_call
-    def create_payment_api_v1_documents_invoice_id_payments_post_with_http_info(
+    def create_document_payment_with_http_info(
         self,
-        invoice_id: StrictStr,
+        document_id: StrictStr,
         payment_create_request: PaymentCreateRequest,
         _request_timeout: Union[
             None,
@@ -132,11 +132,11 @@ class PaymentsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaymentResponse]:
-        """Create Payment
+        """Create Document Payment
 
 
-        :param invoice_id: (required)
-        :type invoice_id: str
+        :param document_id: (required)
+        :type document_id: str
         :param payment_create_request: (required)
         :type payment_create_request: PaymentCreateRequest
         :param _request_timeout: timeout setting for this request. If one
@@ -161,8 +161,8 @@ class PaymentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_payment_api_v1_documents_invoice_id_payments_post_serialize(
-            invoice_id=invoice_id,
+        _param = self._create_document_payment_serialize(
+            document_id=document_id,
             payment_create_request=payment_create_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -186,9 +186,9 @@ class PaymentsApi:
 
 
     @validate_call
-    def create_payment_api_v1_documents_invoice_id_payments_post_without_preload_content(
+    def create_document_payment_without_preload_content(
         self,
-        invoice_id: StrictStr,
+        document_id: StrictStr,
         payment_create_request: PaymentCreateRequest,
         _request_timeout: Union[
             None,
@@ -203,11 +203,11 @@ class PaymentsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Create Payment
+        """Create Document Payment
 
 
-        :param invoice_id: (required)
-        :type invoice_id: str
+        :param document_id: (required)
+        :type document_id: str
         :param payment_create_request: (required)
         :type payment_create_request: PaymentCreateRequest
         :param _request_timeout: timeout setting for this request. If one
@@ -232,8 +232,8 @@ class PaymentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_payment_api_v1_documents_invoice_id_payments_post_serialize(
-            invoice_id=invoice_id,
+        _param = self._create_document_payment_serialize(
+            document_id=document_id,
             payment_create_request=payment_create_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -252,9 +252,9 @@ class PaymentsApi:
         return response_data.response
 
 
-    def _create_payment_api_v1_documents_invoice_id_payments_post_serialize(
+    def _create_document_payment_serialize(
         self,
-        invoice_id,
+        document_id,
         payment_create_request,
         _request_auth,
         _content_type,
@@ -275,8 +275,8 @@ class PaymentsApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
-        if invoice_id is not None:
-            _path_params['invoice_id'] = invoice_id
+        if document_id is not None:
+            _path_params['document_id'] = document_id
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -314,7 +314,7 @@ class PaymentsApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/api/v1/documents/{invoice_id}/payments',
+            resource_path='/api/v1/documents/{document_id}/payments',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -331,7 +331,7 @@ class PaymentsApi:
 
 
     @validate_call
-    def delete_payment_api_v1_payments_payment_id_delete(
+    def delete_payment(
         self,
         payment_id: StrictStr,
         _request_timeout: Union[
@@ -374,7 +374,7 @@ class PaymentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_payment_api_v1_payments_payment_id_delete_serialize(
+        _param = self._delete_payment_serialize(
             payment_id=payment_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -398,7 +398,7 @@ class PaymentsApi:
 
 
     @validate_call
-    def delete_payment_api_v1_payments_payment_id_delete_with_http_info(
+    def delete_payment_with_http_info(
         self,
         payment_id: StrictStr,
         _request_timeout: Union[
@@ -441,7 +441,7 @@ class PaymentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_payment_api_v1_payments_payment_id_delete_serialize(
+        _param = self._delete_payment_serialize(
             payment_id=payment_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -465,7 +465,7 @@ class PaymentsApi:
 
 
     @validate_call
-    def delete_payment_api_v1_payments_payment_id_delete_without_preload_content(
+    def delete_payment_without_preload_content(
         self,
         payment_id: StrictStr,
         _request_timeout: Union[
@@ -508,7 +508,7 @@ class PaymentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_payment_api_v1_payments_payment_id_delete_serialize(
+        _param = self._delete_payment_serialize(
             payment_id=payment_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -527,7 +527,7 @@ class PaymentsApi:
         return response_data.response
 
 
-    def _delete_payment_api_v1_payments_payment_id_delete_serialize(
+    def _delete_payment_serialize(
         self,
         payment_id,
         _request_auth,
@@ -590,7 +590,7 @@ class PaymentsApi:
 
 
     @validate_call
-    def get_payment_api_v1_payments_payment_id_get(
+    def get_payment(
         self,
         payment_id: StrictStr,
         _request_timeout: Union[
@@ -633,7 +633,7 @@ class PaymentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_payment_api_v1_payments_payment_id_get_serialize(
+        _param = self._get_payment_serialize(
             payment_id=payment_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -657,7 +657,7 @@ class PaymentsApi:
 
 
     @validate_call
-    def get_payment_api_v1_payments_payment_id_get_with_http_info(
+    def get_payment_with_http_info(
         self,
         payment_id: StrictStr,
         _request_timeout: Union[
@@ -700,7 +700,7 @@ class PaymentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_payment_api_v1_payments_payment_id_get_serialize(
+        _param = self._get_payment_serialize(
             payment_id=payment_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -724,7 +724,7 @@ class PaymentsApi:
 
 
     @validate_call
-    def get_payment_api_v1_payments_payment_id_get_without_preload_content(
+    def get_payment_without_preload_content(
         self,
         payment_id: StrictStr,
         _request_timeout: Union[
@@ -767,7 +767,7 @@ class PaymentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_payment_api_v1_payments_payment_id_get_serialize(
+        _param = self._get_payment_serialize(
             payment_id=payment_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -786,7 +786,7 @@ class PaymentsApi:
         return response_data.response
 
 
-    def _get_payment_api_v1_payments_payment_id_get_serialize(
+    def _get_payment_serialize(
         self,
         payment_id,
         _request_auth,
@@ -849,9 +849,9 @@ class PaymentsApi:
 
 
     @validate_call
-    def list_invoice_payments_api_v1_documents_invoice_id_payments_get(
+    def list_document_payments(
         self,
-        invoice_id: StrictStr,
+        document_id: StrictStr,
         limit: Optional[Annotated[int, Field(le=100, strict=True, ge=1)]] = None,
         cursor: Optional[StrictStr] = None,
         _request_timeout: Union[
@@ -867,11 +867,11 @@ class PaymentsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaymentsListResponse:
-        """List Invoice Payments
+        """List Document Payments
 
 
-        :param invoice_id: (required)
-        :type invoice_id: str
+        :param document_id: (required)
+        :type document_id: str
         :param limit:
         :type limit: int
         :param cursor:
@@ -898,8 +898,8 @@ class PaymentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_invoice_payments_api_v1_documents_invoice_id_payments_get_serialize(
-            invoice_id=invoice_id,
+        _param = self._list_document_payments_serialize(
+            document_id=document_id,
             limit=limit,
             cursor=cursor,
             _request_auth=_request_auth,
@@ -924,9 +924,9 @@ class PaymentsApi:
 
 
     @validate_call
-    def list_invoice_payments_api_v1_documents_invoice_id_payments_get_with_http_info(
+    def list_document_payments_with_http_info(
         self,
-        invoice_id: StrictStr,
+        document_id: StrictStr,
         limit: Optional[Annotated[int, Field(le=100, strict=True, ge=1)]] = None,
         cursor: Optional[StrictStr] = None,
         _request_timeout: Union[
@@ -942,11 +942,11 @@ class PaymentsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaymentsListResponse]:
-        """List Invoice Payments
+        """List Document Payments
 
 
-        :param invoice_id: (required)
-        :type invoice_id: str
+        :param document_id: (required)
+        :type document_id: str
         :param limit:
         :type limit: int
         :param cursor:
@@ -973,8 +973,8 @@ class PaymentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_invoice_payments_api_v1_documents_invoice_id_payments_get_serialize(
-            invoice_id=invoice_id,
+        _param = self._list_document_payments_serialize(
+            document_id=document_id,
             limit=limit,
             cursor=cursor,
             _request_auth=_request_auth,
@@ -999,9 +999,9 @@ class PaymentsApi:
 
 
     @validate_call
-    def list_invoice_payments_api_v1_documents_invoice_id_payments_get_without_preload_content(
+    def list_document_payments_without_preload_content(
         self,
-        invoice_id: StrictStr,
+        document_id: StrictStr,
         limit: Optional[Annotated[int, Field(le=100, strict=True, ge=1)]] = None,
         cursor: Optional[StrictStr] = None,
         _request_timeout: Union[
@@ -1017,11 +1017,11 @@ class PaymentsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """List Invoice Payments
+        """List Document Payments
 
 
-        :param invoice_id: (required)
-        :type invoice_id: str
+        :param document_id: (required)
+        :type document_id: str
         :param limit:
         :type limit: int
         :param cursor:
@@ -1048,8 +1048,8 @@ class PaymentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_invoice_payments_api_v1_documents_invoice_id_payments_get_serialize(
-            invoice_id=invoice_id,
+        _param = self._list_document_payments_serialize(
+            document_id=document_id,
             limit=limit,
             cursor=cursor,
             _request_auth=_request_auth,
@@ -1069,9 +1069,9 @@ class PaymentsApi:
         return response_data.response
 
 
-    def _list_invoice_payments_api_v1_documents_invoice_id_payments_get_serialize(
+    def _list_document_payments_serialize(
         self,
-        invoice_id,
+        document_id,
         limit,
         cursor,
         _request_auth,
@@ -1093,8 +1093,8 @@ class PaymentsApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
-        if invoice_id is not None:
-            _path_params['invoice_id'] = invoice_id
+        if document_id is not None:
+            _path_params['document_id'] = document_id
         # process the query parameters
         if limit is not None:
             
@@ -1125,7 +1125,7 @@ class PaymentsApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/api/v1/documents/{invoice_id}/payments',
+            resource_path='/api/v1/documents/{document_id}/payments',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1142,7 +1142,7 @@ class PaymentsApi:
 
 
     @validate_call
-    def update_payment_api_v1_payments_payment_id_patch(
+    def update_payment(
         self,
         payment_id: StrictStr,
         payment_patch_request: PaymentPatchRequest,
@@ -1188,7 +1188,7 @@ class PaymentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_payment_api_v1_payments_payment_id_patch_serialize(
+        _param = self._update_payment_serialize(
             payment_id=payment_id,
             payment_patch_request=payment_patch_request,
             _request_auth=_request_auth,
@@ -1213,7 +1213,7 @@ class PaymentsApi:
 
 
     @validate_call
-    def update_payment_api_v1_payments_payment_id_patch_with_http_info(
+    def update_payment_with_http_info(
         self,
         payment_id: StrictStr,
         payment_patch_request: PaymentPatchRequest,
@@ -1259,7 +1259,7 @@ class PaymentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_payment_api_v1_payments_payment_id_patch_serialize(
+        _param = self._update_payment_serialize(
             payment_id=payment_id,
             payment_patch_request=payment_patch_request,
             _request_auth=_request_auth,
@@ -1284,7 +1284,7 @@ class PaymentsApi:
 
 
     @validate_call
-    def update_payment_api_v1_payments_payment_id_patch_without_preload_content(
+    def update_payment_without_preload_content(
         self,
         payment_id: StrictStr,
         payment_patch_request: PaymentPatchRequest,
@@ -1330,7 +1330,7 @@ class PaymentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_payment_api_v1_payments_payment_id_patch_serialize(
+        _param = self._update_payment_serialize(
             payment_id=payment_id,
             payment_patch_request=payment_patch_request,
             _request_auth=_request_auth,
@@ -1350,7 +1350,7 @@ class PaymentsApi:
         return response_data.response
 
 
-    def _update_payment_api_v1_payments_payment_id_patch_serialize(
+    def _update_payment_serialize(
         self,
         payment_id,
         payment_patch_request,

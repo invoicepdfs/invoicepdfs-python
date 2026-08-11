@@ -4,15 +4,15 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**health_health_get**](HealthApi.md#health_health_get) | **GET** /health | Health
-[**ready_ready_get**](HealthApi.md#ready_ready_get) | **GET** /ready | Ready
-[**version_version_get**](HealthApi.md#version_version_get) | **GET** /version | Version
+[**get_health**](HealthApi.md#get_health) | **GET** /health | Get Health
+[**get_readiness**](HealthApi.md#get_readiness) | **GET** /ready | Get Readiness
+[**get_version**](HealthApi.md#get_version) | **GET** /version | Get Version
 
 
-# **health_health_get**
-> HealthResponse health_health_get()
+# **get_health**
+> HealthResponse get_health()
 
-Health
+Get Health
 
 ### Example
 
@@ -36,12 +36,12 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     api_instance = invoicepdfs.HealthApi(api_client)
 
     try:
-        # Health
-        api_response = api_instance.health_health_get()
-        print("The response of HealthApi->health_health_get:\n")
+        # Get Health
+        api_response = api_instance.get_health()
+        print("The response of HealthApi->get_health:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling HealthApi->health_health_get: %s\n" % e)
+        print("Exception when calling HealthApi->get_health: %s\n" % e)
 ```
 
 
@@ -71,10 +71,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ready_ready_get**
-> ReadyResponse ready_ready_get()
+# **get_readiness**
+> ReadyResponse get_readiness()
 
-Ready
+Get Readiness
 
 ### Example
 
@@ -98,12 +98,12 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     api_instance = invoicepdfs.HealthApi(api_client)
 
     try:
-        # Ready
-        api_response = api_instance.ready_ready_get()
-        print("The response of HealthApi->ready_ready_get:\n")
+        # Get Readiness
+        api_response = api_instance.get_readiness()
+        print("The response of HealthApi->get_readiness:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling HealthApi->ready_ready_get: %s\n" % e)
+        print("Exception when calling HealthApi->get_readiness: %s\n" % e)
 ```
 
 
@@ -133,10 +133,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **version_version_get**
-> VersionResponse version_version_get()
+# **get_version**
+> VersionResponse get_version()
 
-Version
+Get Version
 
 ### Example
 
@@ -160,12 +160,12 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     api_instance = invoicepdfs.HealthApi(api_client)
 
     try:
-        # Version
-        api_response = api_instance.version_version_get()
-        print("The response of HealthApi->version_version_get:\n")
+        # Get Version
+        api_response = api_instance.get_version()
+        print("The response of HealthApi->get_version:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling HealthApi->version_version_get: %s\n" % e)
+        print("Exception when calling HealthApi->get_version: %s\n" % e)
 ```
 
 

@@ -38,7 +38,7 @@ class DeliveriesApi:
 
 
     @validate_call
-    def get_delivery_api_v1_deliveries_delivery_id_get(
+    def get_delivery(
         self,
         delivery_id: StrictStr,
         _request_timeout: Union[
@@ -81,7 +81,7 @@ class DeliveriesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_delivery_api_v1_deliveries_delivery_id_get_serialize(
+        _param = self._get_delivery_serialize(
             delivery_id=delivery_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -105,7 +105,7 @@ class DeliveriesApi:
 
 
     @validate_call
-    def get_delivery_api_v1_deliveries_delivery_id_get_with_http_info(
+    def get_delivery_with_http_info(
         self,
         delivery_id: StrictStr,
         _request_timeout: Union[
@@ -148,7 +148,7 @@ class DeliveriesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_delivery_api_v1_deliveries_delivery_id_get_serialize(
+        _param = self._get_delivery_serialize(
             delivery_id=delivery_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -172,7 +172,7 @@ class DeliveriesApi:
 
 
     @validate_call
-    def get_delivery_api_v1_deliveries_delivery_id_get_without_preload_content(
+    def get_delivery_without_preload_content(
         self,
         delivery_id: StrictStr,
         _request_timeout: Union[
@@ -215,7 +215,7 @@ class DeliveriesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_delivery_api_v1_deliveries_delivery_id_get_serialize(
+        _param = self._get_delivery_serialize(
             delivery_id=delivery_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -234,7 +234,7 @@ class DeliveriesApi:
         return response_data.response
 
 
-    def _get_delivery_api_v1_deliveries_delivery_id_get_serialize(
+    def _get_delivery_serialize(
         self,
         delivery_id,
         _request_auth,
@@ -297,7 +297,7 @@ class DeliveriesApi:
 
 
     @validate_call
-    def retry_delivery_api_v1_deliveries_delivery_id_retry_post(
+    def retry_delivery(
         self,
         delivery_id: StrictStr,
         _request_timeout: Union[
@@ -340,7 +340,7 @@ class DeliveriesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retry_delivery_api_v1_deliveries_delivery_id_retry_post_serialize(
+        _param = self._retry_delivery_serialize(
             delivery_id=delivery_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -364,7 +364,7 @@ class DeliveriesApi:
 
 
     @validate_call
-    def retry_delivery_api_v1_deliveries_delivery_id_retry_post_with_http_info(
+    def retry_delivery_with_http_info(
         self,
         delivery_id: StrictStr,
         _request_timeout: Union[
@@ -407,7 +407,7 @@ class DeliveriesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retry_delivery_api_v1_deliveries_delivery_id_retry_post_serialize(
+        _param = self._retry_delivery_serialize(
             delivery_id=delivery_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -431,7 +431,7 @@ class DeliveriesApi:
 
 
     @validate_call
-    def retry_delivery_api_v1_deliveries_delivery_id_retry_post_without_preload_content(
+    def retry_delivery_without_preload_content(
         self,
         delivery_id: StrictStr,
         _request_timeout: Union[
@@ -474,7 +474,7 @@ class DeliveriesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retry_delivery_api_v1_deliveries_delivery_id_retry_post_serialize(
+        _param = self._retry_delivery_serialize(
             delivery_id=delivery_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -493,7 +493,7 @@ class DeliveriesApi:
         return response_data.response
 
 
-    def _retry_delivery_api_v1_deliveries_delivery_id_retry_post_serialize(
+    def _retry_delivery_serialize(
         self,
         delivery_id,
         _request_auth,

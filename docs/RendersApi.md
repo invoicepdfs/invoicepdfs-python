@@ -4,12 +4,12 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**download_render_api_v1_renders_render_id_download_get**](RendersApi.md#download_render_api_v1_renders_render_id_download_get) | **GET** /api/v1/renders/{render_id}/download | Download Render
-[**get_render_api_v1_renders_render_id_get**](RendersApi.md#get_render_api_v1_renders_render_id_get) | **GET** /api/v1/renders/{render_id} | Get Render
+[**download_render**](RendersApi.md#download_render) | **GET** /api/v1/renders/{render_id}/download | Download Render
+[**get_render**](RendersApi.md#get_render) | **GET** /api/v1/renders/{render_id} | Get Render
 
 
-# **download_render_api_v1_renders_render_id_download_get**
-> bytearray download_render_api_v1_renders_render_id_download_get(render_id)
+# **download_render**
+> bytearray download_render(render_id)
 
 Download Render
 
@@ -46,11 +46,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Download Render
-        api_response = api_instance.download_render_api_v1_renders_render_id_download_get(render_id)
-        print("The response of RendersApi->download_render_api_v1_renders_render_id_download_get:\n")
+        api_response = api_instance.download_render(render_id)
+        print("The response of RendersApi->download_render:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling RendersApi->download_render_api_v1_renders_render_id_download_get: %s\n" % e)
+        print("Exception when calling RendersApi->download_render: %s\n" % e)
 ```
 
 
@@ -84,8 +84,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_render_api_v1_renders_render_id_get**
-> Dict[str, object] get_render_api_v1_renders_render_id_get(render_id)
+# **get_render**
+> Dict[str, object] get_render(render_id)
 
 Get Render
 
@@ -122,11 +122,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Get Render
-        api_response = api_instance.get_render_api_v1_renders_render_id_get(render_id)
-        print("The response of RendersApi->get_render_api_v1_renders_render_id_get:\n")
+        api_response = api_instance.get_render(render_id)
+        print("The response of RendersApi->get_render:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling RendersApi->get_render_api_v1_renders_render_id_get: %s\n" % e)
+        print("Exception when calling RendersApi->get_render: %s\n" % e)
 ```
 
 

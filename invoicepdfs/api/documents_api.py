@@ -19,8 +19,6 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing import Any, Optional
 from typing_extensions import Annotated
-from invoicepdfs.models.app_documents_schemas_document_render_request import AppDocumentsSchemasDocumentRenderRequest
-from invoicepdfs.models.app_schemas_v1_document_render_request import AppSchemasV1DocumentRenderRequest
 from invoicepdfs.models.deliveries_list_response import DeliveriesListResponse
 from invoicepdfs.models.delivery_response import DeliveryResponse
 from invoicepdfs.models.delivery_send_request import DeliverySendRequest
@@ -28,6 +26,8 @@ from invoicepdfs.models.document_calculate_request import DocumentCalculateReque
 from invoicepdfs.models.document_calculate_response import DocumentCalculateResponse
 from invoicepdfs.models.document_create_request import DocumentCreateRequest
 from invoicepdfs.models.document_patch_request import DocumentPatchRequest
+from invoicepdfs.models.document_render_options import DocumentRenderOptions
+from invoicepdfs.models.document_render_request import DocumentRenderRequest
 from invoicepdfs.models.document_response import DocumentResponse
 from invoicepdfs.models.document_validate_request import DocumentValidateRequest
 from invoicepdfs.models.document_validate_response import DocumentValidateResponse
@@ -53,7 +53,7 @@ class DocumentsApi:
 
 
     @validate_call
-    def archive_document_api_v1_documents_document_id_archive_post(
+    def archive_document(
         self,
         document_id: StrictStr,
         _request_timeout: Union[
@@ -96,7 +96,7 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._archive_document_api_v1_documents_document_id_archive_post_serialize(
+        _param = self._archive_document_serialize(
             document_id=document_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -120,7 +120,7 @@ class DocumentsApi:
 
 
     @validate_call
-    def archive_document_api_v1_documents_document_id_archive_post_with_http_info(
+    def archive_document_with_http_info(
         self,
         document_id: StrictStr,
         _request_timeout: Union[
@@ -163,7 +163,7 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._archive_document_api_v1_documents_document_id_archive_post_serialize(
+        _param = self._archive_document_serialize(
             document_id=document_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -187,7 +187,7 @@ class DocumentsApi:
 
 
     @validate_call
-    def archive_document_api_v1_documents_document_id_archive_post_without_preload_content(
+    def archive_document_without_preload_content(
         self,
         document_id: StrictStr,
         _request_timeout: Union[
@@ -230,7 +230,7 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._archive_document_api_v1_documents_document_id_archive_post_serialize(
+        _param = self._archive_document_serialize(
             document_id=document_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -249,7 +249,7 @@ class DocumentsApi:
         return response_data.response
 
 
-    def _archive_document_api_v1_documents_document_id_archive_post_serialize(
+    def _archive_document_serialize(
         self,
         document_id,
         _request_auth,
@@ -312,7 +312,7 @@ class DocumentsApi:
 
 
     @validate_call
-    def calculate_document_api_v1_documents_calculate_post(
+    def calculate_document(
         self,
         document_calculate_request: DocumentCalculateRequest,
         _request_timeout: Union[
@@ -355,7 +355,7 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._calculate_document_api_v1_documents_calculate_post_serialize(
+        _param = self._calculate_document_serialize(
             document_calculate_request=document_calculate_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -379,7 +379,7 @@ class DocumentsApi:
 
 
     @validate_call
-    def calculate_document_api_v1_documents_calculate_post_with_http_info(
+    def calculate_document_with_http_info(
         self,
         document_calculate_request: DocumentCalculateRequest,
         _request_timeout: Union[
@@ -422,7 +422,7 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._calculate_document_api_v1_documents_calculate_post_serialize(
+        _param = self._calculate_document_serialize(
             document_calculate_request=document_calculate_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -446,7 +446,7 @@ class DocumentsApi:
 
 
     @validate_call
-    def calculate_document_api_v1_documents_calculate_post_without_preload_content(
+    def calculate_document_without_preload_content(
         self,
         document_calculate_request: DocumentCalculateRequest,
         _request_timeout: Union[
@@ -489,7 +489,7 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._calculate_document_api_v1_documents_calculate_post_serialize(
+        _param = self._calculate_document_serialize(
             document_calculate_request=document_calculate_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -508,7 +508,7 @@ class DocumentsApi:
         return response_data.response
 
 
-    def _calculate_document_api_v1_documents_calculate_post_serialize(
+    def _calculate_document_serialize(
         self,
         document_calculate_request,
         _request_auth,
@@ -584,7 +584,7 @@ class DocumentsApi:
 
 
     @validate_call
-    def create_document_api_v1_documents_post(
+    def create_document(
         self,
         document_create_request: DocumentCreateRequest,
         idempotency_key: Optional[StrictStr] = None,
@@ -630,7 +630,7 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_document_api_v1_documents_post_serialize(
+        _param = self._create_document_serialize(
             document_create_request=document_create_request,
             idempotency_key=idempotency_key,
             _request_auth=_request_auth,
@@ -655,7 +655,7 @@ class DocumentsApi:
 
 
     @validate_call
-    def create_document_api_v1_documents_post_with_http_info(
+    def create_document_with_http_info(
         self,
         document_create_request: DocumentCreateRequest,
         idempotency_key: Optional[StrictStr] = None,
@@ -701,7 +701,7 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_document_api_v1_documents_post_serialize(
+        _param = self._create_document_serialize(
             document_create_request=document_create_request,
             idempotency_key=idempotency_key,
             _request_auth=_request_auth,
@@ -726,7 +726,7 @@ class DocumentsApi:
 
 
     @validate_call
-    def create_document_api_v1_documents_post_without_preload_content(
+    def create_document_without_preload_content(
         self,
         document_create_request: DocumentCreateRequest,
         idempotency_key: Optional[StrictStr] = None,
@@ -772,7 +772,7 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_document_api_v1_documents_post_serialize(
+        _param = self._create_document_serialize(
             document_create_request=document_create_request,
             idempotency_key=idempotency_key,
             _request_auth=_request_auth,
@@ -792,7 +792,7 @@ class DocumentsApi:
         return response_data.response
 
 
-    def _create_document_api_v1_documents_post_serialize(
+    def _create_document_serialize(
         self,
         document_create_request,
         idempotency_key,
@@ -871,7 +871,309 @@ class DocumentsApi:
 
 
     @validate_call
-    def delete_document_api_v1_documents_document_id_delete(
+    def create_document_render(
+        self,
+        document_id: StrictStr,
+        document_render_options: DocumentRenderOptions,
+        idempotency_key: Optional[StrictStr] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> object:
+        """Create Document Render
+
+
+        :param document_id: (required)
+        :type document_id: str
+        :param document_render_options: (required)
+        :type document_render_options: DocumentRenderOptions
+        :param idempotency_key:
+        :type idempotency_key: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._create_document_render_serialize(
+            document_id=document_id,
+            document_render_options=document_render_options,
+            idempotency_key=idempotency_key,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "object",
+            '422': "ApiErrorResponse",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def create_document_render_with_http_info(
+        self,
+        document_id: StrictStr,
+        document_render_options: DocumentRenderOptions,
+        idempotency_key: Optional[StrictStr] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[object]:
+        """Create Document Render
+
+
+        :param document_id: (required)
+        :type document_id: str
+        :param document_render_options: (required)
+        :type document_render_options: DocumentRenderOptions
+        :param idempotency_key:
+        :type idempotency_key: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._create_document_render_serialize(
+            document_id=document_id,
+            document_render_options=document_render_options,
+            idempotency_key=idempotency_key,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "object",
+            '422': "ApiErrorResponse",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def create_document_render_without_preload_content(
+        self,
+        document_id: StrictStr,
+        document_render_options: DocumentRenderOptions,
+        idempotency_key: Optional[StrictStr] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Create Document Render
+
+
+        :param document_id: (required)
+        :type document_id: str
+        :param document_render_options: (required)
+        :type document_render_options: DocumentRenderOptions
+        :param idempotency_key:
+        :type idempotency_key: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._create_document_render_serialize(
+            document_id=document_id,
+            document_render_options=document_render_options,
+            idempotency_key=idempotency_key,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "object",
+            '422': "ApiErrorResponse",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _create_document_render_serialize(
+        self,
+        document_id,
+        document_render_options,
+        idempotency_key,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if document_id is not None:
+            _path_params['document_id'] = document_id
+        # process the query parameters
+        # process the header parameters
+        if idempotency_key is not None:
+            _header_params['Idempotency-Key'] = idempotency_key
+        # process the form parameters
+        # process the body parameter
+        if document_render_options is not None:
+            _body_params = document_render_options
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'HTTPBearer'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/api/v1/documents/{document_id}/renders',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def delete_document(
         self,
         document_id: StrictStr,
         _request_timeout: Union[
@@ -914,7 +1216,7 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_document_api_v1_documents_document_id_delete_serialize(
+        _param = self._delete_document_serialize(
             document_id=document_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -938,7 +1240,7 @@ class DocumentsApi:
 
 
     @validate_call
-    def delete_document_api_v1_documents_document_id_delete_with_http_info(
+    def delete_document_with_http_info(
         self,
         document_id: StrictStr,
         _request_timeout: Union[
@@ -981,7 +1283,7 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_document_api_v1_documents_document_id_delete_serialize(
+        _param = self._delete_document_serialize(
             document_id=document_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1005,7 +1307,7 @@ class DocumentsApi:
 
 
     @validate_call
-    def delete_document_api_v1_documents_document_id_delete_without_preload_content(
+    def delete_document_without_preload_content(
         self,
         document_id: StrictStr,
         _request_timeout: Union[
@@ -1048,7 +1350,7 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_document_api_v1_documents_document_id_delete_serialize(
+        _param = self._delete_document_serialize(
             document_id=document_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1067,7 +1369,7 @@ class DocumentsApi:
         return response_data.response
 
 
-    def _delete_document_api_v1_documents_document_id_delete_serialize(
+    def _delete_document_serialize(
         self,
         document_id,
         _request_auth,
@@ -1130,7 +1432,7 @@ class DocumentsApi:
 
 
     @validate_call
-    def duplicate_document_api_v1_documents_document_id_duplicate_post(
+    def duplicate_document(
         self,
         document_id: StrictStr,
         _request_timeout: Union[
@@ -1173,7 +1475,7 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._duplicate_document_api_v1_documents_document_id_duplicate_post_serialize(
+        _param = self._duplicate_document_serialize(
             document_id=document_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1197,7 +1499,7 @@ class DocumentsApi:
 
 
     @validate_call
-    def duplicate_document_api_v1_documents_document_id_duplicate_post_with_http_info(
+    def duplicate_document_with_http_info(
         self,
         document_id: StrictStr,
         _request_timeout: Union[
@@ -1240,7 +1542,7 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._duplicate_document_api_v1_documents_document_id_duplicate_post_serialize(
+        _param = self._duplicate_document_serialize(
             document_id=document_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1264,7 +1566,7 @@ class DocumentsApi:
 
 
     @validate_call
-    def duplicate_document_api_v1_documents_document_id_duplicate_post_without_preload_content(
+    def duplicate_document_without_preload_content(
         self,
         document_id: StrictStr,
         _request_timeout: Union[
@@ -1307,7 +1609,7 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._duplicate_document_api_v1_documents_document_id_duplicate_post_serialize(
+        _param = self._duplicate_document_serialize(
             document_id=document_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1326,7 +1628,7 @@ class DocumentsApi:
         return response_data.response
 
 
-    def _duplicate_document_api_v1_documents_document_id_duplicate_post_serialize(
+    def _duplicate_document_serialize(
         self,
         document_id,
         _request_auth,
@@ -1389,7 +1691,7 @@ class DocumentsApi:
 
 
     @validate_call
-    def finalize_document_api_v1_documents_document_id_finalize_post(
+    def finalize_document(
         self,
         document_id: StrictStr,
         _request_timeout: Union[
@@ -1432,7 +1734,7 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._finalize_document_api_v1_documents_document_id_finalize_post_serialize(
+        _param = self._finalize_document_serialize(
             document_id=document_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1456,7 +1758,7 @@ class DocumentsApi:
 
 
     @validate_call
-    def finalize_document_api_v1_documents_document_id_finalize_post_with_http_info(
+    def finalize_document_with_http_info(
         self,
         document_id: StrictStr,
         _request_timeout: Union[
@@ -1499,7 +1801,7 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._finalize_document_api_v1_documents_document_id_finalize_post_serialize(
+        _param = self._finalize_document_serialize(
             document_id=document_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1523,7 +1825,7 @@ class DocumentsApi:
 
 
     @validate_call
-    def finalize_document_api_v1_documents_document_id_finalize_post_without_preload_content(
+    def finalize_document_without_preload_content(
         self,
         document_id: StrictStr,
         _request_timeout: Union[
@@ -1566,7 +1868,7 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._finalize_document_api_v1_documents_document_id_finalize_post_serialize(
+        _param = self._finalize_document_serialize(
             document_id=document_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1585,7 +1887,7 @@ class DocumentsApi:
         return response_data.response
 
 
-    def _finalize_document_api_v1_documents_document_id_finalize_post_serialize(
+    def _finalize_document_serialize(
         self,
         document_id,
         _request_auth,
@@ -1648,7 +1950,7 @@ class DocumentsApi:
 
 
     @validate_call
-    def get_document_api_v1_documents_document_id_get(
+    def get_document(
         self,
         document_id: StrictStr,
         _request_timeout: Union[
@@ -1691,7 +1993,7 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_document_api_v1_documents_document_id_get_serialize(
+        _param = self._get_document_serialize(
             document_id=document_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1715,7 +2017,7 @@ class DocumentsApi:
 
 
     @validate_call
-    def get_document_api_v1_documents_document_id_get_with_http_info(
+    def get_document_with_http_info(
         self,
         document_id: StrictStr,
         _request_timeout: Union[
@@ -1758,7 +2060,7 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_document_api_v1_documents_document_id_get_serialize(
+        _param = self._get_document_serialize(
             document_id=document_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1782,7 +2084,7 @@ class DocumentsApi:
 
 
     @validate_call
-    def get_document_api_v1_documents_document_id_get_without_preload_content(
+    def get_document_without_preload_content(
         self,
         document_id: StrictStr,
         _request_timeout: Union[
@@ -1825,7 +2127,7 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_document_api_v1_documents_document_id_get_serialize(
+        _param = self._get_document_serialize(
             document_id=document_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1844,7 +2146,7 @@ class DocumentsApi:
         return response_data.response
 
 
-    def _get_document_api_v1_documents_document_id_get_serialize(
+    def _get_document_serialize(
         self,
         document_id,
         _request_auth,
@@ -1907,7 +2209,7 @@ class DocumentsApi:
 
 
     @validate_call
-    def list_document_deliveries_api_v1_documents_document_id_deliveries_get(
+    def list_document_deliveries(
         self,
         document_id: StrictStr,
         limit: Optional[Annotated[int, Field(le=100, strict=True, ge=1)]] = None,
@@ -1956,7 +2258,7 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_document_deliveries_api_v1_documents_document_id_deliveries_get_serialize(
+        _param = self._list_document_deliveries_serialize(
             document_id=document_id,
             limit=limit,
             cursor=cursor,
@@ -1982,7 +2284,7 @@ class DocumentsApi:
 
 
     @validate_call
-    def list_document_deliveries_api_v1_documents_document_id_deliveries_get_with_http_info(
+    def list_document_deliveries_with_http_info(
         self,
         document_id: StrictStr,
         limit: Optional[Annotated[int, Field(le=100, strict=True, ge=1)]] = None,
@@ -2031,7 +2333,7 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_document_deliveries_api_v1_documents_document_id_deliveries_get_serialize(
+        _param = self._list_document_deliveries_serialize(
             document_id=document_id,
             limit=limit,
             cursor=cursor,
@@ -2057,7 +2359,7 @@ class DocumentsApi:
 
 
     @validate_call
-    def list_document_deliveries_api_v1_documents_document_id_deliveries_get_without_preload_content(
+    def list_document_deliveries_without_preload_content(
         self,
         document_id: StrictStr,
         limit: Optional[Annotated[int, Field(le=100, strict=True, ge=1)]] = None,
@@ -2106,7 +2408,7 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_document_deliveries_api_v1_documents_document_id_deliveries_get_serialize(
+        _param = self._list_document_deliveries_serialize(
             document_id=document_id,
             limit=limit,
             cursor=cursor,
@@ -2127,7 +2429,7 @@ class DocumentsApi:
         return response_data.response
 
 
-    def _list_document_deliveries_api_v1_documents_document_id_deliveries_get_serialize(
+    def _list_document_deliveries_serialize(
         self,
         document_id,
         limit,
@@ -2200,7 +2502,7 @@ class DocumentsApi:
 
 
     @validate_call
-    def list_documents_api_v1_documents_get(
+    def list_documents(
         self,
         limit: Optional[Annotated[int, Field(le=100, strict=True, ge=1)]] = None,
         cursor: Optional[StrictStr] = None,
@@ -2252,7 +2554,7 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_documents_api_v1_documents_get_serialize(
+        _param = self._list_documents_serialize(
             limit=limit,
             cursor=cursor,
             document_type=document_type,
@@ -2279,7 +2581,7 @@ class DocumentsApi:
 
 
     @validate_call
-    def list_documents_api_v1_documents_get_with_http_info(
+    def list_documents_with_http_info(
         self,
         limit: Optional[Annotated[int, Field(le=100, strict=True, ge=1)]] = None,
         cursor: Optional[StrictStr] = None,
@@ -2331,7 +2633,7 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_documents_api_v1_documents_get_serialize(
+        _param = self._list_documents_serialize(
             limit=limit,
             cursor=cursor,
             document_type=document_type,
@@ -2358,7 +2660,7 @@ class DocumentsApi:
 
 
     @validate_call
-    def list_documents_api_v1_documents_get_without_preload_content(
+    def list_documents_without_preload_content(
         self,
         limit: Optional[Annotated[int, Field(le=100, strict=True, ge=1)]] = None,
         cursor: Optional[StrictStr] = None,
@@ -2410,7 +2712,7 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_documents_api_v1_documents_get_serialize(
+        _param = self._list_documents_serialize(
             limit=limit,
             cursor=cursor,
             document_type=document_type,
@@ -2432,7 +2734,7 @@ class DocumentsApi:
         return response_data.response
 
 
-    def _list_documents_api_v1_documents_get_serialize(
+    def _list_documents_serialize(
         self,
         limit,
         cursor,
@@ -2512,7 +2814,7 @@ class DocumentsApi:
 
 
     @validate_call
-    def mark_paid_api_v1_documents_document_id_mark_paid_post(
+    def mark_paid(
         self,
         document_id: StrictStr,
         _request_timeout: Union[
@@ -2555,7 +2857,7 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._mark_paid_api_v1_documents_document_id_mark_paid_post_serialize(
+        _param = self._mark_paid_serialize(
             document_id=document_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2579,7 +2881,7 @@ class DocumentsApi:
 
 
     @validate_call
-    def mark_paid_api_v1_documents_document_id_mark_paid_post_with_http_info(
+    def mark_paid_with_http_info(
         self,
         document_id: StrictStr,
         _request_timeout: Union[
@@ -2622,7 +2924,7 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._mark_paid_api_v1_documents_document_id_mark_paid_post_serialize(
+        _param = self._mark_paid_serialize(
             document_id=document_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2646,7 +2948,7 @@ class DocumentsApi:
 
 
     @validate_call
-    def mark_paid_api_v1_documents_document_id_mark_paid_post_without_preload_content(
+    def mark_paid_without_preload_content(
         self,
         document_id: StrictStr,
         _request_timeout: Union[
@@ -2689,7 +2991,7 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._mark_paid_api_v1_documents_document_id_mark_paid_post_serialize(
+        _param = self._mark_paid_serialize(
             document_id=document_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2708,7 +3010,7 @@ class DocumentsApi:
         return response_data.response
 
 
-    def _mark_paid_api_v1_documents_document_id_mark_paid_post_serialize(
+    def _mark_paid_serialize(
         self,
         document_id,
         _request_auth,
@@ -2771,7 +3073,7 @@ class DocumentsApi:
 
 
     @validate_call
-    def mark_sent_api_v1_documents_document_id_mark_sent_post(
+    def mark_sent(
         self,
         document_id: StrictStr,
         _request_timeout: Union[
@@ -2814,7 +3116,7 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._mark_sent_api_v1_documents_document_id_mark_sent_post_serialize(
+        _param = self._mark_sent_serialize(
             document_id=document_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2838,7 +3140,7 @@ class DocumentsApi:
 
 
     @validate_call
-    def mark_sent_api_v1_documents_document_id_mark_sent_post_with_http_info(
+    def mark_sent_with_http_info(
         self,
         document_id: StrictStr,
         _request_timeout: Union[
@@ -2881,7 +3183,7 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._mark_sent_api_v1_documents_document_id_mark_sent_post_serialize(
+        _param = self._mark_sent_serialize(
             document_id=document_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2905,7 +3207,7 @@ class DocumentsApi:
 
 
     @validate_call
-    def mark_sent_api_v1_documents_document_id_mark_sent_post_without_preload_content(
+    def mark_sent_without_preload_content(
         self,
         document_id: StrictStr,
         _request_timeout: Union[
@@ -2948,7 +3250,7 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._mark_sent_api_v1_documents_document_id_mark_sent_post_serialize(
+        _param = self._mark_sent_serialize(
             document_id=document_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2967,7 +3269,7 @@ class DocumentsApi:
         return response_data.response
 
 
-    def _mark_sent_api_v1_documents_document_id_mark_sent_post_serialize(
+    def _mark_sent_serialize(
         self,
         document_id,
         _request_auth,
@@ -3030,7 +3332,7 @@ class DocumentsApi:
 
 
     @validate_call
-    def mark_unpaid_api_v1_documents_document_id_mark_unpaid_post(
+    def mark_unpaid(
         self,
         document_id: StrictStr,
         _request_timeout: Union[
@@ -3073,7 +3375,7 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._mark_unpaid_api_v1_documents_document_id_mark_unpaid_post_serialize(
+        _param = self._mark_unpaid_serialize(
             document_id=document_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -3097,7 +3399,7 @@ class DocumentsApi:
 
 
     @validate_call
-    def mark_unpaid_api_v1_documents_document_id_mark_unpaid_post_with_http_info(
+    def mark_unpaid_with_http_info(
         self,
         document_id: StrictStr,
         _request_timeout: Union[
@@ -3140,7 +3442,7 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._mark_unpaid_api_v1_documents_document_id_mark_unpaid_post_serialize(
+        _param = self._mark_unpaid_serialize(
             document_id=document_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -3164,7 +3466,7 @@ class DocumentsApi:
 
 
     @validate_call
-    def mark_unpaid_api_v1_documents_document_id_mark_unpaid_post_without_preload_content(
+    def mark_unpaid_without_preload_content(
         self,
         document_id: StrictStr,
         _request_timeout: Union[
@@ -3207,7 +3509,7 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._mark_unpaid_api_v1_documents_document_id_mark_unpaid_post_serialize(
+        _param = self._mark_unpaid_serialize(
             document_id=document_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -3226,7 +3528,7 @@ class DocumentsApi:
         return response_data.response
 
 
-    def _mark_unpaid_api_v1_documents_document_id_mark_unpaid_post_serialize(
+    def _mark_unpaid_serialize(
         self,
         document_id,
         _request_auth,
@@ -3289,297 +3591,9 @@ class DocumentsApi:
 
 
     @validate_call
-    def patch_document_api_v1_documents_document_id_patch(
+    def render_document(
         self,
-        document_id: StrictStr,
-        document_patch_request: DocumentPatchRequest,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> DocumentResponse:
-        """Patch Document
-
-
-        :param document_id: (required)
-        :type document_id: str
-        :param document_patch_request: (required)
-        :type document_patch_request: DocumentPatchRequest
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._patch_document_api_v1_documents_document_id_patch_serialize(
-            document_id=document_id,
-            document_patch_request=document_patch_request,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DocumentResponse",
-            '422': "ApiErrorResponse",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def patch_document_api_v1_documents_document_id_patch_with_http_info(
-        self,
-        document_id: StrictStr,
-        document_patch_request: DocumentPatchRequest,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[DocumentResponse]:
-        """Patch Document
-
-
-        :param document_id: (required)
-        :type document_id: str
-        :param document_patch_request: (required)
-        :type document_patch_request: DocumentPatchRequest
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._patch_document_api_v1_documents_document_id_patch_serialize(
-            document_id=document_id,
-            document_patch_request=document_patch_request,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DocumentResponse",
-            '422': "ApiErrorResponse",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def patch_document_api_v1_documents_document_id_patch_without_preload_content(
-        self,
-        document_id: StrictStr,
-        document_patch_request: DocumentPatchRequest,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Patch Document
-
-
-        :param document_id: (required)
-        :type document_id: str
-        :param document_patch_request: (required)
-        :type document_patch_request: DocumentPatchRequest
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._patch_document_api_v1_documents_document_id_patch_serialize(
-            document_id=document_id,
-            document_patch_request=document_patch_request,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DocumentResponse",
-            '422': "ApiErrorResponse",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _patch_document_api_v1_documents_document_id_patch_serialize(
-        self,
-        document_id,
-        document_patch_request,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if document_id is not None:
-            _path_params['document_id'] = document_id
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-        if document_patch_request is not None:
-            _body_params = document_patch_request
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-        # set the HTTP header `Content-Type`
-        if _content_type:
-            _header_params['Content-Type'] = _content_type
-        else:
-            _default_content_type = (
-                self.api_client.select_header_content_type(
-                    [
-                        'application/json'
-                    ]
-                )
-            )
-            if _default_content_type is not None:
-                _header_params['Content-Type'] = _default_content_type
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'HTTPBearer'
-        ]
-
-        return self.api_client.param_serialize(
-            method='PATCH',
-            resource_path='/api/v1/documents/{document_id}',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def render_document_api_v1_documents_document_id_renders_post(
-        self,
-        document_id: StrictStr,
-        app_documents_schemas_document_render_request: AppDocumentsSchemasDocumentRenderRequest,
+        document_render_request: DocumentRenderRequest,
         idempotency_key: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
@@ -3597,10 +3611,8 @@ class DocumentsApi:
         """Render Document
 
 
-        :param document_id: (required)
-        :type document_id: str
-        :param app_documents_schemas_document_render_request: (required)
-        :type app_documents_schemas_document_render_request: AppDocumentsSchemasDocumentRenderRequest
+        :param document_render_request: (required)
+        :type document_render_request: DocumentRenderRequest
         :param idempotency_key:
         :type idempotency_key: str
         :param _request_timeout: timeout setting for this request. If one
@@ -3625,9 +3637,8 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._render_document_api_v1_documents_document_id_renders_post_serialize(
-            document_id=document_id,
-            app_documents_schemas_document_render_request=app_documents_schemas_document_render_request,
+        _param = self._render_document_serialize(
+            document_render_request=document_render_request,
             idempotency_key=idempotency_key,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -3651,10 +3662,9 @@ class DocumentsApi:
 
 
     @validate_call
-    def render_document_api_v1_documents_document_id_renders_post_with_http_info(
+    def render_document_with_http_info(
         self,
-        document_id: StrictStr,
-        app_documents_schemas_document_render_request: AppDocumentsSchemasDocumentRenderRequest,
+        document_render_request: DocumentRenderRequest,
         idempotency_key: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
@@ -3672,10 +3682,8 @@ class DocumentsApi:
         """Render Document
 
 
-        :param document_id: (required)
-        :type document_id: str
-        :param app_documents_schemas_document_render_request: (required)
-        :type app_documents_schemas_document_render_request: AppDocumentsSchemasDocumentRenderRequest
+        :param document_render_request: (required)
+        :type document_render_request: DocumentRenderRequest
         :param idempotency_key:
         :type idempotency_key: str
         :param _request_timeout: timeout setting for this request. If one
@@ -3700,9 +3708,8 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._render_document_api_v1_documents_document_id_renders_post_serialize(
-            document_id=document_id,
-            app_documents_schemas_document_render_request=app_documents_schemas_document_render_request,
+        _param = self._render_document_serialize(
+            document_render_request=document_render_request,
             idempotency_key=idempotency_key,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -3726,10 +3733,9 @@ class DocumentsApi:
 
 
     @validate_call
-    def render_document_api_v1_documents_document_id_renders_post_without_preload_content(
+    def render_document_without_preload_content(
         self,
-        document_id: StrictStr,
-        app_documents_schemas_document_render_request: AppDocumentsSchemasDocumentRenderRequest,
+        document_render_request: DocumentRenderRequest,
         idempotency_key: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
@@ -3747,10 +3753,8 @@ class DocumentsApi:
         """Render Document
 
 
-        :param document_id: (required)
-        :type document_id: str
-        :param app_documents_schemas_document_render_request: (required)
-        :type app_documents_schemas_document_render_request: AppDocumentsSchemasDocumentRenderRequest
+        :param document_render_request: (required)
+        :type document_render_request: DocumentRenderRequest
         :param idempotency_key:
         :type idempotency_key: str
         :param _request_timeout: timeout setting for this request. If one
@@ -3775,9 +3779,8 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._render_document_api_v1_documents_document_id_renders_post_serialize(
-            document_id=document_id,
-            app_documents_schemas_document_render_request=app_documents_schemas_document_render_request,
+        _param = self._render_document_serialize(
+            document_render_request=document_render_request,
             idempotency_key=idempotency_key,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -3796,299 +3799,9 @@ class DocumentsApi:
         return response_data.response
 
 
-    def _render_document_api_v1_documents_document_id_renders_post_serialize(
+    def _render_document_serialize(
         self,
-        document_id,
-        app_documents_schemas_document_render_request,
-        idempotency_key,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if document_id is not None:
-            _path_params['document_id'] = document_id
-        # process the query parameters
-        # process the header parameters
-        if idempotency_key is not None:
-            _header_params['Idempotency-Key'] = idempotency_key
-        # process the form parameters
-        # process the body parameter
-        if app_documents_schemas_document_render_request is not None:
-            _body_params = app_documents_schemas_document_render_request
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-        # set the HTTP header `Content-Type`
-        if _content_type:
-            _header_params['Content-Type'] = _content_type
-        else:
-            _default_content_type = (
-                self.api_client.select_header_content_type(
-                    [
-                        'application/json'
-                    ]
-                )
-            )
-            if _default_content_type is not None:
-                _header_params['Content-Type'] = _default_content_type
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'HTTPBearer'
-        ]
-
-        return self.api_client.param_serialize(
-            method='POST',
-            resource_path='/api/v1/documents/{document_id}/renders',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def render_document_api_v1_documents_render_post(
-        self,
-        app_schemas_v1_document_render_request: AppSchemasV1DocumentRenderRequest,
-        idempotency_key: Optional[StrictStr] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
-        """Render Document
-
-
-        :param app_schemas_v1_document_render_request: (required)
-        :type app_schemas_v1_document_render_request: AppSchemasV1DocumentRenderRequest
-        :param idempotency_key:
-        :type idempotency_key: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._render_document_api_v1_documents_render_post_serialize(
-            app_schemas_v1_document_render_request=app_schemas_v1_document_render_request,
-            idempotency_key=idempotency_key,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
-            '422': "ApiErrorResponse",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def render_document_api_v1_documents_render_post_with_http_info(
-        self,
-        app_schemas_v1_document_render_request: AppSchemasV1DocumentRenderRequest,
-        idempotency_key: Optional[StrictStr] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
-        """Render Document
-
-
-        :param app_schemas_v1_document_render_request: (required)
-        :type app_schemas_v1_document_render_request: AppSchemasV1DocumentRenderRequest
-        :param idempotency_key:
-        :type idempotency_key: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._render_document_api_v1_documents_render_post_serialize(
-            app_schemas_v1_document_render_request=app_schemas_v1_document_render_request,
-            idempotency_key=idempotency_key,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
-            '422': "ApiErrorResponse",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def render_document_api_v1_documents_render_post_without_preload_content(
-        self,
-        app_schemas_v1_document_render_request: AppSchemasV1DocumentRenderRequest,
-        idempotency_key: Optional[StrictStr] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Render Document
-
-
-        :param app_schemas_v1_document_render_request: (required)
-        :type app_schemas_v1_document_render_request: AppSchemasV1DocumentRenderRequest
-        :param idempotency_key:
-        :type idempotency_key: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._render_document_api_v1_documents_render_post_serialize(
-            app_schemas_v1_document_render_request=app_schemas_v1_document_render_request,
-            idempotency_key=idempotency_key,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
-            '422': "ApiErrorResponse",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _render_document_api_v1_documents_render_post_serialize(
-        self,
-        app_schemas_v1_document_render_request,
+        document_render_request,
         idempotency_key,
         _request_auth,
         _content_type,
@@ -4115,8 +3828,8 @@ class DocumentsApi:
             _header_params['Idempotency-Key'] = idempotency_key
         # process the form parameters
         # process the body parameter
-        if app_schemas_v1_document_render_request is not None:
-            _body_params = app_schemas_v1_document_render_request
+        if document_render_request is not None:
+            _body_params = document_render_request
 
 
         # set the HTTP header `Accept`
@@ -4165,7 +3878,7 @@ class DocumentsApi:
 
 
     @validate_call
-    def restore_document_api_v1_documents_document_id_restore_post(
+    def restore_document(
         self,
         document_id: StrictStr,
         _request_timeout: Union[
@@ -4208,7 +3921,7 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._restore_document_api_v1_documents_document_id_restore_post_serialize(
+        _param = self._restore_document_serialize(
             document_id=document_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -4232,7 +3945,7 @@ class DocumentsApi:
 
 
     @validate_call
-    def restore_document_api_v1_documents_document_id_restore_post_with_http_info(
+    def restore_document_with_http_info(
         self,
         document_id: StrictStr,
         _request_timeout: Union[
@@ -4275,7 +3988,7 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._restore_document_api_v1_documents_document_id_restore_post_serialize(
+        _param = self._restore_document_serialize(
             document_id=document_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -4299,7 +4012,7 @@ class DocumentsApi:
 
 
     @validate_call
-    def restore_document_api_v1_documents_document_id_restore_post_without_preload_content(
+    def restore_document_without_preload_content(
         self,
         document_id: StrictStr,
         _request_timeout: Union[
@@ -4342,7 +4055,7 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._restore_document_api_v1_documents_document_id_restore_post_serialize(
+        _param = self._restore_document_serialize(
             document_id=document_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -4361,7 +4074,7 @@ class DocumentsApi:
         return response_data.response
 
 
-    def _restore_document_api_v1_documents_document_id_restore_post_serialize(
+    def _restore_document_serialize(
         self,
         document_id,
         _request_auth,
@@ -4424,7 +4137,7 @@ class DocumentsApi:
 
 
     @validate_call
-    def send_document_api_v1_documents_document_id_send_post(
+    def send_document(
         self,
         document_id: StrictStr,
         delivery_send_request: DeliverySendRequest,
@@ -4470,7 +4183,7 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._send_document_api_v1_documents_document_id_send_post_serialize(
+        _param = self._send_document_serialize(
             document_id=document_id,
             delivery_send_request=delivery_send_request,
             _request_auth=_request_auth,
@@ -4495,7 +4208,7 @@ class DocumentsApi:
 
 
     @validate_call
-    def send_document_api_v1_documents_document_id_send_post_with_http_info(
+    def send_document_with_http_info(
         self,
         document_id: StrictStr,
         delivery_send_request: DeliverySendRequest,
@@ -4541,7 +4254,7 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._send_document_api_v1_documents_document_id_send_post_serialize(
+        _param = self._send_document_serialize(
             document_id=document_id,
             delivery_send_request=delivery_send_request,
             _request_auth=_request_auth,
@@ -4566,7 +4279,7 @@ class DocumentsApi:
 
 
     @validate_call
-    def send_document_api_v1_documents_document_id_send_post_without_preload_content(
+    def send_document_without_preload_content(
         self,
         document_id: StrictStr,
         delivery_send_request: DeliverySendRequest,
@@ -4612,7 +4325,7 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._send_document_api_v1_documents_document_id_send_post_serialize(
+        _param = self._send_document_serialize(
             document_id=document_id,
             delivery_send_request=delivery_send_request,
             _request_auth=_request_auth,
@@ -4632,7 +4345,7 @@ class DocumentsApi:
         return response_data.response
 
 
-    def _send_document_api_v1_documents_document_id_send_post_serialize(
+    def _send_document_serialize(
         self,
         document_id,
         delivery_send_request,
@@ -4711,7 +4424,294 @@ class DocumentsApi:
 
 
     @validate_call
-    def validate_document_api_v1_documents_validate_post(
+    def update_document(
+        self,
+        document_id: StrictStr,
+        document_patch_request: DocumentPatchRequest,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> DocumentResponse:
+        """Update Document
+
+
+        :param document_id: (required)
+        :type document_id: str
+        :param document_patch_request: (required)
+        :type document_patch_request: DocumentPatchRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._update_document_serialize(
+            document_id=document_id,
+            document_patch_request=document_patch_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "DocumentResponse",
+            '422': "ApiErrorResponse",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def update_document_with_http_info(
+        self,
+        document_id: StrictStr,
+        document_patch_request: DocumentPatchRequest,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[DocumentResponse]:
+        """Update Document
+
+
+        :param document_id: (required)
+        :type document_id: str
+        :param document_patch_request: (required)
+        :type document_patch_request: DocumentPatchRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._update_document_serialize(
+            document_id=document_id,
+            document_patch_request=document_patch_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "DocumentResponse",
+            '422': "ApiErrorResponse",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def update_document_without_preload_content(
+        self,
+        document_id: StrictStr,
+        document_patch_request: DocumentPatchRequest,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Update Document
+
+
+        :param document_id: (required)
+        :type document_id: str
+        :param document_patch_request: (required)
+        :type document_patch_request: DocumentPatchRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._update_document_serialize(
+            document_id=document_id,
+            document_patch_request=document_patch_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "DocumentResponse",
+            '422': "ApiErrorResponse",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _update_document_serialize(
+        self,
+        document_id,
+        document_patch_request,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if document_id is not None:
+            _path_params['document_id'] = document_id
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if document_patch_request is not None:
+            _body_params = document_patch_request
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'HTTPBearer'
+        ]
+
+        return self.api_client.param_serialize(
+            method='PATCH',
+            resource_path='/api/v1/documents/{document_id}',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def validate_document(
         self,
         document_validate_request: DocumentValidateRequest,
         _request_timeout: Union[
@@ -4754,7 +4754,7 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._validate_document_api_v1_documents_validate_post_serialize(
+        _param = self._validate_document_serialize(
             document_validate_request=document_validate_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -4778,7 +4778,7 @@ class DocumentsApi:
 
 
     @validate_call
-    def validate_document_api_v1_documents_validate_post_with_http_info(
+    def validate_document_with_http_info(
         self,
         document_validate_request: DocumentValidateRequest,
         _request_timeout: Union[
@@ -4821,7 +4821,7 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._validate_document_api_v1_documents_validate_post_serialize(
+        _param = self._validate_document_serialize(
             document_validate_request=document_validate_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -4845,7 +4845,7 @@ class DocumentsApi:
 
 
     @validate_call
-    def validate_document_api_v1_documents_validate_post_without_preload_content(
+    def validate_document_without_preload_content(
         self,
         document_validate_request: DocumentValidateRequest,
         _request_timeout: Union[
@@ -4888,7 +4888,7 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._validate_document_api_v1_documents_validate_post_serialize(
+        _param = self._validate_document_serialize(
             document_validate_request=document_validate_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -4907,7 +4907,7 @@ class DocumentsApi:
         return response_data.response
 
 
-    def _validate_document_api_v1_documents_validate_post_serialize(
+    def _validate_document_serialize(
         self,
         document_validate_request,
         _request_auth,
@@ -4983,7 +4983,7 @@ class DocumentsApi:
 
 
     @validate_call
-    def void_document_api_v1_documents_document_id_void_post(
+    def void_document(
         self,
         document_id: StrictStr,
         _request_timeout: Union[
@@ -5026,7 +5026,7 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._void_document_api_v1_documents_document_id_void_post_serialize(
+        _param = self._void_document_serialize(
             document_id=document_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -5050,7 +5050,7 @@ class DocumentsApi:
 
 
     @validate_call
-    def void_document_api_v1_documents_document_id_void_post_with_http_info(
+    def void_document_with_http_info(
         self,
         document_id: StrictStr,
         _request_timeout: Union[
@@ -5093,7 +5093,7 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._void_document_api_v1_documents_document_id_void_post_serialize(
+        _param = self._void_document_serialize(
             document_id=document_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -5117,7 +5117,7 @@ class DocumentsApi:
 
 
     @validate_call
-    def void_document_api_v1_documents_document_id_void_post_without_preload_content(
+    def void_document_without_preload_content(
         self,
         document_id: StrictStr,
         _request_timeout: Union[
@@ -5160,7 +5160,7 @@ class DocumentsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._void_document_api_v1_documents_document_id_void_post_serialize(
+        _param = self._void_document_serialize(
             document_id=document_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -5179,7 +5179,7 @@ class DocumentsApi:
         return response_data.response
 
 
-    def _void_document_api_v1_documents_document_id_void_post_serialize(
+    def _void_document_serialize(
         self,
         document_id,
         _request_auth,

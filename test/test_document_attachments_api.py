@@ -14,29 +14,36 @@
 
 import unittest
 
-from invoicepdfs.api.deliveries_api import DeliveriesApi
+from invoicepdfs.api.document_attachments_api import DocumentAttachmentsApi
 
 
-class TestDeliveriesApi(unittest.TestCase):
-    """DeliveriesApi unit test stubs"""
+class TestDocumentAttachmentsApi(unittest.TestCase):
+    """DocumentAttachmentsApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = DeliveriesApi()
+        self.api = DocumentAttachmentsApi()
 
     def tearDown(self) -> None:
         pass
 
-    def test_get_delivery(self) -> None:
-        """Test case for get_delivery
+    def test_create_document_attachment(self) -> None:
+        """Test case for create_document_attachment
 
-        Get Delivery
+        Create Document Attachment
         """
         pass
 
-    def test_retry_delivery(self) -> None:
-        """Test case for retry_delivery
+    def test_delete_document_attachment(self) -> None:
+        """Test case for delete_document_attachment
 
-        Retry Delivery
+        Delete Document Attachment
+        """
+        pass
+
+    def test_list_document_attachments(self) -> None:
+        """Test case for list_document_attachments
+
+        List Document Attachments
         """
         pass
 

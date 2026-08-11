@@ -36,6 +36,7 @@ class TestApiErrorResponse(unittest.TestCase):
         if include_optional:
             return ApiErrorResponse(
                 error = invoicepdfs.models.api_error_response_error.ApiErrorResponse_error(
+                    status = 422, 
                     code = 'unprocessable_entity', 
                     message = 'Request validation failed', 
                     request_id = '', 
@@ -44,6 +45,7 @@ class TestApiErrorResponse(unittest.TestCase):
         else:
             return ApiErrorResponse(
                 error = invoicepdfs.models.api_error_response_error.ApiErrorResponse_error(
+                    status = 422, 
                     code = 'unprocessable_entity', 
                     message = 'Request validation failed', 
                     request_id = '', 

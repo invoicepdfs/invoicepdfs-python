@@ -4,21 +4,21 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_member_api_v1_workspaces_workspace_id_members_post**](WorkspacesApi.md#create_member_api_v1_workspaces_workspace_id_members_post) | **POST** /api/v1/workspaces/{workspace_id}/members | Create Member
-[**create_workspace_api_v1_workspaces_post**](WorkspacesApi.md#create_workspace_api_v1_workspaces_post) | **POST** /api/v1/workspaces | Create Workspace
-[**delete_member_api_v1_workspaces_workspace_id_members_member_id_delete**](WorkspacesApi.md#delete_member_api_v1_workspaces_workspace_id_members_member_id_delete) | **DELETE** /api/v1/workspaces/{workspace_id}/members/{member_id} | Delete Member
-[**delete_workspace_api_v1_workspaces_workspace_id_delete**](WorkspacesApi.md#delete_workspace_api_v1_workspaces_workspace_id_delete) | **DELETE** /api/v1/workspaces/{workspace_id} | Delete Workspace
-[**get_workspace_api_v1_workspaces_workspace_id_get**](WorkspacesApi.md#get_workspace_api_v1_workspaces_workspace_id_get) | **GET** /api/v1/workspaces/{workspace_id} | Get Workspace
-[**list_members_api_v1_workspaces_workspace_id_members_get**](WorkspacesApi.md#list_members_api_v1_workspaces_workspace_id_members_get) | **GET** /api/v1/workspaces/{workspace_id}/members | List Members
-[**list_workspaces_api_v1_workspaces_get**](WorkspacesApi.md#list_workspaces_api_v1_workspaces_get) | **GET** /api/v1/workspaces | List Workspaces
-[**patch_member_api_v1_workspaces_workspace_id_members_member_id_patch**](WorkspacesApi.md#patch_member_api_v1_workspaces_workspace_id_members_member_id_patch) | **PATCH** /api/v1/workspaces/{workspace_id}/members/{member_id} | Patch Member
-[**patch_workspace_api_v1_workspaces_workspace_id_patch**](WorkspacesApi.md#patch_workspace_api_v1_workspaces_workspace_id_patch) | **PATCH** /api/v1/workspaces/{workspace_id} | Patch Workspace
+[**add_workspace_member**](WorkspacesApi.md#add_workspace_member) | **POST** /api/v1/workspaces/{workspace_id}/members | Add Workspace Member
+[**create_workspace**](WorkspacesApi.md#create_workspace) | **POST** /api/v1/workspaces | Create Workspace
+[**delete_workspace**](WorkspacesApi.md#delete_workspace) | **DELETE** /api/v1/workspaces/{workspace_id} | Delete Workspace
+[**get_workspace**](WorkspacesApi.md#get_workspace) | **GET** /api/v1/workspaces/{workspace_id} | Get Workspace
+[**list_workspace_members**](WorkspacesApi.md#list_workspace_members) | **GET** /api/v1/workspaces/{workspace_id}/members | List Workspace Members
+[**list_workspaces**](WorkspacesApi.md#list_workspaces) | **GET** /api/v1/workspaces | List Workspaces
+[**remove_workspace_member**](WorkspacesApi.md#remove_workspace_member) | **DELETE** /api/v1/workspaces/{workspace_id}/members/{member_id} | Remove Workspace Member
+[**update_workspace**](WorkspacesApi.md#update_workspace) | **PATCH** /api/v1/workspaces/{workspace_id} | Update Workspace
+[**update_workspace_member**](WorkspacesApi.md#update_workspace_member) | **PATCH** /api/v1/workspaces/{workspace_id}/members/{member_id} | Update Workspace Member
 
 
-# **create_member_api_v1_workspaces_workspace_id_members_post**
-> WorkspaceMembersListResponse create_member_api_v1_workspaces_workspace_id_members_post(workspace_id, workspace_member_create_request, idempotency_key=idempotency_key)
+# **add_workspace_member**
+> WorkspaceMembersListResponse add_workspace_member(workspace_id, workspace_member_create_request, idempotency_key=idempotency_key)
 
-Create Member
+Add Workspace Member
 
 ### Example
 
@@ -56,12 +56,12 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     idempotency_key = 'idempotency_key_example' # str |  (optional)
 
     try:
-        # Create Member
-        api_response = api_instance.create_member_api_v1_workspaces_workspace_id_members_post(workspace_id, workspace_member_create_request, idempotency_key=idempotency_key)
-        print("The response of WorkspacesApi->create_member_api_v1_workspaces_workspace_id_members_post:\n")
+        # Add Workspace Member
+        api_response = api_instance.add_workspace_member(workspace_id, workspace_member_create_request, idempotency_key=idempotency_key)
+        print("The response of WorkspacesApi->add_workspace_member:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling WorkspacesApi->create_member_api_v1_workspaces_workspace_id_members_post: %s\n" % e)
+        print("Exception when calling WorkspacesApi->add_workspace_member: %s\n" % e)
 ```
 
 
@@ -97,8 +97,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create_workspace_api_v1_workspaces_post**
-> WorkspaceResponse create_workspace_api_v1_workspaces_post(workspace_create_request, idempotency_key=idempotency_key)
+# **create_workspace**
+> WorkspaceResponse create_workspace(workspace_create_request, idempotency_key=idempotency_key)
 
 Create Workspace
 
@@ -138,11 +138,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Create Workspace
-        api_response = api_instance.create_workspace_api_v1_workspaces_post(workspace_create_request, idempotency_key=idempotency_key)
-        print("The response of WorkspacesApi->create_workspace_api_v1_workspaces_post:\n")
+        api_response = api_instance.create_workspace(workspace_create_request, idempotency_key=idempotency_key)
+        print("The response of WorkspacesApi->create_workspace:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling WorkspacesApi->create_workspace_api_v1_workspaces_post: %s\n" % e)
+        print("Exception when calling WorkspacesApi->create_workspace: %s\n" % e)
 ```
 
 
@@ -177,87 +177,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_member_api_v1_workspaces_workspace_id_members_member_id_delete**
-> SimpleBoolResponse delete_member_api_v1_workspaces_workspace_id_members_member_id_delete(workspace_id, member_id)
-
-Delete Member
-
-### Example
-
-* Bearer Authentication (HTTPBearer):
-
-```python
-import invoicepdfs
-from invoicepdfs.models.simple_bool_response import SimpleBoolResponse
-from invoicepdfs.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://localhost
-# See configuration.py for a list of all supported configuration parameters.
-configuration = invoicepdfs.Configuration(
-    host = "http://localhost"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: HTTPBearer
-configuration = invoicepdfs.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-with invoicepdfs.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = invoicepdfs.WorkspacesApi(api_client)
-    workspace_id = 'workspace_id_example' # str | 
-    member_id = 'member_id_example' # str | 
-
-    try:
-        # Delete Member
-        api_response = api_instance.delete_member_api_v1_workspaces_workspace_id_members_member_id_delete(workspace_id, member_id)
-        print("The response of WorkspacesApi->delete_member_api_v1_workspaces_workspace_id_members_member_id_delete:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling WorkspacesApi->delete_member_api_v1_workspaces_workspace_id_members_member_id_delete: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **workspace_id** | **str**|  | 
- **member_id** | **str**|  | 
-
-### Return type
-
-[**SimpleBoolResponse**](SimpleBoolResponse.md)
-
-### Authorization
-
-[HTTPBearer](../README.md#HTTPBearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful Response |  -  |
-**422** | Validation Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **delete_workspace_api_v1_workspaces_workspace_id_delete**
-> SimpleBoolResponse delete_workspace_api_v1_workspaces_workspace_id_delete(workspace_id)
+# **delete_workspace**
+> SimpleBoolResponse delete_workspace(workspace_id)
 
 Delete Workspace
 
@@ -295,11 +216,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Delete Workspace
-        api_response = api_instance.delete_workspace_api_v1_workspaces_workspace_id_delete(workspace_id)
-        print("The response of WorkspacesApi->delete_workspace_api_v1_workspaces_workspace_id_delete:\n")
+        api_response = api_instance.delete_workspace(workspace_id)
+        print("The response of WorkspacesApi->delete_workspace:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling WorkspacesApi->delete_workspace_api_v1_workspaces_workspace_id_delete: %s\n" % e)
+        print("Exception when calling WorkspacesApi->delete_workspace: %s\n" % e)
 ```
 
 
@@ -333,8 +254,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_workspace_api_v1_workspaces_workspace_id_get**
-> WorkspaceResponse get_workspace_api_v1_workspaces_workspace_id_get(workspace_id)
+# **get_workspace**
+> WorkspaceResponse get_workspace(workspace_id)
 
 Get Workspace
 
@@ -372,11 +293,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Get Workspace
-        api_response = api_instance.get_workspace_api_v1_workspaces_workspace_id_get(workspace_id)
-        print("The response of WorkspacesApi->get_workspace_api_v1_workspaces_workspace_id_get:\n")
+        api_response = api_instance.get_workspace(workspace_id)
+        print("The response of WorkspacesApi->get_workspace:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling WorkspacesApi->get_workspace_api_v1_workspaces_workspace_id_get: %s\n" % e)
+        print("Exception when calling WorkspacesApi->get_workspace: %s\n" % e)
 ```
 
 
@@ -410,10 +331,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_members_api_v1_workspaces_workspace_id_members_get**
-> WorkspaceMembersListResponse list_members_api_v1_workspaces_workspace_id_members_get(workspace_id)
+# **list_workspace_members**
+> WorkspaceMembersListResponse list_workspace_members(workspace_id)
 
-List Members
+List Workspace Members
 
 ### Example
 
@@ -448,12 +369,12 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     workspace_id = 'workspace_id_example' # str | 
 
     try:
-        # List Members
-        api_response = api_instance.list_members_api_v1_workspaces_workspace_id_members_get(workspace_id)
-        print("The response of WorkspacesApi->list_members_api_v1_workspaces_workspace_id_members_get:\n")
+        # List Workspace Members
+        api_response = api_instance.list_workspace_members(workspace_id)
+        print("The response of WorkspacesApi->list_workspace_members:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling WorkspacesApi->list_members_api_v1_workspaces_workspace_id_members_get: %s\n" % e)
+        print("Exception when calling WorkspacesApi->list_workspace_members: %s\n" % e)
 ```
 
 
@@ -487,8 +408,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_workspaces_api_v1_workspaces_get**
-> WorkspacesListResponse list_workspaces_api_v1_workspaces_get(limit=limit, cursor=cursor)
+# **list_workspaces**
+> WorkspacesListResponse list_workspaces(limit=limit, cursor=cursor)
 
 List Workspaces
 
@@ -527,11 +448,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # List Workspaces
-        api_response = api_instance.list_workspaces_api_v1_workspaces_get(limit=limit, cursor=cursor)
-        print("The response of WorkspacesApi->list_workspaces_api_v1_workspaces_get:\n")
+        api_response = api_instance.list_workspaces(limit=limit, cursor=cursor)
+        print("The response of WorkspacesApi->list_workspaces:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling WorkspacesApi->list_workspaces_api_v1_workspaces_get: %s\n" % e)
+        print("Exception when calling WorkspacesApi->list_workspaces: %s\n" % e)
 ```
 
 
@@ -566,10 +487,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **patch_member_api_v1_workspaces_workspace_id_members_member_id_patch**
-> WorkspaceMemberOut patch_member_api_v1_workspaces_workspace_id_members_member_id_patch(workspace_id, member_id, workspace_member_patch_request)
+# **remove_workspace_member**
+> SimpleBoolResponse remove_workspace_member(workspace_id, member_id)
 
-Patch Member
+Remove Workspace Member
 
 ### Example
 
@@ -577,8 +498,7 @@ Patch Member
 
 ```python
 import invoicepdfs
-from invoicepdfs.models.workspace_member_out import WorkspaceMemberOut
-from invoicepdfs.models.workspace_member_patch_request import WorkspaceMemberPatchRequest
+from invoicepdfs.models.simple_bool_response import SimpleBoolResponse
 from invoicepdfs.rest import ApiException
 from pprint import pprint
 
@@ -604,15 +524,14 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     api_instance = invoicepdfs.WorkspacesApi(api_client)
     workspace_id = 'workspace_id_example' # str | 
     member_id = 'member_id_example' # str | 
-    workspace_member_patch_request = invoicepdfs.WorkspaceMemberPatchRequest() # WorkspaceMemberPatchRequest | 
 
     try:
-        # Patch Member
-        api_response = api_instance.patch_member_api_v1_workspaces_workspace_id_members_member_id_patch(workspace_id, member_id, workspace_member_patch_request)
-        print("The response of WorkspacesApi->patch_member_api_v1_workspaces_workspace_id_members_member_id_patch:\n")
+        # Remove Workspace Member
+        api_response = api_instance.remove_workspace_member(workspace_id, member_id)
+        print("The response of WorkspacesApi->remove_workspace_member:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling WorkspacesApi->patch_member_api_v1_workspaces_workspace_id_members_member_id_patch: %s\n" % e)
+        print("Exception when calling WorkspacesApi->remove_workspace_member: %s\n" % e)
 ```
 
 
@@ -624,11 +543,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **workspace_id** | **str**|  | 
  **member_id** | **str**|  | 
- **workspace_member_patch_request** | [**WorkspaceMemberPatchRequest**](WorkspaceMemberPatchRequest.md)|  | 
 
 ### Return type
 
-[**WorkspaceMemberOut**](WorkspaceMemberOut.md)
+[**SimpleBoolResponse**](SimpleBoolResponse.md)
 
 ### Authorization
 
@@ -636,7 +554,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details
@@ -648,10 +566,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **patch_workspace_api_v1_workspaces_workspace_id_patch**
-> WorkspaceResponse patch_workspace_api_v1_workspaces_workspace_id_patch(workspace_id, workspace_patch_request, idempotency_key=idempotency_key)
+# **update_workspace**
+> WorkspaceResponse update_workspace(workspace_id, workspace_patch_request, idempotency_key=idempotency_key)
 
-Patch Workspace
+Update Workspace
 
 ### Example
 
@@ -689,12 +607,12 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     idempotency_key = 'idempotency_key_example' # str |  (optional)
 
     try:
-        # Patch Workspace
-        api_response = api_instance.patch_workspace_api_v1_workspaces_workspace_id_patch(workspace_id, workspace_patch_request, idempotency_key=idempotency_key)
-        print("The response of WorkspacesApi->patch_workspace_api_v1_workspaces_workspace_id_patch:\n")
+        # Update Workspace
+        api_response = api_instance.update_workspace(workspace_id, workspace_patch_request, idempotency_key=idempotency_key)
+        print("The response of WorkspacesApi->update_workspace:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling WorkspacesApi->patch_workspace_api_v1_workspaces_workspace_id_patch: %s\n" % e)
+        print("Exception when calling WorkspacesApi->update_workspace: %s\n" % e)
 ```
 
 
@@ -711,6 +629,88 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**WorkspaceResponse**](WorkspaceResponse.md)
+
+### Authorization
+
+[HTTPBearer](../README.md#HTTPBearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**422** | Validation Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_workspace_member**
+> WorkspaceMemberOut update_workspace_member(workspace_id, member_id, workspace_member_patch_request)
+
+Update Workspace Member
+
+### Example
+
+* Bearer Authentication (HTTPBearer):
+
+```python
+import invoicepdfs
+from invoicepdfs.models.workspace_member_out import WorkspaceMemberOut
+from invoicepdfs.models.workspace_member_patch_request import WorkspaceMemberPatchRequest
+from invoicepdfs.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = invoicepdfs.Configuration(
+    host = "http://localhost"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: HTTPBearer
+configuration = invoicepdfs.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with invoicepdfs.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = invoicepdfs.WorkspacesApi(api_client)
+    workspace_id = 'workspace_id_example' # str | 
+    member_id = 'member_id_example' # str | 
+    workspace_member_patch_request = invoicepdfs.WorkspaceMemberPatchRequest() # WorkspaceMemberPatchRequest | 
+
+    try:
+        # Update Workspace Member
+        api_response = api_instance.update_workspace_member(workspace_id, member_id, workspace_member_patch_request)
+        print("The response of WorkspacesApi->update_workspace_member:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling WorkspacesApi->update_workspace_member: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **workspace_id** | **str**|  | 
+ **member_id** | **str**|  | 
+ **workspace_member_patch_request** | [**WorkspaceMemberPatchRequest**](WorkspaceMemberPatchRequest.md)|  | 
+
+### Return type
+
+[**WorkspaceMemberOut**](WorkspaceMemberOut.md)
 
 ### Authorization
 

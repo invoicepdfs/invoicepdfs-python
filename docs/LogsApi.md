@@ -4,11 +4,11 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_logs_api_v1_logs_get**](LogsApi.md#list_logs_api_v1_logs_get) | **GET** /api/v1/logs | List Logs
+[**list_logs**](LogsApi.md#list_logs) | **GET** /api/v1/logs | List Logs
 
 
-# **list_logs_api_v1_logs_get**
-> ApiRequestLogsListResponse list_logs_api_v1_logs_get(status=status, limit=limit)
+# **list_logs**
+> ApiRequestLogsListResponse list_logs(status=status, limit=limit)
 
 List Logs
 
@@ -47,11 +47,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # List Logs
-        api_response = api_instance.list_logs_api_v1_logs_get(status=status, limit=limit)
-        print("The response of LogsApi->list_logs_api_v1_logs_get:\n")
+        api_response = api_instance.list_logs(status=status, limit=limit)
+        print("The response of LogsApi->list_logs:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling LogsApi->list_logs_api_v1_logs_get: %s\n" % e)
+        print("Exception when calling LogsApi->list_logs: %s\n" % e)
 ```
 
 
