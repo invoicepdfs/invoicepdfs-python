@@ -1906,7 +1906,7 @@ class TemplatesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> TemplatesListResponse:
-        """Templates
+        """List Templates
 
 
         :param _request_timeout: timeout setting for this request. If one
@@ -1968,7 +1968,7 @@ class TemplatesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[TemplatesListResponse]:
-        """Templates
+        """List Templates
 
 
         :param _request_timeout: timeout setting for this request. If one
@@ -2030,7 +2030,7 @@ class TemplatesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Templates
+        """List Templates
 
 
         :param _request_timeout: timeout setting for this request. If one
@@ -2710,7 +2710,7 @@ class TemplatesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> CustomTemplateResponse:
-        """Patch Template
+        """Update Template
 
 
         :param template_id: (required)
@@ -2781,7 +2781,7 @@ class TemplatesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[CustomTemplateResponse]:
-        """Patch Template
+        """Update Template
 
 
         :param template_id: (required)
@@ -2852,7 +2852,7 @@ class TemplatesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Patch Template
+        """Update Template
 
 
         :param template_id: (required)

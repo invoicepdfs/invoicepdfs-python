@@ -1354,7 +1354,7 @@ class ApiKeysApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiKeyDetailResponse:
-        """Patch Api Key
+        """Update Api Key
 
 
         :param api_key_id: (required)
@@ -1425,7 +1425,7 @@ class ApiKeysApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ApiKeyDetailResponse]:
-        """Patch Api Key
+        """Update Api Key
 
 
         :param api_key_id: (required)
@@ -1496,7 +1496,7 @@ class ApiKeysApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Patch Api Key
+        """Update Api Key
 
 
         :param api_key_id: (required)

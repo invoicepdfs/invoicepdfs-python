@@ -4,20 +4,20 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**exchange_auth_token**](AuthApi.md#exchange_auth_token) | **POST** /api/v1/auth/token | Token Exchange
-[**get_current_user**](AuthApi.md#get_current_user) | **GET** /api/v1/auth/me | Me
+[**exchange_auth_token**](AuthApi.md#exchange_auth_token) | **POST** /api/v1/auth/token | Exchange Auth Token
+[**get_current_user**](AuthApi.md#get_current_user) | **GET** /api/v1/auth/me | Get Current User
 [**logout**](AuthApi.md#logout) | **POST** /api/v1/auth/logout | Logout
-[**refresh_access_token**](AuthApi.md#refresh_access_token) | **POST** /api/v1/auth/refresh | Refresh
+[**refresh_access_token**](AuthApi.md#refresh_access_token) | **POST** /api/v1/auth/refresh | Refresh Access Token
 [**register**](AuthApi.md#register) | **POST** /api/v1/auth/register | Register
-[**request_password_reset**](AuthApi.md#request_password_reset) | **POST** /api/v1/auth/forgot-password | Forgot Password
+[**request_password_reset**](AuthApi.md#request_password_reset) | **POST** /api/v1/auth/forgot-password | Request Password Reset
 [**reset_password**](AuthApi.md#reset_password) | **POST** /api/v1/auth/reset-password | Reset Password
-[**update_current_user**](AuthApi.md#update_current_user) | **PATCH** /api/v1/auth/me | Patch Me
+[**update_current_user**](AuthApi.md#update_current_user) | **PATCH** /api/v1/auth/me | Update Current User
 
 
 # **exchange_auth_token**
 > AuthTokenResponse exchange_auth_token(auth_token_request)
 
-Token Exchange
+Exchange Auth Token
 
 Exchange a Firebase ID token for account info.  Use this on login: the client authenticates with Firebase, sends the ID token here, and receives the InvoicePDFs account details. The Firebase token itself is used as the Bearer token for subsequent API calls.
 
@@ -45,7 +45,7 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     auth_token_request = invoicepdfs.AuthTokenRequest() # AuthTokenRequest | 
 
     try:
-        # Token Exchange
+        # Exchange Auth Token
         api_response = api_instance.exchange_auth_token(auth_token_request)
         print("The response of AuthApi->exchange_auth_token:\n")
         pprint(api_response)
@@ -87,7 +87,7 @@ No authorization required
 # **get_current_user**
 > AuthMeResponse get_current_user()
 
-Me
+Get Current User
 
 ### Example
 
@@ -121,7 +121,7 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     api_instance = invoicepdfs.AuthApi(api_client)
 
     try:
-        # Me
+        # Get Current User
         api_response = api_instance.get_current_user()
         print("The response of AuthApi->get_current_user:\n")
         pprint(api_response)
@@ -233,7 +233,7 @@ This endpoint does not need any parameter.
 # **refresh_access_token**
 > AuthRefreshResponse refresh_access_token(auth_refresh_request)
 
-Refresh
+Refresh Access Token
 
 Exchange a Firebase refresh token for a new ID token.
 
@@ -261,7 +261,7 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     auth_refresh_request = invoicepdfs.AuthRefreshRequest() # AuthRefreshRequest | 
 
     try:
-        # Refresh
+        # Refresh Access Token
         api_response = api_instance.refresh_access_token(auth_refresh_request)
         print("The response of AuthApi->refresh_access_token:\n")
         pprint(api_response)
@@ -373,7 +373,7 @@ No authorization required
 # **request_password_reset**
 > AuthMessageResponse request_password_reset(auth_forgot_password_request)
 
-Forgot Password
+Request Password Reset
 
 Send a password reset email via Firebase.
 
@@ -401,7 +401,7 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     auth_forgot_password_request = invoicepdfs.AuthForgotPasswordRequest() # AuthForgotPasswordRequest | 
 
     try:
-        # Forgot Password
+        # Request Password Reset
         api_response = api_instance.request_password_reset(auth_forgot_password_request)
         print("The response of AuthApi->request_password_reset:\n")
         pprint(api_response)
@@ -513,7 +513,7 @@ No authorization required
 # **update_current_user**
 > AuthMeResponse update_current_user(auth_me_patch_request)
 
-Patch Me
+Update Current User
 
 Update the authenticated account's name or email.
 
@@ -551,7 +551,7 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     auth_me_patch_request = invoicepdfs.AuthMePatchRequest() # AuthMePatchRequest | 
 
     try:
-        # Patch Me
+        # Update Current User
         api_response = api_instance.update_current_user(auth_me_patch_request)
         print("The response of AuthApi->update_current_user:\n")
         pprint(api_response)

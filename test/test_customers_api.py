@@ -57,7 +57,7 @@ class TestCustomersApi(unittest.TestCase):
     def test_update_customer(self) -> None:
         """Test case for update_customer
 
-        Patch Customer
+        Update Customer
         """
         pass
 

@@ -29,14 +29,14 @@ class TestBillingApi(unittest.TestCase):
     def test_create_checkout_session(self) -> None:
         """Test case for create_checkout_session
 
-        Create Checkout
+        Create Checkout Session
         """
         pass
 
     def test_create_portal_session(self) -> None:
         """Test case for create_portal_session
 
-        Create Portal
+        Create Portal Session
         """
         pass
 

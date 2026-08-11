@@ -63,7 +63,7 @@ class AuthApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AuthTokenResponse:
-        """Token Exchange
+        """Exchange Auth Token
 
         Exchange a Firebase ID token for account info.  Use this on login: the client authenticates with Firebase, sends the ID token here, and receives the InvoicePDFs account details. The Firebase token itself is used as the Bearer token for subsequent API calls.
 
@@ -131,7 +131,7 @@ class AuthApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AuthTokenResponse]:
-        """Token Exchange
+        """Exchange Auth Token
 
         Exchange a Firebase ID token for account info.  Use this on login: the client authenticates with Firebase, sends the ID token here, and receives the InvoicePDFs account details. The Firebase token itself is used as the Bearer token for subsequent API calls.
 
@@ -199,7 +199,7 @@ class AuthApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Token Exchange
+        """Exchange Auth Token
 
         Exchange a Firebase ID token for account info.  Use this on login: the client authenticates with Firebase, sends the ID token here, and receives the InvoicePDFs account details. The Firebase token itself is used as the Bearer token for subsequent API calls.
 
@@ -336,7 +336,7 @@ class AuthApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AuthMeResponse:
-        """Me
+        """Get Current User
 
 
         :param _request_timeout: timeout setting for this request. If one
@@ -398,7 +398,7 @@ class AuthApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AuthMeResponse]:
-        """Me
+        """Get Current User
 
 
         :param _request_timeout: timeout setting for this request. If one
@@ -460,7 +460,7 @@ class AuthApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Me
+        """Get Current User
 
 
         :param _request_timeout: timeout setting for this request. If one
@@ -822,7 +822,7 @@ class AuthApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AuthRefreshResponse:
-        """Refresh
+        """Refresh Access Token
 
         Exchange a Firebase refresh token for a new ID token.
 
@@ -890,7 +890,7 @@ class AuthApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AuthRefreshResponse]:
-        """Refresh
+        """Refresh Access Token
 
         Exchange a Firebase refresh token for a new ID token.
 
@@ -958,7 +958,7 @@ class AuthApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Refresh
+        """Refresh Access Token
 
         Exchange a Firebase refresh token for a new ID token.
 
@@ -1370,7 +1370,7 @@ class AuthApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AuthMessageResponse:
-        """Forgot Password
+        """Request Password Reset
 
         Send a password reset email via Firebase.
 
@@ -1438,7 +1438,7 @@ class AuthApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AuthMessageResponse]:
-        """Forgot Password
+        """Request Password Reset
 
         Send a password reset email via Firebase.
 
@@ -1506,7 +1506,7 @@ class AuthApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Forgot Password
+        """Request Password Reset
 
         Send a password reset email via Firebase.
 
@@ -1918,7 +1918,7 @@ class AuthApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AuthMeResponse:
-        """Patch Me
+        """Update Current User
 
         Update the authenticated account's name or email.
 
@@ -1986,7 +1986,7 @@ class AuthApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AuthMeResponse]:
-        """Patch Me
+        """Update Current User
 
         Update the authenticated account's name or email.
 
@@ -2054,7 +2054,7 @@ class AuthApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Patch Me
+        """Update Current User
 
         Update the authenticated account's name or email.
 

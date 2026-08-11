@@ -50,7 +50,7 @@ class TestDocumentsApi(unittest.TestCase):
     def test_create_document_render(self) -> None:
         """Test case for create_document_render
 
-        Render Document
+        Create Document Render
         """
         pass
 
@@ -141,7 +141,7 @@ class TestDocumentsApi(unittest.TestCase):
     def test_update_document(self) -> None:
         """Test case for update_document
 
-        Patch Document
+        Update Document
         """
         pass
 

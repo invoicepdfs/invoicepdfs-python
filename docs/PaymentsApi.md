@@ -4,17 +4,17 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_document_payment**](PaymentsApi.md#create_document_payment) | **POST** /api/v1/documents/{document_id}/payments | Create Payment
+[**create_document_payment**](PaymentsApi.md#create_document_payment) | **POST** /api/v1/documents/{document_id}/payments | Create Document Payment
 [**delete_payment**](PaymentsApi.md#delete_payment) | **DELETE** /api/v1/payments/{payment_id} | Delete Payment
 [**get_payment**](PaymentsApi.md#get_payment) | **GET** /api/v1/payments/{payment_id} | Get Payment
-[**list_document_payments**](PaymentsApi.md#list_document_payments) | **GET** /api/v1/documents/{document_id}/payments | List Invoice Payments
+[**list_document_payments**](PaymentsApi.md#list_document_payments) | **GET** /api/v1/documents/{document_id}/payments | List Document Payments
 [**update_payment**](PaymentsApi.md#update_payment) | **PATCH** /api/v1/payments/{payment_id} | Update Payment
 
 
 # **create_document_payment**
 > PaymentResponse create_document_payment(document_id, payment_create_request)
 
-Create Payment
+Create Document Payment
 
 ### Example
 
@@ -51,7 +51,7 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     payment_create_request = invoicepdfs.PaymentCreateRequest() # PaymentCreateRequest | 
 
     try:
-        # Create Payment
+        # Create Document Payment
         api_response = api_instance.create_document_payment(document_id, payment_create_request)
         print("The response of PaymentsApi->create_document_payment:\n")
         pprint(api_response)
@@ -248,7 +248,7 @@ Name | Type | Description  | Notes
 # **list_document_payments**
 > PaymentsListResponse list_document_payments(document_id, limit=limit, cursor=cursor)
 
-List Invoice Payments
+List Document Payments
 
 ### Example
 
@@ -285,7 +285,7 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     cursor = 'cursor_example' # str |  (optional)
 
     try:
-        # List Invoice Payments
+        # List Document Payments
         api_response = api_instance.list_document_payments(document_id, limit=limit, cursor=cursor)
         print("The response of PaymentsApi->list_document_payments:\n")
         pprint(api_response)

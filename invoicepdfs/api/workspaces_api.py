@@ -66,7 +66,7 @@ class WorkspacesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> WorkspaceMembersListResponse:
-        """Create Member
+        """Add Workspace Member
 
 
         :param workspace_id: (required)
@@ -141,7 +141,7 @@ class WorkspacesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[WorkspaceMembersListResponse]:
-        """Create Member
+        """Add Workspace Member
 
 
         :param workspace_id: (required)
@@ -216,7 +216,7 @@ class WorkspacesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Create Member
+        """Add Workspace Member
 
 
         :param workspace_id: (required)
@@ -1171,7 +1171,7 @@ class WorkspacesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> WorkspaceMembersListResponse:
-        """List Members
+        """List Workspace Members
 
 
         :param workspace_id: (required)
@@ -1238,7 +1238,7 @@ class WorkspacesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[WorkspaceMembersListResponse]:
-        """List Members
+        """List Workspace Members
 
 
         :param workspace_id: (required)
@@ -1305,7 +1305,7 @@ class WorkspacesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """List Members
+        """List Workspace Members
 
 
         :param workspace_id: (required)
@@ -1709,7 +1709,7 @@ class WorkspacesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> SimpleBoolResponse:
-        """Delete Member
+        """Remove Workspace Member
 
 
         :param workspace_id: (required)
@@ -1780,7 +1780,7 @@ class WorkspacesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[SimpleBoolResponse]:
-        """Delete Member
+        """Remove Workspace Member
 
 
         :param workspace_id: (required)
@@ -1851,7 +1851,7 @@ class WorkspacesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Delete Member
+        """Remove Workspace Member
 
 
         :param workspace_id: (required)
@@ -1984,7 +1984,7 @@ class WorkspacesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> WorkspaceResponse:
-        """Patch Workspace
+        """Update Workspace
 
 
         :param workspace_id: (required)
@@ -2059,7 +2059,7 @@ class WorkspacesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[WorkspaceResponse]:
-        """Patch Workspace
+        """Update Workspace
 
 
         :param workspace_id: (required)
@@ -2134,7 +2134,7 @@ class WorkspacesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Patch Workspace
+        """Update Workspace
 
 
         :param workspace_id: (required)
@@ -2286,7 +2286,7 @@ class WorkspacesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> WorkspaceMemberOut:
-        """Patch Member
+        """Update Workspace Member
 
 
         :param workspace_id: (required)
@@ -2361,7 +2361,7 @@ class WorkspacesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[WorkspaceMemberOut]:
-        """Patch Member
+        """Update Workspace Member
 
 
         :param workspace_id: (required)
@@ -2436,7 +2436,7 @@ class WorkspacesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Patch Member
+        """Update Workspace Member
 
 
         :param workspace_id: (required)

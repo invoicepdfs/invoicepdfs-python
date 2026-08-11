@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**list_api_keys**](ApiKeysApi.md#list_api_keys) | **GET** /api/v1/api-keys | List Api Keys
 [**revoke_api_key**](ApiKeysApi.md#revoke_api_key) | **DELETE** /api/v1/api-keys/{api_key_id} | Revoke Api Key
 [**rotate_api_key**](ApiKeysApi.md#rotate_api_key) | **POST** /api/v1/api-keys/{api_key_id}/rotate | Rotate Api Key
-[**update_api_key**](ApiKeysApi.md#update_api_key) | **PATCH** /api/v1/api-keys/{api_key_id} | Patch Api Key
+[**update_api_key**](ApiKeysApi.md#update_api_key) | **PATCH** /api/v1/api-keys/{api_key_id} | Update Api Key
 
 
 # **create_api_key**
@@ -398,7 +398,7 @@ Name | Type | Description  | Notes
 # **update_api_key**
 > ApiKeyDetailResponse update_api_key(api_key_id, api_key_patch_request)
 
-Patch Api Key
+Update Api Key
 
 ### Example
 
@@ -435,7 +435,7 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     api_key_patch_request = invoicepdfs.ApiKeyPatchRequest() # ApiKeyPatchRequest | 
 
     try:
-        # Patch Api Key
+        # Update Api Key
         api_response = api_instance.update_api_key(api_key_id, api_key_patch_request)
         print("The response of ApiKeysApi->update_api_key:\n")
         pprint(api_response)

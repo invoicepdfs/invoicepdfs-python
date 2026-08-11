@@ -78,7 +78,7 @@ class TestRecurringInvoicesApi(unittest.TestCase):
     def test_update_recurring_invoice(self) -> None:
         """Test case for update_recurring_invoice
 
-        Patch Recurring Invoice
+        Update Recurring Invoice
         """
         pass
 

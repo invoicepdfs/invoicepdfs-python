@@ -4,20 +4,20 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_branding_profile**](BrandingProfilesApi.md#create_branding_profile) | **POST** /api/v1/branding-profiles | Create Profile
-[**delete_branding_logo**](BrandingProfilesApi.md#delete_branding_logo) | **DELETE** /api/v1/branding-profiles/{profile_id}/logo | Delete Logo
-[**delete_branding_profile**](BrandingProfilesApi.md#delete_branding_profile) | **DELETE** /api/v1/branding-profiles/{profile_id} | Delete Profile
-[**get_branding_profile**](BrandingProfilesApi.md#get_branding_profile) | **GET** /api/v1/branding-profiles/{profile_id} | Get Profile
-[**list_branding_profiles**](BrandingProfilesApi.md#list_branding_profiles) | **GET** /api/v1/branding-profiles | List Profiles
-[**set_default_branding_profile**](BrandingProfilesApi.md#set_default_branding_profile) | **POST** /api/v1/branding-profiles/{profile_id}/default | Set Default
-[**update_branding_profile**](BrandingProfilesApi.md#update_branding_profile) | **PATCH** /api/v1/branding-profiles/{profile_id} | Update Profile
-[**upload_branding_logo**](BrandingProfilesApi.md#upload_branding_logo) | **POST** /api/v1/branding-profiles/{profile_id}/logo | Upload Logo
+[**create_branding_profile**](BrandingProfilesApi.md#create_branding_profile) | **POST** /api/v1/branding-profiles | Create Branding Profile
+[**delete_branding_logo**](BrandingProfilesApi.md#delete_branding_logo) | **DELETE** /api/v1/branding-profiles/{profile_id}/logo | Delete Branding Logo
+[**delete_branding_profile**](BrandingProfilesApi.md#delete_branding_profile) | **DELETE** /api/v1/branding-profiles/{profile_id} | Delete Branding Profile
+[**get_branding_profile**](BrandingProfilesApi.md#get_branding_profile) | **GET** /api/v1/branding-profiles/{profile_id} | Get Branding Profile
+[**list_branding_profiles**](BrandingProfilesApi.md#list_branding_profiles) | **GET** /api/v1/branding-profiles | List Branding Profiles
+[**set_default_branding_profile**](BrandingProfilesApi.md#set_default_branding_profile) | **POST** /api/v1/branding-profiles/{profile_id}/default | Set Default Branding Profile
+[**update_branding_profile**](BrandingProfilesApi.md#update_branding_profile) | **PATCH** /api/v1/branding-profiles/{profile_id} | Update Branding Profile
+[**upload_branding_logo**](BrandingProfilesApi.md#upload_branding_logo) | **POST** /api/v1/branding-profiles/{profile_id}/logo | Upload Branding Logo
 
 
 # **create_branding_profile**
 > BrandingProfileResponse create_branding_profile(branding_profile_create_request)
 
-Create Profile
+Create Branding Profile
 
 ### Example
 
@@ -53,7 +53,7 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     branding_profile_create_request = invoicepdfs.BrandingProfileCreateRequest() # BrandingProfileCreateRequest | 
 
     try:
-        # Create Profile
+        # Create Branding Profile
         api_response = api_instance.create_branding_profile(branding_profile_create_request)
         print("The response of BrandingProfilesApi->create_branding_profile:\n")
         pprint(api_response)
@@ -95,7 +95,7 @@ Name | Type | Description  | Notes
 # **delete_branding_logo**
 > SimpleBoolResponse delete_branding_logo(profile_id)
 
-Delete Logo
+Delete Branding Logo
 
 ### Example
 
@@ -130,7 +130,7 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     profile_id = 'profile_id_example' # str | 
 
     try:
-        # Delete Logo
+        # Delete Branding Logo
         api_response = api_instance.delete_branding_logo(profile_id)
         print("The response of BrandingProfilesApi->delete_branding_logo:\n")
         pprint(api_response)
@@ -172,7 +172,7 @@ Name | Type | Description  | Notes
 # **delete_branding_profile**
 > SimpleBoolResponse delete_branding_profile(profile_id)
 
-Delete Profile
+Delete Branding Profile
 
 ### Example
 
@@ -207,7 +207,7 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     profile_id = 'profile_id_example' # str | 
 
     try:
-        # Delete Profile
+        # Delete Branding Profile
         api_response = api_instance.delete_branding_profile(profile_id)
         print("The response of BrandingProfilesApi->delete_branding_profile:\n")
         pprint(api_response)
@@ -249,7 +249,7 @@ Name | Type | Description  | Notes
 # **get_branding_profile**
 > BrandingProfileResponse get_branding_profile(profile_id)
 
-Get Profile
+Get Branding Profile
 
 ### Example
 
@@ -284,7 +284,7 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     profile_id = 'profile_id_example' # str | 
 
     try:
-        # Get Profile
+        # Get Branding Profile
         api_response = api_instance.get_branding_profile(profile_id)
         print("The response of BrandingProfilesApi->get_branding_profile:\n")
         pprint(api_response)
@@ -326,7 +326,7 @@ Name | Type | Description  | Notes
 # **list_branding_profiles**
 > BrandingProfilesListResponse list_branding_profiles()
 
-List Profiles
+List Branding Profiles
 
 ### Example
 
@@ -360,7 +360,7 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     api_instance = invoicepdfs.BrandingProfilesApi(api_client)
 
     try:
-        # List Profiles
+        # List Branding Profiles
         api_response = api_instance.list_branding_profiles()
         print("The response of BrandingProfilesApi->list_branding_profiles:\n")
         pprint(api_response)
@@ -398,7 +398,7 @@ This endpoint does not need any parameter.
 # **set_default_branding_profile**
 > BrandingProfileResponse set_default_branding_profile(profile_id)
 
-Set Default
+Set Default Branding Profile
 
 ### Example
 
@@ -433,7 +433,7 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     profile_id = 'profile_id_example' # str | 
 
     try:
-        # Set Default
+        # Set Default Branding Profile
         api_response = api_instance.set_default_branding_profile(profile_id)
         print("The response of BrandingProfilesApi->set_default_branding_profile:\n")
         pprint(api_response)
@@ -475,7 +475,7 @@ Name | Type | Description  | Notes
 # **update_branding_profile**
 > BrandingProfileResponse update_branding_profile(profile_id, branding_profile_patch_request)
 
-Update Profile
+Update Branding Profile
 
 ### Example
 
@@ -512,7 +512,7 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     branding_profile_patch_request = invoicepdfs.BrandingProfilePatchRequest() # BrandingProfilePatchRequest | 
 
     try:
-        # Update Profile
+        # Update Branding Profile
         api_response = api_instance.update_branding_profile(profile_id, branding_profile_patch_request)
         print("The response of BrandingProfilesApi->update_branding_profile:\n")
         pprint(api_response)
@@ -555,7 +555,7 @@ Name | Type | Description  | Notes
 # **upload_branding_logo**
 > BrandingProfileResponse upload_branding_logo(profile_id, file)
 
-Upload Logo
+Upload Branding Logo
 
 ### Example
 
@@ -591,7 +591,7 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     file = None # bytearray | 
 
     try:
-        # Upload Logo
+        # Upload Branding Logo
         api_response = api_instance.upload_branding_logo(profile_id, file)
         print("The response of BrandingProfilesApi->upload_branding_logo:\n")
         pprint(api_response)

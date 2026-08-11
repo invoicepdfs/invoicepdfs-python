@@ -58,7 +58,7 @@ class DocumentAttachmentsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> InvoiceAttachmentResponse:
-        """Create Attachment
+        """Create Document Attachment
 
 
         :param document_id: (required)
@@ -129,7 +129,7 @@ class DocumentAttachmentsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[InvoiceAttachmentResponse]:
-        """Create Attachment
+        """Create Document Attachment
 
 
         :param document_id: (required)
@@ -200,7 +200,7 @@ class DocumentAttachmentsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Create Attachment
+        """Create Document Attachment
 
 
         :param document_id: (required)
@@ -345,7 +345,7 @@ class DocumentAttachmentsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> SimpleBoolResponse:
-        """Delete Attachment
+        """Delete Document Attachment
 
 
         :param document_id: (required)
@@ -416,7 +416,7 @@ class DocumentAttachmentsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[SimpleBoolResponse]:
-        """Delete Attachment
+        """Delete Document Attachment
 
 
         :param document_id: (required)
@@ -487,7 +487,7 @@ class DocumentAttachmentsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Delete Attachment
+        """Delete Document Attachment
 
 
         :param document_id: (required)
@@ -618,7 +618,7 @@ class DocumentAttachmentsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> InvoiceAttachmentsListResponse:
-        """List Attachments
+        """List Document Attachments
 
 
         :param document_id: (required)
@@ -685,7 +685,7 @@ class DocumentAttachmentsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[InvoiceAttachmentsListResponse]:
-        """List Attachments
+        """List Document Attachments
 
 
         :param document_id: (required)
@@ -752,7 +752,7 @@ class DocumentAttachmentsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """List Attachments
+        """List Document Attachments
 
 
         :param document_id: (required)

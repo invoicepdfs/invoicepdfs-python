@@ -61,7 +61,7 @@ class NumberingSequencesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> NumberingSequenceResponse:
-        """Consume Next
+        """Consume Sequence Number
 
         Consume and return the next number, incrementing the counter.
 
@@ -129,7 +129,7 @@ class NumberingSequencesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[NumberingSequenceResponse]:
-        """Consume Next
+        """Consume Sequence Number
 
         Consume and return the next number, incrementing the counter.
 
@@ -197,7 +197,7 @@ class NumberingSequencesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Consume Next
+        """Consume Sequence Number
 
         Consume and return the next number, incrementing the counter.
 

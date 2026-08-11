@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**delete_customer**](CustomersApi.md#delete_customer) | **DELETE** /api/v1/customers/{customer_id} | Delete Customer
 [**get_customer**](CustomersApi.md#get_customer) | **GET** /api/v1/customers/{customer_id} | Get Customer
 [**list_customers**](CustomersApi.md#list_customers) | **GET** /api/v1/customers | List Customers
-[**update_customer**](CustomersApi.md#update_customer) | **PATCH** /api/v1/customers/{customer_id} | Patch Customer
+[**update_customer**](CustomersApi.md#update_customer) | **PATCH** /api/v1/customers/{customer_id} | Update Customer
 
 
 # **create_customer**
@@ -327,7 +327,7 @@ Name | Type | Description  | Notes
 # **update_customer**
 > CustomerResponse update_customer(customer_id, customer_patch, idempotency_key=idempotency_key)
 
-Patch Customer
+Update Customer
 
 ### Example
 
@@ -365,7 +365,7 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     idempotency_key = 'idempotency_key_example' # str |  (optional)
 
     try:
-        # Patch Customer
+        # Update Customer
         api_response = api_instance.update_customer(customer_id, customer_patch, idempotency_key=idempotency_key)
         print("The response of CustomersApi->update_customer:\n")
         pprint(api_response)

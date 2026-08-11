@@ -11,7 +11,7 @@ Method | HTTP request | Description
 [**list_recurring_invoices**](RecurringInvoicesApi.md#list_recurring_invoices) | **GET** /api/v1/recurring-invoices | List Recurring Invoices
 [**pause_recurring_invoice**](RecurringInvoicesApi.md#pause_recurring_invoice) | **POST** /api/v1/recurring-invoices/{recurring_id}/pause | Pause Recurring Invoice
 [**resume_recurring_invoice**](RecurringInvoicesApi.md#resume_recurring_invoice) | **POST** /api/v1/recurring-invoices/{recurring_id}/resume | Resume Recurring Invoice
-[**update_recurring_invoice**](RecurringInvoicesApi.md#update_recurring_invoice) | **PATCH** /api/v1/recurring-invoices/{recurring_id} | Patch Recurring Invoice
+[**update_recurring_invoice**](RecurringInvoicesApi.md#update_recurring_invoice) | **PATCH** /api/v1/recurring-invoices/{recurring_id} | Update Recurring Invoice
 
 
 # **cancel_recurring_invoice**
@@ -565,7 +565,7 @@ Name | Type | Description  | Notes
 # **update_recurring_invoice**
 > RecurringInvoiceResponse update_recurring_invoice(recurring_id, recurring_invoice_patch_request)
 
-Patch Recurring Invoice
+Update Recurring Invoice
 
 ### Example
 
@@ -602,7 +602,7 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     recurring_invoice_patch_request = invoicepdfs.RecurringInvoicePatchRequest() # RecurringInvoicePatchRequest | 
 
     try:
-        # Patch Recurring Invoice
+        # Update Recurring Invoice
         api_response = api_instance.update_recurring_invoice(recurring_id, recurring_invoice_patch_request)
         print("The response of RecurringInvoicesApi->update_recurring_invoice:\n")
         pprint(api_response)

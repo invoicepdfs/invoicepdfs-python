@@ -29,7 +29,7 @@ class TestWorkspacesApi(unittest.TestCase):
     def test_add_workspace_member(self) -> None:
         """Test case for add_workspace_member
 
-        Create Member
+        Add Workspace Member
         """
         pass
 
@@ -57,7 +57,7 @@ class TestWorkspacesApi(unittest.TestCase):
     def test_list_workspace_members(self) -> None:
         """Test case for list_workspace_members
 
-        List Members
+        List Workspace Members
         """
         pass
 
@@ -71,21 +71,21 @@ class TestWorkspacesApi(unittest.TestCase):
     def test_remove_workspace_member(self) -> None:
         """Test case for remove_workspace_member
 
-        Delete Member
+        Remove Workspace Member
         """
         pass
 
     def test_update_workspace(self) -> None:
         """Test case for update_workspace
 
-        Patch Workspace
+        Update Workspace
         """
         pass
 
     def test_update_workspace_member(self) -> None:
         """Test case for update_workspace_member
 
-        Patch Member
+        Update Workspace Member
         """
         pass
 

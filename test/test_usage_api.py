@@ -29,14 +29,14 @@ class TestUsageApi(unittest.TestCase):
     def test_get_usage(self) -> None:
         """Test case for get_usage
 
-        Usage
+        Get Usage
         """
         pass
 
     def test_get_usage_limits(self) -> None:
         """Test case for get_usage_limits
 
-        Get Limits
+        Get Usage Limits
         """
         pass
 

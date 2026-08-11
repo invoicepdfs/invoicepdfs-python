@@ -4,21 +4,21 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**add_workspace_member**](WorkspacesApi.md#add_workspace_member) | **POST** /api/v1/workspaces/{workspace_id}/members | Create Member
+[**add_workspace_member**](WorkspacesApi.md#add_workspace_member) | **POST** /api/v1/workspaces/{workspace_id}/members | Add Workspace Member
 [**create_workspace**](WorkspacesApi.md#create_workspace) | **POST** /api/v1/workspaces | Create Workspace
 [**delete_workspace**](WorkspacesApi.md#delete_workspace) | **DELETE** /api/v1/workspaces/{workspace_id} | Delete Workspace
 [**get_workspace**](WorkspacesApi.md#get_workspace) | **GET** /api/v1/workspaces/{workspace_id} | Get Workspace
-[**list_workspace_members**](WorkspacesApi.md#list_workspace_members) | **GET** /api/v1/workspaces/{workspace_id}/members | List Members
+[**list_workspace_members**](WorkspacesApi.md#list_workspace_members) | **GET** /api/v1/workspaces/{workspace_id}/members | List Workspace Members
 [**list_workspaces**](WorkspacesApi.md#list_workspaces) | **GET** /api/v1/workspaces | List Workspaces
-[**remove_workspace_member**](WorkspacesApi.md#remove_workspace_member) | **DELETE** /api/v1/workspaces/{workspace_id}/members/{member_id} | Delete Member
-[**update_workspace**](WorkspacesApi.md#update_workspace) | **PATCH** /api/v1/workspaces/{workspace_id} | Patch Workspace
-[**update_workspace_member**](WorkspacesApi.md#update_workspace_member) | **PATCH** /api/v1/workspaces/{workspace_id}/members/{member_id} | Patch Member
+[**remove_workspace_member**](WorkspacesApi.md#remove_workspace_member) | **DELETE** /api/v1/workspaces/{workspace_id}/members/{member_id} | Remove Workspace Member
+[**update_workspace**](WorkspacesApi.md#update_workspace) | **PATCH** /api/v1/workspaces/{workspace_id} | Update Workspace
+[**update_workspace_member**](WorkspacesApi.md#update_workspace_member) | **PATCH** /api/v1/workspaces/{workspace_id}/members/{member_id} | Update Workspace Member
 
 
 # **add_workspace_member**
 > WorkspaceMembersListResponse add_workspace_member(workspace_id, workspace_member_create_request, idempotency_key=idempotency_key)
 
-Create Member
+Add Workspace Member
 
 ### Example
 
@@ -56,7 +56,7 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     idempotency_key = 'idempotency_key_example' # str |  (optional)
 
     try:
-        # Create Member
+        # Add Workspace Member
         api_response = api_instance.add_workspace_member(workspace_id, workspace_member_create_request, idempotency_key=idempotency_key)
         print("The response of WorkspacesApi->add_workspace_member:\n")
         pprint(api_response)
@@ -334,7 +334,7 @@ Name | Type | Description  | Notes
 # **list_workspace_members**
 > WorkspaceMembersListResponse list_workspace_members(workspace_id)
 
-List Members
+List Workspace Members
 
 ### Example
 
@@ -369,7 +369,7 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     workspace_id = 'workspace_id_example' # str | 
 
     try:
-        # List Members
+        # List Workspace Members
         api_response = api_instance.list_workspace_members(workspace_id)
         print("The response of WorkspacesApi->list_workspace_members:\n")
         pprint(api_response)
@@ -490,7 +490,7 @@ Name | Type | Description  | Notes
 # **remove_workspace_member**
 > SimpleBoolResponse remove_workspace_member(workspace_id, member_id)
 
-Delete Member
+Remove Workspace Member
 
 ### Example
 
@@ -526,7 +526,7 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     member_id = 'member_id_example' # str | 
 
     try:
-        # Delete Member
+        # Remove Workspace Member
         api_response = api_instance.remove_workspace_member(workspace_id, member_id)
         print("The response of WorkspacesApi->remove_workspace_member:\n")
         pprint(api_response)
@@ -569,7 +569,7 @@ Name | Type | Description  | Notes
 # **update_workspace**
 > WorkspaceResponse update_workspace(workspace_id, workspace_patch_request, idempotency_key=idempotency_key)
 
-Patch Workspace
+Update Workspace
 
 ### Example
 
@@ -607,7 +607,7 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     idempotency_key = 'idempotency_key_example' # str |  (optional)
 
     try:
-        # Patch Workspace
+        # Update Workspace
         api_response = api_instance.update_workspace(workspace_id, workspace_patch_request, idempotency_key=idempotency_key)
         print("The response of WorkspacesApi->update_workspace:\n")
         pprint(api_response)
@@ -651,7 +651,7 @@ Name | Type | Description  | Notes
 # **update_workspace_member**
 > WorkspaceMemberOut update_workspace_member(workspace_id, member_id, workspace_member_patch_request)
 
-Patch Member
+Update Workspace Member
 
 ### Example
 
@@ -689,7 +689,7 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     workspace_member_patch_request = invoicepdfs.WorkspaceMemberPatchRequest() # WorkspaceMemberPatchRequest | 
 
     try:
-        # Patch Member
+        # Update Workspace Member
         api_response = api_instance.update_workspace_member(workspace_id, member_id, workspace_member_patch_request)
         print("The response of WorkspacesApi->update_workspace_member:\n")
         pprint(api_response)

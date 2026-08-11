@@ -64,7 +64,7 @@ class TestApiKeysApi(unittest.TestCase):
     def test_update_api_key(self) -> None:
         """Test case for update_api_key
 
-        Patch Api Key
+        Update Api Key
         """
         pass
 

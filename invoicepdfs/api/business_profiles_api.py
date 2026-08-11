@@ -1145,7 +1145,7 @@ class BusinessProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> BusinessProfileResponse:
-        """Patch Business Profile
+        """Update Business Profile
 
 
         :param business_profile_id: (required)
@@ -1220,7 +1220,7 @@ class BusinessProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[BusinessProfileResponse]:
-        """Patch Business Profile
+        """Update Business Profile
 
 
         :param business_profile_id: (required)
@@ -1295,7 +1295,7 @@ class BusinessProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Patch Business Profile
+        """Update Business Profile
 
 
         :param business_profile_id: (required)

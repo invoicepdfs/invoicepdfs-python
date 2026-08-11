@@ -4,15 +4,15 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_usage**](UsageApi.md#get_usage) | **GET** /api/v1/usage | Usage
-[**get_usage_limits**](UsageApi.md#get_usage_limits) | **GET** /api/v1/usage/limits | Get Limits
+[**get_usage**](UsageApi.md#get_usage) | **GET** /api/v1/usage | Get Usage
+[**get_usage_limits**](UsageApi.md#get_usage_limits) | **GET** /api/v1/usage/limits | Get Usage Limits
 [**list_usage_events**](UsageApi.md#list_usage_events) | **GET** /api/v1/usage/events | List Usage Events
 
 
 # **get_usage**
 > UsageResponse get_usage()
 
-Usage
+Get Usage
 
 ### Example
 
@@ -46,7 +46,7 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     api_instance = invoicepdfs.UsageApi(api_client)
 
     try:
-        # Usage
+        # Get Usage
         api_response = api_instance.get_usage()
         print("The response of UsageApi->get_usage:\n")
         pprint(api_response)
@@ -84,7 +84,7 @@ This endpoint does not need any parameter.
 # **get_usage_limits**
 > Dict[str, object] get_usage_limits()
 
-Get Limits
+Get Usage Limits
 
 ### Example
 
@@ -117,7 +117,7 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     api_instance = invoicepdfs.UsageApi(api_client)
 
     try:
-        # Get Limits
+        # Get Usage Limits
         api_response = api_instance.get_usage_limits()
         print("The response of UsageApi->get_usage_limits:\n")
         pprint(api_response)

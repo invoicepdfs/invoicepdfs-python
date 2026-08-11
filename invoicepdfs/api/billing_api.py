@@ -57,7 +57,7 @@ class BillingApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> BillingCheckoutResponse:
-        """Create Checkout
+        """Create Checkout Session
 
         Create a Stripe Checkout session for a subscription.
 
@@ -125,7 +125,7 @@ class BillingApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[BillingCheckoutResponse]:
-        """Create Checkout
+        """Create Checkout Session
 
         Create a Stripe Checkout session for a subscription.
 
@@ -193,7 +193,7 @@ class BillingApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Create Checkout
+        """Create Checkout Session
 
         Create a Stripe Checkout session for a subscription.
 
@@ -331,7 +331,7 @@ class BillingApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> BillingPortalResponse:
-        """Create Portal
+        """Create Portal Session
 
         Create a Stripe Customer Portal session for self-service management.
 
@@ -394,7 +394,7 @@ class BillingApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[BillingPortalResponse]:
-        """Create Portal
+        """Create Portal Session
 
         Create a Stripe Customer Portal session for self-service management.
 
@@ -457,7 +457,7 @@ class BillingApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Create Portal
+        """Create Portal Session
 
         Create a Stripe Customer Portal session for self-service management.
 

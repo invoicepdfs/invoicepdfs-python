@@ -54,7 +54,7 @@ class HealthApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> HealthResponse:
-        """Health
+        """Get Health
 
 
         :param _request_timeout: timeout setting for this request. If one
@@ -116,7 +116,7 @@ class HealthApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[HealthResponse]:
-        """Health
+        """Get Health
 
 
         :param _request_timeout: timeout setting for this request. If one
@@ -178,7 +178,7 @@ class HealthApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Health
+        """Get Health
 
 
         :param _request_timeout: timeout setting for this request. If one
@@ -294,7 +294,7 @@ class HealthApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ReadyResponse:
-        """Ready
+        """Get Readiness
 
 
         :param _request_timeout: timeout setting for this request. If one
@@ -356,7 +356,7 @@ class HealthApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ReadyResponse]:
-        """Ready
+        """Get Readiness
 
 
         :param _request_timeout: timeout setting for this request. If one
@@ -418,7 +418,7 @@ class HealthApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Ready
+        """Get Readiness
 
 
         :param _request_timeout: timeout setting for this request. If one
@@ -534,7 +534,7 @@ class HealthApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> VersionResponse:
-        """Version
+        """Get Version
 
 
         :param _request_timeout: timeout setting for this request. If one
@@ -596,7 +596,7 @@ class HealthApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[VersionResponse]:
-        """Version
+        """Get Version
 
 
         :param _request_timeout: timeout setting for this request. If one
@@ -658,7 +658,7 @@ class HealthApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Version
+        """Get Version
 
 
         :param _request_timeout: timeout setting for this request. If one

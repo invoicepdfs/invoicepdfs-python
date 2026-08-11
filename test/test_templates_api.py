@@ -78,7 +78,7 @@ class TestTemplatesApi(unittest.TestCase):
     def test_list_templates(self) -> None:
         """Test case for list_templates
 
-        Templates
+        List Templates
         """
         pass
 
@@ -99,7 +99,7 @@ class TestTemplatesApi(unittest.TestCase):
     def test_update_template(self) -> None:
         """Test case for update_template
 
-        Patch Template
+        Update Template
         """
         pass
 

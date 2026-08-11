@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**delete_business_profile**](BusinessProfilesApi.md#delete_business_profile) | **DELETE** /api/v1/business-profiles/{business_profile_id} | Delete Business Profile
 [**get_business_profile**](BusinessProfilesApi.md#get_business_profile) | **GET** /api/v1/business-profiles/{business_profile_id} | Get Business Profile
 [**list_business_profiles**](BusinessProfilesApi.md#list_business_profiles) | **GET** /api/v1/business-profiles | List Business Profiles
-[**update_business_profile**](BusinessProfilesApi.md#update_business_profile) | **PATCH** /api/v1/business-profiles/{business_profile_id} | Patch Business Profile
+[**update_business_profile**](BusinessProfilesApi.md#update_business_profile) | **PATCH** /api/v1/business-profiles/{business_profile_id} | Update Business Profile
 
 
 # **create_business_profile**
@@ -327,7 +327,7 @@ Name | Type | Description  | Notes
 # **update_business_profile**
 > BusinessProfileResponse update_business_profile(business_profile_id, business_profile_patch, idempotency_key=idempotency_key)
 
-Patch Business Profile
+Update Business Profile
 
 ### Example
 
@@ -365,7 +365,7 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     idempotency_key = 'idempotency_key_example' # str |  (optional)
 
     try:
-        # Patch Business Profile
+        # Update Business Profile
         api_response = api_instance.update_business_profile(business_profile_id, business_profile_patch, idempotency_key=idempotency_key)
         print("The response of BusinessProfilesApi->update_business_profile:\n")
         pprint(api_response)

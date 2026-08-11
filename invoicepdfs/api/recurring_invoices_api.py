@@ -1957,7 +1957,7 @@ class RecurringInvoicesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RecurringInvoiceResponse:
-        """Patch Recurring Invoice
+        """Update Recurring Invoice
 
 
         :param recurring_id: (required)
@@ -2028,7 +2028,7 @@ class RecurringInvoicesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[RecurringInvoiceResponse]:
-        """Patch Recurring Invoice
+        """Update Recurring Invoice
 
 
         :param recurring_id: (required)
@@ -2099,7 +2099,7 @@ class RecurringInvoicesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Patch Recurring Invoice
+        """Update Recurring Invoice
 
 
         :param recurring_id: (required)

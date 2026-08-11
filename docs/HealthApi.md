@@ -4,15 +4,15 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_health**](HealthApi.md#get_health) | **GET** /health | Health
-[**get_readiness**](HealthApi.md#get_readiness) | **GET** /ready | Ready
-[**get_version**](HealthApi.md#get_version) | **GET** /version | Version
+[**get_health**](HealthApi.md#get_health) | **GET** /health | Get Health
+[**get_readiness**](HealthApi.md#get_readiness) | **GET** /ready | Get Readiness
+[**get_version**](HealthApi.md#get_version) | **GET** /version | Get Version
 
 
 # **get_health**
 > HealthResponse get_health()
 
-Health
+Get Health
 
 ### Example
 
@@ -36,7 +36,7 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     api_instance = invoicepdfs.HealthApi(api_client)
 
     try:
-        # Health
+        # Get Health
         api_response = api_instance.get_health()
         print("The response of HealthApi->get_health:\n")
         pprint(api_response)
@@ -74,7 +74,7 @@ No authorization required
 # **get_readiness**
 > ReadyResponse get_readiness()
 
-Ready
+Get Readiness
 
 ### Example
 
@@ -98,7 +98,7 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     api_instance = invoicepdfs.HealthApi(api_client)
 
     try:
-        # Ready
+        # Get Readiness
         api_response = api_instance.get_readiness()
         print("The response of HealthApi->get_readiness:\n")
         pprint(api_response)
@@ -136,7 +136,7 @@ No authorization required
 # **get_version**
 > VersionResponse get_version()
 
-Version
+Get Version
 
 ### Example
 
@@ -160,7 +160,7 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     api_instance = invoicepdfs.HealthApi(api_client)
 
     try:
-        # Version
+        # Get Version
         api_response = api_instance.get_version()
         print("The response of HealthApi->get_version:\n")
         pprint(api_response)

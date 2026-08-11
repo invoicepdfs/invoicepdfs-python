@@ -29,56 +29,56 @@ class TestBrandingProfilesApi(unittest.TestCase):
     def test_create_branding_profile(self) -> None:
         """Test case for create_branding_profile
 
-        Create Profile
+        Create Branding Profile
         """
         pass
 
     def test_delete_branding_logo(self) -> None:
         """Test case for delete_branding_logo
 
-        Delete Logo
+        Delete Branding Logo
         """
         pass
 
     def test_delete_branding_profile(self) -> None:
         """Test case for delete_branding_profile
 
-        Delete Profile
+        Delete Branding Profile
         """
         pass
 
     def test_get_branding_profile(self) -> None:
         """Test case for get_branding_profile
 
-        Get Profile
+        Get Branding Profile
         """
         pass
 
     def test_list_branding_profiles(self) -> None:
         """Test case for list_branding_profiles
 
-        List Profiles
+        List Branding Profiles
         """
         pass
 
     def test_set_default_branding_profile(self) -> None:
         """Test case for set_default_branding_profile
 
-        Set Default
+        Set Default Branding Profile
         """
         pass
 
     def test_update_branding_profile(self) -> None:
         """Test case for update_branding_profile
 
-        Update Profile
+        Update Branding Profile
         """
         pass
 
     def test_upload_branding_logo(self) -> None:
         """Test case for upload_branding_logo
 
-        Upload Logo
+        Upload Branding Logo
         """
         pass
 

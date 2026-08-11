@@ -29,7 +29,7 @@ class TestNumberingSequencesApi(unittest.TestCase):
     def test_consume_sequence_number(self) -> None:
         """Test case for consume_sequence_number
 
-        Consume Next
+        Consume Sequence Number
         """
         pass
 

@@ -4,8 +4,8 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_checkout_session**](BillingApi.md#create_checkout_session) | **POST** /api/v1/billing/checkout-session | Create Checkout
-[**create_portal_session**](BillingApi.md#create_portal_session) | **POST** /api/v1/billing/portal-session | Create Portal
+[**create_checkout_session**](BillingApi.md#create_checkout_session) | **POST** /api/v1/billing/checkout-session | Create Checkout Session
+[**create_portal_session**](BillingApi.md#create_portal_session) | **POST** /api/v1/billing/portal-session | Create Portal Session
 [**get_subscription**](BillingApi.md#get_subscription) | **GET** /api/v1/billing/subscription | Get Subscription
 [**list_plans**](BillingApi.md#list_plans) | **GET** /api/v1/billing/plans | List Plans
 
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 # **create_checkout_session**
 > BillingCheckoutResponse create_checkout_session(billing_checkout_request)
 
-Create Checkout
+Create Checkout Session
 
 Create a Stripe Checkout session for a subscription.
 
@@ -51,7 +51,7 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     billing_checkout_request = invoicepdfs.BillingCheckoutRequest() # BillingCheckoutRequest | 
 
     try:
-        # Create Checkout
+        # Create Checkout Session
         api_response = api_instance.create_checkout_session(billing_checkout_request)
         print("The response of BillingApi->create_checkout_session:\n")
         pprint(api_response)
@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 # **create_portal_session**
 > BillingPortalResponse create_portal_session()
 
-Create Portal
+Create Portal Session
 
 Create a Stripe Customer Portal session for self-service management.
 
@@ -129,7 +129,7 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     api_instance = invoicepdfs.BillingApi(api_client)
 
     try:
-        # Create Portal
+        # Create Portal Session
         api_response = api_instance.create_portal_session()
         print("The response of BillingApi->create_portal_session:\n")
         pprint(api_response)

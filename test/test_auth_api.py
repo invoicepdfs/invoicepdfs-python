@@ -29,14 +29,14 @@ class TestAuthApi(unittest.TestCase):
     def test_exchange_auth_token(self) -> None:
         """Test case for exchange_auth_token
 
-        Token Exchange
+        Exchange Auth Token
         """
         pass
 
     def test_get_current_user(self) -> None:
         """Test case for get_current_user
 
-        Me
+        Get Current User
         """
         pass
 
@@ -50,7 +50,7 @@ class TestAuthApi(unittest.TestCase):
     def test_refresh_access_token(self) -> None:
         """Test case for refresh_access_token
 
-        Refresh
+        Refresh Access Token
         """
         pass
 
@@ -64,7 +64,7 @@ class TestAuthApi(unittest.TestCase):
     def test_request_password_reset(self) -> None:
         """Test case for request_password_reset
 
-        Forgot Password
+        Request Password Reset
         """
         pass
 
@@ -78,7 +78,7 @@ class TestAuthApi(unittest.TestCase):
     def test_update_current_user(self) -> None:
         """Test case for update_current_user
 
-        Patch Me
+        Update Current User
         """
         pass
 

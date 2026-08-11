@@ -29,7 +29,7 @@ class TestPaymentsApi(unittest.TestCase):
     def test_create_document_payment(self) -> None:
         """Test case for create_document_payment
 
-        Create Payment
+        Create Document Payment
         """
         pass
 
@@ -50,7 +50,7 @@ class TestPaymentsApi(unittest.TestCase):
     def test_list_document_payments(self) -> None:
         """Test case for list_document_payments
 
-        List Invoice Payments
+        List Document Payments
         """
         pass
 

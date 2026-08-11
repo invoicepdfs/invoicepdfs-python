@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**archive_document**](DocumentsApi.md#archive_document) | **POST** /api/v1/documents/{document_id}/archive | Archive Document
 [**calculate_document**](DocumentsApi.md#calculate_document) | **POST** /api/v1/documents/calculate | Calculate Document
 [**create_document**](DocumentsApi.md#create_document) | **POST** /api/v1/documents | Create Document
-[**create_document_render**](DocumentsApi.md#create_document_render) | **POST** /api/v1/documents/{document_id}/renders | Render Document
+[**create_document_render**](DocumentsApi.md#create_document_render) | **POST** /api/v1/documents/{document_id}/renders | Create Document Render
 [**delete_document**](DocumentsApi.md#delete_document) | **DELETE** /api/v1/documents/{document_id} | Delete Document
 [**duplicate_document**](DocumentsApi.md#duplicate_document) | **POST** /api/v1/documents/{document_id}/duplicate | Duplicate Document
 [**finalize_document**](DocumentsApi.md#finalize_document) | **POST** /api/v1/documents/{document_id}/finalize | Finalize Document
@@ -20,7 +20,7 @@ Method | HTTP request | Description
 [**render_document**](DocumentsApi.md#render_document) | **POST** /api/v1/documents/render | Render Document
 [**restore_document**](DocumentsApi.md#restore_document) | **POST** /api/v1/documents/{document_id}/restore | Restore Document
 [**send_document**](DocumentsApi.md#send_document) | **POST** /api/v1/documents/{document_id}/send | Send Document
-[**update_document**](DocumentsApi.md#update_document) | **PATCH** /api/v1/documents/{document_id} | Patch Document
+[**update_document**](DocumentsApi.md#update_document) | **PATCH** /api/v1/documents/{document_id} | Update Document
 [**validate_document**](DocumentsApi.md#validate_document) | **POST** /api/v1/documents/validate | Validate Document
 [**void_document**](DocumentsApi.md#void_document) | **POST** /api/v1/documents/{document_id}/void | Void Document
 
@@ -263,7 +263,7 @@ Name | Type | Description  | Notes
 # **create_document_render**
 > object create_document_render(document_id, document_render_options, idempotency_key=idempotency_key)
 
-Render Document
+Create Document Render
 
 ### Example
 
@@ -300,7 +300,7 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     idempotency_key = 'idempotency_key_example' # str |  (optional)
 
     try:
-        # Render Document
+        # Create Document Render
         api_response = api_instance.create_document_render(document_id, document_render_options, idempotency_key=idempotency_key)
         print("The response of DocumentsApi->create_document_render:\n")
         pprint(api_response)
@@ -1283,7 +1283,7 @@ Name | Type | Description  | Notes
 # **update_document**
 > DocumentResponse update_document(document_id, document_patch_request)
 
-Patch Document
+Update Document
 
 ### Example
 
@@ -1320,7 +1320,7 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     document_patch_request = invoicepdfs.DocumentPatchRequest() # DocumentPatchRequest | 
 
     try:
-        # Patch Document
+        # Update Document
         api_response = api_instance.update_document(document_id, document_patch_request)
         print("The response of DocumentsApi->update_document:\n")
         pprint(api_response)

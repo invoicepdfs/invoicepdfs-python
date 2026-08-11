@@ -889,7 +889,7 @@ class DocumentsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> object:
-        """Render Document
+        """Create Document Render
 
 
         :param document_id: (required)
@@ -964,7 +964,7 @@ class DocumentsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[object]:
-        """Render Document
+        """Create Document Render
 
 
         :param document_id: (required)
@@ -1039,7 +1039,7 @@ class DocumentsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Render Document
+        """Create Document Render
 
 
         :param document_id: (required)
@@ -4441,7 +4441,7 @@ class DocumentsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> DocumentResponse:
-        """Patch Document
+        """Update Document
 
 
         :param document_id: (required)
@@ -4512,7 +4512,7 @@ class DocumentsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[DocumentResponse]:
-        """Patch Document
+        """Update Document
 
 
         :param document_id: (required)
@@ -4583,7 +4583,7 @@ class DocumentsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Patch Document
+        """Update Document
 
 
         :param document_id: (required)

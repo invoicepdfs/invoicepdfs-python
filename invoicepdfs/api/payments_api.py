@@ -61,7 +61,7 @@ class PaymentsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaymentResponse:
-        """Create Payment
+        """Create Document Payment
 
 
         :param document_id: (required)
@@ -132,7 +132,7 @@ class PaymentsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaymentResponse]:
-        """Create Payment
+        """Create Document Payment
 
 
         :param document_id: (required)
@@ -203,7 +203,7 @@ class PaymentsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Create Payment
+        """Create Document Payment
 
 
         :param document_id: (required)
@@ -867,7 +867,7 @@ class PaymentsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaymentsListResponse:
-        """List Invoice Payments
+        """List Document Payments
 
 
         :param document_id: (required)
@@ -942,7 +942,7 @@ class PaymentsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaymentsListResponse]:
-        """List Invoice Payments
+        """List Document Payments
 
 
         :param document_id: (required)
@@ -1017,7 +1017,7 @@ class PaymentsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """List Invoice Payments
+        """List Document Payments
 
 
         :param document_id: (required)

@@ -59,7 +59,7 @@ class BrandingProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> BrandingProfileResponse:
-        """Create Profile
+        """Create Branding Profile
 
 
         :param branding_profile_create_request: (required)
@@ -126,7 +126,7 @@ class BrandingProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[BrandingProfileResponse]:
-        """Create Profile
+        """Create Branding Profile
 
 
         :param branding_profile_create_request: (required)
@@ -193,7 +193,7 @@ class BrandingProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Create Profile
+        """Create Branding Profile
 
 
         :param branding_profile_create_request: (required)
@@ -331,7 +331,7 @@ class BrandingProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> SimpleBoolResponse:
-        """Delete Logo
+        """Delete Branding Logo
 
 
         :param profile_id: (required)
@@ -398,7 +398,7 @@ class BrandingProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[SimpleBoolResponse]:
-        """Delete Logo
+        """Delete Branding Logo
 
 
         :param profile_id: (required)
@@ -465,7 +465,7 @@ class BrandingProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Delete Logo
+        """Delete Branding Logo
 
 
         :param profile_id: (required)
@@ -590,7 +590,7 @@ class BrandingProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> SimpleBoolResponse:
-        """Delete Profile
+        """Delete Branding Profile
 
 
         :param profile_id: (required)
@@ -657,7 +657,7 @@ class BrandingProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[SimpleBoolResponse]:
-        """Delete Profile
+        """Delete Branding Profile
 
 
         :param profile_id: (required)
@@ -724,7 +724,7 @@ class BrandingProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Delete Profile
+        """Delete Branding Profile
 
 
         :param profile_id: (required)
@@ -849,7 +849,7 @@ class BrandingProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> BrandingProfileResponse:
-        """Get Profile
+        """Get Branding Profile
 
 
         :param profile_id: (required)
@@ -916,7 +916,7 @@ class BrandingProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[BrandingProfileResponse]:
-        """Get Profile
+        """Get Branding Profile
 
 
         :param profile_id: (required)
@@ -983,7 +983,7 @@ class BrandingProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get Profile
+        """Get Branding Profile
 
 
         :param profile_id: (required)
@@ -1107,7 +1107,7 @@ class BrandingProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> BrandingProfilesListResponse:
-        """List Profiles
+        """List Branding Profiles
 
 
         :param _request_timeout: timeout setting for this request. If one
@@ -1169,7 +1169,7 @@ class BrandingProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[BrandingProfilesListResponse]:
-        """List Profiles
+        """List Branding Profiles
 
 
         :param _request_timeout: timeout setting for this request. If one
@@ -1231,7 +1231,7 @@ class BrandingProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """List Profiles
+        """List Branding Profiles
 
 
         :param _request_timeout: timeout setting for this request. If one
@@ -1349,7 +1349,7 @@ class BrandingProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> BrandingProfileResponse:
-        """Set Default
+        """Set Default Branding Profile
 
 
         :param profile_id: (required)
@@ -1416,7 +1416,7 @@ class BrandingProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[BrandingProfileResponse]:
-        """Set Default
+        """Set Default Branding Profile
 
 
         :param profile_id: (required)
@@ -1483,7 +1483,7 @@ class BrandingProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Set Default
+        """Set Default Branding Profile
 
 
         :param profile_id: (required)
@@ -1609,7 +1609,7 @@ class BrandingProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> BrandingProfileResponse:
-        """Update Profile
+        """Update Branding Profile
 
 
         :param profile_id: (required)
@@ -1680,7 +1680,7 @@ class BrandingProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[BrandingProfileResponse]:
-        """Update Profile
+        """Update Branding Profile
 
 
         :param profile_id: (required)
@@ -1751,7 +1751,7 @@ class BrandingProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Update Profile
+        """Update Branding Profile
 
 
         :param profile_id: (required)
@@ -1896,7 +1896,7 @@ class BrandingProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> BrandingProfileResponse:
-        """Upload Logo
+        """Upload Branding Logo
 
 
         :param profile_id: (required)
@@ -1967,7 +1967,7 @@ class BrandingProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[BrandingProfileResponse]:
-        """Upload Logo
+        """Upload Branding Logo
 
 
         :param profile_id: (required)
@@ -2038,7 +2038,7 @@ class BrandingProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Upload Logo
+        """Upload Branding Logo
 
 
         :param profile_id: (required)

@@ -57,7 +57,7 @@ class TestBusinessProfilesApi(unittest.TestCase):
     def test_update_business_profile(self) -> None:
         """Test case for update_business_profile
 
-        Patch Business Profile
+        Update Business Profile
         """
         pass
 

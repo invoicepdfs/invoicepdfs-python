@@ -4,15 +4,15 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_document_attachment**](DocumentAttachmentsApi.md#create_document_attachment) | **POST** /api/v1/documents/{document_id}/attachments | Create Attachment
-[**delete_document_attachment**](DocumentAttachmentsApi.md#delete_document_attachment) | **DELETE** /api/v1/documents/{document_id}/attachments/{attachment_id} | Delete Attachment
-[**list_document_attachments**](DocumentAttachmentsApi.md#list_document_attachments) | **GET** /api/v1/documents/{document_id}/attachments | List Attachments
+[**create_document_attachment**](DocumentAttachmentsApi.md#create_document_attachment) | **POST** /api/v1/documents/{document_id}/attachments | Create Document Attachment
+[**delete_document_attachment**](DocumentAttachmentsApi.md#delete_document_attachment) | **DELETE** /api/v1/documents/{document_id}/attachments/{attachment_id} | Delete Document Attachment
+[**list_document_attachments**](DocumentAttachmentsApi.md#list_document_attachments) | **GET** /api/v1/documents/{document_id}/attachments | List Document Attachments
 
 
 # **create_document_attachment**
 > InvoiceAttachmentResponse create_document_attachment(document_id, invoice_attachment_create_request)
 
-Create Attachment
+Create Document Attachment
 
 ### Example
 
@@ -49,7 +49,7 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     invoice_attachment_create_request = invoicepdfs.InvoiceAttachmentCreateRequest() # InvoiceAttachmentCreateRequest | 
 
     try:
-        # Create Attachment
+        # Create Document Attachment
         api_response = api_instance.create_document_attachment(document_id, invoice_attachment_create_request)
         print("The response of DocumentAttachmentsApi->create_document_attachment:\n")
         pprint(api_response)
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 # **delete_document_attachment**
 > SimpleBoolResponse delete_document_attachment(document_id, attachment_id)
 
-Delete Attachment
+Delete Document Attachment
 
 ### Example
 
@@ -128,7 +128,7 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     attachment_id = 'attachment_id_example' # str | 
 
     try:
-        # Delete Attachment
+        # Delete Document Attachment
         api_response = api_instance.delete_document_attachment(document_id, attachment_id)
         print("The response of DocumentAttachmentsApi->delete_document_attachment:\n")
         pprint(api_response)
@@ -171,7 +171,7 @@ Name | Type | Description  | Notes
 # **list_document_attachments**
 > InvoiceAttachmentsListResponse list_document_attachments(document_id)
 
-List Attachments
+List Document Attachments
 
 ### Example
 
@@ -206,7 +206,7 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     document_id = 'document_id_example' # str | 
 
     try:
-        # List Attachments
+        # List Document Attachments
         api_response = api_instance.list_document_attachments(document_id)
         print("The response of DocumentAttachmentsApi->list_document_attachments:\n")
         pprint(api_response)

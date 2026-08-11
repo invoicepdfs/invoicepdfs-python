@@ -11,10 +11,10 @@ Method | HTTP request | Description
 [**get_custom_template**](TemplatesApi.md#get_custom_template) | **GET** /api/v1/templates/custom/{template_id} | Get Custom Template
 [**get_template**](TemplatesApi.md#get_template) | **GET** /api/v1/templates/{template_id} | Get Template
 [**list_custom_templates**](TemplatesApi.md#list_custom_templates) | **GET** /api/v1/templates/custom | List Custom Templates
-[**list_templates**](TemplatesApi.md#list_templates) | **GET** /api/v1/templates | Templates
+[**list_templates**](TemplatesApi.md#list_templates) | **GET** /api/v1/templates | List Templates
 [**preview_template**](TemplatesApi.md#preview_template) | **POST** /api/v1/templates/{template_id}/preview | Preview Template
 [**publish_template**](TemplatesApi.md#publish_template) | **POST** /api/v1/templates/custom/{template_id}/publish | Publish Template
-[**update_template**](TemplatesApi.md#update_template) | **PATCH** /api/v1/templates/custom/{template_id} | Patch Template
+[**update_template**](TemplatesApi.md#update_template) | **PATCH** /api/v1/templates/custom/{template_id} | Update Template
 
 
 # **create_template**
@@ -559,7 +559,7 @@ Name | Type | Description  | Notes
 # **list_templates**
 > TemplatesListResponse list_templates()
 
-Templates
+List Templates
 
 ### Example
 
@@ -593,7 +593,7 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     api_instance = invoicepdfs.TemplatesApi(api_client)
 
     try:
-        # Templates
+        # List Templates
         api_response = api_instance.list_templates()
         print("The response of TemplatesApi->list_templates:\n")
         pprint(api_response)
@@ -789,7 +789,7 @@ Name | Type | Description  | Notes
 # **update_template**
 > CustomTemplateResponse update_template(template_id, template_patch_request)
 
-Patch Template
+Update Template
 
 ### Example
 
@@ -826,7 +826,7 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     template_patch_request = invoicepdfs.TemplatePatchRequest() # TemplatePatchRequest | 
 
     try:
-        # Patch Template
+        # Update Template
         api_response = api_instance.update_template(template_id, template_patch_request)
         print("The response of TemplatesApi->update_template:\n")
         pprint(api_response)

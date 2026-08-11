@@ -4,7 +4,7 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**consume_sequence_number**](NumberingSequencesApi.md#consume_sequence_number) | **POST** /api/v1/numbering-sequences/{sequence_id}/next | Consume Next
+[**consume_sequence_number**](NumberingSequencesApi.md#consume_sequence_number) | **POST** /api/v1/numbering-sequences/{sequence_id}/next | Consume Sequence Number
 [**create_sequence**](NumberingSequencesApi.md#create_sequence) | **POST** /api/v1/numbering-sequences | Create Sequence
 [**delete_sequence**](NumberingSequencesApi.md#delete_sequence) | **DELETE** /api/v1/numbering-sequences/{sequence_id} | Delete Sequence
 [**get_sequence**](NumberingSequencesApi.md#get_sequence) | **GET** /api/v1/numbering-sequences/{sequence_id} | Get Sequence
@@ -16,7 +16,7 @@ Method | HTTP request | Description
 # **consume_sequence_number**
 > NumberingSequenceResponse consume_sequence_number(sequence_id)
 
-Consume Next
+Consume Sequence Number
 
 Consume and return the next number, incrementing the counter.
 
@@ -53,7 +53,7 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     sequence_id = 'sequence_id_example' # str | 
 
     try:
-        # Consume Next
+        # Consume Sequence Number
         api_response = api_instance.consume_sequence_number(sequence_id)
         print("The response of NumberingSequencesApi->consume_sequence_number:\n")
         pprint(api_response)

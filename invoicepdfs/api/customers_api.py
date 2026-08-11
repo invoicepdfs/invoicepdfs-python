@@ -1145,7 +1145,7 @@ class CustomersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> CustomerResponse:
-        """Patch Customer
+        """Update Customer
 
 
         :param customer_id: (required)
@@ -1220,7 +1220,7 @@ class CustomersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[CustomerResponse]:
-        """Patch Customer
+        """Update Customer
 
 
         :param customer_id: (required)
@@ -1295,7 +1295,7 @@ class CustomersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Patch Customer
+        """Update Customer
 
 
         :param customer_id: (required)

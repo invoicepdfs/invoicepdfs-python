@@ -29,21 +29,21 @@ class TestDocumentAttachmentsApi(unittest.TestCase):
     def test_create_document_attachment(self) -> None:
         """Test case for create_document_attachment
 
-        Create Attachment
+        Create Document Attachment
         """
         pass
 
     def test_delete_document_attachment(self) -> None:
         """Test case for delete_document_attachment
 
-        Delete Attachment
+        Delete Document Attachment
         """
         pass
 
     def test_list_document_attachments(self) -> None:
         """Test case for list_document_attachments
 
-        List Attachments
+        List Document Attachments
         """
         pass
 

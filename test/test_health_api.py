@@ -29,21 +29,21 @@ class TestHealthApi(unittest.TestCase):
     def test_get_health(self) -> None:
         """Test case for get_health
 
-        Health
+        Get Health
         """
         pass
 
     def test_get_readiness(self) -> None:
         """Test case for get_readiness
 
-        Ready
+        Get Readiness
         """
         pass
 
     def test_get_version(self) -> None:
         """Test case for get_version
 
-        Version
+        Get Version
         """
         pass
 

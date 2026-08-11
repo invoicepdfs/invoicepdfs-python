@@ -55,7 +55,7 @@ class UsageApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> UsageResponse:
-        """Usage
+        """Get Usage
 
 
         :param _request_timeout: timeout setting for this request. If one
@@ -117,7 +117,7 @@ class UsageApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[UsageResponse]:
-        """Usage
+        """Get Usage
 
 
         :param _request_timeout: timeout setting for this request. If one
@@ -179,7 +179,7 @@ class UsageApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Usage
+        """Get Usage
 
 
         :param _request_timeout: timeout setting for this request. If one
@@ -296,7 +296,7 @@ class UsageApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Dict[str, object]:
-        """Get Limits
+        """Get Usage Limits
 
 
         :param _request_timeout: timeout setting for this request. If one
@@ -358,7 +358,7 @@ class UsageApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Dict[str, object]]:
-        """Get Limits
+        """Get Usage Limits
 
 
         :param _request_timeout: timeout setting for this request. If one
@@ -420,7 +420,7 @@ class UsageApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get Limits
+        """Get Usage Limits
 
 
         :param _request_timeout: timeout setting for this request. If one
