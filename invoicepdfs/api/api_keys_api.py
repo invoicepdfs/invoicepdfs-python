@@ -97,7 +97,7 @@ class ApiKeysApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiKeyCreateResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -164,7 +164,7 @@ class ApiKeysApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiKeyCreateResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -231,7 +231,7 @@ class ApiKeysApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiKeyCreateResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -369,7 +369,7 @@ class ApiKeysApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiKeyDetailResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -436,7 +436,7 @@ class ApiKeysApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiKeyDetailResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -503,7 +503,7 @@ class ApiKeysApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiKeyDetailResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -873,7 +873,7 @@ class ApiKeysApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiKeyDetailResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -944,7 +944,7 @@ class ApiKeysApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiKeyDetailResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1015,7 +1015,7 @@ class ApiKeysApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiKeyDetailResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1156,7 +1156,7 @@ class ApiKeysApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiKeyRevokeResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1223,7 +1223,7 @@ class ApiKeysApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiKeyRevokeResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1290,7 +1290,7 @@ class ApiKeysApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiKeyRevokeResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1416,7 +1416,7 @@ class ApiKeysApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiKeyRotateResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1484,7 +1484,7 @@ class ApiKeysApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiKeyRotateResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1552,7 +1552,7 @@ class ApiKeysApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiKeyRotateResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,

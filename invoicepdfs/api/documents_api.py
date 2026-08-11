@@ -106,7 +106,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DocumentResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -173,7 +173,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DocumentResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -240,7 +240,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DocumentResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -365,7 +365,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DocumentCalculateResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -432,7 +432,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DocumentCalculateResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -499,7 +499,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DocumentCalculateResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -641,7 +641,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DocumentResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -712,7 +712,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DocumentResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -783,7 +783,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DocumentResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -924,7 +924,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SimpleBoolResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -991,7 +991,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SimpleBoolResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1058,7 +1058,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SimpleBoolResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1183,7 +1183,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DocumentResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1250,7 +1250,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DocumentResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1317,7 +1317,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DocumentResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1442,7 +1442,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DocumentResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1509,7 +1509,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DocumentResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1576,7 +1576,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DocumentResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1701,7 +1701,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DocumentResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1768,7 +1768,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DocumentResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1835,7 +1835,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DocumentResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1968,7 +1968,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DeliveriesListResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2043,7 +2043,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DeliveriesListResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2118,7 +2118,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DeliveriesListResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2265,7 +2265,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DocumentsListResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2344,7 +2344,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DocumentsListResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2423,7 +2423,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DocumentsListResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2565,7 +2565,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DocumentResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2632,7 +2632,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DocumentResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2699,7 +2699,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DocumentResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2824,7 +2824,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DocumentResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2891,7 +2891,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DocumentResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2958,7 +2958,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DocumentResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3083,7 +3083,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DocumentResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3150,7 +3150,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DocumentResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3217,7 +3217,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DocumentResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3346,7 +3346,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DocumentResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3417,7 +3417,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DocumentResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3488,7 +3488,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DocumentResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3637,7 +3637,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "object",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3712,7 +3712,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "object",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3787,7 +3787,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "object",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3935,7 +3935,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "object",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4006,7 +4006,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "object",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4077,7 +4077,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "object",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4218,7 +4218,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DocumentResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4285,7 +4285,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DocumentResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4352,7 +4352,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DocumentResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4481,7 +4481,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DeliveryResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4552,7 +4552,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DeliveryResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4623,7 +4623,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DeliveryResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4764,7 +4764,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DocumentValidateResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4831,7 +4831,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DocumentValidateResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4898,7 +4898,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DocumentValidateResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5036,7 +5036,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DocumentResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5103,7 +5103,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DocumentResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5170,7 +5170,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DocumentResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,

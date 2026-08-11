@@ -97,7 +97,7 @@ class TemplateVersionsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "TemplateVersionResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -168,7 +168,7 @@ class TemplateVersionsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "TemplateVersionResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -239,7 +239,7 @@ class TemplateVersionsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "TemplateVersionResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -384,7 +384,7 @@ class TemplateVersionsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "TemplateVersionResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -455,7 +455,7 @@ class TemplateVersionsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "TemplateVersionResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -526,7 +526,7 @@ class TemplateVersionsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "TemplateVersionResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -654,7 +654,7 @@ class TemplateVersionsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "TemplateVersionsListResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -721,7 +721,7 @@ class TemplateVersionsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "TemplateVersionsListResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -788,7 +788,7 @@ class TemplateVersionsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "TemplateVersionsListResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,

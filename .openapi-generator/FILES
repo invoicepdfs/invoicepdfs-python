@@ -1,6 +1,8 @@
 .gitignore
 .gitlab-ci.yml
 .travis.yml
+docs/ApiErrorResponse.md
+docs/ApiErrorResponseError.md
 docs/ApiKeyCreateRequest.md
 docs/ApiKeyCreateResponse.md
 docs/ApiKeyCreated.md
@@ -106,7 +108,6 @@ docs/DocumentsListResponse.md
 docs/FileOut.md
 docs/FileResponse.md
 docs/FilesApi.md
-docs/HTTPValidationError.md
 docs/HealthApi.md
 docs/HealthResponse.md
 docs/ImportCreateRequest.md
@@ -138,7 +139,6 @@ docs/JobResponse.md
 docs/JobsApi.md
 docs/LineItemDiscountInput.md
 docs/LineItemTaxInput.md
-docs/LocationInner.md
 docs/LogsApi.md
 docs/Money.md
 docs/MoneyOut.md
@@ -195,7 +195,6 @@ docs/UsageData.md
 docs/UsagePeriod.md
 docs/UsageRenders.md
 docs/UsageResponse.md
-docs/ValidationError.md
 docs/VersionResponse.md
 docs/WebhookDeliveriesListResponse.md
 docs/WebhookDeliveryOut.md
@@ -253,6 +252,8 @@ invoicepdfs/api_response.py
 invoicepdfs/configuration.py
 invoicepdfs/exceptions.py
 invoicepdfs/models/__init__.py
+invoicepdfs/models/api_error_response.py
+invoicepdfs/models/api_error_response_error.py
 invoicepdfs/models/api_key_create_request.py
 invoicepdfs/models/api_key_create_response.py
 invoicepdfs/models/api_key_created.py
@@ -348,7 +349,6 @@ invoicepdfs/models/documents_list_response.py
 invoicepdfs/models/file_out.py
 invoicepdfs/models/file_response.py
 invoicepdfs/models/health_response.py
-invoicepdfs/models/http_validation_error.py
 invoicepdfs/models/import_create_request.py
 invoicepdfs/models/import_out.py
 invoicepdfs/models/import_response.py
@@ -375,7 +375,6 @@ invoicepdfs/models/job_progress_out.py
 invoicepdfs/models/job_response.py
 invoicepdfs/models/line_item_discount_input.py
 invoicepdfs/models/line_item_tax_input.py
-invoicepdfs/models/location_inner.py
 invoicepdfs/models/money.py
 invoicepdfs/models/money_out.py
 invoicepdfs/models/numbering_sequence_create_request.py
@@ -421,7 +420,6 @@ invoicepdfs/models/usage_data.py
 invoicepdfs/models/usage_period.py
 invoicepdfs/models/usage_renders.py
 invoicepdfs/models/usage_response.py
-invoicepdfs/models/validation_error.py
 invoicepdfs/models/version_response.py
 invoicepdfs/models/webhook_deliveries_list_response.py
 invoicepdfs/models/webhook_delivery_out.py
@@ -449,4 +447,6 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_api_error_response.py
+test/test_api_error_response_error.py
 tox.ini

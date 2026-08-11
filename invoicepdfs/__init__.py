@@ -58,6 +58,8 @@ from invoicepdfs.exceptions import ApiAttributeError
 from invoicepdfs.exceptions import ApiException
 
 # import models into sdk package
+from invoicepdfs.models.api_error_response import ApiErrorResponse
+from invoicepdfs.models.api_error_response_error import ApiErrorResponseError
 from invoicepdfs.models.api_key_create_request import ApiKeyCreateRequest
 from invoicepdfs.models.api_key_create_response import ApiKeyCreateResponse
 from invoicepdfs.models.api_key_created import ApiKeyCreated
@@ -152,7 +154,6 @@ from invoicepdfs.models.document_validate_response import DocumentValidateRespon
 from invoicepdfs.models.documents_list_response import DocumentsListResponse
 from invoicepdfs.models.file_out import FileOut
 from invoicepdfs.models.file_response import FileResponse
-from invoicepdfs.models.http_validation_error import HTTPValidationError
 from invoicepdfs.models.health_response import HealthResponse
 from invoicepdfs.models.import_create_request import ImportCreateRequest
 from invoicepdfs.models.import_out import ImportOut
@@ -180,7 +181,6 @@ from invoicepdfs.models.job_progress_out import JobProgressOut
 from invoicepdfs.models.job_response import JobResponse
 from invoicepdfs.models.line_item_discount_input import LineItemDiscountInput
 from invoicepdfs.models.line_item_tax_input import LineItemTaxInput
-from invoicepdfs.models.location_inner import LocationInner
 from invoicepdfs.models.money import Money
 from invoicepdfs.models.money_out import MoneyOut
 from invoicepdfs.models.numbering_sequence_create_request import NumberingSequenceCreateRequest
@@ -226,7 +226,6 @@ from invoicepdfs.models.usage_data import UsageData
 from invoicepdfs.models.usage_period import UsagePeriod
 from invoicepdfs.models.usage_renders import UsageRenders
 from invoicepdfs.models.usage_response import UsageResponse
-from invoicepdfs.models.validation_error import ValidationError
 from invoicepdfs.models.version_response import VersionResponse
 from invoicepdfs.models.webhook_deliveries_list_response import WebhookDeliveriesListResponse
 from invoicepdfs.models.webhook_delivery_out import WebhookDeliveryOut

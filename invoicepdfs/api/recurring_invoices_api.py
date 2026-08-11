@@ -97,7 +97,7 @@ class RecurringInvoicesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RecurringInvoiceResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -164,7 +164,7 @@ class RecurringInvoicesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RecurringInvoiceResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -231,7 +231,7 @@ class RecurringInvoicesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RecurringInvoiceResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -356,7 +356,7 @@ class RecurringInvoicesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RecurringInvoiceResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -423,7 +423,7 @@ class RecurringInvoicesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RecurringInvoiceResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -490,7 +490,7 @@ class RecurringInvoicesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RecurringInvoiceResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -628,7 +628,7 @@ class RecurringInvoicesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RecurringInvoiceResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -695,7 +695,7 @@ class RecurringInvoicesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RecurringInvoiceResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -762,7 +762,7 @@ class RecurringInvoicesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RecurringInvoiceResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -895,7 +895,7 @@ class RecurringInvoicesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "InvoicesListResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -970,7 +970,7 @@ class RecurringInvoicesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "InvoicesListResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1045,7 +1045,7 @@ class RecurringInvoicesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "InvoicesListResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1188,7 +1188,7 @@ class RecurringInvoicesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RecurringInvoicesListResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1263,7 +1263,7 @@ class RecurringInvoicesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RecurringInvoicesListResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1338,7 +1338,7 @@ class RecurringInvoicesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RecurringInvoicesListResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1479,7 +1479,7 @@ class RecurringInvoicesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RecurringInvoiceResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1550,7 +1550,7 @@ class RecurringInvoicesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RecurringInvoiceResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1621,7 +1621,7 @@ class RecurringInvoicesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RecurringInvoiceResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1762,7 +1762,7 @@ class RecurringInvoicesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RecurringInvoiceResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1829,7 +1829,7 @@ class RecurringInvoicesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RecurringInvoiceResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1896,7 +1896,7 @@ class RecurringInvoicesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RecurringInvoiceResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2021,7 +2021,7 @@ class RecurringInvoicesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RecurringInvoiceResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2088,7 +2088,7 @@ class RecurringInvoicesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RecurringInvoiceResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2155,7 +2155,7 @@ class RecurringInvoicesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RecurringInvoiceResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,

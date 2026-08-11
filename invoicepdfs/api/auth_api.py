@@ -101,7 +101,7 @@ class AuthApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AuthMessageResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -169,7 +169,7 @@ class AuthApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AuthMessageResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -237,7 +237,7 @@ class AuthApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AuthMessageResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -860,7 +860,7 @@ class AuthApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AuthMeResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -928,7 +928,7 @@ class AuthApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AuthMeResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -996,7 +996,7 @@ class AuthApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AuthMeResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1135,7 +1135,7 @@ class AuthApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AuthRefreshResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1203,7 +1203,7 @@ class AuthApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AuthRefreshResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1271,7 +1271,7 @@ class AuthApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AuthRefreshResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1409,7 +1409,7 @@ class AuthApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AuthRegisterResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1477,7 +1477,7 @@ class AuthApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AuthRegisterResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1545,7 +1545,7 @@ class AuthApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AuthRegisterResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1683,7 +1683,7 @@ class AuthApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AuthMessageResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1751,7 +1751,7 @@ class AuthApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AuthMessageResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1819,7 +1819,7 @@ class AuthApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AuthMessageResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1957,7 +1957,7 @@ class AuthApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AuthTokenResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2025,7 +2025,7 @@ class AuthApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AuthTokenResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2093,7 +2093,7 @@ class AuthApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AuthTokenResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,

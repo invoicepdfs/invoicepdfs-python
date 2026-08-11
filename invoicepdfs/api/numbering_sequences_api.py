@@ -99,7 +99,7 @@ class NumberingSequencesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "NumberingSequenceResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -167,7 +167,7 @@ class NumberingSequencesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "NumberingSequenceResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -235,7 +235,7 @@ class NumberingSequencesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "NumberingSequenceResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -360,7 +360,7 @@ class NumberingSequencesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "NumberingSequenceResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -427,7 +427,7 @@ class NumberingSequencesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "NumberingSequenceResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -494,7 +494,7 @@ class NumberingSequencesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "NumberingSequenceResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -632,7 +632,7 @@ class NumberingSequencesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SimpleBoolResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -699,7 +699,7 @@ class NumberingSequencesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SimpleBoolResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -766,7 +766,7 @@ class NumberingSequencesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SimpleBoolResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -891,7 +891,7 @@ class NumberingSequencesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "NumberingSequenceResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -958,7 +958,7 @@ class NumberingSequencesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "NumberingSequenceResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1025,7 +1025,7 @@ class NumberingSequencesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "NumberingSequenceResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1154,7 +1154,7 @@ class NumberingSequencesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "NumberingSequencesListResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1225,7 +1225,7 @@ class NumberingSequencesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "NumberingSequencesListResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1296,7 +1296,7 @@ class NumberingSequencesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "NumberingSequencesListResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1428,7 +1428,7 @@ class NumberingSequencesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "NumberingSequencePreviewResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1495,7 +1495,7 @@ class NumberingSequencesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "NumberingSequencePreviewResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1562,7 +1562,7 @@ class NumberingSequencesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "NumberingSequencePreviewResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1691,7 +1691,7 @@ class NumberingSequencesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "NumberingSequenceResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1762,7 +1762,7 @@ class NumberingSequencesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "NumberingSequenceResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1833,7 +1833,7 @@ class NumberingSequencesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "NumberingSequenceResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,

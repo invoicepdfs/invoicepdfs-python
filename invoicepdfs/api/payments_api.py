@@ -101,7 +101,7 @@ class PaymentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "PaymentResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -172,7 +172,7 @@ class PaymentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "PaymentResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -243,7 +243,7 @@ class PaymentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "PaymentResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -384,7 +384,7 @@ class PaymentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SimpleBoolResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -451,7 +451,7 @@ class PaymentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SimpleBoolResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -518,7 +518,7 @@ class PaymentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SimpleBoolResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -643,7 +643,7 @@ class PaymentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "PaymentResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -710,7 +710,7 @@ class PaymentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "PaymentResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -777,7 +777,7 @@ class PaymentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "PaymentResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -910,7 +910,7 @@ class PaymentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "PaymentsListResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -985,7 +985,7 @@ class PaymentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "PaymentsListResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1060,7 +1060,7 @@ class PaymentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "PaymentsListResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1199,7 +1199,7 @@ class PaymentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "PaymentResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1270,7 +1270,7 @@ class PaymentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "PaymentResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1341,7 +1341,7 @@ class PaymentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "PaymentResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,

@@ -109,7 +109,7 @@ class WorkspacesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WorkspaceMembersListResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -184,7 +184,7 @@ class WorkspacesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WorkspaceMembersListResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -259,7 +259,7 @@ class WorkspacesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WorkspaceMembersListResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -407,7 +407,7 @@ class WorkspacesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WorkspaceResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -478,7 +478,7 @@ class WorkspacesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WorkspaceResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -549,7 +549,7 @@ class WorkspacesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WorkspaceResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -694,7 +694,7 @@ class WorkspacesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SimpleBoolResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -765,7 +765,7 @@ class WorkspacesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SimpleBoolResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -836,7 +836,7 @@ class WorkspacesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SimpleBoolResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -964,7 +964,7 @@ class WorkspacesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SimpleBoolResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1031,7 +1031,7 @@ class WorkspacesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SimpleBoolResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1098,7 +1098,7 @@ class WorkspacesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SimpleBoolResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1223,7 +1223,7 @@ class WorkspacesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WorkspaceResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1290,7 +1290,7 @@ class WorkspacesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WorkspaceResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1357,7 +1357,7 @@ class WorkspacesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WorkspaceResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1482,7 +1482,7 @@ class WorkspacesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WorkspaceMembersListResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1549,7 +1549,7 @@ class WorkspacesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WorkspaceMembersListResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1616,7 +1616,7 @@ class WorkspacesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WorkspaceMembersListResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1745,7 +1745,7 @@ class WorkspacesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WorkspacesListResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1816,7 +1816,7 @@ class WorkspacesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WorkspacesListResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1887,7 +1887,7 @@ class WorkspacesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WorkspacesListResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2027,7 +2027,7 @@ class WorkspacesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WorkspaceMemberOut",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2102,7 +2102,7 @@ class WorkspacesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WorkspaceMemberOut",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2177,7 +2177,7 @@ class WorkspacesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WorkspaceMemberOut",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2329,7 +2329,7 @@ class WorkspacesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WorkspaceResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2404,7 +2404,7 @@ class WorkspacesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WorkspaceResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2479,7 +2479,7 @@ class WorkspacesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WorkspaceResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,

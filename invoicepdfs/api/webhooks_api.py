@@ -100,7 +100,7 @@ class WebhooksApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WebhookEndpointResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -167,7 +167,7 @@ class WebhooksApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WebhookEndpointResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -234,7 +234,7 @@ class WebhooksApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WebhookEndpointResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -372,7 +372,7 @@ class WebhooksApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SimpleBoolResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -439,7 +439,7 @@ class WebhooksApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SimpleBoolResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -506,7 +506,7 @@ class WebhooksApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SimpleBoolResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -631,7 +631,7 @@ class WebhooksApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WebhookDeliveryResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -698,7 +698,7 @@ class WebhooksApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WebhookDeliveryResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -765,7 +765,7 @@ class WebhooksApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WebhookDeliveryResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -890,7 +890,7 @@ class WebhooksApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WebhookEndpointResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -957,7 +957,7 @@ class WebhooksApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WebhookEndpointResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1024,7 +1024,7 @@ class WebhooksApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WebhookEndpointResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1153,7 +1153,7 @@ class WebhooksApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WebhookDeliveriesListResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1224,7 +1224,7 @@ class WebhooksApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WebhookDeliveriesListResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1295,7 +1295,7 @@ class WebhooksApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WebhookDeliveriesListResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1431,7 +1431,7 @@ class WebhooksApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WebhookEndpointsListResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1502,7 +1502,7 @@ class WebhooksApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WebhookEndpointsListResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1573,7 +1573,7 @@ class WebhooksApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WebhookEndpointsListResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1705,7 +1705,7 @@ class WebhooksApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WebhookDeliveryResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1772,7 +1772,7 @@ class WebhooksApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WebhookDeliveryResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1839,7 +1839,7 @@ class WebhooksApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WebhookDeliveryResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1964,7 +1964,7 @@ class WebhooksApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WebhookSecretResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2031,7 +2031,7 @@ class WebhooksApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WebhookSecretResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2098,7 +2098,7 @@ class WebhooksApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WebhookSecretResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2223,7 +2223,7 @@ class WebhooksApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WebhookDeliveryResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2290,7 +2290,7 @@ class WebhooksApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WebhookDeliveryResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2357,7 +2357,7 @@ class WebhooksApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WebhookDeliveryResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2486,7 +2486,7 @@ class WebhooksApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WebhookEndpointResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2557,7 +2557,7 @@ class WebhooksApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WebhookEndpointResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2628,7 +2628,7 @@ class WebhooksApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "WebhookEndpointResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,

@@ -92,7 +92,7 @@ class ImportsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ImportResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -159,7 +159,7 @@ class ImportsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ImportResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -226,7 +226,7 @@ class ImportsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ImportResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -351,7 +351,7 @@ class ImportsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ImportResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -418,7 +418,7 @@ class ImportsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ImportResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -485,7 +485,7 @@ class ImportsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ImportResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -610,7 +610,7 @@ class ImportsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ImportResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -677,7 +677,7 @@ class ImportsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ImportResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -744,7 +744,7 @@ class ImportsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ImportResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -882,7 +882,7 @@ class ImportsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ImportResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -949,7 +949,7 @@ class ImportsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ImportResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1016,7 +1016,7 @@ class ImportsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ImportResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,

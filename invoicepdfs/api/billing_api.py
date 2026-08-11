@@ -95,7 +95,7 @@ class BillingApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "BillingCheckoutResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -163,7 +163,7 @@ class BillingApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "BillingCheckoutResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -231,7 +231,7 @@ class BillingApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "BillingCheckoutResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,

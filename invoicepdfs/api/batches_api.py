@@ -96,7 +96,7 @@ class BatchesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "BatchResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -163,7 +163,7 @@ class BatchesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "BatchResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -230,7 +230,7 @@ class BatchesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "BatchResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -355,7 +355,7 @@ class BatchesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "BatchResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -422,7 +422,7 @@ class BatchesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "BatchResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -489,7 +489,7 @@ class BatchesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "BatchResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -627,7 +627,7 @@ class BatchesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "object",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -694,7 +694,7 @@ class BatchesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "object",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -761,7 +761,7 @@ class BatchesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "object",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -886,7 +886,7 @@ class BatchesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "BatchResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -953,7 +953,7 @@ class BatchesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "BatchResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1020,7 +1020,7 @@ class BatchesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "BatchResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1153,7 +1153,7 @@ class BatchesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "BatchItemsListResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1228,7 +1228,7 @@ class BatchesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "BatchItemsListResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1303,7 +1303,7 @@ class BatchesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "BatchItemsListResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1442,7 +1442,7 @@ class BatchesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "BatchesListResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1513,7 +1513,7 @@ class BatchesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "BatchesListResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1584,7 +1584,7 @@ class BatchesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "BatchesListResponse",
-            '422': "HTTPValidationError",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
