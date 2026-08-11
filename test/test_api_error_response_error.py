@@ -35,6 +35,7 @@ class TestApiErrorResponseError(unittest.TestCase):
         model = ApiErrorResponseError()
         if include_optional:
             return ApiErrorResponseError(
+                status = 422,
                 code = 'unprocessable_entity',
                 message = 'Request validation failed',
                 request_id = '',
@@ -42,6 +43,7 @@ class TestApiErrorResponseError(unittest.TestCase):
             )
         else:
             return ApiErrorResponseError(
+                status = 422,
                 code = 'unprocessable_entity',
                 message = 'Request validation failed',
         )

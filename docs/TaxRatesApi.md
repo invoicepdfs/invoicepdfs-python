@@ -4,15 +4,15 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_tax_rate_api_v1_tax_rates_post**](TaxRatesApi.md#create_tax_rate_api_v1_tax_rates_post) | **POST** /api/v1/tax-rates | Create Tax Rate
-[**delete_tax_rate_api_v1_tax_rates_tax_rate_id_delete**](TaxRatesApi.md#delete_tax_rate_api_v1_tax_rates_tax_rate_id_delete) | **DELETE** /api/v1/tax-rates/{tax_rate_id} | Delete Tax Rate
-[**get_tax_rate_api_v1_tax_rates_tax_rate_id_get**](TaxRatesApi.md#get_tax_rate_api_v1_tax_rates_tax_rate_id_get) | **GET** /api/v1/tax-rates/{tax_rate_id} | Get Tax Rate
-[**list_tax_rates_api_v1_tax_rates_get**](TaxRatesApi.md#list_tax_rates_api_v1_tax_rates_get) | **GET** /api/v1/tax-rates | List Tax Rates
-[**update_tax_rate_api_v1_tax_rates_tax_rate_id_patch**](TaxRatesApi.md#update_tax_rate_api_v1_tax_rates_tax_rate_id_patch) | **PATCH** /api/v1/tax-rates/{tax_rate_id} | Update Tax Rate
+[**create_tax_rate**](TaxRatesApi.md#create_tax_rate) | **POST** /api/v1/tax-rates | Create Tax Rate
+[**delete_tax_rate**](TaxRatesApi.md#delete_tax_rate) | **DELETE** /api/v1/tax-rates/{tax_rate_id} | Delete Tax Rate
+[**get_tax_rate**](TaxRatesApi.md#get_tax_rate) | **GET** /api/v1/tax-rates/{tax_rate_id} | Get Tax Rate
+[**list_tax_rates**](TaxRatesApi.md#list_tax_rates) | **GET** /api/v1/tax-rates | List Tax Rates
+[**update_tax_rate**](TaxRatesApi.md#update_tax_rate) | **PATCH** /api/v1/tax-rates/{tax_rate_id} | Update Tax Rate
 
 
-# **create_tax_rate_api_v1_tax_rates_post**
-> TaxRateResponse create_tax_rate_api_v1_tax_rates_post(tax_rate_create_request)
+# **create_tax_rate**
+> TaxRateResponse create_tax_rate(tax_rate_create_request)
 
 Create Tax Rate
 
@@ -51,11 +51,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Create Tax Rate
-        api_response = api_instance.create_tax_rate_api_v1_tax_rates_post(tax_rate_create_request)
-        print("The response of TaxRatesApi->create_tax_rate_api_v1_tax_rates_post:\n")
+        api_response = api_instance.create_tax_rate(tax_rate_create_request)
+        print("The response of TaxRatesApi->create_tax_rate:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TaxRatesApi->create_tax_rate_api_v1_tax_rates_post: %s\n" % e)
+        print("Exception when calling TaxRatesApi->create_tax_rate: %s\n" % e)
 ```
 
 
@@ -89,8 +89,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_tax_rate_api_v1_tax_rates_tax_rate_id_delete**
-> SimpleBoolResponse delete_tax_rate_api_v1_tax_rates_tax_rate_id_delete(tax_rate_id)
+# **delete_tax_rate**
+> SimpleBoolResponse delete_tax_rate(tax_rate_id)
 
 Delete Tax Rate
 
@@ -128,11 +128,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Delete Tax Rate
-        api_response = api_instance.delete_tax_rate_api_v1_tax_rates_tax_rate_id_delete(tax_rate_id)
-        print("The response of TaxRatesApi->delete_tax_rate_api_v1_tax_rates_tax_rate_id_delete:\n")
+        api_response = api_instance.delete_tax_rate(tax_rate_id)
+        print("The response of TaxRatesApi->delete_tax_rate:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TaxRatesApi->delete_tax_rate_api_v1_tax_rates_tax_rate_id_delete: %s\n" % e)
+        print("Exception when calling TaxRatesApi->delete_tax_rate: %s\n" % e)
 ```
 
 
@@ -166,8 +166,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_tax_rate_api_v1_tax_rates_tax_rate_id_get**
-> TaxRateResponse get_tax_rate_api_v1_tax_rates_tax_rate_id_get(tax_rate_id)
+# **get_tax_rate**
+> TaxRateResponse get_tax_rate(tax_rate_id)
 
 Get Tax Rate
 
@@ -205,11 +205,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Get Tax Rate
-        api_response = api_instance.get_tax_rate_api_v1_tax_rates_tax_rate_id_get(tax_rate_id)
-        print("The response of TaxRatesApi->get_tax_rate_api_v1_tax_rates_tax_rate_id_get:\n")
+        api_response = api_instance.get_tax_rate(tax_rate_id)
+        print("The response of TaxRatesApi->get_tax_rate:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TaxRatesApi->get_tax_rate_api_v1_tax_rates_tax_rate_id_get: %s\n" % e)
+        print("Exception when calling TaxRatesApi->get_tax_rate: %s\n" % e)
 ```
 
 
@@ -243,8 +243,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_tax_rates_api_v1_tax_rates_get**
-> TaxRatesListResponse list_tax_rates_api_v1_tax_rates_get(limit=limit, cursor=cursor)
+# **list_tax_rates**
+> TaxRatesListResponse list_tax_rates(limit=limit, cursor=cursor)
 
 List Tax Rates
 
@@ -283,11 +283,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # List Tax Rates
-        api_response = api_instance.list_tax_rates_api_v1_tax_rates_get(limit=limit, cursor=cursor)
-        print("The response of TaxRatesApi->list_tax_rates_api_v1_tax_rates_get:\n")
+        api_response = api_instance.list_tax_rates(limit=limit, cursor=cursor)
+        print("The response of TaxRatesApi->list_tax_rates:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TaxRatesApi->list_tax_rates_api_v1_tax_rates_get: %s\n" % e)
+        print("Exception when calling TaxRatesApi->list_tax_rates: %s\n" % e)
 ```
 
 
@@ -322,8 +322,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_tax_rate_api_v1_tax_rates_tax_rate_id_patch**
-> TaxRateResponse update_tax_rate_api_v1_tax_rates_tax_rate_id_patch(tax_rate_id, tax_rate_patch_request)
+# **update_tax_rate**
+> TaxRateResponse update_tax_rate(tax_rate_id, tax_rate_patch_request)
 
 Update Tax Rate
 
@@ -363,11 +363,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Update Tax Rate
-        api_response = api_instance.update_tax_rate_api_v1_tax_rates_tax_rate_id_patch(tax_rate_id, tax_rate_patch_request)
-        print("The response of TaxRatesApi->update_tax_rate_api_v1_tax_rates_tax_rate_id_patch:\n")
+        api_response = api_instance.update_tax_rate(tax_rate_id, tax_rate_patch_request)
+        print("The response of TaxRatesApi->update_tax_rate:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TaxRatesApi->update_tax_rate_api_v1_tax_rates_tax_rate_id_patch: %s\n" % e)
+        print("Exception when calling TaxRatesApi->update_tax_rate: %s\n" % e)
 ```
 
 

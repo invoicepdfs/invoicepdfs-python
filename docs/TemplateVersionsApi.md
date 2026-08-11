@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_template_version_api_v1_templates_template_id_versions_post**](TemplateVersionsApi.md#create_template_version_api_v1_templates_template_id_versions_post) | **POST** /api/v1/templates/{template_id}/versions | Create Template Version
-[**get_template_version_api_v1_templates_template_id_versions_version_get**](TemplateVersionsApi.md#get_template_version_api_v1_templates_template_id_versions_version_get) | **GET** /api/v1/templates/{template_id}/versions/{version} | Get Template Version
-[**list_template_versions_api_v1_templates_template_id_versions_get**](TemplateVersionsApi.md#list_template_versions_api_v1_templates_template_id_versions_get) | **GET** /api/v1/templates/{template_id}/versions | List Template Versions
+[**create_template_version**](TemplateVersionsApi.md#create_template_version) | **POST** /api/v1/templates/{template_id}/versions | Create Template Version
+[**get_template_version**](TemplateVersionsApi.md#get_template_version) | **GET** /api/v1/templates/{template_id}/versions/{version} | Get Template Version
+[**list_template_versions**](TemplateVersionsApi.md#list_template_versions) | **GET** /api/v1/templates/{template_id}/versions | List Template Versions
 
 
-# **create_template_version_api_v1_templates_template_id_versions_post**
-> TemplateVersionResponse create_template_version_api_v1_templates_template_id_versions_post(template_id, template_version_create_request)
+# **create_template_version**
+> TemplateVersionResponse create_template_version(template_id, template_version_create_request)
 
 Create Template Version
 
@@ -50,11 +50,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Create Template Version
-        api_response = api_instance.create_template_version_api_v1_templates_template_id_versions_post(template_id, template_version_create_request)
-        print("The response of TemplateVersionsApi->create_template_version_api_v1_templates_template_id_versions_post:\n")
+        api_response = api_instance.create_template_version(template_id, template_version_create_request)
+        print("The response of TemplateVersionsApi->create_template_version:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TemplateVersionsApi->create_template_version_api_v1_templates_template_id_versions_post: %s\n" % e)
+        print("Exception when calling TemplateVersionsApi->create_template_version: %s\n" % e)
 ```
 
 
@@ -89,8 +89,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_template_version_api_v1_templates_template_id_versions_version_get**
-> TemplateVersionResponse get_template_version_api_v1_templates_template_id_versions_version_get(template_id, version)
+# **get_template_version**
+> TemplateVersionResponse get_template_version(template_id, version)
 
 Get Template Version
 
@@ -129,11 +129,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Get Template Version
-        api_response = api_instance.get_template_version_api_v1_templates_template_id_versions_version_get(template_id, version)
-        print("The response of TemplateVersionsApi->get_template_version_api_v1_templates_template_id_versions_version_get:\n")
+        api_response = api_instance.get_template_version(template_id, version)
+        print("The response of TemplateVersionsApi->get_template_version:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TemplateVersionsApi->get_template_version_api_v1_templates_template_id_versions_version_get: %s\n" % e)
+        print("Exception when calling TemplateVersionsApi->get_template_version: %s\n" % e)
 ```
 
 
@@ -168,8 +168,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_template_versions_api_v1_templates_template_id_versions_get**
-> TemplateVersionsListResponse list_template_versions_api_v1_templates_template_id_versions_get(template_id)
+# **list_template_versions**
+> TemplateVersionsListResponse list_template_versions(template_id)
 
 List Template Versions
 
@@ -207,11 +207,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # List Template Versions
-        api_response = api_instance.list_template_versions_api_v1_templates_template_id_versions_get(template_id)
-        print("The response of TemplateVersionsApi->list_template_versions_api_v1_templates_template_id_versions_get:\n")
+        api_response = api_instance.list_template_versions(template_id)
+        print("The response of TemplateVersionsApi->list_template_versions:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TemplateVersionsApi->list_template_versions_api_v1_templates_template_id_versions_get: %s\n" % e)
+        print("Exception when calling TemplateVersionsApi->list_template_versions: %s\n" % e)
 ```
 
 

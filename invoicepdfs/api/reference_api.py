@@ -37,7 +37,7 @@ class ReferenceApi:
 
 
     @validate_call
-    def list_countries_api_v1_reference_countries_get(
+    def list_countries(
         self,
         _request_timeout: Union[
             None,
@@ -77,7 +77,7 @@ class ReferenceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_countries_api_v1_reference_countries_get_serialize(
+        _param = self._list_countries_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -99,7 +99,7 @@ class ReferenceApi:
 
 
     @validate_call
-    def list_countries_api_v1_reference_countries_get_with_http_info(
+    def list_countries_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -139,7 +139,7 @@ class ReferenceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_countries_api_v1_reference_countries_get_serialize(
+        _param = self._list_countries_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -161,7 +161,7 @@ class ReferenceApi:
 
 
     @validate_call
-    def list_countries_api_v1_reference_countries_get_without_preload_content(
+    def list_countries_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -201,7 +201,7 @@ class ReferenceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_countries_api_v1_reference_countries_get_serialize(
+        _param = self._list_countries_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -218,7 +218,7 @@ class ReferenceApi:
         return response_data.response
 
 
-    def _list_countries_api_v1_reference_countries_get_serialize(
+    def _list_countries_serialize(
         self,
         _request_auth,
         _content_type,
@@ -277,7 +277,7 @@ class ReferenceApi:
 
 
     @validate_call
-    def list_currencies_api_v1_reference_currencies_get(
+    def list_currencies(
         self,
         _request_timeout: Union[
             None,
@@ -317,7 +317,7 @@ class ReferenceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_currencies_api_v1_reference_currencies_get_serialize(
+        _param = self._list_currencies_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -339,7 +339,7 @@ class ReferenceApi:
 
 
     @validate_call
-    def list_currencies_api_v1_reference_currencies_get_with_http_info(
+    def list_currencies_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -379,7 +379,7 @@ class ReferenceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_currencies_api_v1_reference_currencies_get_serialize(
+        _param = self._list_currencies_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -401,7 +401,7 @@ class ReferenceApi:
 
 
     @validate_call
-    def list_currencies_api_v1_reference_currencies_get_without_preload_content(
+    def list_currencies_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -441,7 +441,7 @@ class ReferenceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_currencies_api_v1_reference_currencies_get_serialize(
+        _param = self._list_currencies_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -458,7 +458,7 @@ class ReferenceApi:
         return response_data.response
 
 
-    def _list_currencies_api_v1_reference_currencies_get_serialize(
+    def _list_currencies_serialize(
         self,
         _request_auth,
         _content_type,
@@ -517,7 +517,7 @@ class ReferenceApi:
 
 
     @validate_call
-    def list_document_types_api_v1_reference_document_types_get(
+    def list_document_types(
         self,
         _request_timeout: Union[
             None,
@@ -558,7 +558,7 @@ class ReferenceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_document_types_api_v1_reference_document_types_get_serialize(
+        _param = self._list_document_types_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -580,7 +580,7 @@ class ReferenceApi:
 
 
     @validate_call
-    def list_document_types_api_v1_reference_document_types_get_with_http_info(
+    def list_document_types_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -621,7 +621,7 @@ class ReferenceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_document_types_api_v1_reference_document_types_get_serialize(
+        _param = self._list_document_types_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -643,7 +643,7 @@ class ReferenceApi:
 
 
     @validate_call
-    def list_document_types_api_v1_reference_document_types_get_without_preload_content(
+    def list_document_types_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -684,7 +684,7 @@ class ReferenceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_document_types_api_v1_reference_document_types_get_serialize(
+        _param = self._list_document_types_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -701,7 +701,7 @@ class ReferenceApi:
         return response_data.response
 
 
-    def _list_document_types_api_v1_reference_document_types_get_serialize(
+    def _list_document_types_serialize(
         self,
         _request_auth,
         _content_type,
@@ -760,7 +760,7 @@ class ReferenceApi:
 
 
     @validate_call
-    def list_locales_api_v1_reference_locales_get(
+    def list_locales(
         self,
         _request_timeout: Union[
             None,
@@ -800,7 +800,7 @@ class ReferenceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_locales_api_v1_reference_locales_get_serialize(
+        _param = self._list_locales_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -822,7 +822,7 @@ class ReferenceApi:
 
 
     @validate_call
-    def list_locales_api_v1_reference_locales_get_with_http_info(
+    def list_locales_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -862,7 +862,7 @@ class ReferenceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_locales_api_v1_reference_locales_get_serialize(
+        _param = self._list_locales_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -884,7 +884,7 @@ class ReferenceApi:
 
 
     @validate_call
-    def list_locales_api_v1_reference_locales_get_without_preload_content(
+    def list_locales_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -924,7 +924,7 @@ class ReferenceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_locales_api_v1_reference_locales_get_serialize(
+        _param = self._list_locales_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -941,7 +941,7 @@ class ReferenceApi:
         return response_data.response
 
 
-    def _list_locales_api_v1_reference_locales_get_serialize(
+    def _list_locales_serialize(
         self,
         _request_auth,
         _content_type,
@@ -1000,7 +1000,7 @@ class ReferenceApi:
 
 
     @validate_call
-    def list_page_sizes_api_v1_reference_page_sizes_get(
+    def list_page_sizes(
         self,
         _request_timeout: Union[
             None,
@@ -1040,7 +1040,7 @@ class ReferenceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_page_sizes_api_v1_reference_page_sizes_get_serialize(
+        _param = self._list_page_sizes_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1062,7 +1062,7 @@ class ReferenceApi:
 
 
     @validate_call
-    def list_page_sizes_api_v1_reference_page_sizes_get_with_http_info(
+    def list_page_sizes_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -1102,7 +1102,7 @@ class ReferenceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_page_sizes_api_v1_reference_page_sizes_get_serialize(
+        _param = self._list_page_sizes_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1124,7 +1124,7 @@ class ReferenceApi:
 
 
     @validate_call
-    def list_page_sizes_api_v1_reference_page_sizes_get_without_preload_content(
+    def list_page_sizes_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -1164,7 +1164,7 @@ class ReferenceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_page_sizes_api_v1_reference_page_sizes_get_serialize(
+        _param = self._list_page_sizes_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1181,7 +1181,7 @@ class ReferenceApi:
         return response_data.response
 
 
-    def _list_page_sizes_api_v1_reference_page_sizes_get_serialize(
+    def _list_page_sizes_serialize(
         self,
         _request_auth,
         _content_type,
@@ -1240,7 +1240,7 @@ class ReferenceApi:
 
 
     @validate_call
-    def list_timezones_api_v1_reference_timezones_get(
+    def list_timezones(
         self,
         _request_timeout: Union[
             None,
@@ -1280,7 +1280,7 @@ class ReferenceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_timezones_api_v1_reference_timezones_get_serialize(
+        _param = self._list_timezones_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1302,7 +1302,7 @@ class ReferenceApi:
 
 
     @validate_call
-    def list_timezones_api_v1_reference_timezones_get_with_http_info(
+    def list_timezones_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -1342,7 +1342,7 @@ class ReferenceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_timezones_api_v1_reference_timezones_get_serialize(
+        _param = self._list_timezones_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1364,7 +1364,7 @@ class ReferenceApi:
 
 
     @validate_call
-    def list_timezones_api_v1_reference_timezones_get_without_preload_content(
+    def list_timezones_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -1404,7 +1404,7 @@ class ReferenceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_timezones_api_v1_reference_timezones_get_serialize(
+        _param = self._list_timezones_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1421,7 +1421,7 @@ class ReferenceApi:
         return response_data.response
 
 
-    def _list_timezones_api_v1_reference_timezones_get_serialize(
+    def _list_timezones_serialize(
         self,
         _request_auth,
         _content_type,

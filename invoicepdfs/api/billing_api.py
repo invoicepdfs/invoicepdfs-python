@@ -41,7 +41,7 @@ class BillingApi:
 
 
     @validate_call
-    def create_checkout_api_v1_billing_checkout_session_post(
+    def create_checkout_session(
         self,
         billing_checkout_request: BillingCheckoutRequest,
         _request_timeout: Union[
@@ -85,7 +85,7 @@ class BillingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_checkout_api_v1_billing_checkout_session_post_serialize(
+        _param = self._create_checkout_session_serialize(
             billing_checkout_request=billing_checkout_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -109,7 +109,7 @@ class BillingApi:
 
 
     @validate_call
-    def create_checkout_api_v1_billing_checkout_session_post_with_http_info(
+    def create_checkout_session_with_http_info(
         self,
         billing_checkout_request: BillingCheckoutRequest,
         _request_timeout: Union[
@@ -153,7 +153,7 @@ class BillingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_checkout_api_v1_billing_checkout_session_post_serialize(
+        _param = self._create_checkout_session_serialize(
             billing_checkout_request=billing_checkout_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -177,7 +177,7 @@ class BillingApi:
 
 
     @validate_call
-    def create_checkout_api_v1_billing_checkout_session_post_without_preload_content(
+    def create_checkout_session_without_preload_content(
         self,
         billing_checkout_request: BillingCheckoutRequest,
         _request_timeout: Union[
@@ -221,7 +221,7 @@ class BillingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_checkout_api_v1_billing_checkout_session_post_serialize(
+        _param = self._create_checkout_session_serialize(
             billing_checkout_request=billing_checkout_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -240,7 +240,7 @@ class BillingApi:
         return response_data.response
 
 
-    def _create_checkout_api_v1_billing_checkout_session_post_serialize(
+    def _create_checkout_session_serialize(
         self,
         billing_checkout_request,
         _request_auth,
@@ -316,7 +316,7 @@ class BillingApi:
 
 
     @validate_call
-    def create_portal_api_v1_billing_portal_session_post(
+    def create_portal_session(
         self,
         _request_timeout: Union[
             None,
@@ -357,7 +357,7 @@ class BillingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_portal_api_v1_billing_portal_session_post_serialize(
+        _param = self._create_portal_session_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -379,7 +379,7 @@ class BillingApi:
 
 
     @validate_call
-    def create_portal_api_v1_billing_portal_session_post_with_http_info(
+    def create_portal_session_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -420,7 +420,7 @@ class BillingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_portal_api_v1_billing_portal_session_post_serialize(
+        _param = self._create_portal_session_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -442,7 +442,7 @@ class BillingApi:
 
 
     @validate_call
-    def create_portal_api_v1_billing_portal_session_post_without_preload_content(
+    def create_portal_session_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -483,7 +483,7 @@ class BillingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_portal_api_v1_billing_portal_session_post_serialize(
+        _param = self._create_portal_session_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -500,7 +500,7 @@ class BillingApi:
         return response_data.response
 
 
-    def _create_portal_api_v1_billing_portal_session_post_serialize(
+    def _create_portal_session_serialize(
         self,
         _request_auth,
         _content_type,
@@ -560,7 +560,7 @@ class BillingApi:
 
 
     @validate_call
-    def get_subscription_api_v1_billing_subscription_get(
+    def get_subscription(
         self,
         _request_timeout: Union[
             None,
@@ -601,7 +601,7 @@ class BillingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_subscription_api_v1_billing_subscription_get_serialize(
+        _param = self._get_subscription_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -623,7 +623,7 @@ class BillingApi:
 
 
     @validate_call
-    def get_subscription_api_v1_billing_subscription_get_with_http_info(
+    def get_subscription_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -664,7 +664,7 @@ class BillingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_subscription_api_v1_billing_subscription_get_serialize(
+        _param = self._get_subscription_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -686,7 +686,7 @@ class BillingApi:
 
 
     @validate_call
-    def get_subscription_api_v1_billing_subscription_get_without_preload_content(
+    def get_subscription_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -727,7 +727,7 @@ class BillingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_subscription_api_v1_billing_subscription_get_serialize(
+        _param = self._get_subscription_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -744,7 +744,7 @@ class BillingApi:
         return response_data.response
 
 
-    def _get_subscription_api_v1_billing_subscription_get_serialize(
+    def _get_subscription_serialize(
         self,
         _request_auth,
         _content_type,
@@ -804,7 +804,7 @@ class BillingApi:
 
 
     @validate_call
-    def list_plans_api_v1_billing_plans_get(
+    def list_plans(
         self,
         _request_timeout: Union[
             None,
@@ -845,7 +845,7 @@ class BillingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_plans_api_v1_billing_plans_get_serialize(
+        _param = self._list_plans_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -867,7 +867,7 @@ class BillingApi:
 
 
     @validate_call
-    def list_plans_api_v1_billing_plans_get_with_http_info(
+    def list_plans_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -908,7 +908,7 @@ class BillingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_plans_api_v1_billing_plans_get_serialize(
+        _param = self._list_plans_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -930,7 +930,7 @@ class BillingApi:
 
 
     @validate_call
-    def list_plans_api_v1_billing_plans_get_without_preload_content(
+    def list_plans_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -971,7 +971,7 @@ class BillingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_plans_api_v1_billing_plans_get_serialize(
+        _param = self._list_plans_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -988,7 +988,7 @@ class BillingApi:
         return response_data.response
 
 
-    def _list_plans_api_v1_billing_plans_get_serialize(
+    def _list_plans_serialize(
         self,
         _request_auth,
         _content_type,

@@ -40,7 +40,7 @@ class FilesApi:
 
 
     @validate_call
-    def delete_file_api_v1_files_file_id_delete(
+    def delete_file(
         self,
         file_id: StrictStr,
         _request_timeout: Union[
@@ -83,7 +83,7 @@ class FilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_file_api_v1_files_file_id_delete_serialize(
+        _param = self._delete_file_serialize(
             file_id=file_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -107,7 +107,7 @@ class FilesApi:
 
 
     @validate_call
-    def delete_file_api_v1_files_file_id_delete_with_http_info(
+    def delete_file_with_http_info(
         self,
         file_id: StrictStr,
         _request_timeout: Union[
@@ -150,7 +150,7 @@ class FilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_file_api_v1_files_file_id_delete_serialize(
+        _param = self._delete_file_serialize(
             file_id=file_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -174,7 +174,7 @@ class FilesApi:
 
 
     @validate_call
-    def delete_file_api_v1_files_file_id_delete_without_preload_content(
+    def delete_file_without_preload_content(
         self,
         file_id: StrictStr,
         _request_timeout: Union[
@@ -217,7 +217,7 @@ class FilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_file_api_v1_files_file_id_delete_serialize(
+        _param = self._delete_file_serialize(
             file_id=file_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -236,7 +236,7 @@ class FilesApi:
         return response_data.response
 
 
-    def _delete_file_api_v1_files_file_id_delete_serialize(
+    def _delete_file_serialize(
         self,
         file_id,
         _request_auth,
@@ -299,7 +299,7 @@ class FilesApi:
 
 
     @validate_call
-    def get_file_api_v1_files_file_id_get(
+    def get_file(
         self,
         file_id: StrictStr,
         _request_timeout: Union[
@@ -342,7 +342,7 @@ class FilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_file_api_v1_files_file_id_get_serialize(
+        _param = self._get_file_serialize(
             file_id=file_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -366,7 +366,7 @@ class FilesApi:
 
 
     @validate_call
-    def get_file_api_v1_files_file_id_get_with_http_info(
+    def get_file_with_http_info(
         self,
         file_id: StrictStr,
         _request_timeout: Union[
@@ -409,7 +409,7 @@ class FilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_file_api_v1_files_file_id_get_serialize(
+        _param = self._get_file_serialize(
             file_id=file_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -433,7 +433,7 @@ class FilesApi:
 
 
     @validate_call
-    def get_file_api_v1_files_file_id_get_without_preload_content(
+    def get_file_without_preload_content(
         self,
         file_id: StrictStr,
         _request_timeout: Union[
@@ -476,7 +476,7 @@ class FilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_file_api_v1_files_file_id_get_serialize(
+        _param = self._get_file_serialize(
             file_id=file_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -495,7 +495,7 @@ class FilesApi:
         return response_data.response
 
 
-    def _get_file_api_v1_files_file_id_get_serialize(
+    def _get_file_serialize(
         self,
         file_id,
         _request_auth,
@@ -558,7 +558,7 @@ class FilesApi:
 
 
     @validate_call
-    def upload_file_api_v1_files_post(
+    def upload_file(
         self,
         file: Union[StrictBytes, StrictStr],
         idempotency_key: Optional[StrictStr] = None,
@@ -604,7 +604,7 @@ class FilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._upload_file_api_v1_files_post_serialize(
+        _param = self._upload_file_serialize(
             file=file,
             idempotency_key=idempotency_key,
             _request_auth=_request_auth,
@@ -629,7 +629,7 @@ class FilesApi:
 
 
     @validate_call
-    def upload_file_api_v1_files_post_with_http_info(
+    def upload_file_with_http_info(
         self,
         file: Union[StrictBytes, StrictStr],
         idempotency_key: Optional[StrictStr] = None,
@@ -675,7 +675,7 @@ class FilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._upload_file_api_v1_files_post_serialize(
+        _param = self._upload_file_serialize(
             file=file,
             idempotency_key=idempotency_key,
             _request_auth=_request_auth,
@@ -700,7 +700,7 @@ class FilesApi:
 
 
     @validate_call
-    def upload_file_api_v1_files_post_without_preload_content(
+    def upload_file_without_preload_content(
         self,
         file: Union[StrictBytes, StrictStr],
         idempotency_key: Optional[StrictStr] = None,
@@ -746,7 +746,7 @@ class FilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._upload_file_api_v1_files_post_serialize(
+        _param = self._upload_file_serialize(
             file=file,
             idempotency_key=idempotency_key,
             _request_auth=_request_auth,
@@ -766,7 +766,7 @@ class FilesApi:
         return response_data.response
 
 
-    def _upload_file_api_v1_files_post_serialize(
+    def _upload_file_serialize(
         self,
         file,
         idempotency_key,

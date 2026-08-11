@@ -4,14 +4,14 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancel_import_api_v1_imports_import_id_cancel_post**](ImportsApi.md#cancel_import_api_v1_imports_import_id_cancel_post) | **POST** /api/v1/imports/{import_id}/cancel | Cancel Import
-[**confirm_import_api_v1_imports_import_id_confirm_post**](ImportsApi.md#confirm_import_api_v1_imports_import_id_confirm_post) | **POST** /api/v1/imports/{import_id}/confirm | Confirm Import
-[**create_import_api_v1_imports_post**](ImportsApi.md#create_import_api_v1_imports_post) | **POST** /api/v1/imports | Create Import
-[**get_import_api_v1_imports_import_id_get**](ImportsApi.md#get_import_api_v1_imports_import_id_get) | **GET** /api/v1/imports/{import_id} | Get Import
+[**cancel_import**](ImportsApi.md#cancel_import) | **POST** /api/v1/imports/{import_id}/cancel | Cancel Import
+[**confirm_import**](ImportsApi.md#confirm_import) | **POST** /api/v1/imports/{import_id}/confirm | Confirm Import
+[**create_import**](ImportsApi.md#create_import) | **POST** /api/v1/imports | Create Import
+[**get_import**](ImportsApi.md#get_import) | **GET** /api/v1/imports/{import_id} | Get Import
 
 
-# **cancel_import_api_v1_imports_import_id_cancel_post**
-> ImportResponse cancel_import_api_v1_imports_import_id_cancel_post(import_id)
+# **cancel_import**
+> ImportResponse cancel_import(import_id)
 
 Cancel Import
 
@@ -49,11 +49,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Cancel Import
-        api_response = api_instance.cancel_import_api_v1_imports_import_id_cancel_post(import_id)
-        print("The response of ImportsApi->cancel_import_api_v1_imports_import_id_cancel_post:\n")
+        api_response = api_instance.cancel_import(import_id)
+        print("The response of ImportsApi->cancel_import:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ImportsApi->cancel_import_api_v1_imports_import_id_cancel_post: %s\n" % e)
+        print("Exception when calling ImportsApi->cancel_import: %s\n" % e)
 ```
 
 
@@ -87,8 +87,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **confirm_import_api_v1_imports_import_id_confirm_post**
-> ImportResponse confirm_import_api_v1_imports_import_id_confirm_post(import_id)
+# **confirm_import**
+> ImportResponse confirm_import(import_id)
 
 Confirm Import
 
@@ -126,11 +126,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Confirm Import
-        api_response = api_instance.confirm_import_api_v1_imports_import_id_confirm_post(import_id)
-        print("The response of ImportsApi->confirm_import_api_v1_imports_import_id_confirm_post:\n")
+        api_response = api_instance.confirm_import(import_id)
+        print("The response of ImportsApi->confirm_import:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ImportsApi->confirm_import_api_v1_imports_import_id_confirm_post: %s\n" % e)
+        print("Exception when calling ImportsApi->confirm_import: %s\n" % e)
 ```
 
 
@@ -164,8 +164,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create_import_api_v1_imports_post**
-> ImportResponse create_import_api_v1_imports_post(import_create_request)
+# **create_import**
+> ImportResponse create_import(import_create_request)
 
 Create Import
 
@@ -204,11 +204,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Create Import
-        api_response = api_instance.create_import_api_v1_imports_post(import_create_request)
-        print("The response of ImportsApi->create_import_api_v1_imports_post:\n")
+        api_response = api_instance.create_import(import_create_request)
+        print("The response of ImportsApi->create_import:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ImportsApi->create_import_api_v1_imports_post: %s\n" % e)
+        print("Exception when calling ImportsApi->create_import: %s\n" % e)
 ```
 
 
@@ -242,8 +242,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_import_api_v1_imports_import_id_get**
-> ImportResponse get_import_api_v1_imports_import_id_get(import_id)
+# **get_import**
+> ImportResponse get_import(import_id)
 
 Get Import
 
@@ -281,11 +281,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Get Import
-        api_response = api_instance.get_import_api_v1_imports_import_id_get(import_id)
-        print("The response of ImportsApi->get_import_api_v1_imports_import_id_get:\n")
+        api_response = api_instance.get_import(import_id)
+        print("The response of ImportsApi->get_import:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ImportsApi->get_import_api_v1_imports_import_id_get: %s\n" % e)
+        print("Exception when calling ImportsApi->get_import: %s\n" % e)
 ```
 
 

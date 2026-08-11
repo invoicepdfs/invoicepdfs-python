@@ -39,7 +39,7 @@ class ImportsApi:
 
 
     @validate_call
-    def cancel_import_api_v1_imports_import_id_cancel_post(
+    def cancel_import(
         self,
         import_id: StrictStr,
         _request_timeout: Union[
@@ -82,7 +82,7 @@ class ImportsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._cancel_import_api_v1_imports_import_id_cancel_post_serialize(
+        _param = self._cancel_import_serialize(
             import_id=import_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -106,7 +106,7 @@ class ImportsApi:
 
 
     @validate_call
-    def cancel_import_api_v1_imports_import_id_cancel_post_with_http_info(
+    def cancel_import_with_http_info(
         self,
         import_id: StrictStr,
         _request_timeout: Union[
@@ -149,7 +149,7 @@ class ImportsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._cancel_import_api_v1_imports_import_id_cancel_post_serialize(
+        _param = self._cancel_import_serialize(
             import_id=import_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -173,7 +173,7 @@ class ImportsApi:
 
 
     @validate_call
-    def cancel_import_api_v1_imports_import_id_cancel_post_without_preload_content(
+    def cancel_import_without_preload_content(
         self,
         import_id: StrictStr,
         _request_timeout: Union[
@@ -216,7 +216,7 @@ class ImportsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._cancel_import_api_v1_imports_import_id_cancel_post_serialize(
+        _param = self._cancel_import_serialize(
             import_id=import_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -235,7 +235,7 @@ class ImportsApi:
         return response_data.response
 
 
-    def _cancel_import_api_v1_imports_import_id_cancel_post_serialize(
+    def _cancel_import_serialize(
         self,
         import_id,
         _request_auth,
@@ -298,7 +298,7 @@ class ImportsApi:
 
 
     @validate_call
-    def confirm_import_api_v1_imports_import_id_confirm_post(
+    def confirm_import(
         self,
         import_id: StrictStr,
         _request_timeout: Union[
@@ -341,7 +341,7 @@ class ImportsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._confirm_import_api_v1_imports_import_id_confirm_post_serialize(
+        _param = self._confirm_import_serialize(
             import_id=import_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -365,7 +365,7 @@ class ImportsApi:
 
 
     @validate_call
-    def confirm_import_api_v1_imports_import_id_confirm_post_with_http_info(
+    def confirm_import_with_http_info(
         self,
         import_id: StrictStr,
         _request_timeout: Union[
@@ -408,7 +408,7 @@ class ImportsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._confirm_import_api_v1_imports_import_id_confirm_post_serialize(
+        _param = self._confirm_import_serialize(
             import_id=import_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -432,7 +432,7 @@ class ImportsApi:
 
 
     @validate_call
-    def confirm_import_api_v1_imports_import_id_confirm_post_without_preload_content(
+    def confirm_import_without_preload_content(
         self,
         import_id: StrictStr,
         _request_timeout: Union[
@@ -475,7 +475,7 @@ class ImportsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._confirm_import_api_v1_imports_import_id_confirm_post_serialize(
+        _param = self._confirm_import_serialize(
             import_id=import_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -494,7 +494,7 @@ class ImportsApi:
         return response_data.response
 
 
-    def _confirm_import_api_v1_imports_import_id_confirm_post_serialize(
+    def _confirm_import_serialize(
         self,
         import_id,
         _request_auth,
@@ -557,7 +557,7 @@ class ImportsApi:
 
 
     @validate_call
-    def create_import_api_v1_imports_post(
+    def create_import(
         self,
         import_create_request: ImportCreateRequest,
         _request_timeout: Union[
@@ -600,7 +600,7 @@ class ImportsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_import_api_v1_imports_post_serialize(
+        _param = self._create_import_serialize(
             import_create_request=import_create_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -624,7 +624,7 @@ class ImportsApi:
 
 
     @validate_call
-    def create_import_api_v1_imports_post_with_http_info(
+    def create_import_with_http_info(
         self,
         import_create_request: ImportCreateRequest,
         _request_timeout: Union[
@@ -667,7 +667,7 @@ class ImportsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_import_api_v1_imports_post_serialize(
+        _param = self._create_import_serialize(
             import_create_request=import_create_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -691,7 +691,7 @@ class ImportsApi:
 
 
     @validate_call
-    def create_import_api_v1_imports_post_without_preload_content(
+    def create_import_without_preload_content(
         self,
         import_create_request: ImportCreateRequest,
         _request_timeout: Union[
@@ -734,7 +734,7 @@ class ImportsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_import_api_v1_imports_post_serialize(
+        _param = self._create_import_serialize(
             import_create_request=import_create_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -753,7 +753,7 @@ class ImportsApi:
         return response_data.response
 
 
-    def _create_import_api_v1_imports_post_serialize(
+    def _create_import_serialize(
         self,
         import_create_request,
         _request_auth,
@@ -829,7 +829,7 @@ class ImportsApi:
 
 
     @validate_call
-    def get_import_api_v1_imports_import_id_get(
+    def get_import(
         self,
         import_id: StrictStr,
         _request_timeout: Union[
@@ -872,7 +872,7 @@ class ImportsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_import_api_v1_imports_import_id_get_serialize(
+        _param = self._get_import_serialize(
             import_id=import_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -896,7 +896,7 @@ class ImportsApi:
 
 
     @validate_call
-    def get_import_api_v1_imports_import_id_get_with_http_info(
+    def get_import_with_http_info(
         self,
         import_id: StrictStr,
         _request_timeout: Union[
@@ -939,7 +939,7 @@ class ImportsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_import_api_v1_imports_import_id_get_serialize(
+        _param = self._get_import_serialize(
             import_id=import_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -963,7 +963,7 @@ class ImportsApi:
 
 
     @validate_call
-    def get_import_api_v1_imports_import_id_get_without_preload_content(
+    def get_import_without_preload_content(
         self,
         import_id: StrictStr,
         _request_timeout: Union[
@@ -1006,7 +1006,7 @@ class ImportsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_import_api_v1_imports_import_id_get_serialize(
+        _param = self._get_import_serialize(
             import_id=import_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1025,7 +1025,7 @@ class ImportsApi:
         return response_data.response
 
 
-    def _get_import_api_v1_imports_import_id_get_serialize(
+    def _get_import_serialize(
         self,
         import_id,
         _request_auth,

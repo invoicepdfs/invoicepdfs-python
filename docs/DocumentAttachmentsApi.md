@@ -1,16 +1,16 @@
-# invoicepdfs.InvoiceAttachmentsApi
+# invoicepdfs.DocumentAttachmentsApi
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_attachment_api_v1_documents_invoice_id_attachments_post**](InvoiceAttachmentsApi.md#create_attachment_api_v1_documents_invoice_id_attachments_post) | **POST** /api/v1/documents/{invoice_id}/attachments | Create Attachment
-[**delete_attachment_api_v1_documents_invoice_id_attachments_attachment_id_delete**](InvoiceAttachmentsApi.md#delete_attachment_api_v1_documents_invoice_id_attachments_attachment_id_delete) | **DELETE** /api/v1/documents/{invoice_id}/attachments/{attachment_id} | Delete Attachment
-[**list_attachments_api_v1_documents_invoice_id_attachments_get**](InvoiceAttachmentsApi.md#list_attachments_api_v1_documents_invoice_id_attachments_get) | **GET** /api/v1/documents/{invoice_id}/attachments | List Attachments
+[**create_document_attachment**](DocumentAttachmentsApi.md#create_document_attachment) | **POST** /api/v1/documents/{document_id}/attachments | Create Attachment
+[**delete_document_attachment**](DocumentAttachmentsApi.md#delete_document_attachment) | **DELETE** /api/v1/documents/{document_id}/attachments/{attachment_id} | Delete Attachment
+[**list_document_attachments**](DocumentAttachmentsApi.md#list_document_attachments) | **GET** /api/v1/documents/{document_id}/attachments | List Attachments
 
 
-# **create_attachment_api_v1_documents_invoice_id_attachments_post**
-> InvoiceAttachmentResponse create_attachment_api_v1_documents_invoice_id_attachments_post(invoice_id, invoice_attachment_create_request)
+# **create_document_attachment**
+> InvoiceAttachmentResponse create_document_attachment(document_id, invoice_attachment_create_request)
 
 Create Attachment
 
@@ -44,17 +44,17 @@ configuration = invoicepdfs.Configuration(
 # Enter a context with an instance of the API client
 with invoicepdfs.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = invoicepdfs.InvoiceAttachmentsApi(api_client)
-    invoice_id = 'invoice_id_example' # str | 
+    api_instance = invoicepdfs.DocumentAttachmentsApi(api_client)
+    document_id = 'document_id_example' # str | 
     invoice_attachment_create_request = invoicepdfs.InvoiceAttachmentCreateRequest() # InvoiceAttachmentCreateRequest | 
 
     try:
         # Create Attachment
-        api_response = api_instance.create_attachment_api_v1_documents_invoice_id_attachments_post(invoice_id, invoice_attachment_create_request)
-        print("The response of InvoiceAttachmentsApi->create_attachment_api_v1_documents_invoice_id_attachments_post:\n")
+        api_response = api_instance.create_document_attachment(document_id, invoice_attachment_create_request)
+        print("The response of DocumentAttachmentsApi->create_document_attachment:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling InvoiceAttachmentsApi->create_attachment_api_v1_documents_invoice_id_attachments_post: %s\n" % e)
+        print("Exception when calling DocumentAttachmentsApi->create_document_attachment: %s\n" % e)
 ```
 
 
@@ -64,7 +64,7 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **invoice_id** | **str**|  | 
+ **document_id** | **str**|  | 
  **invoice_attachment_create_request** | [**InvoiceAttachmentCreateRequest**](InvoiceAttachmentCreateRequest.md)|  | 
 
 ### Return type
@@ -89,8 +89,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_attachment_api_v1_documents_invoice_id_attachments_attachment_id_delete**
-> SimpleBoolResponse delete_attachment_api_v1_documents_invoice_id_attachments_attachment_id_delete(invoice_id, attachment_id)
+# **delete_document_attachment**
+> SimpleBoolResponse delete_document_attachment(document_id, attachment_id)
 
 Delete Attachment
 
@@ -123,17 +123,17 @@ configuration = invoicepdfs.Configuration(
 # Enter a context with an instance of the API client
 with invoicepdfs.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = invoicepdfs.InvoiceAttachmentsApi(api_client)
-    invoice_id = 'invoice_id_example' # str | 
+    api_instance = invoicepdfs.DocumentAttachmentsApi(api_client)
+    document_id = 'document_id_example' # str | 
     attachment_id = 'attachment_id_example' # str | 
 
     try:
         # Delete Attachment
-        api_response = api_instance.delete_attachment_api_v1_documents_invoice_id_attachments_attachment_id_delete(invoice_id, attachment_id)
-        print("The response of InvoiceAttachmentsApi->delete_attachment_api_v1_documents_invoice_id_attachments_attachment_id_delete:\n")
+        api_response = api_instance.delete_document_attachment(document_id, attachment_id)
+        print("The response of DocumentAttachmentsApi->delete_document_attachment:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling InvoiceAttachmentsApi->delete_attachment_api_v1_documents_invoice_id_attachments_attachment_id_delete: %s\n" % e)
+        print("Exception when calling DocumentAttachmentsApi->delete_document_attachment: %s\n" % e)
 ```
 
 
@@ -143,7 +143,7 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **invoice_id** | **str**|  | 
+ **document_id** | **str**|  | 
  **attachment_id** | **str**|  | 
 
 ### Return type
@@ -168,8 +168,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_attachments_api_v1_documents_invoice_id_attachments_get**
-> InvoiceAttachmentsListResponse list_attachments_api_v1_documents_invoice_id_attachments_get(invoice_id)
+# **list_document_attachments**
+> InvoiceAttachmentsListResponse list_document_attachments(document_id)
 
 List Attachments
 
@@ -202,16 +202,16 @@ configuration = invoicepdfs.Configuration(
 # Enter a context with an instance of the API client
 with invoicepdfs.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = invoicepdfs.InvoiceAttachmentsApi(api_client)
-    invoice_id = 'invoice_id_example' # str | 
+    api_instance = invoicepdfs.DocumentAttachmentsApi(api_client)
+    document_id = 'document_id_example' # str | 
 
     try:
         # List Attachments
-        api_response = api_instance.list_attachments_api_v1_documents_invoice_id_attachments_get(invoice_id)
-        print("The response of InvoiceAttachmentsApi->list_attachments_api_v1_documents_invoice_id_attachments_get:\n")
+        api_response = api_instance.list_document_attachments(document_id)
+        print("The response of DocumentAttachmentsApi->list_document_attachments:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling InvoiceAttachmentsApi->list_attachments_api_v1_documents_invoice_id_attachments_get: %s\n" % e)
+        print("Exception when calling DocumentAttachmentsApi->list_document_attachments: %s\n" % e)
 ```
 
 
@@ -221,7 +221,7 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **invoice_id** | **str**|  | 
+ **document_id** | **str**|  | 
 
 ### Return type
 

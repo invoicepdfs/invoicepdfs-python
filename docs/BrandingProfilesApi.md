@@ -4,18 +4,18 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_profile_api_v1_branding_profiles_post**](BrandingProfilesApi.md#create_profile_api_v1_branding_profiles_post) | **POST** /api/v1/branding-profiles | Create Profile
-[**delete_logo_api_v1_branding_profiles_profile_id_logo_delete**](BrandingProfilesApi.md#delete_logo_api_v1_branding_profiles_profile_id_logo_delete) | **DELETE** /api/v1/branding-profiles/{profile_id}/logo | Delete Logo
-[**delete_profile_api_v1_branding_profiles_profile_id_delete**](BrandingProfilesApi.md#delete_profile_api_v1_branding_profiles_profile_id_delete) | **DELETE** /api/v1/branding-profiles/{profile_id} | Delete Profile
-[**get_profile_api_v1_branding_profiles_profile_id_get**](BrandingProfilesApi.md#get_profile_api_v1_branding_profiles_profile_id_get) | **GET** /api/v1/branding-profiles/{profile_id} | Get Profile
-[**list_profiles_api_v1_branding_profiles_get**](BrandingProfilesApi.md#list_profiles_api_v1_branding_profiles_get) | **GET** /api/v1/branding-profiles | List Profiles
-[**set_default_api_v1_branding_profiles_profile_id_default_post**](BrandingProfilesApi.md#set_default_api_v1_branding_profiles_profile_id_default_post) | **POST** /api/v1/branding-profiles/{profile_id}/default | Set Default
-[**update_profile_api_v1_branding_profiles_profile_id_patch**](BrandingProfilesApi.md#update_profile_api_v1_branding_profiles_profile_id_patch) | **PATCH** /api/v1/branding-profiles/{profile_id} | Update Profile
-[**upload_logo_api_v1_branding_profiles_profile_id_logo_post**](BrandingProfilesApi.md#upload_logo_api_v1_branding_profiles_profile_id_logo_post) | **POST** /api/v1/branding-profiles/{profile_id}/logo | Upload Logo
+[**create_branding_profile**](BrandingProfilesApi.md#create_branding_profile) | **POST** /api/v1/branding-profiles | Create Profile
+[**delete_branding_logo**](BrandingProfilesApi.md#delete_branding_logo) | **DELETE** /api/v1/branding-profiles/{profile_id}/logo | Delete Logo
+[**delete_branding_profile**](BrandingProfilesApi.md#delete_branding_profile) | **DELETE** /api/v1/branding-profiles/{profile_id} | Delete Profile
+[**get_branding_profile**](BrandingProfilesApi.md#get_branding_profile) | **GET** /api/v1/branding-profiles/{profile_id} | Get Profile
+[**list_branding_profiles**](BrandingProfilesApi.md#list_branding_profiles) | **GET** /api/v1/branding-profiles | List Profiles
+[**set_default_branding_profile**](BrandingProfilesApi.md#set_default_branding_profile) | **POST** /api/v1/branding-profiles/{profile_id}/default | Set Default
+[**update_branding_profile**](BrandingProfilesApi.md#update_branding_profile) | **PATCH** /api/v1/branding-profiles/{profile_id} | Update Profile
+[**upload_branding_logo**](BrandingProfilesApi.md#upload_branding_logo) | **POST** /api/v1/branding-profiles/{profile_id}/logo | Upload Logo
 
 
-# **create_profile_api_v1_branding_profiles_post**
-> BrandingProfileResponse create_profile_api_v1_branding_profiles_post(branding_profile_create_request)
+# **create_branding_profile**
+> BrandingProfileResponse create_branding_profile(branding_profile_create_request)
 
 Create Profile
 
@@ -54,11 +54,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Create Profile
-        api_response = api_instance.create_profile_api_v1_branding_profiles_post(branding_profile_create_request)
-        print("The response of BrandingProfilesApi->create_profile_api_v1_branding_profiles_post:\n")
+        api_response = api_instance.create_branding_profile(branding_profile_create_request)
+        print("The response of BrandingProfilesApi->create_branding_profile:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BrandingProfilesApi->create_profile_api_v1_branding_profiles_post: %s\n" % e)
+        print("Exception when calling BrandingProfilesApi->create_branding_profile: %s\n" % e)
 ```
 
 
@@ -92,8 +92,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_logo_api_v1_branding_profiles_profile_id_logo_delete**
-> SimpleBoolResponse delete_logo_api_v1_branding_profiles_profile_id_logo_delete(profile_id)
+# **delete_branding_logo**
+> SimpleBoolResponse delete_branding_logo(profile_id)
 
 Delete Logo
 
@@ -131,11 +131,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Delete Logo
-        api_response = api_instance.delete_logo_api_v1_branding_profiles_profile_id_logo_delete(profile_id)
-        print("The response of BrandingProfilesApi->delete_logo_api_v1_branding_profiles_profile_id_logo_delete:\n")
+        api_response = api_instance.delete_branding_logo(profile_id)
+        print("The response of BrandingProfilesApi->delete_branding_logo:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BrandingProfilesApi->delete_logo_api_v1_branding_profiles_profile_id_logo_delete: %s\n" % e)
+        print("Exception when calling BrandingProfilesApi->delete_branding_logo: %s\n" % e)
 ```
 
 
@@ -169,8 +169,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_profile_api_v1_branding_profiles_profile_id_delete**
-> SimpleBoolResponse delete_profile_api_v1_branding_profiles_profile_id_delete(profile_id)
+# **delete_branding_profile**
+> SimpleBoolResponse delete_branding_profile(profile_id)
 
 Delete Profile
 
@@ -208,11 +208,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Delete Profile
-        api_response = api_instance.delete_profile_api_v1_branding_profiles_profile_id_delete(profile_id)
-        print("The response of BrandingProfilesApi->delete_profile_api_v1_branding_profiles_profile_id_delete:\n")
+        api_response = api_instance.delete_branding_profile(profile_id)
+        print("The response of BrandingProfilesApi->delete_branding_profile:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BrandingProfilesApi->delete_profile_api_v1_branding_profiles_profile_id_delete: %s\n" % e)
+        print("Exception when calling BrandingProfilesApi->delete_branding_profile: %s\n" % e)
 ```
 
 
@@ -246,8 +246,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_profile_api_v1_branding_profiles_profile_id_get**
-> BrandingProfileResponse get_profile_api_v1_branding_profiles_profile_id_get(profile_id)
+# **get_branding_profile**
+> BrandingProfileResponse get_branding_profile(profile_id)
 
 Get Profile
 
@@ -285,11 +285,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Get Profile
-        api_response = api_instance.get_profile_api_v1_branding_profiles_profile_id_get(profile_id)
-        print("The response of BrandingProfilesApi->get_profile_api_v1_branding_profiles_profile_id_get:\n")
+        api_response = api_instance.get_branding_profile(profile_id)
+        print("The response of BrandingProfilesApi->get_branding_profile:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BrandingProfilesApi->get_profile_api_v1_branding_profiles_profile_id_get: %s\n" % e)
+        print("Exception when calling BrandingProfilesApi->get_branding_profile: %s\n" % e)
 ```
 
 
@@ -323,8 +323,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_profiles_api_v1_branding_profiles_get**
-> BrandingProfilesListResponse list_profiles_api_v1_branding_profiles_get()
+# **list_branding_profiles**
+> BrandingProfilesListResponse list_branding_profiles()
 
 List Profiles
 
@@ -361,11 +361,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # List Profiles
-        api_response = api_instance.list_profiles_api_v1_branding_profiles_get()
-        print("The response of BrandingProfilesApi->list_profiles_api_v1_branding_profiles_get:\n")
+        api_response = api_instance.list_branding_profiles()
+        print("The response of BrandingProfilesApi->list_branding_profiles:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BrandingProfilesApi->list_profiles_api_v1_branding_profiles_get: %s\n" % e)
+        print("Exception when calling BrandingProfilesApi->list_branding_profiles: %s\n" % e)
 ```
 
 
@@ -395,8 +395,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **set_default_api_v1_branding_profiles_profile_id_default_post**
-> BrandingProfileResponse set_default_api_v1_branding_profiles_profile_id_default_post(profile_id)
+# **set_default_branding_profile**
+> BrandingProfileResponse set_default_branding_profile(profile_id)
 
 Set Default
 
@@ -434,11 +434,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Set Default
-        api_response = api_instance.set_default_api_v1_branding_profiles_profile_id_default_post(profile_id)
-        print("The response of BrandingProfilesApi->set_default_api_v1_branding_profiles_profile_id_default_post:\n")
+        api_response = api_instance.set_default_branding_profile(profile_id)
+        print("The response of BrandingProfilesApi->set_default_branding_profile:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BrandingProfilesApi->set_default_api_v1_branding_profiles_profile_id_default_post: %s\n" % e)
+        print("Exception when calling BrandingProfilesApi->set_default_branding_profile: %s\n" % e)
 ```
 
 
@@ -472,8 +472,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_profile_api_v1_branding_profiles_profile_id_patch**
-> BrandingProfileResponse update_profile_api_v1_branding_profiles_profile_id_patch(profile_id, branding_profile_patch_request)
+# **update_branding_profile**
+> BrandingProfileResponse update_branding_profile(profile_id, branding_profile_patch_request)
 
 Update Profile
 
@@ -513,11 +513,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Update Profile
-        api_response = api_instance.update_profile_api_v1_branding_profiles_profile_id_patch(profile_id, branding_profile_patch_request)
-        print("The response of BrandingProfilesApi->update_profile_api_v1_branding_profiles_profile_id_patch:\n")
+        api_response = api_instance.update_branding_profile(profile_id, branding_profile_patch_request)
+        print("The response of BrandingProfilesApi->update_branding_profile:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BrandingProfilesApi->update_profile_api_v1_branding_profiles_profile_id_patch: %s\n" % e)
+        print("Exception when calling BrandingProfilesApi->update_branding_profile: %s\n" % e)
 ```
 
 
@@ -552,8 +552,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **upload_logo_api_v1_branding_profiles_profile_id_logo_post**
-> BrandingProfileResponse upload_logo_api_v1_branding_profiles_profile_id_logo_post(profile_id, file)
+# **upload_branding_logo**
+> BrandingProfileResponse upload_branding_logo(profile_id, file)
 
 Upload Logo
 
@@ -592,11 +592,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Upload Logo
-        api_response = api_instance.upload_logo_api_v1_branding_profiles_profile_id_logo_post(profile_id, file)
-        print("The response of BrandingProfilesApi->upload_logo_api_v1_branding_profiles_profile_id_logo_post:\n")
+        api_response = api_instance.upload_branding_logo(profile_id, file)
+        print("The response of BrandingProfilesApi->upload_branding_logo:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BrandingProfilesApi->upload_logo_api_v1_branding_profiles_profile_id_logo_post: %s\n" % e)
+        print("Exception when calling BrandingProfilesApi->upload_branding_logo: %s\n" % e)
 ```
 
 

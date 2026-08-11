@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancel_job_api_v1_jobs_job_id_cancel_post**](JobsApi.md#cancel_job_api_v1_jobs_job_id_cancel_post) | **POST** /api/v1/jobs/{job_id}/cancel | Cancel Job
-[**get_job_api_v1_jobs_job_id_get**](JobsApi.md#get_job_api_v1_jobs_job_id_get) | **GET** /api/v1/jobs/{job_id} | Get Job
-[**retry_job_api_v1_jobs_job_id_retry_post**](JobsApi.md#retry_job_api_v1_jobs_job_id_retry_post) | **POST** /api/v1/jobs/{job_id}/retry | Retry Job
+[**cancel_job**](JobsApi.md#cancel_job) | **POST** /api/v1/jobs/{job_id}/cancel | Cancel Job
+[**get_job**](JobsApi.md#get_job) | **GET** /api/v1/jobs/{job_id} | Get Job
+[**retry_job**](JobsApi.md#retry_job) | **POST** /api/v1/jobs/{job_id}/retry | Retry Job
 
 
-# **cancel_job_api_v1_jobs_job_id_cancel_post**
-> JobResponse cancel_job_api_v1_jobs_job_id_cancel_post(job_id)
+# **cancel_job**
+> JobResponse cancel_job(job_id)
 
 Cancel Job
 
@@ -48,11 +48,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Cancel Job
-        api_response = api_instance.cancel_job_api_v1_jobs_job_id_cancel_post(job_id)
-        print("The response of JobsApi->cancel_job_api_v1_jobs_job_id_cancel_post:\n")
+        api_response = api_instance.cancel_job(job_id)
+        print("The response of JobsApi->cancel_job:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling JobsApi->cancel_job_api_v1_jobs_job_id_cancel_post: %s\n" % e)
+        print("Exception when calling JobsApi->cancel_job: %s\n" % e)
 ```
 
 
@@ -86,8 +86,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_job_api_v1_jobs_job_id_get**
-> JobResponse get_job_api_v1_jobs_job_id_get(job_id)
+# **get_job**
+> JobResponse get_job(job_id)
 
 Get Job
 
@@ -125,11 +125,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Get Job
-        api_response = api_instance.get_job_api_v1_jobs_job_id_get(job_id)
-        print("The response of JobsApi->get_job_api_v1_jobs_job_id_get:\n")
+        api_response = api_instance.get_job(job_id)
+        print("The response of JobsApi->get_job:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling JobsApi->get_job_api_v1_jobs_job_id_get: %s\n" % e)
+        print("Exception when calling JobsApi->get_job: %s\n" % e)
 ```
 
 
@@ -163,8 +163,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **retry_job_api_v1_jobs_job_id_retry_post**
-> JobResponse retry_job_api_v1_jobs_job_id_retry_post(job_id)
+# **retry_job**
+> JobResponse retry_job(job_id)
 
 Retry Job
 
@@ -202,11 +202,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Retry Job
-        api_response = api_instance.retry_job_api_v1_jobs_job_id_retry_post(job_id)
-        print("The response of JobsApi->retry_job_api_v1_jobs_job_id_retry_post:\n")
+        api_response = api_instance.retry_job(job_id)
+        print("The response of JobsApi->retry_job:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling JobsApi->retry_job_api_v1_jobs_job_id_retry_post: %s\n" % e)
+        print("Exception when calling JobsApi->retry_job: %s\n" % e)
 ```
 
 

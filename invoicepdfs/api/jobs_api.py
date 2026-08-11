@@ -38,7 +38,7 @@ class JobsApi:
 
 
     @validate_call
-    def cancel_job_api_v1_jobs_job_id_cancel_post(
+    def cancel_job(
         self,
         job_id: StrictStr,
         _request_timeout: Union[
@@ -81,7 +81,7 @@ class JobsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._cancel_job_api_v1_jobs_job_id_cancel_post_serialize(
+        _param = self._cancel_job_serialize(
             job_id=job_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -105,7 +105,7 @@ class JobsApi:
 
 
     @validate_call
-    def cancel_job_api_v1_jobs_job_id_cancel_post_with_http_info(
+    def cancel_job_with_http_info(
         self,
         job_id: StrictStr,
         _request_timeout: Union[
@@ -148,7 +148,7 @@ class JobsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._cancel_job_api_v1_jobs_job_id_cancel_post_serialize(
+        _param = self._cancel_job_serialize(
             job_id=job_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -172,7 +172,7 @@ class JobsApi:
 
 
     @validate_call
-    def cancel_job_api_v1_jobs_job_id_cancel_post_without_preload_content(
+    def cancel_job_without_preload_content(
         self,
         job_id: StrictStr,
         _request_timeout: Union[
@@ -215,7 +215,7 @@ class JobsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._cancel_job_api_v1_jobs_job_id_cancel_post_serialize(
+        _param = self._cancel_job_serialize(
             job_id=job_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -234,7 +234,7 @@ class JobsApi:
         return response_data.response
 
 
-    def _cancel_job_api_v1_jobs_job_id_cancel_post_serialize(
+    def _cancel_job_serialize(
         self,
         job_id,
         _request_auth,
@@ -297,7 +297,7 @@ class JobsApi:
 
 
     @validate_call
-    def get_job_api_v1_jobs_job_id_get(
+    def get_job(
         self,
         job_id: StrictStr,
         _request_timeout: Union[
@@ -340,7 +340,7 @@ class JobsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_job_api_v1_jobs_job_id_get_serialize(
+        _param = self._get_job_serialize(
             job_id=job_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -364,7 +364,7 @@ class JobsApi:
 
 
     @validate_call
-    def get_job_api_v1_jobs_job_id_get_with_http_info(
+    def get_job_with_http_info(
         self,
         job_id: StrictStr,
         _request_timeout: Union[
@@ -407,7 +407,7 @@ class JobsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_job_api_v1_jobs_job_id_get_serialize(
+        _param = self._get_job_serialize(
             job_id=job_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -431,7 +431,7 @@ class JobsApi:
 
 
     @validate_call
-    def get_job_api_v1_jobs_job_id_get_without_preload_content(
+    def get_job_without_preload_content(
         self,
         job_id: StrictStr,
         _request_timeout: Union[
@@ -474,7 +474,7 @@ class JobsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_job_api_v1_jobs_job_id_get_serialize(
+        _param = self._get_job_serialize(
             job_id=job_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -493,7 +493,7 @@ class JobsApi:
         return response_data.response
 
 
-    def _get_job_api_v1_jobs_job_id_get_serialize(
+    def _get_job_serialize(
         self,
         job_id,
         _request_auth,
@@ -556,7 +556,7 @@ class JobsApi:
 
 
     @validate_call
-    def retry_job_api_v1_jobs_job_id_retry_post(
+    def retry_job(
         self,
         job_id: StrictStr,
         _request_timeout: Union[
@@ -599,7 +599,7 @@ class JobsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retry_job_api_v1_jobs_job_id_retry_post_serialize(
+        _param = self._retry_job_serialize(
             job_id=job_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -623,7 +623,7 @@ class JobsApi:
 
 
     @validate_call
-    def retry_job_api_v1_jobs_job_id_retry_post_with_http_info(
+    def retry_job_with_http_info(
         self,
         job_id: StrictStr,
         _request_timeout: Union[
@@ -666,7 +666,7 @@ class JobsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retry_job_api_v1_jobs_job_id_retry_post_serialize(
+        _param = self._retry_job_serialize(
             job_id=job_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -690,7 +690,7 @@ class JobsApi:
 
 
     @validate_call
-    def retry_job_api_v1_jobs_job_id_retry_post_without_preload_content(
+    def retry_job_without_preload_content(
         self,
         job_id: StrictStr,
         _request_timeout: Union[
@@ -733,7 +733,7 @@ class JobsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retry_job_api_v1_jobs_job_id_retry_post_serialize(
+        _param = self._retry_job_serialize(
             job_id=job_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -752,7 +752,7 @@ class JobsApi:
         return response_data.response
 
 
-    def _retry_job_api_v1_jobs_job_id_retry_post_serialize(
+    def _retry_job_serialize(
         self,
         job_id,
         _request_auth,

@@ -4,14 +4,14 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_checkout_api_v1_billing_checkout_session_post**](BillingApi.md#create_checkout_api_v1_billing_checkout_session_post) | **POST** /api/v1/billing/checkout-session | Create Checkout
-[**create_portal_api_v1_billing_portal_session_post**](BillingApi.md#create_portal_api_v1_billing_portal_session_post) | **POST** /api/v1/billing/portal-session | Create Portal
-[**get_subscription_api_v1_billing_subscription_get**](BillingApi.md#get_subscription_api_v1_billing_subscription_get) | **GET** /api/v1/billing/subscription | Get Subscription
-[**list_plans_api_v1_billing_plans_get**](BillingApi.md#list_plans_api_v1_billing_plans_get) | **GET** /api/v1/billing/plans | List Plans
+[**create_checkout_session**](BillingApi.md#create_checkout_session) | **POST** /api/v1/billing/checkout-session | Create Checkout
+[**create_portal_session**](BillingApi.md#create_portal_session) | **POST** /api/v1/billing/portal-session | Create Portal
+[**get_subscription**](BillingApi.md#get_subscription) | **GET** /api/v1/billing/subscription | Get Subscription
+[**list_plans**](BillingApi.md#list_plans) | **GET** /api/v1/billing/plans | List Plans
 
 
-# **create_checkout_api_v1_billing_checkout_session_post**
-> BillingCheckoutResponse create_checkout_api_v1_billing_checkout_session_post(billing_checkout_request)
+# **create_checkout_session**
+> BillingCheckoutResponse create_checkout_session(billing_checkout_request)
 
 Create Checkout
 
@@ -52,11 +52,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Create Checkout
-        api_response = api_instance.create_checkout_api_v1_billing_checkout_session_post(billing_checkout_request)
-        print("The response of BillingApi->create_checkout_api_v1_billing_checkout_session_post:\n")
+        api_response = api_instance.create_checkout_session(billing_checkout_request)
+        print("The response of BillingApi->create_checkout_session:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BillingApi->create_checkout_api_v1_billing_checkout_session_post: %s\n" % e)
+        print("Exception when calling BillingApi->create_checkout_session: %s\n" % e)
 ```
 
 
@@ -90,8 +90,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create_portal_api_v1_billing_portal_session_post**
-> BillingPortalResponse create_portal_api_v1_billing_portal_session_post()
+# **create_portal_session**
+> BillingPortalResponse create_portal_session()
 
 Create Portal
 
@@ -130,11 +130,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Create Portal
-        api_response = api_instance.create_portal_api_v1_billing_portal_session_post()
-        print("The response of BillingApi->create_portal_api_v1_billing_portal_session_post:\n")
+        api_response = api_instance.create_portal_session()
+        print("The response of BillingApi->create_portal_session:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BillingApi->create_portal_api_v1_billing_portal_session_post: %s\n" % e)
+        print("Exception when calling BillingApi->create_portal_session: %s\n" % e)
 ```
 
 
@@ -164,8 +164,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_subscription_api_v1_billing_subscription_get**
-> BillingSubscriptionResponse get_subscription_api_v1_billing_subscription_get()
+# **get_subscription**
+> BillingSubscriptionResponse get_subscription()
 
 Get Subscription
 
@@ -204,11 +204,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Get Subscription
-        api_response = api_instance.get_subscription_api_v1_billing_subscription_get()
-        print("The response of BillingApi->get_subscription_api_v1_billing_subscription_get:\n")
+        api_response = api_instance.get_subscription()
+        print("The response of BillingApi->get_subscription:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BillingApi->get_subscription_api_v1_billing_subscription_get: %s\n" % e)
+        print("Exception when calling BillingApi->get_subscription: %s\n" % e)
 ```
 
 
@@ -238,8 +238,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_plans_api_v1_billing_plans_get**
-> BillingPlansListResponse list_plans_api_v1_billing_plans_get()
+# **list_plans**
+> BillingPlansListResponse list_plans()
 
 List Plans
 
@@ -278,11 +278,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # List Plans
-        api_response = api_instance.list_plans_api_v1_billing_plans_get()
-        print("The response of BillingApi->list_plans_api_v1_billing_plans_get:\n")
+        api_response = api_instance.list_plans()
+        print("The response of BillingApi->list_plans:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BillingApi->list_plans_api_v1_billing_plans_get: %s\n" % e)
+        print("Exception when calling BillingApi->list_plans: %s\n" % e)
 ```
 
 

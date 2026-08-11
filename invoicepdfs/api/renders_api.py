@@ -38,7 +38,7 @@ class RendersApi:
 
 
     @validate_call
-    def download_render_api_v1_renders_render_id_download_get(
+    def download_render(
         self,
         render_id: StrictStr,
         _request_timeout: Union[
@@ -81,7 +81,7 @@ class RendersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._download_render_api_v1_renders_render_id_download_get_serialize(
+        _param = self._download_render_serialize(
             render_id=render_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -105,7 +105,7 @@ class RendersApi:
 
 
     @validate_call
-    def download_render_api_v1_renders_render_id_download_get_with_http_info(
+    def download_render_with_http_info(
         self,
         render_id: StrictStr,
         _request_timeout: Union[
@@ -148,7 +148,7 @@ class RendersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._download_render_api_v1_renders_render_id_download_get_serialize(
+        _param = self._download_render_serialize(
             render_id=render_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -172,7 +172,7 @@ class RendersApi:
 
 
     @validate_call
-    def download_render_api_v1_renders_render_id_download_get_without_preload_content(
+    def download_render_without_preload_content(
         self,
         render_id: StrictStr,
         _request_timeout: Union[
@@ -215,7 +215,7 @@ class RendersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._download_render_api_v1_renders_render_id_download_get_serialize(
+        _param = self._download_render_serialize(
             render_id=render_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -234,7 +234,7 @@ class RendersApi:
         return response_data.response
 
 
-    def _download_render_api_v1_renders_render_id_download_get_serialize(
+    def _download_render_serialize(
         self,
         render_id,
         _request_auth,
@@ -298,7 +298,7 @@ class RendersApi:
 
 
     @validate_call
-    def get_render_api_v1_renders_render_id_get(
+    def get_render(
         self,
         render_id: StrictStr,
         _request_timeout: Union[
@@ -341,7 +341,7 @@ class RendersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_render_api_v1_renders_render_id_get_serialize(
+        _param = self._get_render_serialize(
             render_id=render_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -365,7 +365,7 @@ class RendersApi:
 
 
     @validate_call
-    def get_render_api_v1_renders_render_id_get_with_http_info(
+    def get_render_with_http_info(
         self,
         render_id: StrictStr,
         _request_timeout: Union[
@@ -408,7 +408,7 @@ class RendersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_render_api_v1_renders_render_id_get_serialize(
+        _param = self._get_render_serialize(
             render_id=render_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -432,7 +432,7 @@ class RendersApi:
 
 
     @validate_call
-    def get_render_api_v1_renders_render_id_get_without_preload_content(
+    def get_render_without_preload_content(
         self,
         render_id: StrictStr,
         _request_timeout: Union[
@@ -475,7 +475,7 @@ class RendersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_render_api_v1_renders_render_id_get_serialize(
+        _param = self._get_render_serialize(
             render_id=render_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -494,7 +494,7 @@ class RendersApi:
         return response_data.response
 
 
-    def _get_render_api_v1_renders_render_id_get_serialize(
+    def _get_render_serialize(
         self,
         render_id,
         _request_auth,

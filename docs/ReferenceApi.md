@@ -4,16 +4,16 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_countries_api_v1_reference_countries_get**](ReferenceApi.md#list_countries_api_v1_reference_countries_get) | **GET** /api/v1/reference/countries | List Countries
-[**list_currencies_api_v1_reference_currencies_get**](ReferenceApi.md#list_currencies_api_v1_reference_currencies_get) | **GET** /api/v1/reference/currencies | List Currencies
-[**list_document_types_api_v1_reference_document_types_get**](ReferenceApi.md#list_document_types_api_v1_reference_document_types_get) | **GET** /api/v1/reference/document-types | List Document Types
-[**list_locales_api_v1_reference_locales_get**](ReferenceApi.md#list_locales_api_v1_reference_locales_get) | **GET** /api/v1/reference/locales | List Locales
-[**list_page_sizes_api_v1_reference_page_sizes_get**](ReferenceApi.md#list_page_sizes_api_v1_reference_page_sizes_get) | **GET** /api/v1/reference/page-sizes | List Page Sizes
-[**list_timezones_api_v1_reference_timezones_get**](ReferenceApi.md#list_timezones_api_v1_reference_timezones_get) | **GET** /api/v1/reference/timezones | List Timezones
+[**list_countries**](ReferenceApi.md#list_countries) | **GET** /api/v1/reference/countries | List Countries
+[**list_currencies**](ReferenceApi.md#list_currencies) | **GET** /api/v1/reference/currencies | List Currencies
+[**list_document_types**](ReferenceApi.md#list_document_types) | **GET** /api/v1/reference/document-types | List Document Types
+[**list_locales**](ReferenceApi.md#list_locales) | **GET** /api/v1/reference/locales | List Locales
+[**list_page_sizes**](ReferenceApi.md#list_page_sizes) | **GET** /api/v1/reference/page-sizes | List Page Sizes
+[**list_timezones**](ReferenceApi.md#list_timezones) | **GET** /api/v1/reference/timezones | List Timezones
 
 
-# **list_countries_api_v1_reference_countries_get**
-> Dict[str, object] list_countries_api_v1_reference_countries_get()
+# **list_countries**
+> Dict[str, object] list_countries()
 
 List Countries
 
@@ -39,11 +39,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # List Countries
-        api_response = api_instance.list_countries_api_v1_reference_countries_get()
-        print("The response of ReferenceApi->list_countries_api_v1_reference_countries_get:\n")
+        api_response = api_instance.list_countries()
+        print("The response of ReferenceApi->list_countries:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ReferenceApi->list_countries_api_v1_reference_countries_get: %s\n" % e)
+        print("Exception when calling ReferenceApi->list_countries: %s\n" % e)
 ```
 
 
@@ -73,8 +73,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_currencies_api_v1_reference_currencies_get**
-> Dict[str, object] list_currencies_api_v1_reference_currencies_get()
+# **list_currencies**
+> Dict[str, object] list_currencies()
 
 List Currencies
 
@@ -100,11 +100,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # List Currencies
-        api_response = api_instance.list_currencies_api_v1_reference_currencies_get()
-        print("The response of ReferenceApi->list_currencies_api_v1_reference_currencies_get:\n")
+        api_response = api_instance.list_currencies()
+        print("The response of ReferenceApi->list_currencies:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ReferenceApi->list_currencies_api_v1_reference_currencies_get: %s\n" % e)
+        print("Exception when calling ReferenceApi->list_currencies: %s\n" % e)
 ```
 
 
@@ -134,8 +134,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_document_types_api_v1_reference_document_types_get**
-> Dict[str, object] list_document_types_api_v1_reference_document_types_get()
+# **list_document_types**
+> Dict[str, object] list_document_types()
 
 List Document Types
 
@@ -163,11 +163,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # List Document Types
-        api_response = api_instance.list_document_types_api_v1_reference_document_types_get()
-        print("The response of ReferenceApi->list_document_types_api_v1_reference_document_types_get:\n")
+        api_response = api_instance.list_document_types()
+        print("The response of ReferenceApi->list_document_types:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ReferenceApi->list_document_types_api_v1_reference_document_types_get: %s\n" % e)
+        print("Exception when calling ReferenceApi->list_document_types: %s\n" % e)
 ```
 
 
@@ -197,8 +197,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_locales_api_v1_reference_locales_get**
-> Dict[str, object] list_locales_api_v1_reference_locales_get()
+# **list_locales**
+> Dict[str, object] list_locales()
 
 List Locales
 
@@ -224,11 +224,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # List Locales
-        api_response = api_instance.list_locales_api_v1_reference_locales_get()
-        print("The response of ReferenceApi->list_locales_api_v1_reference_locales_get:\n")
+        api_response = api_instance.list_locales()
+        print("The response of ReferenceApi->list_locales:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ReferenceApi->list_locales_api_v1_reference_locales_get: %s\n" % e)
+        print("Exception when calling ReferenceApi->list_locales: %s\n" % e)
 ```
 
 
@@ -258,8 +258,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_page_sizes_api_v1_reference_page_sizes_get**
-> Dict[str, object] list_page_sizes_api_v1_reference_page_sizes_get()
+# **list_page_sizes**
+> Dict[str, object] list_page_sizes()
 
 List Page Sizes
 
@@ -285,11 +285,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # List Page Sizes
-        api_response = api_instance.list_page_sizes_api_v1_reference_page_sizes_get()
-        print("The response of ReferenceApi->list_page_sizes_api_v1_reference_page_sizes_get:\n")
+        api_response = api_instance.list_page_sizes()
+        print("The response of ReferenceApi->list_page_sizes:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ReferenceApi->list_page_sizes_api_v1_reference_page_sizes_get: %s\n" % e)
+        print("Exception when calling ReferenceApi->list_page_sizes: %s\n" % e)
 ```
 
 
@@ -319,8 +319,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_timezones_api_v1_reference_timezones_get**
-> Dict[str, object] list_timezones_api_v1_reference_timezones_get()
+# **list_timezones**
+> Dict[str, object] list_timezones()
 
 List Timezones
 
@@ -346,11 +346,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # List Timezones
-        api_response = api_instance.list_timezones_api_v1_reference_timezones_get()
-        print("The response of ReferenceApi->list_timezones_api_v1_reference_timezones_get:\n")
+        api_response = api_instance.list_timezones()
+        print("The response of ReferenceApi->list_timezones:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ReferenceApi->list_timezones_api_v1_reference_timezones_get: %s\n" % e)
+        print("Exception when calling ReferenceApi->list_timezones: %s\n" % e)
 ```
 
 

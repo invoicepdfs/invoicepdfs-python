@@ -4,11 +4,11 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_stats_api_v1_stats_get**](StatsApi.md#get_stats_api_v1_stats_get) | **GET** /api/v1/stats | Get Stats
+[**get_stats**](StatsApi.md#get_stats) | **GET** /api/v1/stats | Get Stats
 
 
-# **get_stats_api_v1_stats_get**
-> StatsResponse get_stats_api_v1_stats_get()
+# **get_stats**
+> StatsResponse get_stats()
 
 Get Stats
 
@@ -45,11 +45,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 
     try:
         # Get Stats
-        api_response = api_instance.get_stats_api_v1_stats_get()
-        print("The response of StatsApi->get_stats_api_v1_stats_get:\n")
+        api_response = api_instance.get_stats()
+        print("The response of StatsApi->get_stats:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling StatsApi->get_stats_api_v1_stats_get: %s\n" % e)
+        print("Exception when calling StatsApi->get_stats: %s\n" % e)
 ```
 
 

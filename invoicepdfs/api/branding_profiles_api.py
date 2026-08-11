@@ -43,7 +43,7 @@ class BrandingProfilesApi:
 
 
     @validate_call
-    def create_profile_api_v1_branding_profiles_post(
+    def create_branding_profile(
         self,
         branding_profile_create_request: BrandingProfileCreateRequest,
         _request_timeout: Union[
@@ -86,7 +86,7 @@ class BrandingProfilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_profile_api_v1_branding_profiles_post_serialize(
+        _param = self._create_branding_profile_serialize(
             branding_profile_create_request=branding_profile_create_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -110,7 +110,7 @@ class BrandingProfilesApi:
 
 
     @validate_call
-    def create_profile_api_v1_branding_profiles_post_with_http_info(
+    def create_branding_profile_with_http_info(
         self,
         branding_profile_create_request: BrandingProfileCreateRequest,
         _request_timeout: Union[
@@ -153,7 +153,7 @@ class BrandingProfilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_profile_api_v1_branding_profiles_post_serialize(
+        _param = self._create_branding_profile_serialize(
             branding_profile_create_request=branding_profile_create_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -177,7 +177,7 @@ class BrandingProfilesApi:
 
 
     @validate_call
-    def create_profile_api_v1_branding_profiles_post_without_preload_content(
+    def create_branding_profile_without_preload_content(
         self,
         branding_profile_create_request: BrandingProfileCreateRequest,
         _request_timeout: Union[
@@ -220,7 +220,7 @@ class BrandingProfilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_profile_api_v1_branding_profiles_post_serialize(
+        _param = self._create_branding_profile_serialize(
             branding_profile_create_request=branding_profile_create_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -239,7 +239,7 @@ class BrandingProfilesApi:
         return response_data.response
 
 
-    def _create_profile_api_v1_branding_profiles_post_serialize(
+    def _create_branding_profile_serialize(
         self,
         branding_profile_create_request,
         _request_auth,
@@ -315,7 +315,7 @@ class BrandingProfilesApi:
 
 
     @validate_call
-    def delete_logo_api_v1_branding_profiles_profile_id_logo_delete(
+    def delete_branding_logo(
         self,
         profile_id: StrictStr,
         _request_timeout: Union[
@@ -358,7 +358,7 @@ class BrandingProfilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_logo_api_v1_branding_profiles_profile_id_logo_delete_serialize(
+        _param = self._delete_branding_logo_serialize(
             profile_id=profile_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -382,7 +382,7 @@ class BrandingProfilesApi:
 
 
     @validate_call
-    def delete_logo_api_v1_branding_profiles_profile_id_logo_delete_with_http_info(
+    def delete_branding_logo_with_http_info(
         self,
         profile_id: StrictStr,
         _request_timeout: Union[
@@ -425,7 +425,7 @@ class BrandingProfilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_logo_api_v1_branding_profiles_profile_id_logo_delete_serialize(
+        _param = self._delete_branding_logo_serialize(
             profile_id=profile_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -449,7 +449,7 @@ class BrandingProfilesApi:
 
 
     @validate_call
-    def delete_logo_api_v1_branding_profiles_profile_id_logo_delete_without_preload_content(
+    def delete_branding_logo_without_preload_content(
         self,
         profile_id: StrictStr,
         _request_timeout: Union[
@@ -492,7 +492,7 @@ class BrandingProfilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_logo_api_v1_branding_profiles_profile_id_logo_delete_serialize(
+        _param = self._delete_branding_logo_serialize(
             profile_id=profile_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -511,7 +511,7 @@ class BrandingProfilesApi:
         return response_data.response
 
 
-    def _delete_logo_api_v1_branding_profiles_profile_id_logo_delete_serialize(
+    def _delete_branding_logo_serialize(
         self,
         profile_id,
         _request_auth,
@@ -574,7 +574,7 @@ class BrandingProfilesApi:
 
 
     @validate_call
-    def delete_profile_api_v1_branding_profiles_profile_id_delete(
+    def delete_branding_profile(
         self,
         profile_id: StrictStr,
         _request_timeout: Union[
@@ -617,7 +617,7 @@ class BrandingProfilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_profile_api_v1_branding_profiles_profile_id_delete_serialize(
+        _param = self._delete_branding_profile_serialize(
             profile_id=profile_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -641,7 +641,7 @@ class BrandingProfilesApi:
 
 
     @validate_call
-    def delete_profile_api_v1_branding_profiles_profile_id_delete_with_http_info(
+    def delete_branding_profile_with_http_info(
         self,
         profile_id: StrictStr,
         _request_timeout: Union[
@@ -684,7 +684,7 @@ class BrandingProfilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_profile_api_v1_branding_profiles_profile_id_delete_serialize(
+        _param = self._delete_branding_profile_serialize(
             profile_id=profile_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -708,7 +708,7 @@ class BrandingProfilesApi:
 
 
     @validate_call
-    def delete_profile_api_v1_branding_profiles_profile_id_delete_without_preload_content(
+    def delete_branding_profile_without_preload_content(
         self,
         profile_id: StrictStr,
         _request_timeout: Union[
@@ -751,7 +751,7 @@ class BrandingProfilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_profile_api_v1_branding_profiles_profile_id_delete_serialize(
+        _param = self._delete_branding_profile_serialize(
             profile_id=profile_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -770,7 +770,7 @@ class BrandingProfilesApi:
         return response_data.response
 
 
-    def _delete_profile_api_v1_branding_profiles_profile_id_delete_serialize(
+    def _delete_branding_profile_serialize(
         self,
         profile_id,
         _request_auth,
@@ -833,7 +833,7 @@ class BrandingProfilesApi:
 
 
     @validate_call
-    def get_profile_api_v1_branding_profiles_profile_id_get(
+    def get_branding_profile(
         self,
         profile_id: StrictStr,
         _request_timeout: Union[
@@ -876,7 +876,7 @@ class BrandingProfilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_profile_api_v1_branding_profiles_profile_id_get_serialize(
+        _param = self._get_branding_profile_serialize(
             profile_id=profile_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -900,7 +900,7 @@ class BrandingProfilesApi:
 
 
     @validate_call
-    def get_profile_api_v1_branding_profiles_profile_id_get_with_http_info(
+    def get_branding_profile_with_http_info(
         self,
         profile_id: StrictStr,
         _request_timeout: Union[
@@ -943,7 +943,7 @@ class BrandingProfilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_profile_api_v1_branding_profiles_profile_id_get_serialize(
+        _param = self._get_branding_profile_serialize(
             profile_id=profile_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -967,7 +967,7 @@ class BrandingProfilesApi:
 
 
     @validate_call
-    def get_profile_api_v1_branding_profiles_profile_id_get_without_preload_content(
+    def get_branding_profile_without_preload_content(
         self,
         profile_id: StrictStr,
         _request_timeout: Union[
@@ -1010,7 +1010,7 @@ class BrandingProfilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_profile_api_v1_branding_profiles_profile_id_get_serialize(
+        _param = self._get_branding_profile_serialize(
             profile_id=profile_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1029,7 +1029,7 @@ class BrandingProfilesApi:
         return response_data.response
 
 
-    def _get_profile_api_v1_branding_profiles_profile_id_get_serialize(
+    def _get_branding_profile_serialize(
         self,
         profile_id,
         _request_auth,
@@ -1092,7 +1092,7 @@ class BrandingProfilesApi:
 
 
     @validate_call
-    def list_profiles_api_v1_branding_profiles_get(
+    def list_branding_profiles(
         self,
         _request_timeout: Union[
             None,
@@ -1132,7 +1132,7 @@ class BrandingProfilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_profiles_api_v1_branding_profiles_get_serialize(
+        _param = self._list_branding_profiles_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1154,7 +1154,7 @@ class BrandingProfilesApi:
 
 
     @validate_call
-    def list_profiles_api_v1_branding_profiles_get_with_http_info(
+    def list_branding_profiles_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -1194,7 +1194,7 @@ class BrandingProfilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_profiles_api_v1_branding_profiles_get_serialize(
+        _param = self._list_branding_profiles_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1216,7 +1216,7 @@ class BrandingProfilesApi:
 
 
     @validate_call
-    def list_profiles_api_v1_branding_profiles_get_without_preload_content(
+    def list_branding_profiles_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -1256,7 +1256,7 @@ class BrandingProfilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_profiles_api_v1_branding_profiles_get_serialize(
+        _param = self._list_branding_profiles_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1273,7 +1273,7 @@ class BrandingProfilesApi:
         return response_data.response
 
 
-    def _list_profiles_api_v1_branding_profiles_get_serialize(
+    def _list_branding_profiles_serialize(
         self,
         _request_auth,
         _content_type,
@@ -1333,7 +1333,7 @@ class BrandingProfilesApi:
 
 
     @validate_call
-    def set_default_api_v1_branding_profiles_profile_id_default_post(
+    def set_default_branding_profile(
         self,
         profile_id: StrictStr,
         _request_timeout: Union[
@@ -1376,7 +1376,7 @@ class BrandingProfilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._set_default_api_v1_branding_profiles_profile_id_default_post_serialize(
+        _param = self._set_default_branding_profile_serialize(
             profile_id=profile_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1400,7 +1400,7 @@ class BrandingProfilesApi:
 
 
     @validate_call
-    def set_default_api_v1_branding_profiles_profile_id_default_post_with_http_info(
+    def set_default_branding_profile_with_http_info(
         self,
         profile_id: StrictStr,
         _request_timeout: Union[
@@ -1443,7 +1443,7 @@ class BrandingProfilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._set_default_api_v1_branding_profiles_profile_id_default_post_serialize(
+        _param = self._set_default_branding_profile_serialize(
             profile_id=profile_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1467,7 +1467,7 @@ class BrandingProfilesApi:
 
 
     @validate_call
-    def set_default_api_v1_branding_profiles_profile_id_default_post_without_preload_content(
+    def set_default_branding_profile_without_preload_content(
         self,
         profile_id: StrictStr,
         _request_timeout: Union[
@@ -1510,7 +1510,7 @@ class BrandingProfilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._set_default_api_v1_branding_profiles_profile_id_default_post_serialize(
+        _param = self._set_default_branding_profile_serialize(
             profile_id=profile_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1529,7 +1529,7 @@ class BrandingProfilesApi:
         return response_data.response
 
 
-    def _set_default_api_v1_branding_profiles_profile_id_default_post_serialize(
+    def _set_default_branding_profile_serialize(
         self,
         profile_id,
         _request_auth,
@@ -1592,7 +1592,7 @@ class BrandingProfilesApi:
 
 
     @validate_call
-    def update_profile_api_v1_branding_profiles_profile_id_patch(
+    def update_branding_profile(
         self,
         profile_id: StrictStr,
         branding_profile_patch_request: BrandingProfilePatchRequest,
@@ -1638,7 +1638,7 @@ class BrandingProfilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_profile_api_v1_branding_profiles_profile_id_patch_serialize(
+        _param = self._update_branding_profile_serialize(
             profile_id=profile_id,
             branding_profile_patch_request=branding_profile_patch_request,
             _request_auth=_request_auth,
@@ -1663,7 +1663,7 @@ class BrandingProfilesApi:
 
 
     @validate_call
-    def update_profile_api_v1_branding_profiles_profile_id_patch_with_http_info(
+    def update_branding_profile_with_http_info(
         self,
         profile_id: StrictStr,
         branding_profile_patch_request: BrandingProfilePatchRequest,
@@ -1709,7 +1709,7 @@ class BrandingProfilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_profile_api_v1_branding_profiles_profile_id_patch_serialize(
+        _param = self._update_branding_profile_serialize(
             profile_id=profile_id,
             branding_profile_patch_request=branding_profile_patch_request,
             _request_auth=_request_auth,
@@ -1734,7 +1734,7 @@ class BrandingProfilesApi:
 
 
     @validate_call
-    def update_profile_api_v1_branding_profiles_profile_id_patch_without_preload_content(
+    def update_branding_profile_without_preload_content(
         self,
         profile_id: StrictStr,
         branding_profile_patch_request: BrandingProfilePatchRequest,
@@ -1780,7 +1780,7 @@ class BrandingProfilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_profile_api_v1_branding_profiles_profile_id_patch_serialize(
+        _param = self._update_branding_profile_serialize(
             profile_id=profile_id,
             branding_profile_patch_request=branding_profile_patch_request,
             _request_auth=_request_auth,
@@ -1800,7 +1800,7 @@ class BrandingProfilesApi:
         return response_data.response
 
 
-    def _update_profile_api_v1_branding_profiles_profile_id_patch_serialize(
+    def _update_branding_profile_serialize(
         self,
         profile_id,
         branding_profile_patch_request,
@@ -1879,7 +1879,7 @@ class BrandingProfilesApi:
 
 
     @validate_call
-    def upload_logo_api_v1_branding_profiles_profile_id_logo_post(
+    def upload_branding_logo(
         self,
         profile_id: StrictStr,
         file: Union[StrictBytes, StrictStr],
@@ -1925,7 +1925,7 @@ class BrandingProfilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._upload_logo_api_v1_branding_profiles_profile_id_logo_post_serialize(
+        _param = self._upload_branding_logo_serialize(
             profile_id=profile_id,
             file=file,
             _request_auth=_request_auth,
@@ -1950,7 +1950,7 @@ class BrandingProfilesApi:
 
 
     @validate_call
-    def upload_logo_api_v1_branding_profiles_profile_id_logo_post_with_http_info(
+    def upload_branding_logo_with_http_info(
         self,
         profile_id: StrictStr,
         file: Union[StrictBytes, StrictStr],
@@ -1996,7 +1996,7 @@ class BrandingProfilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._upload_logo_api_v1_branding_profiles_profile_id_logo_post_serialize(
+        _param = self._upload_branding_logo_serialize(
             profile_id=profile_id,
             file=file,
             _request_auth=_request_auth,
@@ -2021,7 +2021,7 @@ class BrandingProfilesApi:
 
 
     @validate_call
-    def upload_logo_api_v1_branding_profiles_profile_id_logo_post_without_preload_content(
+    def upload_branding_logo_without_preload_content(
         self,
         profile_id: StrictStr,
         file: Union[StrictBytes, StrictStr],
@@ -2067,7 +2067,7 @@ class BrandingProfilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._upload_logo_api_v1_branding_profiles_profile_id_logo_post_serialize(
+        _param = self._upload_branding_logo_serialize(
             profile_id=profile_id,
             file=file,
             _request_auth=_request_auth,
@@ -2087,7 +2087,7 @@ class BrandingProfilesApi:
         return response_data.response
 
 
-    def _upload_logo_api_v1_branding_profiles_profile_id_logo_post_serialize(
+    def _upload_branding_logo_serialize(
         self,
         profile_id,
         file,

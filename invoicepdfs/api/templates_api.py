@@ -19,9 +19,9 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing import Any, Optional
 from typing_extensions import Annotated
-from invoicepdfs.models.app_schemas_v1_document_render_request import AppSchemasV1DocumentRenderRequest
 from invoicepdfs.models.custom_template_response import CustomTemplateResponse
 from invoicepdfs.models.custom_templates_list_response import CustomTemplatesListResponse
+from invoicepdfs.models.document_render_request import DocumentRenderRequest
 from invoicepdfs.models.template_create_request import TemplateCreateRequest
 from invoicepdfs.models.template_detail_response import TemplateDetailResponse
 from invoicepdfs.models.template_patch_request import TemplatePatchRequest
@@ -46,7 +46,7 @@ class TemplatesApi:
 
 
     @validate_call
-    def create_template_api_v1_templates_custom_post(
+    def create_template(
         self,
         template_create_request: TemplateCreateRequest,
         _request_timeout: Union[
@@ -89,7 +89,7 @@ class TemplatesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_template_api_v1_templates_custom_post_serialize(
+        _param = self._create_template_serialize(
             template_create_request=template_create_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -113,7 +113,7 @@ class TemplatesApi:
 
 
     @validate_call
-    def create_template_api_v1_templates_custom_post_with_http_info(
+    def create_template_with_http_info(
         self,
         template_create_request: TemplateCreateRequest,
         _request_timeout: Union[
@@ -156,7 +156,7 @@ class TemplatesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_template_api_v1_templates_custom_post_serialize(
+        _param = self._create_template_serialize(
             template_create_request=template_create_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -180,7 +180,7 @@ class TemplatesApi:
 
 
     @validate_call
-    def create_template_api_v1_templates_custom_post_without_preload_content(
+    def create_template_without_preload_content(
         self,
         template_create_request: TemplateCreateRequest,
         _request_timeout: Union[
@@ -223,7 +223,7 @@ class TemplatesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_template_api_v1_templates_custom_post_serialize(
+        _param = self._create_template_serialize(
             template_create_request=template_create_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -242,7 +242,7 @@ class TemplatesApi:
         return response_data.response
 
 
-    def _create_template_api_v1_templates_custom_post_serialize(
+    def _create_template_serialize(
         self,
         template_create_request,
         _request_auth,
@@ -318,7 +318,7 @@ class TemplatesApi:
 
 
     @validate_call
-    def delete_template_api_v1_templates_custom_template_id_delete(
+    def delete_template(
         self,
         template_id: StrictStr,
         _request_timeout: Union[
@@ -361,7 +361,7 @@ class TemplatesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_template_api_v1_templates_custom_template_id_delete_serialize(
+        _param = self._delete_template_serialize(
             template_id=template_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -385,7 +385,7 @@ class TemplatesApi:
 
 
     @validate_call
-    def delete_template_api_v1_templates_custom_template_id_delete_with_http_info(
+    def delete_template_with_http_info(
         self,
         template_id: StrictStr,
         _request_timeout: Union[
@@ -428,7 +428,7 @@ class TemplatesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_template_api_v1_templates_custom_template_id_delete_serialize(
+        _param = self._delete_template_serialize(
             template_id=template_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -452,7 +452,7 @@ class TemplatesApi:
 
 
     @validate_call
-    def delete_template_api_v1_templates_custom_template_id_delete_without_preload_content(
+    def delete_template_without_preload_content(
         self,
         template_id: StrictStr,
         _request_timeout: Union[
@@ -495,7 +495,7 @@ class TemplatesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_template_api_v1_templates_custom_template_id_delete_serialize(
+        _param = self._delete_template_serialize(
             template_id=template_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -514,7 +514,7 @@ class TemplatesApi:
         return response_data.response
 
 
-    def _delete_template_api_v1_templates_custom_template_id_delete_serialize(
+    def _delete_template_serialize(
         self,
         template_id,
         _request_auth,
@@ -577,7 +577,7 @@ class TemplatesApi:
 
 
     @validate_call
-    def duplicate_template_api_v1_templates_custom_template_id_duplicate_post(
+    def duplicate_template(
         self,
         template_id: StrictStr,
         _request_timeout: Union[
@@ -620,7 +620,7 @@ class TemplatesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._duplicate_template_api_v1_templates_custom_template_id_duplicate_post_serialize(
+        _param = self._duplicate_template_serialize(
             template_id=template_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -644,7 +644,7 @@ class TemplatesApi:
 
 
     @validate_call
-    def duplicate_template_api_v1_templates_custom_template_id_duplicate_post_with_http_info(
+    def duplicate_template_with_http_info(
         self,
         template_id: StrictStr,
         _request_timeout: Union[
@@ -687,7 +687,7 @@ class TemplatesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._duplicate_template_api_v1_templates_custom_template_id_duplicate_post_serialize(
+        _param = self._duplicate_template_serialize(
             template_id=template_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -711,7 +711,7 @@ class TemplatesApi:
 
 
     @validate_call
-    def duplicate_template_api_v1_templates_custom_template_id_duplicate_post_without_preload_content(
+    def duplicate_template_without_preload_content(
         self,
         template_id: StrictStr,
         _request_timeout: Union[
@@ -754,7 +754,7 @@ class TemplatesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._duplicate_template_api_v1_templates_custom_template_id_duplicate_post_serialize(
+        _param = self._duplicate_template_serialize(
             template_id=template_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -773,7 +773,7 @@ class TemplatesApi:
         return response_data.response
 
 
-    def _duplicate_template_api_v1_templates_custom_template_id_duplicate_post_serialize(
+    def _duplicate_template_serialize(
         self,
         template_id,
         _request_auth,
@@ -836,7 +836,7 @@ class TemplatesApi:
 
 
     @validate_call
-    def get_builtin_template_api_v1_templates_builtin_template_id_get(
+    def get_builtin_template(
         self,
         template_id: StrictStr,
         _request_timeout: Union[
@@ -879,7 +879,7 @@ class TemplatesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_builtin_template_api_v1_templates_builtin_template_id_get_serialize(
+        _param = self._get_builtin_template_serialize(
             template_id=template_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -903,7 +903,7 @@ class TemplatesApi:
 
 
     @validate_call
-    def get_builtin_template_api_v1_templates_builtin_template_id_get_with_http_info(
+    def get_builtin_template_with_http_info(
         self,
         template_id: StrictStr,
         _request_timeout: Union[
@@ -946,7 +946,7 @@ class TemplatesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_builtin_template_api_v1_templates_builtin_template_id_get_serialize(
+        _param = self._get_builtin_template_serialize(
             template_id=template_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -970,7 +970,7 @@ class TemplatesApi:
 
 
     @validate_call
-    def get_builtin_template_api_v1_templates_builtin_template_id_get_without_preload_content(
+    def get_builtin_template_without_preload_content(
         self,
         template_id: StrictStr,
         _request_timeout: Union[
@@ -1013,7 +1013,7 @@ class TemplatesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_builtin_template_api_v1_templates_builtin_template_id_get_serialize(
+        _param = self._get_builtin_template_serialize(
             template_id=template_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1032,7 +1032,7 @@ class TemplatesApi:
         return response_data.response
 
 
-    def _get_builtin_template_api_v1_templates_builtin_template_id_get_serialize(
+    def _get_builtin_template_serialize(
         self,
         template_id,
         _request_auth,
@@ -1095,7 +1095,7 @@ class TemplatesApi:
 
 
     @validate_call
-    def get_custom_template_api_v1_templates_custom_template_id_get(
+    def get_custom_template(
         self,
         template_id: StrictStr,
         _request_timeout: Union[
@@ -1138,7 +1138,7 @@ class TemplatesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_custom_template_api_v1_templates_custom_template_id_get_serialize(
+        _param = self._get_custom_template_serialize(
             template_id=template_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1162,7 +1162,7 @@ class TemplatesApi:
 
 
     @validate_call
-    def get_custom_template_api_v1_templates_custom_template_id_get_with_http_info(
+    def get_custom_template_with_http_info(
         self,
         template_id: StrictStr,
         _request_timeout: Union[
@@ -1205,7 +1205,7 @@ class TemplatesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_custom_template_api_v1_templates_custom_template_id_get_serialize(
+        _param = self._get_custom_template_serialize(
             template_id=template_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1229,7 +1229,7 @@ class TemplatesApi:
 
 
     @validate_call
-    def get_custom_template_api_v1_templates_custom_template_id_get_without_preload_content(
+    def get_custom_template_without_preload_content(
         self,
         template_id: StrictStr,
         _request_timeout: Union[
@@ -1272,7 +1272,7 @@ class TemplatesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_custom_template_api_v1_templates_custom_template_id_get_serialize(
+        _param = self._get_custom_template_serialize(
             template_id=template_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1291,7 +1291,7 @@ class TemplatesApi:
         return response_data.response
 
 
-    def _get_custom_template_api_v1_templates_custom_template_id_get_serialize(
+    def _get_custom_template_serialize(
         self,
         template_id,
         _request_auth,
@@ -1354,7 +1354,7 @@ class TemplatesApi:
 
 
     @validate_call
-    def get_template_api_v1_templates_template_id_get(
+    def get_template(
         self,
         template_id: StrictStr,
         _request_timeout: Union[
@@ -1397,7 +1397,7 @@ class TemplatesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_template_api_v1_templates_template_id_get_serialize(
+        _param = self._get_template_serialize(
             template_id=template_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1421,7 +1421,7 @@ class TemplatesApi:
 
 
     @validate_call
-    def get_template_api_v1_templates_template_id_get_with_http_info(
+    def get_template_with_http_info(
         self,
         template_id: StrictStr,
         _request_timeout: Union[
@@ -1464,7 +1464,7 @@ class TemplatesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_template_api_v1_templates_template_id_get_serialize(
+        _param = self._get_template_serialize(
             template_id=template_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1488,7 +1488,7 @@ class TemplatesApi:
 
 
     @validate_call
-    def get_template_api_v1_templates_template_id_get_without_preload_content(
+    def get_template_without_preload_content(
         self,
         template_id: StrictStr,
         _request_timeout: Union[
@@ -1531,7 +1531,7 @@ class TemplatesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_template_api_v1_templates_template_id_get_serialize(
+        _param = self._get_template_serialize(
             template_id=template_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1550,7 +1550,7 @@ class TemplatesApi:
         return response_data.response
 
 
-    def _get_template_api_v1_templates_template_id_get_serialize(
+    def _get_template_serialize(
         self,
         template_id,
         _request_auth,
@@ -1613,7 +1613,7 @@ class TemplatesApi:
 
 
     @validate_call
-    def list_custom_templates_api_v1_templates_custom_get(
+    def list_custom_templates(
         self,
         limit: Optional[Annotated[int, Field(le=100, strict=True, ge=1)]] = None,
         cursor: Optional[StrictStr] = None,
@@ -1659,7 +1659,7 @@ class TemplatesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_custom_templates_api_v1_templates_custom_get_serialize(
+        _param = self._list_custom_templates_serialize(
             limit=limit,
             cursor=cursor,
             _request_auth=_request_auth,
@@ -1684,7 +1684,7 @@ class TemplatesApi:
 
 
     @validate_call
-    def list_custom_templates_api_v1_templates_custom_get_with_http_info(
+    def list_custom_templates_with_http_info(
         self,
         limit: Optional[Annotated[int, Field(le=100, strict=True, ge=1)]] = None,
         cursor: Optional[StrictStr] = None,
@@ -1730,7 +1730,7 @@ class TemplatesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_custom_templates_api_v1_templates_custom_get_serialize(
+        _param = self._list_custom_templates_serialize(
             limit=limit,
             cursor=cursor,
             _request_auth=_request_auth,
@@ -1755,7 +1755,7 @@ class TemplatesApi:
 
 
     @validate_call
-    def list_custom_templates_api_v1_templates_custom_get_without_preload_content(
+    def list_custom_templates_without_preload_content(
         self,
         limit: Optional[Annotated[int, Field(le=100, strict=True, ge=1)]] = None,
         cursor: Optional[StrictStr] = None,
@@ -1801,7 +1801,7 @@ class TemplatesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_custom_templates_api_v1_templates_custom_get_serialize(
+        _param = self._list_custom_templates_serialize(
             limit=limit,
             cursor=cursor,
             _request_auth=_request_auth,
@@ -1821,7 +1821,7 @@ class TemplatesApi:
         return response_data.response
 
 
-    def _list_custom_templates_api_v1_templates_custom_get_serialize(
+    def _list_custom_templates_serialize(
         self,
         limit,
         cursor,
@@ -1891,10 +1891,8 @@ class TemplatesApi:
 
 
     @validate_call
-    def patch_template_api_v1_templates_custom_template_id_patch(
+    def list_templates(
         self,
-        template_id: StrictStr,
-        template_patch_request: TemplatePatchRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1907,14 +1905,10 @@ class TemplatesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> CustomTemplateResponse:
-        """Patch Template
+    ) -> TemplatesListResponse:
+        """Templates
 
 
-        :param template_id: (required)
-        :type template_id: str
-        :param template_patch_request: (required)
-        :type template_patch_request: TemplatePatchRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1937,9 +1931,7 @@ class TemplatesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._patch_template_api_v1_templates_custom_template_id_patch_serialize(
-            template_id=template_id,
-            template_patch_request=template_patch_request,
+        _param = self._list_templates_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1947,8 +1939,7 @@ class TemplatesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "CustomTemplateResponse",
-            '422': "ApiErrorResponse",
+            '200': "TemplatesListResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1962,10 +1953,8 @@ class TemplatesApi:
 
 
     @validate_call
-    def patch_template_api_v1_templates_custom_template_id_patch_with_http_info(
+    def list_templates_with_http_info(
         self,
-        template_id: StrictStr,
-        template_patch_request: TemplatePatchRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1978,14 +1967,10 @@ class TemplatesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[CustomTemplateResponse]:
-        """Patch Template
+    ) -> ApiResponse[TemplatesListResponse]:
+        """Templates
 
 
-        :param template_id: (required)
-        :type template_id: str
-        :param template_patch_request: (required)
-        :type template_patch_request: TemplatePatchRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2008,9 +1993,7 @@ class TemplatesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._patch_template_api_v1_templates_custom_template_id_patch_serialize(
-            template_id=template_id,
-            template_patch_request=template_patch_request,
+        _param = self._list_templates_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2018,8 +2001,7 @@ class TemplatesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "CustomTemplateResponse",
-            '422': "ApiErrorResponse",
+            '200': "TemplatesListResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2033,10 +2015,8 @@ class TemplatesApi:
 
 
     @validate_call
-    def patch_template_api_v1_templates_custom_template_id_patch_without_preload_content(
+    def list_templates_without_preload_content(
         self,
-        template_id: StrictStr,
-        template_patch_request: TemplatePatchRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2050,13 +2030,9 @@ class TemplatesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Patch Template
+        """Templates
 
 
-        :param template_id: (required)
-        :type template_id: str
-        :param template_patch_request: (required)
-        :type template_patch_request: TemplatePatchRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2079,9 +2055,7 @@ class TemplatesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._patch_template_api_v1_templates_custom_template_id_patch_serialize(
-            template_id=template_id,
-            template_patch_request=template_patch_request,
+        _param = self._list_templates_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2089,8 +2063,7 @@ class TemplatesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "CustomTemplateResponse",
-            '422': "ApiErrorResponse",
+            '200': "TemplatesListResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2099,10 +2072,8 @@ class TemplatesApi:
         return response_data.response
 
 
-    def _patch_template_api_v1_templates_custom_template_id_patch_serialize(
+    def _list_templates_serialize(
         self,
-        template_id,
-        template_patch_request,
         _request_auth,
         _content_type,
         _headers,
@@ -2122,14 +2093,10 @@ class TemplatesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
-        if template_id is not None:
-            _path_params['template_id'] = template_id
         # process the query parameters
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if template_patch_request is not None:
-            _body_params = template_patch_request
 
 
         # set the HTTP header `Accept`
@@ -2140,19 +2107,6 @@ class TemplatesApi:
                 ]
             )
 
-        # set the HTTP header `Content-Type`
-        if _content_type:
-            _header_params['Content-Type'] = _content_type
-        else:
-            _default_content_type = (
-                self.api_client.select_header_content_type(
-                    [
-                        'application/json'
-                    ]
-                )
-            )
-            if _default_content_type is not None:
-                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [
@@ -2160,8 +2114,8 @@ class TemplatesApi:
         ]
 
         return self.api_client.param_serialize(
-            method='PATCH',
-            resource_path='/api/v1/templates/custom/{template_id}',
+            method='GET',
+            resource_path='/api/v1/templates',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -2178,10 +2132,10 @@ class TemplatesApi:
 
 
     @validate_call
-    def preview_template_api_v1_templates_template_id_preview_post(
+    def preview_template(
         self,
         template_id: StrictStr,
-        app_schemas_v1_document_render_request: AppSchemasV1DocumentRenderRequest,
+        document_render_request: DocumentRenderRequest,
         idempotency_key: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
@@ -2201,8 +2155,8 @@ class TemplatesApi:
 
         :param template_id: (required)
         :type template_id: str
-        :param app_schemas_v1_document_render_request: (required)
-        :type app_schemas_v1_document_render_request: AppSchemasV1DocumentRenderRequest
+        :param document_render_request: (required)
+        :type document_render_request: DocumentRenderRequest
         :param idempotency_key:
         :type idempotency_key: str
         :param _request_timeout: timeout setting for this request. If one
@@ -2227,9 +2181,9 @@ class TemplatesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._preview_template_api_v1_templates_template_id_preview_post_serialize(
+        _param = self._preview_template_serialize(
             template_id=template_id,
-            app_schemas_v1_document_render_request=app_schemas_v1_document_render_request,
+            document_render_request=document_render_request,
             idempotency_key=idempotency_key,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2253,10 +2207,10 @@ class TemplatesApi:
 
 
     @validate_call
-    def preview_template_api_v1_templates_template_id_preview_post_with_http_info(
+    def preview_template_with_http_info(
         self,
         template_id: StrictStr,
-        app_schemas_v1_document_render_request: AppSchemasV1DocumentRenderRequest,
+        document_render_request: DocumentRenderRequest,
         idempotency_key: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
@@ -2276,8 +2230,8 @@ class TemplatesApi:
 
         :param template_id: (required)
         :type template_id: str
-        :param app_schemas_v1_document_render_request: (required)
-        :type app_schemas_v1_document_render_request: AppSchemasV1DocumentRenderRequest
+        :param document_render_request: (required)
+        :type document_render_request: DocumentRenderRequest
         :param idempotency_key:
         :type idempotency_key: str
         :param _request_timeout: timeout setting for this request. If one
@@ -2302,9 +2256,9 @@ class TemplatesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._preview_template_api_v1_templates_template_id_preview_post_serialize(
+        _param = self._preview_template_serialize(
             template_id=template_id,
-            app_schemas_v1_document_render_request=app_schemas_v1_document_render_request,
+            document_render_request=document_render_request,
             idempotency_key=idempotency_key,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2328,10 +2282,10 @@ class TemplatesApi:
 
 
     @validate_call
-    def preview_template_api_v1_templates_template_id_preview_post_without_preload_content(
+    def preview_template_without_preload_content(
         self,
         template_id: StrictStr,
-        app_schemas_v1_document_render_request: AppSchemasV1DocumentRenderRequest,
+        document_render_request: DocumentRenderRequest,
         idempotency_key: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
@@ -2351,8 +2305,8 @@ class TemplatesApi:
 
         :param template_id: (required)
         :type template_id: str
-        :param app_schemas_v1_document_render_request: (required)
-        :type app_schemas_v1_document_render_request: AppSchemasV1DocumentRenderRequest
+        :param document_render_request: (required)
+        :type document_render_request: DocumentRenderRequest
         :param idempotency_key:
         :type idempotency_key: str
         :param _request_timeout: timeout setting for this request. If one
@@ -2377,9 +2331,9 @@ class TemplatesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._preview_template_api_v1_templates_template_id_preview_post_serialize(
+        _param = self._preview_template_serialize(
             template_id=template_id,
-            app_schemas_v1_document_render_request=app_schemas_v1_document_render_request,
+            document_render_request=document_render_request,
             idempotency_key=idempotency_key,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2398,10 +2352,10 @@ class TemplatesApi:
         return response_data.response
 
 
-    def _preview_template_api_v1_templates_template_id_preview_post_serialize(
+    def _preview_template_serialize(
         self,
         template_id,
-        app_schemas_v1_document_render_request,
+        document_render_request,
         idempotency_key,
         _request_auth,
         _content_type,
@@ -2430,8 +2384,8 @@ class TemplatesApi:
             _header_params['Idempotency-Key'] = idempotency_key
         # process the form parameters
         # process the body parameter
-        if app_schemas_v1_document_render_request is not None:
-            _body_params = app_schemas_v1_document_render_request
+        if document_render_request is not None:
+            _body_params = document_render_request
 
 
         # set the HTTP header `Accept`
@@ -2480,7 +2434,7 @@ class TemplatesApi:
 
 
     @validate_call
-    def publish_template_api_v1_templates_custom_template_id_publish_post(
+    def publish_template(
         self,
         template_id: StrictStr,
         _request_timeout: Union[
@@ -2523,7 +2477,7 @@ class TemplatesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._publish_template_api_v1_templates_custom_template_id_publish_post_serialize(
+        _param = self._publish_template_serialize(
             template_id=template_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2547,7 +2501,7 @@ class TemplatesApi:
 
 
     @validate_call
-    def publish_template_api_v1_templates_custom_template_id_publish_post_with_http_info(
+    def publish_template_with_http_info(
         self,
         template_id: StrictStr,
         _request_timeout: Union[
@@ -2590,7 +2544,7 @@ class TemplatesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._publish_template_api_v1_templates_custom_template_id_publish_post_serialize(
+        _param = self._publish_template_serialize(
             template_id=template_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2614,7 +2568,7 @@ class TemplatesApi:
 
 
     @validate_call
-    def publish_template_api_v1_templates_custom_template_id_publish_post_without_preload_content(
+    def publish_template_without_preload_content(
         self,
         template_id: StrictStr,
         _request_timeout: Union[
@@ -2657,7 +2611,7 @@ class TemplatesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._publish_template_api_v1_templates_custom_template_id_publish_post_serialize(
+        _param = self._publish_template_serialize(
             template_id=template_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2676,7 +2630,7 @@ class TemplatesApi:
         return response_data.response
 
 
-    def _publish_template_api_v1_templates_custom_template_id_publish_post_serialize(
+    def _publish_template_serialize(
         self,
         template_id,
         _request_auth,
@@ -2739,8 +2693,10 @@ class TemplatesApi:
 
 
     @validate_call
-    def templates_api_v1_templates_get(
+    def update_template(
         self,
+        template_id: StrictStr,
+        template_patch_request: TemplatePatchRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2753,10 +2709,14 @@ class TemplatesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> TemplatesListResponse:
-        """Templates
+    ) -> CustomTemplateResponse:
+        """Patch Template
 
 
+        :param template_id: (required)
+        :type template_id: str
+        :param template_patch_request: (required)
+        :type template_patch_request: TemplatePatchRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2779,7 +2739,9 @@ class TemplatesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._templates_api_v1_templates_get_serialize(
+        _param = self._update_template_serialize(
+            template_id=template_id,
+            template_patch_request=template_patch_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2787,7 +2749,8 @@ class TemplatesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "TemplatesListResponse",
+            '200': "CustomTemplateResponse",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2801,8 +2764,10 @@ class TemplatesApi:
 
 
     @validate_call
-    def templates_api_v1_templates_get_with_http_info(
+    def update_template_with_http_info(
         self,
+        template_id: StrictStr,
+        template_patch_request: TemplatePatchRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2815,10 +2780,14 @@ class TemplatesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[TemplatesListResponse]:
-        """Templates
+    ) -> ApiResponse[CustomTemplateResponse]:
+        """Patch Template
 
 
+        :param template_id: (required)
+        :type template_id: str
+        :param template_patch_request: (required)
+        :type template_patch_request: TemplatePatchRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2841,7 +2810,9 @@ class TemplatesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._templates_api_v1_templates_get_serialize(
+        _param = self._update_template_serialize(
+            template_id=template_id,
+            template_patch_request=template_patch_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2849,7 +2820,8 @@ class TemplatesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "TemplatesListResponse",
+            '200': "CustomTemplateResponse",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2863,8 +2835,10 @@ class TemplatesApi:
 
 
     @validate_call
-    def templates_api_v1_templates_get_without_preload_content(
+    def update_template_without_preload_content(
         self,
+        template_id: StrictStr,
+        template_patch_request: TemplatePatchRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2878,9 +2852,13 @@ class TemplatesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Templates
+        """Patch Template
 
 
+        :param template_id: (required)
+        :type template_id: str
+        :param template_patch_request: (required)
+        :type template_patch_request: TemplatePatchRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2903,7 +2881,9 @@ class TemplatesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._templates_api_v1_templates_get_serialize(
+        _param = self._update_template_serialize(
+            template_id=template_id,
+            template_patch_request=template_patch_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2911,7 +2891,8 @@ class TemplatesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "TemplatesListResponse",
+            '200': "CustomTemplateResponse",
+            '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2920,8 +2901,10 @@ class TemplatesApi:
         return response_data.response
 
 
-    def _templates_api_v1_templates_get_serialize(
+    def _update_template_serialize(
         self,
+        template_id,
+        template_patch_request,
         _request_auth,
         _content_type,
         _headers,
@@ -2941,10 +2924,14 @@ class TemplatesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if template_id is not None:
+            _path_params['template_id'] = template_id
         # process the query parameters
         # process the header parameters
         # process the form parameters
         # process the body parameter
+        if template_patch_request is not None:
+            _body_params = template_patch_request
 
 
         # set the HTTP header `Accept`
@@ -2955,6 +2942,19 @@ class TemplatesApi:
                 ]
             )
 
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [
@@ -2962,8 +2962,8 @@ class TemplatesApi:
         ]
 
         return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/api/v1/templates',
+            method='PATCH',
+            resource_path='/api/v1/templates/custom/{template_id}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

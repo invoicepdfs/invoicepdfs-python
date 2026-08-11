@@ -44,7 +44,7 @@ class TaxRatesApi:
 
 
     @validate_call
-    def create_tax_rate_api_v1_tax_rates_post(
+    def create_tax_rate(
         self,
         tax_rate_create_request: TaxRateCreateRequest,
         _request_timeout: Union[
@@ -87,7 +87,7 @@ class TaxRatesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_tax_rate_api_v1_tax_rates_post_serialize(
+        _param = self._create_tax_rate_serialize(
             tax_rate_create_request=tax_rate_create_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -111,7 +111,7 @@ class TaxRatesApi:
 
 
     @validate_call
-    def create_tax_rate_api_v1_tax_rates_post_with_http_info(
+    def create_tax_rate_with_http_info(
         self,
         tax_rate_create_request: TaxRateCreateRequest,
         _request_timeout: Union[
@@ -154,7 +154,7 @@ class TaxRatesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_tax_rate_api_v1_tax_rates_post_serialize(
+        _param = self._create_tax_rate_serialize(
             tax_rate_create_request=tax_rate_create_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -178,7 +178,7 @@ class TaxRatesApi:
 
 
     @validate_call
-    def create_tax_rate_api_v1_tax_rates_post_without_preload_content(
+    def create_tax_rate_without_preload_content(
         self,
         tax_rate_create_request: TaxRateCreateRequest,
         _request_timeout: Union[
@@ -221,7 +221,7 @@ class TaxRatesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_tax_rate_api_v1_tax_rates_post_serialize(
+        _param = self._create_tax_rate_serialize(
             tax_rate_create_request=tax_rate_create_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -240,7 +240,7 @@ class TaxRatesApi:
         return response_data.response
 
 
-    def _create_tax_rate_api_v1_tax_rates_post_serialize(
+    def _create_tax_rate_serialize(
         self,
         tax_rate_create_request,
         _request_auth,
@@ -316,7 +316,7 @@ class TaxRatesApi:
 
 
     @validate_call
-    def delete_tax_rate_api_v1_tax_rates_tax_rate_id_delete(
+    def delete_tax_rate(
         self,
         tax_rate_id: StrictStr,
         _request_timeout: Union[
@@ -359,7 +359,7 @@ class TaxRatesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_tax_rate_api_v1_tax_rates_tax_rate_id_delete_serialize(
+        _param = self._delete_tax_rate_serialize(
             tax_rate_id=tax_rate_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -383,7 +383,7 @@ class TaxRatesApi:
 
 
     @validate_call
-    def delete_tax_rate_api_v1_tax_rates_tax_rate_id_delete_with_http_info(
+    def delete_tax_rate_with_http_info(
         self,
         tax_rate_id: StrictStr,
         _request_timeout: Union[
@@ -426,7 +426,7 @@ class TaxRatesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_tax_rate_api_v1_tax_rates_tax_rate_id_delete_serialize(
+        _param = self._delete_tax_rate_serialize(
             tax_rate_id=tax_rate_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -450,7 +450,7 @@ class TaxRatesApi:
 
 
     @validate_call
-    def delete_tax_rate_api_v1_tax_rates_tax_rate_id_delete_without_preload_content(
+    def delete_tax_rate_without_preload_content(
         self,
         tax_rate_id: StrictStr,
         _request_timeout: Union[
@@ -493,7 +493,7 @@ class TaxRatesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_tax_rate_api_v1_tax_rates_tax_rate_id_delete_serialize(
+        _param = self._delete_tax_rate_serialize(
             tax_rate_id=tax_rate_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -512,7 +512,7 @@ class TaxRatesApi:
         return response_data.response
 
 
-    def _delete_tax_rate_api_v1_tax_rates_tax_rate_id_delete_serialize(
+    def _delete_tax_rate_serialize(
         self,
         tax_rate_id,
         _request_auth,
@@ -575,7 +575,7 @@ class TaxRatesApi:
 
 
     @validate_call
-    def get_tax_rate_api_v1_tax_rates_tax_rate_id_get(
+    def get_tax_rate(
         self,
         tax_rate_id: StrictStr,
         _request_timeout: Union[
@@ -618,7 +618,7 @@ class TaxRatesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_tax_rate_api_v1_tax_rates_tax_rate_id_get_serialize(
+        _param = self._get_tax_rate_serialize(
             tax_rate_id=tax_rate_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -642,7 +642,7 @@ class TaxRatesApi:
 
 
     @validate_call
-    def get_tax_rate_api_v1_tax_rates_tax_rate_id_get_with_http_info(
+    def get_tax_rate_with_http_info(
         self,
         tax_rate_id: StrictStr,
         _request_timeout: Union[
@@ -685,7 +685,7 @@ class TaxRatesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_tax_rate_api_v1_tax_rates_tax_rate_id_get_serialize(
+        _param = self._get_tax_rate_serialize(
             tax_rate_id=tax_rate_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -709,7 +709,7 @@ class TaxRatesApi:
 
 
     @validate_call
-    def get_tax_rate_api_v1_tax_rates_tax_rate_id_get_without_preload_content(
+    def get_tax_rate_without_preload_content(
         self,
         tax_rate_id: StrictStr,
         _request_timeout: Union[
@@ -752,7 +752,7 @@ class TaxRatesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_tax_rate_api_v1_tax_rates_tax_rate_id_get_serialize(
+        _param = self._get_tax_rate_serialize(
             tax_rate_id=tax_rate_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -771,7 +771,7 @@ class TaxRatesApi:
         return response_data.response
 
 
-    def _get_tax_rate_api_v1_tax_rates_tax_rate_id_get_serialize(
+    def _get_tax_rate_serialize(
         self,
         tax_rate_id,
         _request_auth,
@@ -834,7 +834,7 @@ class TaxRatesApi:
 
 
     @validate_call
-    def list_tax_rates_api_v1_tax_rates_get(
+    def list_tax_rates(
         self,
         limit: Optional[Annotated[int, Field(le=100, strict=True, ge=1)]] = None,
         cursor: Optional[StrictStr] = None,
@@ -880,7 +880,7 @@ class TaxRatesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_tax_rates_api_v1_tax_rates_get_serialize(
+        _param = self._list_tax_rates_serialize(
             limit=limit,
             cursor=cursor,
             _request_auth=_request_auth,
@@ -905,7 +905,7 @@ class TaxRatesApi:
 
 
     @validate_call
-    def list_tax_rates_api_v1_tax_rates_get_with_http_info(
+    def list_tax_rates_with_http_info(
         self,
         limit: Optional[Annotated[int, Field(le=100, strict=True, ge=1)]] = None,
         cursor: Optional[StrictStr] = None,
@@ -951,7 +951,7 @@ class TaxRatesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_tax_rates_api_v1_tax_rates_get_serialize(
+        _param = self._list_tax_rates_serialize(
             limit=limit,
             cursor=cursor,
             _request_auth=_request_auth,
@@ -976,7 +976,7 @@ class TaxRatesApi:
 
 
     @validate_call
-    def list_tax_rates_api_v1_tax_rates_get_without_preload_content(
+    def list_tax_rates_without_preload_content(
         self,
         limit: Optional[Annotated[int, Field(le=100, strict=True, ge=1)]] = None,
         cursor: Optional[StrictStr] = None,
@@ -1022,7 +1022,7 @@ class TaxRatesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_tax_rates_api_v1_tax_rates_get_serialize(
+        _param = self._list_tax_rates_serialize(
             limit=limit,
             cursor=cursor,
             _request_auth=_request_auth,
@@ -1042,7 +1042,7 @@ class TaxRatesApi:
         return response_data.response
 
 
-    def _list_tax_rates_api_v1_tax_rates_get_serialize(
+    def _list_tax_rates_serialize(
         self,
         limit,
         cursor,
@@ -1112,7 +1112,7 @@ class TaxRatesApi:
 
 
     @validate_call
-    def update_tax_rate_api_v1_tax_rates_tax_rate_id_patch(
+    def update_tax_rate(
         self,
         tax_rate_id: StrictStr,
         tax_rate_patch_request: TaxRatePatchRequest,
@@ -1158,7 +1158,7 @@ class TaxRatesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_tax_rate_api_v1_tax_rates_tax_rate_id_patch_serialize(
+        _param = self._update_tax_rate_serialize(
             tax_rate_id=tax_rate_id,
             tax_rate_patch_request=tax_rate_patch_request,
             _request_auth=_request_auth,
@@ -1183,7 +1183,7 @@ class TaxRatesApi:
 
 
     @validate_call
-    def update_tax_rate_api_v1_tax_rates_tax_rate_id_patch_with_http_info(
+    def update_tax_rate_with_http_info(
         self,
         tax_rate_id: StrictStr,
         tax_rate_patch_request: TaxRatePatchRequest,
@@ -1229,7 +1229,7 @@ class TaxRatesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_tax_rate_api_v1_tax_rates_tax_rate_id_patch_serialize(
+        _param = self._update_tax_rate_serialize(
             tax_rate_id=tax_rate_id,
             tax_rate_patch_request=tax_rate_patch_request,
             _request_auth=_request_auth,
@@ -1254,7 +1254,7 @@ class TaxRatesApi:
 
 
     @validate_call
-    def update_tax_rate_api_v1_tax_rates_tax_rate_id_patch_without_preload_content(
+    def update_tax_rate_without_preload_content(
         self,
         tax_rate_id: StrictStr,
         tax_rate_patch_request: TaxRatePatchRequest,
@@ -1300,7 +1300,7 @@ class TaxRatesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_tax_rate_api_v1_tax_rates_tax_rate_id_patch_serialize(
+        _param = self._update_tax_rate_serialize(
             tax_rate_id=tax_rate_id,
             tax_rate_patch_request=tax_rate_patch_request,
             _request_auth=_request_auth,
@@ -1320,7 +1320,7 @@ class TaxRatesApi:
         return response_data.response
 
 
-    def _update_tax_rate_api_v1_tax_rates_tax_rate_id_patch_serialize(
+    def _update_tax_rate_serialize(
         self,
         tax_rate_id,
         tax_rate_patch_request,
