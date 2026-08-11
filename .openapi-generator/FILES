@@ -447,6 +447,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_api_error_response.py
-test/test_api_error_response_error.py
 tox.ini

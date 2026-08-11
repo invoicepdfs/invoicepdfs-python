@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -26,11 +26,12 @@ class ApiErrorResponseError(BaseModel):
     """
     ApiErrorResponseError
     """ # noqa: E501
+    status: StrictInt = Field(description="HTTP status, mirroring the response status line.")
     code: StrictStr
     message: StrictStr
     request_id: Optional[StrictStr] = Field(default=None, description="Trace id for this request; also returned as X-Trace-Id.")
     details: Optional[Dict[str, Any]] = Field(default=None, description="Error-specific context. Validation failures carry `fields`.")
-    __properties: ClassVar[List[str]] = ["code", "message", "request_id", "details"]
+    __properties: ClassVar[List[str]] = ["status", "code", "message", "request_id", "details"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -93,6 +94,7 @@ class ApiErrorResponseError(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "status": obj.get("status"),
             "code": obj.get("code"),
             "message": obj.get("message"),
             "request_id": obj.get("request_id"),
