@@ -17,11 +17,12 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from pydantic import Field, StrictStr
-from typing import Any, Optional
+from typing import Optional
 from typing_extensions import Annotated
 from invoicepdfs.models.custom_template_response import CustomTemplateResponse
 from invoicepdfs.models.custom_templates_list_response import CustomTemplatesListResponse
 from invoicepdfs.models.document_render_request import DocumentRenderRequest
+from invoicepdfs.models.render_response import RenderResponse
 from invoicepdfs.models.template_create_request import TemplateCreateRequest
 from invoicepdfs.models.template_detail_response import TemplateDetailResponse
 from invoicepdfs.models.template_patch_request import TemplatePatchRequest
@@ -2149,7 +2150,7 @@ class TemplatesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> RenderResponse:
         """Preview Template
 
 
@@ -2192,7 +2193,7 @@ class TemplatesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "RenderResponse",
             '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -2224,7 +2225,7 @@ class TemplatesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[RenderResponse]:
         """Preview Template
 
 
@@ -2267,7 +2268,7 @@ class TemplatesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "RenderResponse",
             '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -2342,7 +2343,7 @@ class TemplatesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "RenderResponse",
             '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -2392,7 +2393,8 @@ class TemplatesApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json', 
+                    'application/pdf'
                 ]
             )
 

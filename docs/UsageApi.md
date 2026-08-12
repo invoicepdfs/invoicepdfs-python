@@ -82,7 +82,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_usage_limits**
-> Dict[str, object] get_usage_limits()
+> UsageLimitsResponse get_usage_limits()
 
 Get Usage Limits
 
@@ -92,6 +92,7 @@ Get Usage Limits
 
 ```python
 import invoicepdfs
+from invoicepdfs.models.usage_limits_response import UsageLimitsResponse
 from invoicepdfs.rest import ApiException
 from pprint import pprint
 
@@ -133,7 +134,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**Dict[str, object]**
+[**UsageLimitsResponse**](UsageLimitsResponse.md)
 
 ### Authorization
 
@@ -153,7 +154,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_usage_events**
-> Dict[str, object] list_usage_events(limit=limit, cursor=cursor)
+> UsageEventsListResponse list_usage_events(limit=limit, cursor=cursor)
 
 List Usage Events
 
@@ -163,6 +164,7 @@ List Usage Events
 
 ```python
 import invoicepdfs
+from invoicepdfs.models.usage_events_list_response import UsageEventsListResponse
 from invoicepdfs.rest import ApiException
 from pprint import pprint
 
@@ -210,7 +212,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Dict[str, object]**
+[**UsageEventsListResponse**](UsageEventsListResponse.md)
 
 ### Authorization
 

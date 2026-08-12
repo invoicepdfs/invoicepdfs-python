@@ -17,7 +17,8 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from pydantic import StrictBytes, StrictStr
-from typing import Any, Dict, Union
+from typing import Union
+from invoicepdfs.models.render_response import RenderResponse
 
 from invoicepdfs.api_client import ApiClient, RequestSerialized
 from invoicepdfs.api_response import ApiResponse
@@ -313,7 +314,7 @@ class RendersApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> Dict[str, object]:
+    ) -> RenderResponse:
         """Get Render
 
 
@@ -350,7 +351,7 @@ class RendersApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Dict[str, object]",
+            '200': "RenderResponse",
             '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -380,7 +381,7 @@ class RendersApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[Dict[str, object]]:
+    ) -> ApiResponse[RenderResponse]:
         """Get Render
 
 
@@ -417,7 +418,7 @@ class RendersApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Dict[str, object]",
+            '200': "RenderResponse",
             '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -484,7 +485,7 @@ class RendersApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Dict[str, object]",
+            '200': "RenderResponse",
             '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(

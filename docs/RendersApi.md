@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_render**
-> Dict[str, object] get_render(render_id)
+> RenderResponse get_render(render_id)
 
 Get Render
 
@@ -95,6 +95,7 @@ Get Render
 
 ```python
 import invoicepdfs
+from invoicepdfs.models.render_response import RenderResponse
 from invoicepdfs.rest import ApiException
 from pprint import pprint
 
@@ -140,7 +141,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Dict[str, object]**
+[**RenderResponse**](RenderResponse.md)
 
 ### Authorization
 

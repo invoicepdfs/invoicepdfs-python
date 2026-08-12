@@ -16,8 +16,8 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import Field, StrictStr
-from typing import Any, Optional
+from pydantic import Field, StrictBytes, StrictStr
+from typing import Optional, Union
 from typing_extensions import Annotated
 from invoicepdfs.models.batch_create_request import BatchCreateRequest
 from invoicepdfs.models.batch_items_list_response import BatchItemsListResponse
@@ -589,7 +589,7 @@ class BatchesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> bytearray:
         """Download Batch
 
 
@@ -626,7 +626,7 @@ class BatchesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "bytearray",
             '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -656,7 +656,7 @@ class BatchesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[bytearray]:
         """Download Batch
 
 
@@ -693,7 +693,7 @@ class BatchesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "bytearray",
             '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -760,7 +760,7 @@ class BatchesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "bytearray",
             '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -804,6 +804,7 @@ class BatchesApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
+                    'application/zip', 
                     'application/json'
                 ]
             )

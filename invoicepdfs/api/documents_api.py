@@ -17,7 +17,7 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from pydantic import Field, StrictStr
-from typing import Any, Optional
+from typing import Optional
 from typing_extensions import Annotated
 from invoicepdfs.models.deliveries_list_response import DeliveriesListResponse
 from invoicepdfs.models.delivery_response import DeliveryResponse
@@ -32,6 +32,7 @@ from invoicepdfs.models.document_response import DocumentResponse
 from invoicepdfs.models.document_validate_request import DocumentValidateRequest
 from invoicepdfs.models.document_validate_response import DocumentValidateResponse
 from invoicepdfs.models.documents_list_response import DocumentsListResponse
+from invoicepdfs.models.render_response import RenderResponse
 from invoicepdfs.models.simple_bool_response import SimpleBoolResponse
 
 from invoicepdfs.api_client import ApiClient, RequestSerialized
@@ -888,7 +889,7 @@ class DocumentsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> RenderResponse:
         """Create Document Render
 
 
@@ -931,7 +932,7 @@ class DocumentsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "RenderResponse",
             '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -963,7 +964,7 @@ class DocumentsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[RenderResponse]:
         """Create Document Render
 
 
@@ -1006,7 +1007,7 @@ class DocumentsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "RenderResponse",
             '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -1081,7 +1082,7 @@ class DocumentsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "RenderResponse",
             '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -3607,7 +3608,7 @@ class DocumentsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> RenderResponse:
         """Render Document
 
 
@@ -3647,7 +3648,7 @@ class DocumentsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "RenderResponse",
             '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -3678,7 +3679,7 @@ class DocumentsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[RenderResponse]:
         """Render Document
 
 
@@ -3718,7 +3719,7 @@ class DocumentsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "RenderResponse",
             '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -3789,7 +3790,7 @@ class DocumentsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "RenderResponse",
             '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -3836,7 +3837,8 @@ class DocumentsApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json', 
+                    'application/pdf'
                 ]
             )
 

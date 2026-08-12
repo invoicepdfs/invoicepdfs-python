@@ -629,7 +629,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **preview_template**
-> object preview_template(template_id, document_render_request, idempotency_key=idempotency_key)
+> RenderResponse preview_template(template_id, document_render_request, idempotency_key=idempotency_key)
 
 Preview Template
 
@@ -640,6 +640,7 @@ Preview Template
 ```python
 import invoicepdfs
 from invoicepdfs.models.document_render_request import DocumentRenderRequest
+from invoicepdfs.models.render_response import RenderResponse
 from invoicepdfs.rest import ApiException
 from pprint import pprint
 
@@ -689,7 +690,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**RenderResponse**](RenderResponse.md)
 
 ### Authorization
 
@@ -698,13 +699,13 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: application/json, application/pdf
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful Response |  -  |
+**200** | The rendered preview. Returns the PDF itself instead when &#x60;output.delivery&#x60; is &#x60;binary&#x60; or the request sends &#x60;Accept: application/pdf&#x60;. |  -  |
 **422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -17,8 +17,10 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from pydantic import Field, StrictStr
-from typing import Any, Dict, Optional
+from typing import Optional
 from typing_extensions import Annotated
+from invoicepdfs.models.usage_events_list_response import UsageEventsListResponse
+from invoicepdfs.models.usage_limits_response import UsageLimitsResponse
 from invoicepdfs.models.usage_response import UsageResponse
 
 from invoicepdfs.api_client import ApiClient, RequestSerialized
@@ -295,7 +297,7 @@ class UsageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> Dict[str, object]:
+    ) -> UsageLimitsResponse:
         """Get Usage Limits
 
 
@@ -329,7 +331,7 @@ class UsageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Dict[str, object]",
+            '200': "UsageLimitsResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -357,7 +359,7 @@ class UsageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[Dict[str, object]]:
+    ) -> ApiResponse[UsageLimitsResponse]:
         """Get Usage Limits
 
 
@@ -391,7 +393,7 @@ class UsageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Dict[str, object]",
+            '200': "UsageLimitsResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -453,7 +455,7 @@ class UsageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Dict[str, object]",
+            '200': "UsageLimitsResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -538,7 +540,7 @@ class UsageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> Dict[str, object]:
+    ) -> UsageEventsListResponse:
         """List Usage Events
 
 
@@ -578,7 +580,7 @@ class UsageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Dict[str, object]",
+            '200': "UsageEventsListResponse",
             '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -609,7 +611,7 @@ class UsageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[Dict[str, object]]:
+    ) -> ApiResponse[UsageEventsListResponse]:
         """List Usage Events
 
 
@@ -649,7 +651,7 @@ class UsageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Dict[str, object]",
+            '200': "UsageEventsListResponse",
             '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -720,7 +722,7 @@ class UsageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Dict[str, object]",
+            '200': "UsageEventsListResponse",
             '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(

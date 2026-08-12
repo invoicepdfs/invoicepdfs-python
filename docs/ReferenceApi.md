@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **list_countries**
-> Dict[str, object] list_countries()
+> CountriesListResponse list_countries()
 
 List Countries
 
@@ -22,6 +22,7 @@ List Countries
 
 ```python
 import invoicepdfs
+from invoicepdfs.models.countries_list_response import CountriesListResponse
 from invoicepdfs.rest import ApiException
 from pprint import pprint
 
@@ -54,7 +55,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**Dict[str, object]**
+[**CountriesListResponse**](CountriesListResponse.md)
 
 ### Authorization
 
@@ -74,7 +75,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_currencies**
-> Dict[str, object] list_currencies()
+> CurrenciesListResponse list_currencies()
 
 List Currencies
 
@@ -83,6 +84,7 @@ List Currencies
 
 ```python
 import invoicepdfs
+from invoicepdfs.models.currencies_list_response import CurrenciesListResponse
 from invoicepdfs.rest import ApiException
 from pprint import pprint
 
@@ -115,7 +117,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**Dict[str, object]**
+[**CurrenciesListResponse**](CurrenciesListResponse.md)
 
 ### Authorization
 
@@ -135,7 +137,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_document_types**
-> Dict[str, object] list_document_types()
+> DocumentTypesListResponse list_document_types()
 
 List Document Types
 
@@ -146,6 +148,7 @@ List every supported document type with the metadata a client needs to build a t
 
 ```python
 import invoicepdfs
+from invoicepdfs.models.document_types_list_response import DocumentTypesListResponse
 from invoicepdfs.rest import ApiException
 from pprint import pprint
 
@@ -178,7 +181,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**Dict[str, object]**
+[**DocumentTypesListResponse**](DocumentTypesListResponse.md)
 
 ### Authorization
 
@@ -198,7 +201,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_locales**
-> Dict[str, object] list_locales()
+> LocalesListResponse list_locales()
 
 List Locales
 
@@ -207,6 +210,7 @@ List Locales
 
 ```python
 import invoicepdfs
+from invoicepdfs.models.locales_list_response import LocalesListResponse
 from invoicepdfs.rest import ApiException
 from pprint import pprint
 
@@ -239,7 +243,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**Dict[str, object]**
+[**LocalesListResponse**](LocalesListResponse.md)
 
 ### Authorization
 
@@ -259,7 +263,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_page_sizes**
-> Dict[str, object] list_page_sizes()
+> PageSizesListResponse list_page_sizes()
 
 List Page Sizes
 
@@ -268,6 +272,7 @@ List Page Sizes
 
 ```python
 import invoicepdfs
+from invoicepdfs.models.page_sizes_list_response import PageSizesListResponse
 from invoicepdfs.rest import ApiException
 from pprint import pprint
 
@@ -300,7 +305,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**Dict[str, object]**
+[**PageSizesListResponse**](PageSizesListResponse.md)
 
 ### Authorization
 
@@ -320,7 +325,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_timezones**
-> Dict[str, object] list_timezones()
+> TimezonesListResponse list_timezones()
 
 List Timezones
 
@@ -329,6 +334,7 @@ List Timezones
 
 ```python
 import invoicepdfs
+from invoicepdfs.models.timezones_list_response import TimezonesListResponse
 from invoicepdfs.rest import ApiException
 from pprint import pprint
 
@@ -361,7 +367,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**Dict[str, object]**
+[**TimezonesListResponse**](TimezonesListResponse.md)
 
 ### Authorization
 

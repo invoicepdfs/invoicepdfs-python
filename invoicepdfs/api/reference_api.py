@@ -16,7 +16,12 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from typing import Any, Dict
+from invoicepdfs.models.countries_list_response import CountriesListResponse
+from invoicepdfs.models.currencies_list_response import CurrenciesListResponse
+from invoicepdfs.models.document_types_list_response import DocumentTypesListResponse
+from invoicepdfs.models.locales_list_response import LocalesListResponse
+from invoicepdfs.models.page_sizes_list_response import PageSizesListResponse
+from invoicepdfs.models.timezones_list_response import TimezonesListResponse
 
 from invoicepdfs.api_client import ApiClient, RequestSerialized
 from invoicepdfs.api_response import ApiResponse
@@ -51,7 +56,7 @@ class ReferenceApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> Dict[str, object]:
+    ) -> CountriesListResponse:
         """List Countries
 
 
@@ -85,7 +90,7 @@ class ReferenceApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Dict[str, object]",
+            '200': "CountriesListResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -113,7 +118,7 @@ class ReferenceApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[Dict[str, object]]:
+    ) -> ApiResponse[CountriesListResponse]:
         """List Countries
 
 
@@ -147,7 +152,7 @@ class ReferenceApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Dict[str, object]",
+            '200': "CountriesListResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -209,7 +214,7 @@ class ReferenceApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Dict[str, object]",
+            '200': "CountriesListResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -291,7 +296,7 @@ class ReferenceApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> Dict[str, object]:
+    ) -> CurrenciesListResponse:
         """List Currencies
 
 
@@ -325,7 +330,7 @@ class ReferenceApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Dict[str, object]",
+            '200': "CurrenciesListResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -353,7 +358,7 @@ class ReferenceApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[Dict[str, object]]:
+    ) -> ApiResponse[CurrenciesListResponse]:
         """List Currencies
 
 
@@ -387,7 +392,7 @@ class ReferenceApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Dict[str, object]",
+            '200': "CurrenciesListResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -449,7 +454,7 @@ class ReferenceApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Dict[str, object]",
+            '200': "CurrenciesListResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -531,7 +536,7 @@ class ReferenceApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> Dict[str, object]:
+    ) -> DocumentTypesListResponse:
         """List Document Types
 
         List every supported document type with the metadata a client needs to build a type-aware create form: the number prefix, whether it is payable / takes a source document / supports a reason, which line-item shape it uses (``standard`` = priced, ``shipped`` = quantities only), and the lifecycle actions available to it.
@@ -566,7 +571,7 @@ class ReferenceApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Dict[str, object]",
+            '200': "DocumentTypesListResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -594,7 +599,7 @@ class ReferenceApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[Dict[str, object]]:
+    ) -> ApiResponse[DocumentTypesListResponse]:
         """List Document Types
 
         List every supported document type with the metadata a client needs to build a type-aware create form: the number prefix, whether it is payable / takes a source document / supports a reason, which line-item shape it uses (``standard`` = priced, ``shipped`` = quantities only), and the lifecycle actions available to it.
@@ -629,7 +634,7 @@ class ReferenceApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Dict[str, object]",
+            '200': "DocumentTypesListResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -692,7 +697,7 @@ class ReferenceApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Dict[str, object]",
+            '200': "DocumentTypesListResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -774,7 +779,7 @@ class ReferenceApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> Dict[str, object]:
+    ) -> LocalesListResponse:
         """List Locales
 
 
@@ -808,7 +813,7 @@ class ReferenceApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Dict[str, object]",
+            '200': "LocalesListResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -836,7 +841,7 @@ class ReferenceApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[Dict[str, object]]:
+    ) -> ApiResponse[LocalesListResponse]:
         """List Locales
 
 
@@ -870,7 +875,7 @@ class ReferenceApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Dict[str, object]",
+            '200': "LocalesListResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -932,7 +937,7 @@ class ReferenceApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Dict[str, object]",
+            '200': "LocalesListResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1014,7 +1019,7 @@ class ReferenceApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> Dict[str, object]:
+    ) -> PageSizesListResponse:
         """List Page Sizes
 
 
@@ -1048,7 +1053,7 @@ class ReferenceApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Dict[str, object]",
+            '200': "PageSizesListResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1076,7 +1081,7 @@ class ReferenceApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[Dict[str, object]]:
+    ) -> ApiResponse[PageSizesListResponse]:
         """List Page Sizes
 
 
@@ -1110,7 +1115,7 @@ class ReferenceApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Dict[str, object]",
+            '200': "PageSizesListResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1172,7 +1177,7 @@ class ReferenceApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Dict[str, object]",
+            '200': "PageSizesListResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1254,7 +1259,7 @@ class ReferenceApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> Dict[str, object]:
+    ) -> TimezonesListResponse:
         """List Timezones
 
 
@@ -1288,7 +1293,7 @@ class ReferenceApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Dict[str, object]",
+            '200': "TimezonesListResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1316,7 +1321,7 @@ class ReferenceApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[Dict[str, object]]:
+    ) -> ApiResponse[TimezonesListResponse]:
         """List Timezones
 
 
@@ -1350,7 +1355,7 @@ class ReferenceApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Dict[str, object]",
+            '200': "TimezonesListResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1412,7 +1417,7 @@ class ReferenceApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Dict[str, object]",
+            '200': "TimezonesListResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
