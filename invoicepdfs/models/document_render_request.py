@@ -41,8 +41,8 @@ class DocumentRenderRequest(BaseModel):
         if value is None:
             return value
 
-        if value not in set(['invoice']):
-            raise ValueError("must be one of enum values ('invoice')")
+        if value not in set(['invoice', 'credit_note', 'quote', 'receipt', 'proforma', 'purchase_order', 'delivery_note']):
+            raise ValueError("must be one of enum values ('invoice', 'credit_note', 'quote', 'receipt', 'proforma', 'purchase_order', 'delivery_note')")
         return value
 
     model_config = ConfigDict(
