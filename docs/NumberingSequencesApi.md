@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **consume_sequence_number**
-> NumberingSequenceResponse consume_sequence_number(sequence_id)
+> NumberingNextResponse consume_sequence_number(sequence_id)
 
 Consume Sequence Number
 
@@ -26,7 +26,7 @@ Consume and return the next number, incrementing the counter.
 
 ```python
 import invoicepdfs
-from invoicepdfs.models.numbering_sequence_response import NumberingSequenceResponse
+from invoicepdfs.models.numbering_next_response import NumberingNextResponse
 from invoicepdfs.rest import ApiException
 from pprint import pprint
 
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NumberingSequenceResponse**](NumberingSequenceResponse.md)
+[**NumberingNextResponse**](NumberingNextResponse.md)
 
 ### Authorization
 

@@ -43,6 +43,7 @@ class TestDocumentCalculateResponse(unittest.TestCase):
                         discount_total = invoicepdfs.models.money.Money(
                             amount = '', 
                             currency = '', ), 
+                        document_discount_total = , 
                         tax_total = , 
                         shipping_total = , 
                         total = , )
@@ -58,6 +59,7 @@ class TestDocumentCalculateResponse(unittest.TestCase):
                         discount_total = invoicepdfs.models.money.Money(
                             amount = '', 
                             currency = '', ), 
+                        document_discount_total = , 
                         tax_total = , 
                         shipping_total = , 
                         total = , )

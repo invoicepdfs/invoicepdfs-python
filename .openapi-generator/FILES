@@ -150,6 +150,8 @@ docs/LocalesListResponse.md
 docs/LogsApi.md
 docs/Money.md
 docs/MoneyOut.md
+docs/NumberingNextOut.md
+docs/NumberingNextResponse.md
 docs/NumberingSequenceCreateRequest.md
 docs/NumberingSequenceOut.md
 docs/NumberingSequencePatchRequest.md
@@ -405,6 +407,8 @@ invoicepdfs/models/locale_out.py
 invoicepdfs/models/locales_list_response.py
 invoicepdfs/models/money.py
 invoicepdfs/models/money_out.py
+invoicepdfs/models/numbering_next_out.py
+invoicepdfs/models/numbering_next_response.py
 invoicepdfs/models/numbering_sequence_create_request.py
 invoicepdfs/models/numbering_sequence_out.py
 invoicepdfs/models/numbering_sequence_patch_request.py
@@ -636,6 +640,8 @@ test/test_locales_list_response.py
 test/test_logs_api.py
 test/test_money.py
 test/test_money_out.py
+test/test_numbering_next_out.py
+test/test_numbering_next_response.py
 test/test_numbering_sequence_create_request.py
 test/test_numbering_sequence_out.py
 test/test_numbering_sequence_patch_request.py

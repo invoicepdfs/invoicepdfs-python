@@ -41,6 +41,9 @@ class TestCalculationBreakdown(unittest.TestCase):
                 discount_total = invoicepdfs.models.money.Money(
                     amount = '', 
                     currency = '', ),
+                document_discount_total = invoicepdfs.models.money.Money(
+                    amount = '', 
+                    currency = '', ),
                 tax_total = invoicepdfs.models.money.Money(
                     amount = '', 
                     currency = '', ),

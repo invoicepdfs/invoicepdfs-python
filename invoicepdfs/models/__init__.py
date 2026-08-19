@@ -147,6 +147,8 @@ from invoicepdfs.models.locale_out import LocaleOut
 from invoicepdfs.models.locales_list_response import LocalesListResponse
 from invoicepdfs.models.money import Money
 from invoicepdfs.models.money_out import MoneyOut
+from invoicepdfs.models.numbering_next_out import NumberingNextOut
+from invoicepdfs.models.numbering_next_response import NumberingNextResponse
 from invoicepdfs.models.numbering_sequence_create_request import NumberingSequenceCreateRequest
 from invoicepdfs.models.numbering_sequence_out import NumberingSequenceOut
 from invoicepdfs.models.numbering_sequence_patch_request import NumberingSequencePatchRequest

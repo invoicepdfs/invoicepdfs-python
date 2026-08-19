@@ -19,6 +19,7 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing import Optional
 from typing_extensions import Annotated
+from invoicepdfs.models.numbering_next_response import NumberingNextResponse
 from invoicepdfs.models.numbering_sequence_create_request import NumberingSequenceCreateRequest
 from invoicepdfs.models.numbering_sequence_patch_request import NumberingSequencePatchRequest
 from invoicepdfs.models.numbering_sequence_preview_response import NumberingSequencePreviewResponse
@@ -60,7 +61,7 @@ class NumberingSequencesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> NumberingSequenceResponse:
+    ) -> NumberingNextResponse:
         """Consume Sequence Number
 
         Consume and return the next number, incrementing the counter.
@@ -98,7 +99,7 @@ class NumberingSequencesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "NumberingSequenceResponse",
+            '200': "NumberingNextResponse",
             '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -128,7 +129,7 @@ class NumberingSequencesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[NumberingSequenceResponse]:
+    ) -> ApiResponse[NumberingNextResponse]:
         """Consume Sequence Number
 
         Consume and return the next number, incrementing the counter.
@@ -166,7 +167,7 @@ class NumberingSequencesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "NumberingSequenceResponse",
+            '200': "NumberingNextResponse",
             '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -234,7 +235,7 @@ class NumberingSequencesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "NumberingSequenceResponse",
+            '200': "NumberingNextResponse",
             '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(

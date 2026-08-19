@@ -18,22 +18,17 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict
-from typing import Any, ClassVar, Dict, List, Optional
-from invoicepdfs.models.money import Money
+from typing import Any, ClassVar, Dict, List
+from invoicepdfs.models.numbering_next_out import NumberingNextOut
 from typing import Optional, Set
 from typing_extensions import Self
 
-class CalculationBreakdown(BaseModel):
+class NumberingNextResponse(BaseModel):
     """
-    CalculationBreakdown
+    NumberingNextResponse
     """ # noqa: E501
-    subtotal: Money
-    discount_total: Money
-    document_discount_total: Optional[Money] = None
-    tax_total: Money
-    shipping_total: Money
-    total: Money
-    __properties: ClassVar[List[str]] = ["subtotal", "discount_total", "document_discount_total", "tax_total", "shipping_total", "total"]
+    data: NumberingNextOut
+    __properties: ClassVar[List[str]] = ["data"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -53,7 +48,7 @@ class CalculationBreakdown(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of CalculationBreakdown from a JSON string"""
+        """Create an instance of NumberingNextResponse from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -74,29 +69,14 @@ class CalculationBreakdown(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of subtotal
-        if self.subtotal:
-            _dict['subtotal'] = self.subtotal.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of discount_total
-        if self.discount_total:
-            _dict['discount_total'] = self.discount_total.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of document_discount_total
-        if self.document_discount_total:
-            _dict['document_discount_total'] = self.document_discount_total.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of tax_total
-        if self.tax_total:
-            _dict['tax_total'] = self.tax_total.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of shipping_total
-        if self.shipping_total:
-            _dict['shipping_total'] = self.shipping_total.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of total
-        if self.total:
-            _dict['total'] = self.total.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of data
+        if self.data:
+            _dict['data'] = self.data.to_dict()
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of CalculationBreakdown from a dict"""
+        """Create an instance of NumberingNextResponse from a dict"""
         if obj is None:
             return None
 
@@ -104,12 +84,7 @@ class CalculationBreakdown(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "subtotal": Money.from_dict(obj["subtotal"]) if obj.get("subtotal") is not None else None,
-            "discount_total": Money.from_dict(obj["discount_total"]) if obj.get("discount_total") is not None else None,
-            "document_discount_total": Money.from_dict(obj["document_discount_total"]) if obj.get("document_discount_total") is not None else None,
-            "tax_total": Money.from_dict(obj["tax_total"]) if obj.get("tax_total") is not None else None,
-            "shipping_total": Money.from_dict(obj["shipping_total"]) if obj.get("shipping_total") is not None else None,
-            "total": Money.from_dict(obj["total"]) if obj.get("total") is not None else None
+            "data": NumberingNextOut.from_dict(obj["data"]) if obj.get("data") is not None else None
         })
         return _obj
 
