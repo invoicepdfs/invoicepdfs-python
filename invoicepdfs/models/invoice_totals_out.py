@@ -18,7 +18,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict
-from typing import Any, ClassVar, Dict, List
+from typing import Any, ClassVar, Dict, List, Optional
 from invoicepdfs.models.money_out import MoneyOut
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,12 +27,14 @@ class InvoiceTotalsOut(BaseModel):
     """
     InvoiceTotalsOut
     """ # noqa: E501
+    gross_subtotal: Optional[MoneyOut] = None
     subtotal: MoneyOut
     discount_total: MoneyOut
+    document_discount_total: Optional[MoneyOut] = None
     tax_total: MoneyOut
     shipping_total: MoneyOut
     total: MoneyOut
-    __properties: ClassVar[List[str]] = ["subtotal", "discount_total", "tax_total", "shipping_total", "total"]
+    __properties: ClassVar[List[str]] = ["gross_subtotal", "subtotal", "discount_total", "document_discount_total", "tax_total", "shipping_total", "total"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -73,12 +75,18 @@ class InvoiceTotalsOut(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of gross_subtotal
+        if self.gross_subtotal:
+            _dict['gross_subtotal'] = self.gross_subtotal.to_dict()
         # override the default output from pydantic by calling `to_dict()` of subtotal
         if self.subtotal:
             _dict['subtotal'] = self.subtotal.to_dict()
         # override the default output from pydantic by calling `to_dict()` of discount_total
         if self.discount_total:
             _dict['discount_total'] = self.discount_total.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of document_discount_total
+        if self.document_discount_total:
+            _dict['document_discount_total'] = self.document_discount_total.to_dict()
         # override the default output from pydantic by calling `to_dict()` of tax_total
         if self.tax_total:
             _dict['tax_total'] = self.tax_total.to_dict()
@@ -100,8 +108,10 @@ class InvoiceTotalsOut(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "gross_subtotal": MoneyOut.from_dict(obj["gross_subtotal"]) if obj.get("gross_subtotal") is not None else None,
             "subtotal": MoneyOut.from_dict(obj["subtotal"]) if obj.get("subtotal") is not None else None,
             "discount_total": MoneyOut.from_dict(obj["discount_total"]) if obj.get("discount_total") is not None else None,
+            "document_discount_total": MoneyOut.from_dict(obj["document_discount_total"]) if obj.get("document_discount_total") is not None else None,
             "tax_total": MoneyOut.from_dict(obj["tax_total"]) if obj.get("tax_total") is not None else None,
             "shipping_total": MoneyOut.from_dict(obj["shipping_total"]) if obj.get("shipping_total") is not None else None,
             "total": MoneyOut.from_dict(obj["total"]) if obj.get("total") is not None else None

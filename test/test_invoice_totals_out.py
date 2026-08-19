@@ -35,10 +35,16 @@ class TestInvoiceTotalsOut(unittest.TestCase):
         model = InvoiceTotalsOut()
         if include_optional:
             return InvoiceTotalsOut(
+                gross_subtotal = invoicepdfs.models.money_out.MoneyOut(
+                    amount = '', 
+                    currency = '', ),
                 subtotal = invoicepdfs.models.money_out.MoneyOut(
                     amount = '', 
                     currency = '', ),
                 discount_total = invoicepdfs.models.money_out.MoneyOut(
+                    amount = '', 
+                    currency = '', ),
+                document_discount_total = invoicepdfs.models.money_out.MoneyOut(
                     amount = '', 
                     currency = '', ),
                 tax_total = invoicepdfs.models.money_out.MoneyOut(
