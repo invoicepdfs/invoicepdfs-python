@@ -55,6 +55,12 @@ class TestInvoiceTotalsOut(unittest.TestCase):
                     currency = '', ),
                 total = invoicepdfs.models.money_out.MoneyOut(
                     amount = '', 
+                    currency = '', ),
+                recomputed_total = invoicepdfs.models.money_out.MoneyOut(
+                    amount = '', 
+                    currency = '', ),
+                totals_drift = invoicepdfs.models.money_out.MoneyOut(
+                    amount = '', 
                     currency = '', )
             )
         else:

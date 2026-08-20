@@ -59,7 +59,9 @@ class TestInvoicesListResponse(unittest.TestCase):
                             document_discount_total = , 
                             tax_total = , 
                             shipping_total = , 
-                            total = , ), 
+                            total = , 
+                            recomputed_total = , 
+                            totals_drift = , ), 
                         created_at = '', 
                         updated_at = '', 
                         finalized_at = '', )
@@ -94,7 +96,9 @@ class TestInvoicesListResponse(unittest.TestCase):
                             document_discount_total = , 
                             tax_total = , 
                             shipping_total = , 
-                            total = , ), 
+                            total = , 
+                            recomputed_total = , 
+                            totals_drift = , ), 
                         created_at = '', 
                         updated_at = '', 
                         finalized_at = '', )

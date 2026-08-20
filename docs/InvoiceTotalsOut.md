@@ -12,6 +12,8 @@ Name | Type | Description | Notes
 **tax_total** | [**MoneyOut**](MoneyOut.md) |  | 
 **shipping_total** | [**MoneyOut**](MoneyOut.md) |  | 
 **total** | [**MoneyOut**](MoneyOut.md) |  | 
+**recomputed_total** | [**MoneyOut**](MoneyOut.md) |  | [optional] 
+**totals_drift** | [**MoneyOut**](MoneyOut.md) |  | [optional] 
 
 ## Example
 

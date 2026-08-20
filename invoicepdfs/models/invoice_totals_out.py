@@ -34,7 +34,9 @@ class InvoiceTotalsOut(BaseModel):
     tax_total: MoneyOut
     shipping_total: MoneyOut
     total: MoneyOut
-    __properties: ClassVar[List[str]] = ["gross_subtotal", "subtotal", "discount_total", "document_discount_total", "tax_total", "shipping_total", "total"]
+    recomputed_total: Optional[MoneyOut] = None
+    totals_drift: Optional[MoneyOut] = None
+    __properties: ClassVar[List[str]] = ["gross_subtotal", "subtotal", "discount_total", "document_discount_total", "tax_total", "shipping_total", "total", "recomputed_total", "totals_drift"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -96,6 +98,22 @@ class InvoiceTotalsOut(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of total
         if self.total:
             _dict['total'] = self.total.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of recomputed_total
+        if self.recomputed_total:
+            _dict['recomputed_total'] = self.recomputed_total.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of totals_drift
+        if self.totals_drift:
+            _dict['totals_drift'] = self.totals_drift.to_dict()
+        # set to None if recomputed_total (nullable) is None
+        # and model_fields_set contains the field
+        if self.recomputed_total is None and "recomputed_total" in self.model_fields_set:
+            _dict['recomputed_total'] = None
+
+        # set to None if totals_drift (nullable) is None
+        # and model_fields_set contains the field
+        if self.totals_drift is None and "totals_drift" in self.model_fields_set:
+            _dict['totals_drift'] = None
+
         return _dict
 
     @classmethod
@@ -114,7 +132,9 @@ class InvoiceTotalsOut(BaseModel):
             "document_discount_total": MoneyOut.from_dict(obj["document_discount_total"]) if obj.get("document_discount_total") is not None else None,
             "tax_total": MoneyOut.from_dict(obj["tax_total"]) if obj.get("tax_total") is not None else None,
             "shipping_total": MoneyOut.from_dict(obj["shipping_total"]) if obj.get("shipping_total") is not None else None,
-            "total": MoneyOut.from_dict(obj["total"]) if obj.get("total") is not None else None
+            "total": MoneyOut.from_dict(obj["total"]) if obj.get("total") is not None else None,
+            "recomputed_total": MoneyOut.from_dict(obj["recomputed_total"]) if obj.get("recomputed_total") is not None else None,
+            "totals_drift": MoneyOut.from_dict(obj["totals_drift"]) if obj.get("totals_drift") is not None else None
         })
         return _obj
 
