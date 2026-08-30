@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "1.0.0"
+__version__ = "0.3.0"
 
 # import apis into sdk package
 from invoicepdfs.api.api_keys_api import ApiKeysApi
