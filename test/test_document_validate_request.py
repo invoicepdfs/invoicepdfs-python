@@ -99,7 +99,8 @@ class TestDocumentValidateRequest(unittest.TestCase):
                         ], 
                     shipping = invoicepdfs.models.document_shipping_input.DocumentShippingInput(
                         description = 'Shipping', 
-                        amount = '9.99', ), 
+                        amount = '9.99', 
+                        taxable = True, ), 
                     custom_fields = [
                         invoicepdfs.models.document_custom_field_input.DocumentCustomFieldInput(
                             label = 'PO Number', 
@@ -181,7 +182,8 @@ class TestDocumentValidateRequest(unittest.TestCase):
                         ], 
                     shipping = invoicepdfs.models.document_shipping_input.DocumentShippingInput(
                         description = 'Shipping', 
-                        amount = '9.99', ), 
+                        amount = '9.99', 
+                        taxable = True, ), 
                     custom_fields = [
                         invoicepdfs.models.document_custom_field_input.DocumentCustomFieldInput(
                             label = 'PO Number', 

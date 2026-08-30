@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **description** | **str** |  | [optional] [default to 'Shipping']
 **amount** | **str** |  | 
+**taxable** | **bool** |  | [optional] [default to False]
 
 ## Example
 

@@ -88,7 +88,8 @@ class TestRecurringInvoiceCreateRequest(unittest.TestCase):
                         ], 
                     shipping = invoicepdfs.models.invoice_shipping_input.InvoiceShippingInput(
                         description = 'Shipping', 
-                        amount = '9.99', ), 
+                        amount = '9.99', 
+                        taxable = True, ), 
                     notes = [
                         invoicepdfs.models.invoice_note_input.InvoiceNoteInput(
                             type = 'note', 
@@ -173,7 +174,8 @@ class TestRecurringInvoiceCreateRequest(unittest.TestCase):
                         ], 
                     shipping = invoicepdfs.models.invoice_shipping_input.InvoiceShippingInput(
                         description = 'Shipping', 
-                        amount = '9.99', ), 
+                        amount = '9.99', 
+                        taxable = True, ), 
                     notes = [
                         invoicepdfs.models.invoice_note_input.InvoiceNoteInput(
                             type = 'note', 

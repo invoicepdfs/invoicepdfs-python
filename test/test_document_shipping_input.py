@@ -36,7 +36,8 @@ class TestDocumentShippingInput(unittest.TestCase):
         if include_optional:
             return DocumentShippingInput(
                 description = 'Shipping',
-                amount = '9.99'
+                amount = '9.99',
+                taxable = True
             )
         else:
             return DocumentShippingInput(

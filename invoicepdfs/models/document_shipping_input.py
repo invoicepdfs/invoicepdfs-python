@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,7 +28,8 @@ class DocumentShippingInput(BaseModel):
     """ # noqa: E501
     description: Optional[StrictStr] = 'Shipping'
     amount: StrictStr
-    __properties: ClassVar[List[str]] = ["description", "amount"]
+    taxable: Optional[StrictBool] = False
+    __properties: ClassVar[List[str]] = ["description", "amount", "taxable"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -82,7 +83,8 @@ class DocumentShippingInput(BaseModel):
 
         _obj = cls.model_validate({
             "description": obj.get("description") if obj.get("description") is not None else 'Shipping',
-            "amount": obj.get("amount")
+            "amount": obj.get("amount"),
+            "taxable": obj.get("taxable") if obj.get("taxable") is not None else False
         })
         return _obj
 
