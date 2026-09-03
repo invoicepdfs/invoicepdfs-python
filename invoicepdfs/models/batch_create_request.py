@@ -30,7 +30,7 @@ class BatchCreateRequest(BaseModel):
     BatchCreateRequest
     """ # noqa: E501
     operation: Optional[StrictStr] = 'render'
-    items: Annotated[List[BatchItemInput], Field(min_length=1)]
+    items: Annotated[List[BatchItemInput], Field(min_length=1, max_length=500)]
     template_id: Optional[StrictStr] = 'tpl_modern'
     output: Optional[BatchOutputOptions] = None
     __properties: ClassVar[List[str]] = ["operation", "items", "template_id", "output"]
