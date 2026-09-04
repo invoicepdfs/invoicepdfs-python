@@ -72,30 +72,10 @@ class TaxRatePatchRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if name (nullable) is None
-        # and model_fields_set contains the field
-        if self.name is None and "name" in self.model_fields_set:
-            _dict['name'] = None
-
-        # set to None if rate (nullable) is None
-        # and model_fields_set contains the field
-        if self.rate is None and "rate" in self.model_fields_set:
-            _dict['rate'] = None
-
-        # set to None if inclusive (nullable) is None
-        # and model_fields_set contains the field
-        if self.inclusive is None and "inclusive" in self.model_fields_set:
-            _dict['inclusive'] = None
-
         # set to None if jurisdiction (nullable) is None
         # and model_fields_set contains the field
         if self.jurisdiction is None and "jurisdiction" in self.model_fields_set:
             _dict['jurisdiction'] = None
-
-        # set to None if is_active (nullable) is None
-        # and model_fields_set contains the field
-        if self.is_active is None and "is_active" in self.model_fields_set:
-            _dict['is_active'] = None
 
         return _dict
 

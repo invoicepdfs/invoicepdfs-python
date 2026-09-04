@@ -80,16 +80,6 @@ class RecurringInvoicePatchRequest(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of invoice_template
         if self.invoice_template:
             _dict['invoice_template'] = self.invoice_template.to_dict()
-        # set to None if frequency (nullable) is None
-        # and model_fields_set contains the field
-        if self.frequency is None and "frequency" in self.model_fields_set:
-            _dict['frequency'] = None
-
-        # set to None if interval (nullable) is None
-        # and model_fields_set contains the field
-        if self.interval is None and "interval" in self.model_fields_set:
-            _dict['interval'] = None
-
         # set to None if end_date (nullable) is None
         # and model_fields_set contains the field
         if self.end_date is None and "end_date" in self.model_fields_set:
@@ -104,16 +94,6 @@ class RecurringInvoicePatchRequest(BaseModel):
         # and model_fields_set contains the field
         if self.numbering_sequence_id is None and "numbering_sequence_id" in self.model_fields_set:
             _dict['numbering_sequence_id'] = None
-
-        # set to None if auto_finalize (nullable) is None
-        # and model_fields_set contains the field
-        if self.auto_finalize is None and "auto_finalize" in self.model_fields_set:
-            _dict['auto_finalize'] = None
-
-        # set to None if invoice_template (nullable) is None
-        # and model_fields_set contains the field
-        if self.invoice_template is None and "invoice_template" in self.model_fields_set:
-            _dict['invoice_template'] = None
 
         return _dict
 

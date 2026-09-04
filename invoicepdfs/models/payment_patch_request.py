@@ -73,16 +73,6 @@ class PaymentPatchRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if amount (nullable) is None
-        # and model_fields_set contains the field
-        if self.amount is None and "amount" in self.model_fields_set:
-            _dict['amount'] = None
-
-        # set to None if paid_at (nullable) is None
-        # and model_fields_set contains the field
-        if self.paid_at is None and "paid_at" in self.model_fields_set:
-            _dict['paid_at'] = None
-
         # set to None if method (nullable) is None
         # and model_fields_set contains the field
         if self.method is None and "method" in self.model_fields_set:

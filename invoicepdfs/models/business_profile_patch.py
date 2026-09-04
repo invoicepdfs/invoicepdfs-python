@@ -82,11 +82,6 @@ class BusinessProfilePatch(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of address
         if self.address:
             _dict['address'] = self.address.to_dict()
-        # set to None if legal_name (nullable) is None
-        # and model_fields_set contains the field
-        if self.legal_name is None and "legal_name" in self.model_fields_set:
-            _dict['legal_name'] = None
-
         # set to None if display_name (nullable) is None
         # and model_fields_set contains the field
         if self.display_name is None and "display_name" in self.model_fields_set:

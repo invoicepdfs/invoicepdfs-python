@@ -84,36 +84,6 @@ class NumberingSequencePatchRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if name (nullable) is None
-        # and model_fields_set contains the field
-        if self.name is None and "name" in self.model_fields_set:
-            _dict['name'] = None
-
-        # set to None if prefix (nullable) is None
-        # and model_fields_set contains the field
-        if self.prefix is None and "prefix" in self.model_fields_set:
-            _dict['prefix'] = None
-
-        # set to None if date_pattern (nullable) is None
-        # and model_fields_set contains the field
-        if self.date_pattern is None and "date_pattern" in self.model_fields_set:
-            _dict['date_pattern'] = None
-
-        # set to None if padding (nullable) is None
-        # and model_fields_set contains the field
-        if self.padding is None and "padding" in self.model_fields_set:
-            _dict['padding'] = None
-
-        # set to None if next_number (nullable) is None
-        # and model_fields_set contains the field
-        if self.next_number is None and "next_number" in self.model_fields_set:
-            _dict['next_number'] = None
-
-        # set to None if reset (nullable) is None
-        # and model_fields_set contains the field
-        if self.reset is None and "reset" in self.model_fields_set:
-            _dict['reset'] = None
-
         return _dict
 
     @classmethod

@@ -81,11 +81,6 @@ class CustomerPatch(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of shipping_address
         if self.shipping_address:
             _dict['shipping_address'] = self.shipping_address.to_dict()
-        # set to None if name (nullable) is None
-        # and model_fields_set contains the field
-        if self.name is None and "name" in self.model_fields_set:
-            _dict['name'] = None
-
         # set to None if email (nullable) is None
         # and model_fields_set contains the field
         if self.email is None and "email" in self.model_fields_set:

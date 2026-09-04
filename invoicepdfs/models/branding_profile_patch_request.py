@@ -75,21 +75,6 @@ class BrandingProfilePatchRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if name (nullable) is None
-        # and model_fields_set contains the field
-        if self.name is None and "name" in self.model_fields_set:
-            _dict['name'] = None
-
-        # set to None if primary_color (nullable) is None
-        # and model_fields_set contains the field
-        if self.primary_color is None and "primary_color" in self.model_fields_set:
-            _dict['primary_color'] = None
-
-        # set to None if accent_color (nullable) is None
-        # and model_fields_set contains the field
-        if self.accent_color is None and "accent_color" in self.model_fields_set:
-            _dict['accent_color'] = None
-
         # set to None if font_family (nullable) is None
         # and model_fields_set contains the field
         if self.font_family is None and "font_family" in self.model_fields_set:
@@ -99,21 +84,6 @@ class BrandingProfilePatchRequest(BaseModel):
         # and model_fields_set contains the field
         if self.header_text is None and "header_text" in self.model_fields_set:
             _dict['header_text'] = None
-
-        # set to None if footer_text (nullable) is None
-        # and model_fields_set contains the field
-        if self.footer_text is None and "footer_text" in self.model_fields_set:
-            _dict['footer_text'] = None
-
-        # set to None if hide_invoicepdfs_branding (nullable) is None
-        # and model_fields_set contains the field
-        if self.hide_invoicepdfs_branding is None and "hide_invoicepdfs_branding" in self.model_fields_set:
-            _dict['hide_invoicepdfs_branding'] = None
-
-        # set to None if is_default (nullable) is None
-        # and model_fields_set contains the field
-        if self.is_default is None and "is_default" in self.model_fields_set:
-            _dict['is_default'] = None
 
         return _dict
 
