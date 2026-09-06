@@ -48,6 +48,9 @@ docs/BillingApi.md
 docs/BillingCheckoutData.md
 docs/BillingCheckoutRequest.md
 docs/BillingCheckoutResponse.md
+docs/BillingOverageData.md
+docs/BillingOverageRequest.md
+docs/BillingOverageResponse.md
 docs/BillingPlan.md
 docs/BillingPlansListResponse.md
 docs/BillingPortalData.md
@@ -212,6 +215,7 @@ docs/UsageEventOut.md
 docs/UsageEventsListResponse.md
 docs/UsageLimitsData.md
 docs/UsageLimitsResponse.md
+docs/UsageOverage.md
 docs/UsagePeriod.md
 docs/UsageRateLimit.md
 docs/UsageRenderLimits.md
@@ -316,6 +320,9 @@ invoicepdfs/models/batches_list_response.py
 invoicepdfs/models/billing_checkout_data.py
 invoicepdfs/models/billing_checkout_request.py
 invoicepdfs/models/billing_checkout_response.py
+invoicepdfs/models/billing_overage_data.py
+invoicepdfs/models/billing_overage_request.py
+invoicepdfs/models/billing_overage_response.py
 invoicepdfs/models/billing_plan.py
 invoicepdfs/models/billing_plans_list_response.py
 invoicepdfs/models/billing_portal_data.py
@@ -459,6 +466,7 @@ invoicepdfs/models/usage_event_out.py
 invoicepdfs/models/usage_events_list_response.py
 invoicepdfs/models/usage_limits_data.py
 invoicepdfs/models/usage_limits_response.py
+invoicepdfs/models/usage_overage.py
 invoicepdfs/models/usage_period.py
 invoicepdfs/models/usage_rate_limit.py
 invoicepdfs/models/usage_render_limits.py
@@ -538,6 +546,9 @@ test/test_billing_api.py
 test/test_billing_checkout_data.py
 test/test_billing_checkout_request.py
 test/test_billing_checkout_response.py
+test/test_billing_overage_data.py
+test/test_billing_overage_request.py
+test/test_billing_overage_response.py
 test/test_billing_plan.py
 test/test_billing_plans_list_response.py
 test/test_billing_portal_data.py
@@ -702,6 +713,7 @@ test/test_usage_event_out.py
 test/test_usage_events_list_response.py
 test/test_usage_limits_data.py
 test/test_usage_limits_response.py
+test/test_usage_overage.py
 test/test_usage_period.py
 test/test_usage_rate_limit.py
 test/test_usage_render_limits.py

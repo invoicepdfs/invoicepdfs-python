@@ -18,21 +18,17 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict
-from typing import Any, ClassVar, Dict, List, Optional
-from invoicepdfs.models.usage_overage import UsageOverage
-from invoicepdfs.models.usage_rate_limit import UsageRateLimit
-from invoicepdfs.models.usage_render_limits import UsageRenderLimits
+from typing import Any, ClassVar, Dict, List
+from invoicepdfs.models.billing_overage_data import BillingOverageData
 from typing import Optional, Set
 from typing_extensions import Self
 
-class UsageLimitsData(BaseModel):
+class BillingOverageResponse(BaseModel):
     """
-    UsageLimitsData
+    BillingOverageResponse
     """ # noqa: E501
-    renders: UsageRenderLimits
-    rate_limit: UsageRateLimit
-    overage: Optional[UsageOverage] = None
-    __properties: ClassVar[List[str]] = ["renders", "rate_limit", "overage"]
+    data: BillingOverageData
+    __properties: ClassVar[List[str]] = ["data"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -52,7 +48,7 @@ class UsageLimitsData(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of UsageLimitsData from a JSON string"""
+        """Create an instance of BillingOverageResponse from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -73,20 +69,14 @@ class UsageLimitsData(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of renders
-        if self.renders:
-            _dict['renders'] = self.renders.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of rate_limit
-        if self.rate_limit:
-            _dict['rate_limit'] = self.rate_limit.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of overage
-        if self.overage:
-            _dict['overage'] = self.overage.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of data
+        if self.data:
+            _dict['data'] = self.data.to_dict()
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of UsageLimitsData from a dict"""
+        """Create an instance of BillingOverageResponse from a dict"""
         if obj is None:
             return None
 
@@ -94,9 +84,7 @@ class UsageLimitsData(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "renders": UsageRenderLimits.from_dict(obj["renders"]) if obj.get("renders") is not None else None,
-            "rate_limit": UsageRateLimit.from_dict(obj["rate_limit"]) if obj.get("rate_limit") is not None else None,
-            "overage": UsageOverage.from_dict(obj["overage"]) if obj.get("overage") is not None else None
+            "data": BillingOverageData.from_dict(obj["data"]) if obj.get("data") is not None else None
         })
         return _obj
 

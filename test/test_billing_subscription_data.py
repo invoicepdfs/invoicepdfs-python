@@ -40,7 +40,10 @@ class TestBillingSubscriptionData(unittest.TestCase):
                 plan_id = '',
                 plan_name = '',
                 stripe_configured = True,
-                has_billing_account = True
+                has_billing_account = True,
+                overage_enabled = True,
+                overage_available = True,
+                overage_price_millicents = 56
             )
         else:
             return BillingSubscriptionData(

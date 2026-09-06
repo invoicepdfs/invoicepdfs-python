@@ -40,7 +40,10 @@ class TestBillingPlansListResponse(unittest.TestCase):
                         id = '', 
                         name = '', 
                         price_id = '', 
-                        monthly_render_quota = 56, )
+                        price_id_annual = '', 
+                        monthly_render_quota = 56, 
+                        allow_branding_removal = True, 
+                        overage_price_millicents = 56, )
                     ]
             )
         else:
@@ -50,7 +53,10 @@ class TestBillingPlansListResponse(unittest.TestCase):
                         id = '', 
                         name = '', 
                         price_id = '', 
-                        monthly_render_quota = 56, )
+                        price_id_annual = '', 
+                        monthly_render_quota = 56, 
+                        allow_branding_removal = True, 
+                        overage_price_millicents = 56, )
                     ],
         )
         """

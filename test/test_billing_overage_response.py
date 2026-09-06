@@ -14,10 +14,10 @@
 
 import unittest
 
-from invoicepdfs.models.billing_plan import BillingPlan
+from invoicepdfs.models.billing_overage_response import BillingOverageResponse
 
-class TestBillingPlan(unittest.TestCase):
-    """BillingPlan unit test stubs"""
+class TestBillingOverageResponse(unittest.TestCase):
+    """BillingOverageResponse unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,35 +25,32 @@ class TestBillingPlan(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> BillingPlan:
-        """Test BillingPlan
+    def make_instance(self, include_optional) -> BillingOverageResponse:
+        """Test BillingOverageResponse
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `BillingPlan`
+        # uncomment below to create an instance of `BillingOverageResponse`
         """
-        model = BillingPlan()
+        model = BillingOverageResponse()
         if include_optional:
-            return BillingPlan(
-                id = '',
-                name = '',
-                price_id = '',
-                price_id_annual = '',
-                monthly_render_quota = 56,
-                allow_branding_removal = True,
-                overage_price_millicents = 56
+            return BillingOverageResponse(
+                data = invoicepdfs.models.billing_overage_data.BillingOverageData(
+                    overage_enabled = True, 
+                    overage_available = True, 
+                    overage_price_millicents = 56, )
             )
         else:
-            return BillingPlan(
-                id = '',
-                name = '',
-                price_id = '',
-                monthly_render_quota = 56,
+            return BillingOverageResponse(
+                data = invoicepdfs.models.billing_overage_data.BillingOverageData(
+                    overage_enabled = True, 
+                    overage_available = True, 
+                    overage_price_millicents = 56, ),
         )
         """
 
-    def testBillingPlan(self):
-        """Test BillingPlan"""
+    def testBillingOverageResponse(self):
+        """Test BillingOverageResponse"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

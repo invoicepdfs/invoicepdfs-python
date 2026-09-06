@@ -54,6 +54,13 @@ class TestBillingApi(unittest.TestCase):
         """
         pass
 
+    def test_update_overage_settings(self) -> None:
+        """Test case for update_overage_settings
+
+        Update Overage Settings
+        """
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()

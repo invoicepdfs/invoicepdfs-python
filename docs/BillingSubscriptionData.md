@@ -11,6 +11,9 @@ Name | Type | Description | Notes
 **plan_name** | **str** |  | 
 **stripe_configured** | **bool** |  | [optional] [default to False]
 **has_billing_account** | **bool** |  | [optional] [default to False]
+**overage_enabled** | **bool** |  | [optional] [default to False]
+**overage_available** | **bool** |  | [optional] [default to False]
+**overage_price_millicents** | **int** |  | [optional] 
 
 ## Example
 

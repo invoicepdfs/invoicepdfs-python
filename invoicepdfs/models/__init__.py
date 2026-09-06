@@ -56,6 +56,9 @@ from invoicepdfs.models.batches_list_response import BatchesListResponse
 from invoicepdfs.models.billing_checkout_data import BillingCheckoutData
 from invoicepdfs.models.billing_checkout_request import BillingCheckoutRequest
 from invoicepdfs.models.billing_checkout_response import BillingCheckoutResponse
+from invoicepdfs.models.billing_overage_data import BillingOverageData
+from invoicepdfs.models.billing_overage_request import BillingOverageRequest
+from invoicepdfs.models.billing_overage_response import BillingOverageResponse
 from invoicepdfs.models.billing_plan import BillingPlan
 from invoicepdfs.models.billing_plans_list_response import BillingPlansListResponse
 from invoicepdfs.models.billing_portal_data import BillingPortalData
@@ -199,6 +202,7 @@ from invoicepdfs.models.usage_event_out import UsageEventOut
 from invoicepdfs.models.usage_events_list_response import UsageEventsListResponse
 from invoicepdfs.models.usage_limits_data import UsageLimitsData
 from invoicepdfs.models.usage_limits_response import UsageLimitsResponse
+from invoicepdfs.models.usage_overage import UsageOverage
 from invoicepdfs.models.usage_period import UsagePeriod
 from invoicepdfs.models.usage_rate_limit import UsageRateLimit
 from invoicepdfs.models.usage_render_limits import UsageRenderLimits

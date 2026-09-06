@@ -8,7 +8,10 @@ Name | Type | Description | Notes
 **id** | **str** |  | 
 **name** | **str** |  | 
 **price_id** | **str** |  | 
+**price_id_annual** | **str** |  | [optional] 
 **monthly_render_quota** | **int** |  | 
+**allow_branding_removal** | **bool** |  | [optional] [default to False]
+**overage_price_millicents** | **int** |  | [optional] 
 
 ## Example
 

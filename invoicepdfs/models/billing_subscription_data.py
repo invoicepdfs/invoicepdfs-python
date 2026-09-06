@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -32,7 +32,10 @@ class BillingSubscriptionData(BaseModel):
     plan_name: StrictStr
     stripe_configured: Optional[StrictBool] = False
     has_billing_account: Optional[StrictBool] = False
-    __properties: ClassVar[List[str]] = ["subscription_id", "status", "plan_id", "plan_name", "stripe_configured", "has_billing_account"]
+    overage_enabled: Optional[StrictBool] = False
+    overage_available: Optional[StrictBool] = False
+    overage_price_millicents: Optional[StrictInt] = None
+    __properties: ClassVar[List[str]] = ["subscription_id", "status", "plan_id", "plan_name", "stripe_configured", "has_billing_account", "overage_enabled", "overage_available", "overage_price_millicents"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -83,6 +86,11 @@ class BillingSubscriptionData(BaseModel):
         if self.status is None and "status" in self.model_fields_set:
             _dict['status'] = None
 
+        # set to None if overage_price_millicents (nullable) is None
+        # and model_fields_set contains the field
+        if self.overage_price_millicents is None and "overage_price_millicents" in self.model_fields_set:
+            _dict['overage_price_millicents'] = None
+
         return _dict
 
     @classmethod
@@ -100,7 +108,10 @@ class BillingSubscriptionData(BaseModel):
             "plan_id": obj.get("plan_id"),
             "plan_name": obj.get("plan_name"),
             "stripe_configured": obj.get("stripe_configured") if obj.get("stripe_configured") is not None else False,
-            "has_billing_account": obj.get("has_billing_account") if obj.get("has_billing_account") is not None else False
+            "has_billing_account": obj.get("has_billing_account") if obj.get("has_billing_account") is not None else False,
+            "overage_enabled": obj.get("overage_enabled") if obj.get("overage_enabled") is not None else False,
+            "overage_available": obj.get("overage_available") if obj.get("overage_available") is not None else False,
+            "overage_price_millicents": obj.get("overage_price_millicents")
         })
         return _obj
 

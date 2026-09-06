@@ -14,10 +14,10 @@
 
 import unittest
 
-from invoicepdfs.models.billing_plan import BillingPlan
+from invoicepdfs.models.billing_overage_data import BillingOverageData
 
-class TestBillingPlan(unittest.TestCase):
-    """BillingPlan unit test stubs"""
+class TestBillingOverageData(unittest.TestCase):
+    """BillingOverageData unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,35 +25,29 @@ class TestBillingPlan(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> BillingPlan:
-        """Test BillingPlan
+    def make_instance(self, include_optional) -> BillingOverageData:
+        """Test BillingOverageData
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `BillingPlan`
+        # uncomment below to create an instance of `BillingOverageData`
         """
-        model = BillingPlan()
+        model = BillingOverageData()
         if include_optional:
-            return BillingPlan(
-                id = '',
-                name = '',
-                price_id = '',
-                price_id_annual = '',
-                monthly_render_quota = 56,
-                allow_branding_removal = True,
+            return BillingOverageData(
+                overage_enabled = True,
+                overage_available = True,
                 overage_price_millicents = 56
             )
         else:
-            return BillingPlan(
-                id = '',
-                name = '',
-                price_id = '',
-                monthly_render_quota = 56,
+            return BillingOverageData(
+                overage_enabled = True,
+                overage_available = True,
         )
         """
 
-    def testBillingPlan(self):
-        """Test BillingPlan"""
+    def testBillingOverageData(self):
+        """Test BillingOverageData"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

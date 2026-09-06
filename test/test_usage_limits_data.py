@@ -40,7 +40,13 @@ class TestUsageLimitsData(unittest.TestCase):
                     limit = 56, 
                     remaining = 56, ),
                 rate_limit = invoicepdfs.models.usage_rate_limit.UsageRateLimit(
-                    requests_per_second = 56, )
+                    requests_per_second = 56, ),
+                overage = invoicepdfs.models.usage_overage.UsageOverage(
+                    enabled = True, 
+                    available = True, 
+                    renders = 56, 
+                    price_millicents = 56, 
+                    estimated_cost_cents = 56, )
             )
         else:
             return UsageLimitsData(

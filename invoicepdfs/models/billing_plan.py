@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,8 +29,11 @@ class BillingPlan(BaseModel):
     id: StrictStr
     name: StrictStr
     price_id: StrictStr
+    price_id_annual: Optional[StrictStr] = None
     monthly_render_quota: StrictInt
-    __properties: ClassVar[List[str]] = ["id", "name", "price_id", "monthly_render_quota"]
+    allow_branding_removal: Optional[StrictBool] = False
+    overage_price_millicents: Optional[StrictInt] = None
+    __properties: ClassVar[List[str]] = ["id", "name", "price_id", "price_id_annual", "monthly_render_quota", "allow_branding_removal", "overage_price_millicents"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,6 +74,16 @@ class BillingPlan(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if price_id_annual (nullable) is None
+        # and model_fields_set contains the field
+        if self.price_id_annual is None and "price_id_annual" in self.model_fields_set:
+            _dict['price_id_annual'] = None
+
+        # set to None if overage_price_millicents (nullable) is None
+        # and model_fields_set contains the field
+        if self.overage_price_millicents is None and "overage_price_millicents" in self.model_fields_set:
+            _dict['overage_price_millicents'] = None
+
         return _dict
 
     @classmethod
@@ -86,7 +99,10 @@ class BillingPlan(BaseModel):
             "id": obj.get("id"),
             "name": obj.get("name"),
             "price_id": obj.get("price_id"),
-            "monthly_render_quota": obj.get("monthly_render_quota")
+            "price_id_annual": obj.get("price_id_annual"),
+            "monthly_render_quota": obj.get("monthly_render_quota"),
+            "allow_branding_removal": obj.get("allow_branding_removal") if obj.get("allow_branding_removal") is not None else False,
+            "overage_price_millicents": obj.get("overage_price_millicents")
         })
         return _obj
 
