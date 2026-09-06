@@ -35,7 +35,8 @@ class BillingSubscriptionData(BaseModel):
     overage_enabled: Optional[StrictBool] = False
     overage_available: Optional[StrictBool] = False
     overage_price_millicents: Optional[StrictInt] = None
-    __properties: ClassVar[List[str]] = ["subscription_id", "status", "plan_id", "plan_name", "stripe_configured", "has_billing_account", "overage_enabled", "overage_available", "overage_price_millicents"]
+    allow_branding_removal: Optional[StrictBool] = False
+    __properties: ClassVar[List[str]] = ["subscription_id", "status", "plan_id", "plan_name", "stripe_configured", "has_billing_account", "overage_enabled", "overage_available", "overage_price_millicents", "allow_branding_removal"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -111,7 +112,8 @@ class BillingSubscriptionData(BaseModel):
             "has_billing_account": obj.get("has_billing_account") if obj.get("has_billing_account") is not None else False,
             "overage_enabled": obj.get("overage_enabled") if obj.get("overage_enabled") is not None else False,
             "overage_available": obj.get("overage_available") if obj.get("overage_available") is not None else False,
-            "overage_price_millicents": obj.get("overage_price_millicents")
+            "overage_price_millicents": obj.get("overage_price_millicents"),
+            "allow_branding_removal": obj.get("allow_branding_removal") if obj.get("allow_branding_removal") is not None else False
         })
         return _obj
 

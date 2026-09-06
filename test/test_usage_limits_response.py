@@ -42,6 +42,7 @@ class TestUsageLimitsResponse(unittest.TestCase):
                         remaining = 56, ), 
                     rate_limit = invoicepdfs.models.usage_rate_limit.UsageRateLimit(
                         requests_per_second = 56, ), 
+                    api_log_retention = 56, 
                     overage = invoicepdfs.models.usage_overage.UsageOverage(
                         enabled = True, 
                         available = True, 
@@ -57,6 +58,7 @@ class TestUsageLimitsResponse(unittest.TestCase):
                         remaining = 56, ), 
                     rate_limit = invoicepdfs.models.usage_rate_limit.UsageRateLimit(
                         requests_per_second = 56, ), 
+                    api_log_retention = 56, 
                     overage = invoicepdfs.models.usage_overage.UsageOverage(
                         enabled = True, 
                         available = True, 

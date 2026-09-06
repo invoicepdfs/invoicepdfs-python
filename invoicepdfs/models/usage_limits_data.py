@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
 from invoicepdfs.models.usage_overage import UsageOverage
 from invoicepdfs.models.usage_rate_limit import UsageRateLimit
@@ -31,8 +31,9 @@ class UsageLimitsData(BaseModel):
     """ # noqa: E501
     renders: UsageRenderLimits
     rate_limit: UsageRateLimit
+    api_log_retention: Optional[StrictInt] = 0
     overage: Optional[UsageOverage] = None
-    __properties: ClassVar[List[str]] = ["renders", "rate_limit", "overage"]
+    __properties: ClassVar[List[str]] = ["renders", "rate_limit", "api_log_retention", "overage"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -96,6 +97,7 @@ class UsageLimitsData(BaseModel):
         _obj = cls.model_validate({
             "renders": UsageRenderLimits.from_dict(obj["renders"]) if obj.get("renders") is not None else None,
             "rate_limit": UsageRateLimit.from_dict(obj["rate_limit"]) if obj.get("rate_limit") is not None else None,
+            "api_log_retention": obj.get("api_log_retention") if obj.get("api_log_retention") is not None else 0,
             "overage": UsageOverage.from_dict(obj["overage"]) if obj.get("overage") is not None else None
         })
         return _obj

@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **overage_enabled** | **bool** |  | [optional] [default to False]
 **overage_available** | **bool** |  | [optional] [default to False]
 **overage_price_millicents** | **int** |  | [optional] 
+**allow_branding_removal** | **bool** |  | [optional] [default to False]
 
 ## Example
 

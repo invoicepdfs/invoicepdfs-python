@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **renders** | [**UsageRenderLimits**](UsageRenderLimits.md) |  | 
 **rate_limit** | [**UsageRateLimit**](UsageRateLimit.md) |  | 
+**api_log_retention** | **int** |  | [optional] [default to 0]
 **overage** | [**UsageOverage**](UsageOverage.md) |  | [optional] 
 
 ## Example

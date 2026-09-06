@@ -43,7 +43,8 @@ class TestBillingSubscriptionData(unittest.TestCase):
                 has_billing_account = True,
                 overage_enabled = True,
                 overage_available = True,
-                overage_price_millicents = 56
+                overage_price_millicents = 56,
+                allow_branding_removal = True
             )
         else:
             return BillingSubscriptionData(
