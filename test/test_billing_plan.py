@@ -39,6 +39,8 @@ class TestBillingPlan(unittest.TestCase):
                 name = '',
                 price_id = '',
                 price_id_annual = '',
+                price_cents = 56,
+                price_cents_annual = 56,
                 monthly_render_quota = 56,
                 allow_branding_removal = True,
                 overage_price_millicents = 56

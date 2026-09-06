@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **name** | **str** |  | 
 **price_id** | **str** |  | 
 **price_id_annual** | **str** |  | [optional] 
+**price_cents** | **int** |  | [optional] 
+**price_cents_annual** | **int** |  | [optional] 
 **monthly_render_quota** | **int** |  | 
 **allow_branding_removal** | **bool** |  | [optional] [default to False]
 **overage_price_millicents** | **int** |  | [optional] 
