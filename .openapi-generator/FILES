@@ -70,6 +70,8 @@ docs/BusinessProfileResponse.md
 docs/BusinessProfilesApi.md
 docs/BusinessProfilesListResponse.md
 docs/CalculationBreakdown.md
+docs/ComplianceCheckOut.md
+docs/ComplianceViolationOut.md
 docs/CountriesListResponse.md
 docs/CountryOut.md
 docs/CurrenciesListResponse.md
@@ -93,6 +95,8 @@ docs/DocumentAttachmentsApi.md
 docs/DocumentBrandingInput.md
 docs/DocumentCalculateRequest.md
 docs/DocumentCalculateResponse.md
+docs/DocumentComplianceRequest.md
+docs/DocumentComplianceResponse.md
 docs/DocumentCreateRequest.md
 docs/DocumentCustomFieldInput.md
 docs/DocumentDiscountInput.md
@@ -342,6 +346,8 @@ invoicepdfs/models/business_profile_patch.py
 invoicepdfs/models/business_profile_response.py
 invoicepdfs/models/business_profiles_list_response.py
 invoicepdfs/models/calculation_breakdown.py
+invoicepdfs/models/compliance_check_out.py
+invoicepdfs/models/compliance_violation_out.py
 invoicepdfs/models/countries_list_response.py
 invoicepdfs/models/country_out.py
 invoicepdfs/models/currencies_list_response.py
@@ -362,6 +368,8 @@ invoicepdfs/models/delivery_send_request.py
 invoicepdfs/models/document_branding_input.py
 invoicepdfs/models/document_calculate_request.py
 invoicepdfs/models/document_calculate_response.py
+invoicepdfs/models/document_compliance_request.py
+invoicepdfs/models/document_compliance_response.py
 invoicepdfs/models/document_create_request.py
 invoicepdfs/models/document_custom_field_input.py
 invoicepdfs/models/document_discount_input.py
@@ -572,6 +580,8 @@ test/test_business_profile_response.py
 test/test_business_profiles_api.py
 test/test_business_profiles_list_response.py
 test/test_calculation_breakdown.py
+test/test_compliance_check_out.py
+test/test_compliance_violation_out.py
 test/test_countries_list_response.py
 test/test_country_out.py
 test/test_currencies_list_response.py
@@ -595,6 +605,8 @@ test/test_document_attachments_api.py
 test/test_document_branding_input.py
 test/test_document_calculate_request.py
 test/test_document_calculate_response.py
+test/test_document_compliance_request.py
+test/test_document_compliance_response.py
 test/test_document_create_request.py
 test/test_document_custom_field_input.py
 test/test_document_discount_input.py

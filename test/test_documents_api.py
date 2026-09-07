@@ -145,6 +145,13 @@ class TestDocumentsApi(unittest.TestCase):
         """
         pass
 
+    def test_validate_compliance(self) -> None:
+        """Test case for validate_compliance
+
+        Validate Compliance
+        """
+        pass
+
     def test_validate_document(self) -> None:
         """Test case for validate_document
 
