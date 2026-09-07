@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **inclusive** | **bool** |  | [optional] 
 **jurisdiction** | **str** |  | [optional] 
 **is_active** | **bool** |  | [optional] 
+**category** | [**TaxCategory**](TaxCategory.md) |  | [optional] 
 
 ## Example
 

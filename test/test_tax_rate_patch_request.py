@@ -39,7 +39,11 @@ class TestTaxRatePatchRequest(unittest.TestCase):
                 rate = '',
                 inclusive = True,
                 jurisdiction = '',
-                is_active = True
+                is_active = True,
+                category = invoicepdfs.models.tax_category.TaxCategory(
+                    code = 'S', 
+                    exemption_reason = '', 
+                    exemption_reason_code = '', )
             )
         else:
             return TaxRatePatchRequest(

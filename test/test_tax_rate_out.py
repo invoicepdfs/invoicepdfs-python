@@ -40,6 +40,10 @@ class TestTaxRateOut(unittest.TestCase):
                 rate = '',
                 inclusive = True,
                 jurisdiction = '',
+                category = invoicepdfs.models.tax_category.TaxCategory(
+                    code = 'S', 
+                    exemption_reason = '', 
+                    exemption_reason_code = '', ),
                 is_active = True,
                 created_at = '',
                 updated_at = ''

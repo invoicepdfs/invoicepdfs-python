@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **rate** | **str** |  | 
 **inclusive** | **bool** |  | [optional] [default to False]
 **jurisdiction** | **str** |  | [optional] 
+**category** | [**TaxCategory**](TaxCategory.md) |  | [optional] 
 
 ## Example
 

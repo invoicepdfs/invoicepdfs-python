@@ -19,6 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from invoicepdfs.models.tax_category import TaxCategory
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -31,10 +32,11 @@ class TaxRateOut(BaseModel):
     rate: StrictStr
     inclusive: StrictBool
     jurisdiction: Optional[StrictStr] = None
+    category: Optional[TaxCategory] = None
     is_active: StrictBool
     created_at: StrictStr
     updated_at: StrictStr
-    __properties: ClassVar[List[str]] = ["id", "name", "rate", "inclusive", "jurisdiction", "is_active", "created_at", "updated_at"]
+    __properties: ClassVar[List[str]] = ["id", "name", "rate", "inclusive", "jurisdiction", "category", "is_active", "created_at", "updated_at"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -75,10 +77,18 @@ class TaxRateOut(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of category
+        if self.category:
+            _dict['category'] = self.category.to_dict()
         # set to None if jurisdiction (nullable) is None
         # and model_fields_set contains the field
         if self.jurisdiction is None and "jurisdiction" in self.model_fields_set:
             _dict['jurisdiction'] = None
+
+        # set to None if category (nullable) is None
+        # and model_fields_set contains the field
+        if self.category is None and "category" in self.model_fields_set:
+            _dict['category'] = None
 
         return _dict
 
@@ -97,6 +107,7 @@ class TaxRateOut(BaseModel):
             "rate": obj.get("rate"),
             "inclusive": obj.get("inclusive"),
             "jurisdiction": obj.get("jurisdiction"),
+            "category": TaxCategory.from_dict(obj["category"]) if obj.get("category") is not None else None,
             "is_active": obj.get("is_active"),
             "created_at": obj.get("created_at"),
             "updated_at": obj.get("updated_at")

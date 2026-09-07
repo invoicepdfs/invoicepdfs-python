@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **rate** | **str** |  | 
 **inclusive** | **bool** |  | 
 **jurisdiction** | **str** |  | [optional] 
+**category** | [**TaxCategory**](TaxCategory.md) |  | [optional] 
 **is_active** | **bool** |  | 
 **created_at** | **str** |  | 
 **updated_at** | **str** |  | 

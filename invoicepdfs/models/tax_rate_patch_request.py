@@ -19,6 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from invoicepdfs.models.tax_category import TaxCategory
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -31,7 +32,8 @@ class TaxRatePatchRequest(BaseModel):
     inclusive: Optional[StrictBool] = None
     jurisdiction: Optional[StrictStr] = None
     is_active: Optional[StrictBool] = None
-    __properties: ClassVar[List[str]] = ["name", "rate", "inclusive", "jurisdiction", "is_active"]
+    category: Optional[TaxCategory] = None
+    __properties: ClassVar[List[str]] = ["name", "rate", "inclusive", "jurisdiction", "is_active", "category"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -72,10 +74,18 @@ class TaxRatePatchRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of category
+        if self.category:
+            _dict['category'] = self.category.to_dict()
         # set to None if jurisdiction (nullable) is None
         # and model_fields_set contains the field
         if self.jurisdiction is None and "jurisdiction" in self.model_fields_set:
             _dict['jurisdiction'] = None
+
+        # set to None if category (nullable) is None
+        # and model_fields_set contains the field
+        if self.category is None and "category" in self.model_fields_set:
+            _dict['category'] = None
 
         return _dict
 
@@ -93,7 +103,8 @@ class TaxRatePatchRequest(BaseModel):
             "rate": obj.get("rate"),
             "inclusive": obj.get("inclusive"),
             "jurisdiction": obj.get("jurisdiction"),
-            "is_active": obj.get("is_active")
+            "is_active": obj.get("is_active"),
+            "category": TaxCategory.from_dict(obj["category"]) if obj.get("category") is not None else None
         })
         return _obj
 
