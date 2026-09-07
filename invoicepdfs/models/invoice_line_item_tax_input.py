@@ -19,6 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from invoicepdfs.models.tax_category import TaxCategory
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -30,7 +31,8 @@ class InvoiceLineItemTaxInput(BaseModel):
     name: Optional[StrictStr] = None
     rate: Optional[StrictStr] = None
     inclusive: Optional[StrictBool] = False
-    __properties: ClassVar[List[str]] = ["tax_rate_id", "name", "rate", "inclusive"]
+    category: Optional[TaxCategory] = None
+    __properties: ClassVar[List[str]] = ["tax_rate_id", "name", "rate", "inclusive", "category"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,6 +73,9 @@ class InvoiceLineItemTaxInput(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of category
+        if self.category:
+            _dict['category'] = self.category.to_dict()
         # set to None if tax_rate_id (nullable) is None
         # and model_fields_set contains the field
         if self.tax_rate_id is None and "tax_rate_id" in self.model_fields_set:
@@ -85,6 +90,11 @@ class InvoiceLineItemTaxInput(BaseModel):
         # and model_fields_set contains the field
         if self.rate is None and "rate" in self.model_fields_set:
             _dict['rate'] = None
+
+        # set to None if category (nullable) is None
+        # and model_fields_set contains the field
+        if self.category is None and "category" in self.model_fields_set:
+            _dict['category'] = None
 
         return _dict
 
@@ -101,7 +111,8 @@ class InvoiceLineItemTaxInput(BaseModel):
             "tax_rate_id": obj.get("tax_rate_id"),
             "name": obj.get("name"),
             "rate": obj.get("rate"),
-            "inclusive": obj.get("inclusive") if obj.get("inclusive") is not None else False
+            "inclusive": obj.get("inclusive") if obj.get("inclusive") is not None else False,
+            "category": TaxCategory.from_dict(obj["category"]) if obj.get("category") is not None else None
         })
         return _obj
 

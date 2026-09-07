@@ -17,21 +17,20 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from invoicepdfs.models.tax_category import TaxCategory
+from typing_extensions import Annotated
 from typing import Optional, Set
 from typing_extensions import Self
 
-class DocumentLineItemTaxInput(BaseModel):
+class TaxCategory(BaseModel):
     """
-    DocumentLineItemTaxInput
+    How a tax is treated, as opposed to what it is called.  `name` and `rate` do not say this: two taxes at 0% may be zero-rated, exempt, reverse-charge or outside scope, and EN 16931 keeps them in separate VAT breakdown groups with different mandatory fields. Optional, so an invoice that never mentions a category calculates exactly as before.
     """ # noqa: E501
-    name: StrictStr
-    rate: StrictStr
-    inclusive: Optional[StrictBool] = False
-    category: Optional[TaxCategory] = None
-    __properties: ClassVar[List[str]] = ["name", "rate", "inclusive", "category"]
+    code: Annotated[str, Field(min_length=1, strict=True)] = Field(description="UNCL5305 tax category code — S standard, Z zero-rated, E exempt, AE reverse charge, K intra-community, G export, O outside scope")
+    exemption_reason: Optional[StrictStr] = None
+    exemption_reason_code: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["code", "exemption_reason", "exemption_reason_code"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -51,7 +50,7 @@ class DocumentLineItemTaxInput(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of DocumentLineItemTaxInput from a JSON string"""
+        """Create an instance of TaxCategory from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -72,19 +71,21 @@ class DocumentLineItemTaxInput(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of category
-        if self.category:
-            _dict['category'] = self.category.to_dict()
-        # set to None if category (nullable) is None
+        # set to None if exemption_reason (nullable) is None
         # and model_fields_set contains the field
-        if self.category is None and "category" in self.model_fields_set:
-            _dict['category'] = None
+        if self.exemption_reason is None and "exemption_reason" in self.model_fields_set:
+            _dict['exemption_reason'] = None
+
+        # set to None if exemption_reason_code (nullable) is None
+        # and model_fields_set contains the field
+        if self.exemption_reason_code is None and "exemption_reason_code" in self.model_fields_set:
+            _dict['exemption_reason_code'] = None
 
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of DocumentLineItemTaxInput from a dict"""
+        """Create an instance of TaxCategory from a dict"""
         if obj is None:
             return None
 
@@ -92,10 +93,9 @@ class DocumentLineItemTaxInput(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "name": obj.get("name"),
-            "rate": obj.get("rate"),
-            "inclusive": obj.get("inclusive") if obj.get("inclusive") is not None else False,
-            "category": TaxCategory.from_dict(obj["category"]) if obj.get("category") is not None else None
+            "code": obj.get("code"),
+            "exemption_reason": obj.get("exemption_reason"),
+            "exemption_reason_code": obj.get("exemption_reason_code")
         })
         return _obj
 

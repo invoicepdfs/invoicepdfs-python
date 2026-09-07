@@ -37,7 +37,11 @@ class TestDocumentLineItemTaxInput(unittest.TestCase):
             return DocumentLineItemTaxInput(
                 name = 'Sales Tax',
                 rate = '8.875',
-                inclusive = True
+                inclusive = True,
+                category = invoicepdfs.models.tax_category.TaxCategory(
+                    code = 'S', 
+                    exemption_reason = '', 
+                    exemption_reason_code = '', )
             )
         else:
             return DocumentLineItemTaxInput(

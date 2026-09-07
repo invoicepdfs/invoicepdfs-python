@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **name** | **str** |  | 
 **rate** | **str** |  | 
 **inclusive** | **bool** |  | [optional] [default to False]
+**category** | [**TaxCategory**](TaxCategory.md) |  | [optional] 
 
 ## Example
 

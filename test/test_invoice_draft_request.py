@@ -67,7 +67,11 @@ class TestInvoiceDraftRequest(unittest.TestCase):
                                 tax_rate_id = '', 
                                 name = '', 
                                 rate = '', 
-                                inclusive = True, )
+                                inclusive = True, 
+                                category = invoicepdfs.models.tax_category.TaxCategory(
+                                    code = 'S', 
+                                    exemption_reason = '', 
+                                    exemption_reason_code = '', ), )
                             ], )
                     ],
                 discounts = [
@@ -139,7 +143,11 @@ class TestInvoiceDraftRequest(unittest.TestCase):
                                 tax_rate_id = '', 
                                 name = '', 
                                 rate = '', 
-                                inclusive = True, )
+                                inclusive = True, 
+                                category = invoicepdfs.models.tax_category.TaxCategory(
+                                    code = 'S', 
+                                    exemption_reason = '', 
+                                    exemption_reason_code = '', ), )
                             ], )
                     ],
         )

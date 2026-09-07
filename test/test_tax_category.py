@@ -14,10 +14,10 @@
 
 import unittest
 
-from invoicepdfs.models.line_item_tax_input import LineItemTaxInput
+from invoicepdfs.models.tax_category import TaxCategory
 
-class TestLineItemTaxInput(unittest.TestCase):
-    """LineItemTaxInput unit test stubs"""
+class TestTaxCategory(unittest.TestCase):
+    """TaxCategory unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,32 +25,28 @@ class TestLineItemTaxInput(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> LineItemTaxInput:
-        """Test LineItemTaxInput
+    def make_instance(self, include_optional) -> TaxCategory:
+        """Test TaxCategory
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `LineItemTaxInput`
+        # uncomment below to create an instance of `TaxCategory`
         """
-        model = LineItemTaxInput()
+        model = TaxCategory()
         if include_optional:
-            return LineItemTaxInput(
-                tax_rate_id = '',
-                name = '',
-                rate = '',
-                inclusive = True,
-                category = invoicepdfs.models.tax_category.TaxCategory(
-                    code = 'S', 
-                    exemption_reason = '', 
-                    exemption_reason_code = '', )
+            return TaxCategory(
+                code = 'S',
+                exemption_reason = '',
+                exemption_reason_code = ''
             )
         else:
-            return LineItemTaxInput(
+            return TaxCategory(
+                code = 'S',
         )
         """
 
-    def testLineItemTaxInput(self):
-        """Test LineItemTaxInput"""
+    def testTaxCategory(self):
+        """Test TaxCategory"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

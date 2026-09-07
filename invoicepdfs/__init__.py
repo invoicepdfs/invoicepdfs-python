@@ -224,6 +224,7 @@ from invoicepdfs.models.stats_counts import StatsCounts
 from invoicepdfs.models.stats_overview import StatsOverview
 from invoicepdfs.models.stats_recent_invoice import StatsRecentInvoice
 from invoicepdfs.models.stats_response import StatsResponse
+from invoicepdfs.models.tax_category import TaxCategory
 from invoicepdfs.models.tax_rate_create_request import TaxRateCreateRequest
 from invoicepdfs.models.tax_rate_out import TaxRateOut
 from invoicepdfs.models.tax_rate_patch_request import TaxRatePatchRequest

@@ -189,6 +189,7 @@ docs/StatsCounts.md
 docs/StatsOverview.md
 docs/StatsRecentInvoice.md
 docs/StatsResponse.md
+docs/TaxCategory.md
 docs/TaxRateCreateRequest.md
 docs/TaxRateOut.md
 docs/TaxRatePatchRequest.md
@@ -444,6 +445,7 @@ invoicepdfs/models/stats_counts.py
 invoicepdfs/models/stats_overview.py
 invoicepdfs/models/stats_recent_invoice.py
 invoicepdfs/models/stats_response.py
+invoicepdfs/models/tax_category.py
 invoicepdfs/models/tax_rate_create_request.py
 invoicepdfs/models/tax_rate_out.py
 invoicepdfs/models/tax_rate_patch_request.py
@@ -687,6 +689,7 @@ test/test_stats_counts.py
 test/test_stats_overview.py
 test/test_stats_recent_invoice.py
 test/test_stats_response.py
+test/test_tax_category.py
 test/test_tax_rate_create_request.py
 test/test_tax_rate_out.py
 test/test_tax_rate_patch_request.py

@@ -88,7 +88,11 @@ class TestDocumentValidateRequest(unittest.TestCase):
                                 invoicepdfs.models.document_line_item_tax_input.DocumentLineItemTaxInput(
                                     name = 'Sales Tax', 
                                     rate = '8.875', 
-                                    inclusive = True, )
+                                    inclusive = True, 
+                                    category = invoicepdfs.models.tax_category.TaxCategory(
+                                        code = 'S', 
+                                        exemption_reason = '', 
+                                        exemption_reason_code = '', ), )
                                 ], )
                         ], 
                     discounts = [
@@ -172,7 +176,11 @@ class TestDocumentValidateRequest(unittest.TestCase):
                                 invoicepdfs.models.document_line_item_tax_input.DocumentLineItemTaxInput(
                                     name = 'Sales Tax', 
                                     rate = '8.875', 
-                                    inclusive = True, )
+                                    inclusive = True, 
+                                    category = invoicepdfs.models.tax_category.TaxCategory(
+                                        code = 'S', 
+                                        exemption_reason = '', 
+                                        exemption_reason_code = '', ), )
                                 ], )
                         ], 
                     discounts = [
