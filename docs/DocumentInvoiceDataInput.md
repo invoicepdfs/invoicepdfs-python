@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **buyer** | [**DocumentPartyInput**](DocumentPartyInput.md) |  | 
 **ship_to** | [**DocumentPartyInput**](DocumentPartyInput.md) |  | [optional] 
 **buyer_reference** | **str** |  | [optional] 
+**preceding_invoice_number** | **str** |  | [optional] 
 **line_items** | [**List[DocumentLineItemInput]**](DocumentLineItemInput.md) |  | 
 **discounts** | [**List[DocumentDiscountInput]**](DocumentDiscountInput.md) |  | [optional] 
 **shipping** | [**DocumentShippingInput**](DocumentShippingInput.md) |  | [optional] 

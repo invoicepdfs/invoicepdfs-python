@@ -57,6 +57,8 @@ class TestRecurringInvoicePatchRequest(unittest.TestCase):
                         state = '', 
                         postal_code = '', 
                         country = '', ), 
+                    buyer_reference = '', 
+                    preceding_invoice_number = '', 
                     line_items = [
                         invoicepdfs.models.invoice_line_item_input.InvoiceLineItemInput(
                             name = 'Web Development', 
@@ -64,6 +66,7 @@ class TestRecurringInvoicePatchRequest(unittest.TestCase):
                             quantity = '2', 
                             unit_price = '150.00', 
                             unit = '', 
+                            unit_code = '', 
                             sku = '', 
                             discount = invoicepdfs.models.invoice_discount_input.InvoiceDiscountInput(
                                 type = 'percentage', 

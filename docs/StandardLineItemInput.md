@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **quantity** | **str** | Decimal string | 
 **unit_price** | **str** | Decimal string, major units | [optional] [default to '0.00']
 **unit** | **str** |  | [optional] 
+**unit_code** | **str** |  | [optional] 
 **sku** | **str** |  | [optional] 
 **discount** | [**LineItemDiscountInput**](LineItemDiscountInput.md) |  | [optional] 
 **taxes** | [**List[LineItemTaxInput]**](LineItemTaxInput.md) |  | [optional] 

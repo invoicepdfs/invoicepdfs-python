@@ -40,6 +40,7 @@ class TestInvoiceLineItemInput(unittest.TestCase):
                 quantity = '2',
                 unit_price = '150.00',
                 unit = '',
+                unit_code = '',
                 sku = '',
                 discount = invoicepdfs.models.invoice_discount_input.InvoiceDiscountInput(
                     type = 'percentage', 

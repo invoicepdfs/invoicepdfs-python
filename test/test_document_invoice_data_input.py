@@ -115,6 +115,7 @@ class TestDocumentInvoiceDataInput(unittest.TestCase):
                         value = '9482348239', 
                         scheme_id = '0088', ), ),
                 buyer_reference = '',
+                preceding_invoice_number = '',
                 line_items = [
                     invoicepdfs.models.document_line_item_input.DocumentLineItemInput(
                         name = 'Web Development', 
@@ -122,6 +123,7 @@ class TestDocumentInvoiceDataInput(unittest.TestCase):
                         quantity = '2', 
                         unit_price = '150.00', 
                         unit = '', 
+                        unit_code = '', 
                         sku = '', 
                         discount = invoicepdfs.models.document_discount_input.DocumentDiscountInput(
                             type = 'percentage', 
@@ -234,6 +236,7 @@ class TestDocumentInvoiceDataInput(unittest.TestCase):
                         quantity = '2', 
                         unit_price = '150.00', 
                         unit = '', 
+                        unit_code = '', 
                         sku = '', 
                         discount = invoicepdfs.models.document_discount_input.DocumentDiscountInput(
                             type = 'percentage', 

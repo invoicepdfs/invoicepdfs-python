@@ -60,6 +60,7 @@ class TestDocumentPatchRequest(unittest.TestCase):
                         quantity = '2', 
                         unit_price = '0.00', 
                         unit = '', 
+                        unit_code = '', 
                         sku = '', 
                         discount = invoicepdfs.models.line_item_discount_input.LineItemDiscountInput(
                             type = 'percentage', 

@@ -14,6 +14,8 @@ Name | Type | Description | Notes
 **business_profile_id** | **str** |  | 
 **customer_id** | **str** |  | 
 **ship_to** | [**PostalAddress**](PostalAddress.md) |  | [optional] 
+**buyer_reference** | **str** |  | [optional] 
+**preceding_invoice_number** | **str** |  | [optional] 
 **line_items** | [**List[InvoiceLineItemInput]**](InvoiceLineItemInput.md) |  | 
 **discounts** | [**List[InvoiceDiscountInput]**](InvoiceDiscountInput.md) |  | [optional] 
 **shipping** | [**InvoiceShippingInput**](InvoiceShippingInput.md) |  | [optional] 

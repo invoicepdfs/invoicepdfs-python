@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **quantity** | **str** | Decimal string | 
 **unit_price** | **str** | Decimal string in major units | 
 **unit** | **str** |  | [optional] 
+**unit_code** | **str** |  | [optional] 
 **sku** | **str** |  | [optional] 
 **discount** | [**InvoiceDiscountInput**](InvoiceDiscountInput.md) |  | [optional] 
 **taxes** | [**List[InvoiceLineItemTaxInput]**](InvoiceLineItemTaxInput.md) |  | [optional] 

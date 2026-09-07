@@ -33,10 +33,11 @@ class DocumentLineItemInput(BaseModel):
     quantity: StrictStr
     unit_price: StrictStr = Field(description="Decimal string in major units")
     unit: Optional[StrictStr] = None
+    unit_code: Optional[StrictStr] = None
     sku: Optional[StrictStr] = None
     discount: Optional[DocumentDiscountInput] = None
     taxes: Optional[List[DocumentLineItemTaxInput]] = None
-    __properties: ClassVar[List[str]] = ["name", "description", "quantity", "unit_price", "unit", "sku", "discount", "taxes"]
+    __properties: ClassVar[List[str]] = ["name", "description", "quantity", "unit_price", "unit", "unit_code", "sku", "discount", "taxes"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -97,6 +98,11 @@ class DocumentLineItemInput(BaseModel):
         if self.unit is None and "unit" in self.model_fields_set:
             _dict['unit'] = None
 
+        # set to None if unit_code (nullable) is None
+        # and model_fields_set contains the field
+        if self.unit_code is None and "unit_code" in self.model_fields_set:
+            _dict['unit_code'] = None
+
         # set to None if sku (nullable) is None
         # and model_fields_set contains the field
         if self.sku is None and "sku" in self.model_fields_set:
@@ -124,6 +130,7 @@ class DocumentLineItemInput(BaseModel):
             "quantity": obj.get("quantity"),
             "unit_price": obj.get("unit_price"),
             "unit": obj.get("unit"),
+            "unit_code": obj.get("unit_code"),
             "sku": obj.get("sku"),
             "discount": DocumentDiscountInput.from_dict(obj["discount"]) if obj.get("discount") is not None else None,
             "taxes": [DocumentLineItemTaxInput.from_dict(_item) for _item in obj["taxes"]] if obj.get("taxes") is not None else None

@@ -76,6 +76,7 @@ class TestDocumentRenderRequest(unittest.TestCase):
                         registration_number = '', ), 
                     ship_to = , 
                     buyer_reference = '', 
+                    preceding_invoice_number = '', 
                     line_items = [
                         invoicepdfs.models.document_line_item_input.DocumentLineItemInput(
                             name = 'Web Development', 
@@ -83,6 +84,7 @@ class TestDocumentRenderRequest(unittest.TestCase):
                             quantity = '2', 
                             unit_price = '150.00', 
                             unit = '', 
+                            unit_code = '', 
                             sku = '', 
                             discount = invoicepdfs.models.document_discount_input.DocumentDiscountInput(
                                 type = 'percentage', 
@@ -174,6 +176,7 @@ class TestDocumentRenderRequest(unittest.TestCase):
                         registration_number = '', ), 
                     ship_to = , 
                     buyer_reference = '', 
+                    preceding_invoice_number = '', 
                     line_items = [
                         invoicepdfs.models.document_line_item_input.DocumentLineItemInput(
                             name = 'Web Development', 
@@ -181,6 +184,7 @@ class TestDocumentRenderRequest(unittest.TestCase):
                             quantity = '2', 
                             unit_price = '150.00', 
                             unit = '', 
+                            unit_code = '', 
                             sku = '', 
                             discount = invoicepdfs.models.document_discount_input.DocumentDiscountInput(
                                 type = 'percentage', 
