@@ -60,7 +60,10 @@ class TestDocumentInvoiceDataInput(unittest.TestCase):
                         account_number = '', 
                         routing_number = '', 
                         swift = '', 
-                        iban = '', ), ),
+                        iban = '', ), 
+                    electronic_address = invoicepdfs.models.electronic_address.ElectronicAddress(
+                        value = '9482348239', 
+                        scheme_id = '0088', ), ),
                 buyer = invoicepdfs.models.document_party_input.DocumentPartyInput(
                     name = 'Acme Corp', 
                     legal_name = '', 
@@ -82,7 +85,10 @@ class TestDocumentInvoiceDataInput(unittest.TestCase):
                         account_number = '', 
                         routing_number = '', 
                         swift = '', 
-                        iban = '', ), ),
+                        iban = '', ), 
+                    electronic_address = invoicepdfs.models.electronic_address.ElectronicAddress(
+                        value = '9482348239', 
+                        scheme_id = '0088', ), ),
                 ship_to = invoicepdfs.models.document_party_input.DocumentPartyInput(
                     name = 'Acme Corp', 
                     legal_name = '', 
@@ -104,7 +110,10 @@ class TestDocumentInvoiceDataInput(unittest.TestCase):
                         account_number = '', 
                         routing_number = '', 
                         swift = '', 
-                        iban = '', ), ),
+                        iban = '', ), 
+                    electronic_address = invoicepdfs.models.electronic_address.ElectronicAddress(
+                        value = '9482348239', 
+                        scheme_id = '0088', ), ),
                 line_items = [
                     invoicepdfs.models.document_line_item_input.DocumentLineItemInput(
                         name = 'Web Development', 
@@ -188,7 +197,10 @@ class TestDocumentInvoiceDataInput(unittest.TestCase):
                         account_number = '', 
                         routing_number = '', 
                         swift = '', 
-                        iban = '', ), ),
+                        iban = '', ), 
+                    electronic_address = invoicepdfs.models.electronic_address.ElectronicAddress(
+                        value = '9482348239', 
+                        scheme_id = '0088', ), ),
                 buyer = invoicepdfs.models.document_party_input.DocumentPartyInput(
                     name = 'Acme Corp', 
                     legal_name = '', 
@@ -210,7 +222,10 @@ class TestDocumentInvoiceDataInput(unittest.TestCase):
                         account_number = '', 
                         routing_number = '', 
                         swift = '', 
-                        iban = '', ), ),
+                        iban = '', ), 
+                    electronic_address = invoicepdfs.models.electronic_address.ElectronicAddress(
+                        value = '9482348239', 
+                        scheme_id = '0088', ), ),
                 line_items = [
                     invoicepdfs.models.document_line_item_input.DocumentLineItemInput(
                         name = 'Web Development', 

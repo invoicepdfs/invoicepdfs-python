@@ -19,6 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from invoicepdfs.models.electronic_address import ElectronicAddress
 from invoicepdfs.models.invoice_bank_account_input import InvoiceBankAccountInput
 from invoicepdfs.models.postal_address import PostalAddress
 from typing import Optional, Set
@@ -37,7 +38,8 @@ class DocumentPartyInput(BaseModel):
     registration_number: Optional[StrictStr] = None
     address: Optional[PostalAddress] = None
     bank_account: Optional[InvoiceBankAccountInput] = None
-    __properties: ClassVar[List[str]] = ["name", "legal_name", "email", "phone", "website", "tax_id", "registration_number", "address", "bank_account"]
+    electronic_address: Optional[ElectronicAddress] = None
+    __properties: ClassVar[List[str]] = ["name", "legal_name", "email", "phone", "website", "tax_id", "registration_number", "address", "bank_account", "electronic_address"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -84,6 +86,9 @@ class DocumentPartyInput(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of bank_account
         if self.bank_account:
             _dict['bank_account'] = self.bank_account.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of electronic_address
+        if self.electronic_address:
+            _dict['electronic_address'] = self.electronic_address.to_dict()
         # set to None if legal_name (nullable) is None
         # and model_fields_set contains the field
         if self.legal_name is None and "legal_name" in self.model_fields_set:
@@ -124,6 +129,11 @@ class DocumentPartyInput(BaseModel):
         if self.bank_account is None and "bank_account" in self.model_fields_set:
             _dict['bank_account'] = None
 
+        # set to None if electronic_address (nullable) is None
+        # and model_fields_set contains the field
+        if self.electronic_address is None and "electronic_address" in self.model_fields_set:
+            _dict['electronic_address'] = None
+
         return _dict
 
     @classmethod
@@ -144,7 +154,8 @@ class DocumentPartyInput(BaseModel):
             "tax_id": obj.get("tax_id"),
             "registration_number": obj.get("registration_number"),
             "address": PostalAddress.from_dict(obj["address"]) if obj.get("address") is not None else None,
-            "bank_account": InvoiceBankAccountInput.from_dict(obj["bank_account"]) if obj.get("bank_account") is not None else None
+            "bank_account": InvoiceBankAccountInput.from_dict(obj["bank_account"]) if obj.get("bank_account") is not None else None,
+            "electronic_address": ElectronicAddress.from_dict(obj["electronic_address"]) if obj.get("electronic_address") is not None else None
         })
         return _obj
 

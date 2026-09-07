@@ -62,7 +62,10 @@ class TestDocumentCalculateRequest(unittest.TestCase):
                             account_number = '', 
                             routing_number = '', 
                             swift = '', 
-                            iban = '', ), ), 
+                            iban = '', ), 
+                        electronic_address = invoicepdfs.models.electronic_address.ElectronicAddress(
+                            value = '9482348239', 
+                            scheme_id = '0088', ), ), 
                     buyer = invoicepdfs.models.document_party_input.DocumentPartyInput(
                         name = 'Acme Corp', 
                         legal_name = '', 
@@ -150,7 +153,10 @@ class TestDocumentCalculateRequest(unittest.TestCase):
                             account_number = '', 
                             routing_number = '', 
                             swift = '', 
-                            iban = '', ), ), 
+                            iban = '', ), 
+                        electronic_address = invoicepdfs.models.electronic_address.ElectronicAddress(
+                            value = '9482348239', 
+                            scheme_id = '0088', ), ), 
                     buyer = invoicepdfs.models.document_party_input.DocumentPartyInput(
                         name = 'Acme Corp', 
                         legal_name = '', 

@@ -117,6 +117,7 @@ from invoicepdfs.models.document_types_list_response import DocumentTypesListRes
 from invoicepdfs.models.document_validate_request import DocumentValidateRequest
 from invoicepdfs.models.document_validate_response import DocumentValidateResponse
 from invoicepdfs.models.documents_list_response import DocumentsListResponse
+from invoicepdfs.models.electronic_address import ElectronicAddress
 from invoicepdfs.models.file_out import FileOut
 from invoicepdfs.models.file_response import FileResponse
 from invoicepdfs.models.health_response import HealthResponse

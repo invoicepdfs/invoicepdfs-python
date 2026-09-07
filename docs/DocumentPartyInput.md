@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **registration_number** | **str** |  | [optional] 
 **address** | [**PostalAddress**](PostalAddress.md) |  | [optional] 
 **bank_account** | [**InvoiceBankAccountInput**](InvoiceBankAccountInput.md) |  | [optional] 
+**electronic_address** | [**ElectronicAddress**](ElectronicAddress.md) |  | [optional] 
 
 ## Example
 

@@ -115,6 +115,7 @@ docs/DocumentValidateRequest.md
 docs/DocumentValidateResponse.md
 docs/DocumentsApi.md
 docs/DocumentsListResponse.md
+docs/ElectronicAddress.md
 docs/FileOut.md
 docs/FileResponse.md
 docs/FilesApi.md
@@ -382,6 +383,7 @@ invoicepdfs/models/document_types_list_response.py
 invoicepdfs/models/document_validate_request.py
 invoicepdfs/models/document_validate_response.py
 invoicepdfs/models/documents_list_response.py
+invoicepdfs/models/electronic_address.py
 invoicepdfs/models/file_out.py
 invoicepdfs/models/file_response.py
 invoicepdfs/models/health_response.py
@@ -615,6 +617,7 @@ test/test_document_validate_request.py
 test/test_document_validate_response.py
 test/test_documents_api.py
 test/test_documents_list_response.py
+test/test_electronic_address.py
 test/test_file_out.py
 test/test_file_response.py
 test/test_files_api.py

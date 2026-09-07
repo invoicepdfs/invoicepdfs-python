@@ -55,7 +55,10 @@ class TestDocumentPartyInput(unittest.TestCase):
                     account_number = '', 
                     routing_number = '', 
                     swift = '', 
-                    iban = '', )
+                    iban = '', ),
+                electronic_address = invoicepdfs.models.electronic_address.ElectronicAddress(
+                    value = '9482348239', 
+                    scheme_id = '0088', )
             )
         else:
             return DocumentPartyInput(
