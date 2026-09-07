@@ -75,6 +75,7 @@ class TestDocumentCalculateRequest(unittest.TestCase):
                         tax_id = '', 
                         registration_number = '', ), 
                     ship_to = , 
+                    buyer_reference = '', 
                     line_items = [
                         invoicepdfs.models.document_line_item_input.DocumentLineItemInput(
                             name = 'Web Development', 
@@ -166,6 +167,7 @@ class TestDocumentCalculateRequest(unittest.TestCase):
                         tax_id = '', 
                         registration_number = '', ), 
                     ship_to = , 
+                    buyer_reference = '', 
                     line_items = [
                         invoicepdfs.models.document_line_item_input.DocumentLineItemInput(
                             name = 'Web Development', 

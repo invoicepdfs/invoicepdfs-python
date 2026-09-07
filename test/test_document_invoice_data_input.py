@@ -114,6 +114,7 @@ class TestDocumentInvoiceDataInput(unittest.TestCase):
                     electronic_address = invoicepdfs.models.electronic_address.ElectronicAddress(
                         value = '9482348239', 
                         scheme_id = '0088', ), ),
+                buyer_reference = '',
                 line_items = [
                     invoicepdfs.models.document_line_item_input.DocumentLineItemInput(
                         name = 'Web Development', 

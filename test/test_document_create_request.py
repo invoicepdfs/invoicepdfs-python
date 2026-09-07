@@ -52,6 +52,7 @@ class TestDocumentCreateRequest(unittest.TestCase):
                     state = '', 
                     postal_code = '', 
                     country = '', ),
+                buyer_reference = '',
                 line_items = [
                     invoicepdfs.models.standard_line_item_input.StandardLineItemInput(
                         name = 'Web Development', 

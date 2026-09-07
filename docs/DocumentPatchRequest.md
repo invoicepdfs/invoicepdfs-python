@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **source_document_id** | **str** |  | [optional] 
 **reason** | **str** |  | [optional] 
 **ship_to** | [**PostalAddress**](PostalAddress.md) |  | [optional] 
+**buyer_reference** | **str** |  | [optional] 
 **line_items** | [**List[StandardLineItemInput]**](StandardLineItemInput.md) |  | [optional] 
 **discounts** | [**List[LineItemDiscountInput]**](LineItemDiscountInput.md) |  | [optional] 
 **shipping** | [**InvoiceShippingInput**](InvoiceShippingInput.md) |  | [optional] 
