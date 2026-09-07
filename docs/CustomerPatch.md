@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **tax_id** | **str** |  | [optional] 
 **billing_address** | [**PostalAddress**](PostalAddress.md) |  | [optional] 
 **shipping_address** | [**PostalAddress**](PostalAddress.md) |  | [optional] 
+**electronic_address** | [**ElectronicAddress**](ElectronicAddress.md) |  | [optional] 
 **metadata** | **Dict[str, object]** |  | [optional] 
 
 ## Example

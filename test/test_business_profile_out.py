@@ -48,6 +48,9 @@ class TestBusinessProfileOut(unittest.TestCase):
                     state = '', 
                     postal_code = '', 
                     country = '', ),
+                electronic_address = invoicepdfs.models.electronic_address.ElectronicAddress(
+                    value = '9482348239', 
+                    scheme_id = '0088', ),
                 default_currency = '',
                 default_locale = '',
                 default_timezone = '',

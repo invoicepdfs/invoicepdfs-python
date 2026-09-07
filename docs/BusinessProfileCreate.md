@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **website** | **str** |  | [optional] 
 **tax_id** | **str** |  | [optional] 
 **address** | [**PostalAddress**](PostalAddress.md) |  | [optional] 
+**electronic_address** | [**ElectronicAddress**](ElectronicAddress.md) |  | [optional] 
 **default_currency** | **str** |  | [optional] 
 **default_locale** | **str** |  | [optional] 
 **default_timezone** | **str** |  | [optional] 

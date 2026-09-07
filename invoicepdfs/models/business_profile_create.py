@@ -19,6 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from invoicepdfs.models.electronic_address import ElectronicAddress
 from invoicepdfs.models.postal_address import PostalAddress
 from typing import Optional, Set
 from typing_extensions import Self
@@ -34,11 +35,12 @@ class BusinessProfileCreate(BaseModel):
     website: Optional[StrictStr] = None
     tax_id: Optional[StrictStr] = None
     address: Optional[PostalAddress] = None
+    electronic_address: Optional[ElectronicAddress] = None
     default_currency: Optional[StrictStr] = None
     default_locale: Optional[StrictStr] = None
     default_timezone: Optional[StrictStr] = None
     logo_file_id: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["legal_name", "display_name", "email", "phone", "website", "tax_id", "address", "default_currency", "default_locale", "default_timezone", "logo_file_id"]
+    __properties: ClassVar[List[str]] = ["legal_name", "display_name", "email", "phone", "website", "tax_id", "address", "electronic_address", "default_currency", "default_locale", "default_timezone", "logo_file_id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -82,6 +84,9 @@ class BusinessProfileCreate(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of address
         if self.address:
             _dict['address'] = self.address.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of electronic_address
+        if self.electronic_address:
+            _dict['electronic_address'] = self.electronic_address.to_dict()
         # set to None if display_name (nullable) is None
         # and model_fields_set contains the field
         if self.display_name is None and "display_name" in self.model_fields_set:
@@ -111,6 +116,11 @@ class BusinessProfileCreate(BaseModel):
         # and model_fields_set contains the field
         if self.address is None and "address" in self.model_fields_set:
             _dict['address'] = None
+
+        # set to None if electronic_address (nullable) is None
+        # and model_fields_set contains the field
+        if self.electronic_address is None and "electronic_address" in self.model_fields_set:
+            _dict['electronic_address'] = None
 
         # set to None if default_currency (nullable) is None
         # and model_fields_set contains the field
@@ -151,6 +161,7 @@ class BusinessProfileCreate(BaseModel):
             "website": obj.get("website"),
             "tax_id": obj.get("tax_id"),
             "address": PostalAddress.from_dict(obj["address"]) if obj.get("address") is not None else None,
+            "electronic_address": ElectronicAddress.from_dict(obj["electronic_address"]) if obj.get("electronic_address") is not None else None,
             "default_currency": obj.get("default_currency"),
             "default_locale": obj.get("default_locale"),
             "default_timezone": obj.get("default_timezone"),

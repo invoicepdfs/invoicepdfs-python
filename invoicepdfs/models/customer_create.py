@@ -19,6 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from invoicepdfs.models.electronic_address import ElectronicAddress
 from invoicepdfs.models.postal_address import PostalAddress
 from typing import Optional, Set
 from typing_extensions import Self
@@ -33,8 +34,9 @@ class CustomerCreate(BaseModel):
     tax_id: Optional[StrictStr] = None
     billing_address: Optional[PostalAddress] = None
     shipping_address: Optional[PostalAddress] = None
+    electronic_address: Optional[ElectronicAddress] = None
     metadata: Optional[Dict[str, Any]] = None
-    __properties: ClassVar[List[str]] = ["name", "email", "phone", "tax_id", "billing_address", "shipping_address", "metadata"]
+    __properties: ClassVar[List[str]] = ["name", "email", "phone", "tax_id", "billing_address", "shipping_address", "electronic_address", "metadata"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -81,6 +83,9 @@ class CustomerCreate(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of shipping_address
         if self.shipping_address:
             _dict['shipping_address'] = self.shipping_address.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of electronic_address
+        if self.electronic_address:
+            _dict['electronic_address'] = self.electronic_address.to_dict()
         # set to None if email (nullable) is None
         # and model_fields_set contains the field
         if self.email is None and "email" in self.model_fields_set:
@@ -106,6 +111,11 @@ class CustomerCreate(BaseModel):
         if self.shipping_address is None and "shipping_address" in self.model_fields_set:
             _dict['shipping_address'] = None
 
+        # set to None if electronic_address (nullable) is None
+        # and model_fields_set contains the field
+        if self.electronic_address is None and "electronic_address" in self.model_fields_set:
+            _dict['electronic_address'] = None
+
         # set to None if metadata (nullable) is None
         # and model_fields_set contains the field
         if self.metadata is None and "metadata" in self.model_fields_set:
@@ -129,6 +139,7 @@ class CustomerCreate(BaseModel):
             "tax_id": obj.get("tax_id"),
             "billing_address": PostalAddress.from_dict(obj["billing_address"]) if obj.get("billing_address") is not None else None,
             "shipping_address": PostalAddress.from_dict(obj["shipping_address"]) if obj.get("shipping_address") is not None else None,
+            "electronic_address": ElectronicAddress.from_dict(obj["electronic_address"]) if obj.get("electronic_address") is not None else None,
             "metadata": obj.get("metadata")
         })
         return _obj
