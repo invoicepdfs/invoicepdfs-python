@@ -17,21 +17,21 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
-class ComplianceViolationOut(BaseModel):
+class ComplianceRulesetOut(BaseModel):
     """
-    ComplianceViolationOut
+    One ruleset the document was held to, and whether it actually ran.
     """ # noqa: E501
-    rule: StrictStr = Field(description="The identifier the standard uses — a business term from the mandatory-field check, a rule id from Schematron. A rule id is what a rejection notice from an access point quotes.")
-    path: StrictStr = Field(description="Where the problem is. The mandatory-field check names a field of the request; Schematron names the node in the generated XML.")
-    message: StrictStr
-    severity: Optional[StrictStr] = Field(default='fatal', description="`fatal` would get the document rejected. `warning` is a recommendation — both EN 16931 and Peppol grade a large share of their rules as advisory, and `valid` ignores those.")
-    ruleset: Optional[StrictStr] = Field(default='semantic', description="Which ruleset found it — matches an `id` in `rulesets`.")
-    __properties: ClassVar[List[str]] = ["rule", "path", "message", "severity", "ruleset"]
+    id: StrictStr
+    label: StrictStr
+    version: Optional[StrictStr] = Field(default='', description="The upstream release of the rules. Empty for checks with no version of their own.")
+    ran: StrictBool = Field(description="False when this ruleset could not be run at all. A ruleset that did not run is not a pass — `valid` only reports what was checked.")
+    reason: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["id", "label", "version", "ran", "reason"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -51,7 +51,7 @@ class ComplianceViolationOut(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of ComplianceViolationOut from a JSON string"""
+        """Create an instance of ComplianceRulesetOut from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -72,11 +72,16 @@ class ComplianceViolationOut(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if reason (nullable) is None
+        # and model_fields_set contains the field
+        if self.reason is None and "reason" in self.model_fields_set:
+            _dict['reason'] = None
+
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of ComplianceViolationOut from a dict"""
+        """Create an instance of ComplianceRulesetOut from a dict"""
         if obj is None:
             return None
 
@@ -84,11 +89,11 @@ class ComplianceViolationOut(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "rule": obj.get("rule"),
-            "path": obj.get("path"),
-            "message": obj.get("message"),
-            "severity": obj.get("severity") if obj.get("severity") is not None else 'fatal',
-            "ruleset": obj.get("ruleset") if obj.get("ruleset") is not None else 'semantic'
+            "id": obj.get("id"),
+            "label": obj.get("label"),
+            "version": obj.get("version") if obj.get("version") is not None else '',
+            "ran": obj.get("ran"),
+            "reason": obj.get("reason")
         })
         return _obj
 

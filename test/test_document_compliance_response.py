@@ -37,26 +37,48 @@ class TestDocumentComplianceResponse(unittest.TestCase):
             return DocumentComplianceResponse(
                 data = invoicepdfs.models.compliance_check_out.ComplianceCheckOut(
                     profile = 'peppol_bis_billing_3', 
-                    ruleset_version = 'PEPPOL-UBL-3.15.0', 
+                    ruleset_version = 'EN16931-UBL 1.3.16 + Peppol BIS Billing 3.0.20', 
                     valid = True, 
+                    fully_checked = True, 
+                    rulesets = [
+                        invoicepdfs.models.compliance_ruleset_out.ComplianceRulesetOut(
+                            id = 'peppol-en16931-ubl', 
+                            label = 'Peppol BIS Billing 3.0', 
+                            version = '', 
+                            ran = True, 
+                            reason = '', )
+                        ], 
                     violations = [
                         invoicepdfs.models.compliance_violation_out.ComplianceViolationOut(
                             rule = 'BT-130', 
                             path = 'lines[1].unit_code', 
-                            message = 'A coded unit is required.', )
+                            message = 'A coded unit is required.', 
+                            severity = 'fatal', 
+                            ruleset = 'semantic', )
                         ], )
             )
         else:
             return DocumentComplianceResponse(
                 data = invoicepdfs.models.compliance_check_out.ComplianceCheckOut(
                     profile = 'peppol_bis_billing_3', 
-                    ruleset_version = 'PEPPOL-UBL-3.15.0', 
+                    ruleset_version = 'EN16931-UBL 1.3.16 + Peppol BIS Billing 3.0.20', 
                     valid = True, 
+                    fully_checked = True, 
+                    rulesets = [
+                        invoicepdfs.models.compliance_ruleset_out.ComplianceRulesetOut(
+                            id = 'peppol-en16931-ubl', 
+                            label = 'Peppol BIS Billing 3.0', 
+                            version = '', 
+                            ran = True, 
+                            reason = '', )
+                        ], 
                     violations = [
                         invoicepdfs.models.compliance_violation_out.ComplianceViolationOut(
                             rule = 'BT-130', 
                             path = 'lines[1].unit_code', 
-                            message = 'A coded unit is required.', )
+                            message = 'A coded unit is required.', 
+                            severity = 'fatal', 
+                            ruleset = 'semantic', )
                         ], ),
         )
         """

@@ -19,6 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from invoicepdfs.models.compliance_ruleset_out import ComplianceRulesetOut
 from invoicepdfs.models.compliance_violation_out import ComplianceViolationOut
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,10 +29,12 @@ class ComplianceCheckOut(BaseModel):
     ComplianceCheckOut
     """ # noqa: E501
     profile: StrictStr
-    ruleset_version: StrictStr = Field(description="The version these rules came from. Worth recording alongside any document you file — rulesets revise, and 'which rules did this pass?' is what an audit asks years later.")
-    valid: StrictBool
-    violations: Optional[List[ComplianceViolationOut]] = Field(default=None, description="Every violation found, not the first — fixing one field per round trip is the experience this avoids.")
-    __properties: ClassVar[List[str]] = ["profile", "ruleset_version", "valid", "violations"]
+    ruleset_version: StrictStr = Field(description="The version these rules came from. Worth recording alongside any document you file — rulesets revise, and 'which rules did this pass?' is what an audit asks years later. `rulesets` breaks the same answer down per ruleset.")
+    valid: StrictBool = Field(description="Nothing fatal was found. Read it with `fully_checked` — on its own it says what was checked came back clean, not that everything was checked.")
+    fully_checked: Optional[StrictBool] = Field(default=True, description="Every ruleset that applies to this profile ran. False means at least one could not, and `rulesets` says which and why.")
+    rulesets: Optional[List[ComplianceRulesetOut]] = Field(default=None, description="Every ruleset the document was held to, including the mandatory-field check, at the version that ran.")
+    violations: Optional[List[ComplianceViolationOut]] = Field(default=None, description="Every violation found, not the first — fixing one field per round trip is the experience this avoids. Ordered mandatory-field findings first, since those name a field you can go and change.")
+    __properties: ClassVar[List[str]] = ["profile", "ruleset_version", "valid", "fully_checked", "rulesets", "violations"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -72,6 +75,13 @@ class ComplianceCheckOut(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in rulesets (list)
+        _items = []
+        if self.rulesets:
+            for _item in self.rulesets:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['rulesets'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in violations (list)
         _items = []
         if self.violations:
@@ -94,6 +104,8 @@ class ComplianceCheckOut(BaseModel):
             "profile": obj.get("profile"),
             "ruleset_version": obj.get("ruleset_version"),
             "valid": obj.get("valid"),
+            "fully_checked": obj.get("fully_checked") if obj.get("fully_checked") is not None else True,
+            "rulesets": [ComplianceRulesetOut.from_dict(_item) for _item in obj["rulesets"]] if obj.get("rulesets") is not None else None,
             "violations": [ComplianceViolationOut.from_dict(_item) for _item in obj["violations"]] if obj.get("violations") is not None else None
         })
         return _obj

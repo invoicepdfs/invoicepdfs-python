@@ -121,6 +121,7 @@ from invoicepdfs.models.business_profile_response import BusinessProfileResponse
 from invoicepdfs.models.business_profiles_list_response import BusinessProfilesListResponse
 from invoicepdfs.models.calculation_breakdown import CalculationBreakdown
 from invoicepdfs.models.compliance_check_out import ComplianceCheckOut
+from invoicepdfs.models.compliance_ruleset_out import ComplianceRulesetOut
 from invoicepdfs.models.compliance_violation_out import ComplianceViolationOut
 from invoicepdfs.models.countries_list_response import CountriesListResponse
 from invoicepdfs.models.country_out import CountryOut

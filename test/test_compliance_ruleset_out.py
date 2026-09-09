@@ -14,10 +14,10 @@
 
 import unittest
 
-from invoicepdfs.models.compliance_violation_out import ComplianceViolationOut
+from invoicepdfs.models.compliance_ruleset_out import ComplianceRulesetOut
 
-class TestComplianceViolationOut(unittest.TestCase):
-    """ComplianceViolationOut unit test stubs"""
+class TestComplianceRulesetOut(unittest.TestCase):
+    """ComplianceRulesetOut unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,32 +25,32 @@ class TestComplianceViolationOut(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ComplianceViolationOut:
-        """Test ComplianceViolationOut
+    def make_instance(self, include_optional) -> ComplianceRulesetOut:
+        """Test ComplianceRulesetOut
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `ComplianceViolationOut`
+        # uncomment below to create an instance of `ComplianceRulesetOut`
         """
-        model = ComplianceViolationOut()
+        model = ComplianceRulesetOut()
         if include_optional:
-            return ComplianceViolationOut(
-                rule = 'BT-130',
-                path = 'lines[1].unit_code',
-                message = 'A coded unit is required.',
-                severity = 'fatal',
-                ruleset = 'semantic'
+            return ComplianceRulesetOut(
+                id = 'peppol-en16931-ubl',
+                label = 'Peppol BIS Billing 3.0',
+                version = '',
+                ran = True,
+                reason = ''
             )
         else:
-            return ComplianceViolationOut(
-                rule = 'BT-130',
-                path = 'lines[1].unit_code',
-                message = 'A coded unit is required.',
+            return ComplianceRulesetOut(
+                id = 'peppol-en16931-ubl',
+                label = 'Peppol BIS Billing 3.0',
+                ran = True,
         )
         """
 
-    def testComplianceViolationOut(self):
-        """Test ComplianceViolationOut"""
+    def testComplianceRulesetOut(self):
+        """Test ComplianceRulesetOut"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 
