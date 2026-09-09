@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,7 +29,18 @@ class DocumentRenderOptions(BaseModel):
     template_id: Optional[StrictStr] = 'tpl_modern'
     page_size: Optional[StrictStr] = 'LETTER'
     expires_in: Optional[StrictInt] = 3600
-    __properties: ClassVar[List[str]] = ["template_id", "page_size", "expires_in"]
+    format: Optional[StrictStr] = Field(default='pdf', description="`facturx_pdf` embeds the EN 16931 CII XML in a PDF/A-3, which is what a French or German counterparty means by Factur-X or ZUGFeRD.")
+    __properties: ClassVar[List[str]] = ["template_id", "page_size", "expires_in", "format"]
+
+    @field_validator('format')
+    def format_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['pdf', 'facturx_pdf']):
+            raise ValueError("must be one of enum values ('pdf', 'facturx_pdf')")
+        return value
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -84,7 +95,8 @@ class DocumentRenderOptions(BaseModel):
         _obj = cls.model_validate({
             "template_id": obj.get("template_id") if obj.get("template_id") is not None else 'tpl_modern',
             "page_size": obj.get("page_size") if obj.get("page_size") is not None else 'LETTER',
-            "expires_in": obj.get("expires_in") if obj.get("expires_in") is not None else 3600
+            "expires_in": obj.get("expires_in") if obj.get("expires_in") is not None else 3600,
+            "format": obj.get("format") if obj.get("format") is not None else 'pdf'
         })
         return _obj
 

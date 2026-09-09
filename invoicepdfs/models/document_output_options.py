@@ -37,8 +37,8 @@ class DocumentOutputOptions(BaseModel):
         if value is None:
             return value
 
-        if value not in set(['pdf']):
-            raise ValueError("must be one of enum values ('pdf')")
+        if value not in set(['pdf', 'facturx_pdf']):
+            raise ValueError("must be one of enum values ('pdf', 'facturx_pdf')")
         return value
 
     @field_validator('delivery')

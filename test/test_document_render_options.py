@@ -37,7 +37,8 @@ class TestDocumentRenderOptions(unittest.TestCase):
             return DocumentRenderOptions(
                 template_id = 'tpl_modern',
                 page_size = 'LETTER',
-                expires_in = 56
+                expires_in = 56,
+                format = 'pdf'
             )
         else:
             return DocumentRenderOptions(
