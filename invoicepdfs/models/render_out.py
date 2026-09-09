@@ -47,8 +47,8 @@ class RenderOut(BaseModel):
     @field_validator('document_type')
     def document_type_validate_enum(cls, value):
         """Validates the enum"""
-        if value not in set(['invoice', 'credit_note', 'quote', 'receipt', 'proforma', 'purchase_order', 'delivery_note']):
-            raise ValueError("must be one of enum values ('invoice', 'credit_note', 'quote', 'receipt', 'proforma', 'purchase_order', 'delivery_note')")
+        if value not in set(['invoice', 'credit_note', 'debit_note', 'quote', 'receipt', 'proforma', 'purchase_order', 'delivery_note']):
+            raise ValueError("must be one of enum values ('invoice', 'credit_note', 'debit_note', 'quote', 'receipt', 'proforma', 'purchase_order', 'delivery_note')")
         return value
 
     @field_validator('format')
