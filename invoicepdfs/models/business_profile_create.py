@@ -20,6 +20,7 @@ import json
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from invoicepdfs.models.electronic_address import ElectronicAddress
+from invoicepdfs.models.invoice_bank_account_input import InvoiceBankAccountInput
 from invoicepdfs.models.postal_address import PostalAddress
 from typing import Optional, Set
 from typing_extensions import Self
@@ -30,17 +31,19 @@ class BusinessProfileCreate(BaseModel):
     """ # noqa: E501
     legal_name: StrictStr
     display_name: Optional[StrictStr] = None
+    contact_name: Optional[StrictStr] = None
     email: Optional[StrictStr] = None
     phone: Optional[StrictStr] = None
     website: Optional[StrictStr] = None
     tax_id: Optional[StrictStr] = None
     address: Optional[PostalAddress] = None
+    bank_account: Optional[InvoiceBankAccountInput] = None
     electronic_address: Optional[ElectronicAddress] = None
     default_currency: Optional[StrictStr] = None
     default_locale: Optional[StrictStr] = None
     default_timezone: Optional[StrictStr] = None
     logo_file_id: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["legal_name", "display_name", "email", "phone", "website", "tax_id", "address", "electronic_address", "default_currency", "default_locale", "default_timezone", "logo_file_id"]
+    __properties: ClassVar[List[str]] = ["legal_name", "display_name", "contact_name", "email", "phone", "website", "tax_id", "address", "bank_account", "electronic_address", "default_currency", "default_locale", "default_timezone", "logo_file_id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -84,6 +87,9 @@ class BusinessProfileCreate(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of address
         if self.address:
             _dict['address'] = self.address.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of bank_account
+        if self.bank_account:
+            _dict['bank_account'] = self.bank_account.to_dict()
         # override the default output from pydantic by calling `to_dict()` of electronic_address
         if self.electronic_address:
             _dict['electronic_address'] = self.electronic_address.to_dict()
@@ -91,6 +97,11 @@ class BusinessProfileCreate(BaseModel):
         # and model_fields_set contains the field
         if self.display_name is None and "display_name" in self.model_fields_set:
             _dict['display_name'] = None
+
+        # set to None if contact_name (nullable) is None
+        # and model_fields_set contains the field
+        if self.contact_name is None and "contact_name" in self.model_fields_set:
+            _dict['contact_name'] = None
 
         # set to None if email (nullable) is None
         # and model_fields_set contains the field
@@ -116,6 +127,11 @@ class BusinessProfileCreate(BaseModel):
         # and model_fields_set contains the field
         if self.address is None and "address" in self.model_fields_set:
             _dict['address'] = None
+
+        # set to None if bank_account (nullable) is None
+        # and model_fields_set contains the field
+        if self.bank_account is None and "bank_account" in self.model_fields_set:
+            _dict['bank_account'] = None
 
         # set to None if electronic_address (nullable) is None
         # and model_fields_set contains the field
@@ -156,11 +172,13 @@ class BusinessProfileCreate(BaseModel):
         _obj = cls.model_validate({
             "legal_name": obj.get("legal_name"),
             "display_name": obj.get("display_name"),
+            "contact_name": obj.get("contact_name"),
             "email": obj.get("email"),
             "phone": obj.get("phone"),
             "website": obj.get("website"),
             "tax_id": obj.get("tax_id"),
             "address": PostalAddress.from_dict(obj["address"]) if obj.get("address") is not None else None,
+            "bank_account": InvoiceBankAccountInput.from_dict(obj["bank_account"]) if obj.get("bank_account") is not None else None,
             "electronic_address": ElectronicAddress.from_dict(obj["electronic_address"]) if obj.get("electronic_address") is not None else None,
             "default_currency": obj.get("default_currency"),
             "default_locale": obj.get("default_locale"),

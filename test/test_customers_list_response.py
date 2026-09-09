@@ -38,6 +38,7 @@ class TestCustomersListResponse(unittest.TestCase):
                 data = [
                     invoicepdfs.models.customer_out.CustomerOut(
                         name = 'Jane Smith', 
+                        contact_name = '', 
                         email = '', 
                         phone = '', 
                         tax_id = '', 
@@ -72,6 +73,7 @@ class TestCustomersListResponse(unittest.TestCase):
                 data = [
                     invoicepdfs.models.customer_out.CustomerOut(
                         name = 'Jane Smith', 
+                        contact_name = '', 
                         email = '', 
                         phone = '', 
                         tax_id = '', 

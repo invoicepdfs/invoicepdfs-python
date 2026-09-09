@@ -49,6 +49,7 @@ class DocumentCreateRequest(BaseModel):
     reason: Optional[StrictStr] = None
     ship_to: Optional[PostalAddress] = None
     buyer_reference: Optional[StrictStr] = None
+    delivery_date: Optional[date] = None
     line_items: List[StandardLineItemInput]
     discounts: Optional[List[LineItemDiscountInput]] = None
     shipping: Optional[InvoiceShippingInput] = None
@@ -58,7 +59,7 @@ class DocumentCreateRequest(BaseModel):
     payment: Optional[InvoicePaymentInput] = None
     branding: Optional[InvoiceBrandingInput] = None
     branding_profile_id: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["document_type", "number", "issue_date", "due_date", "currency", "locale", "business_profile_id", "customer_id", "source_document_id", "reason", "ship_to", "buyer_reference", "line_items", "discounts", "shipping", "notes", "terms", "custom_fields", "payment", "branding", "branding_profile_id"]
+    __properties: ClassVar[List[str]] = ["document_type", "number", "issue_date", "due_date", "currency", "locale", "business_profile_id", "customer_id", "source_document_id", "reason", "ship_to", "buyer_reference", "delivery_date", "line_items", "discounts", "shipping", "notes", "terms", "custom_fields", "payment", "branding", "branding_profile_id"]
 
     @field_validator('document_type')
     def document_type_validate_enum(cls, value):
@@ -186,6 +187,11 @@ class DocumentCreateRequest(BaseModel):
         if self.buyer_reference is None and "buyer_reference" in self.model_fields_set:
             _dict['buyer_reference'] = None
 
+        # set to None if delivery_date (nullable) is None
+        # and model_fields_set contains the field
+        if self.delivery_date is None and "delivery_date" in self.model_fields_set:
+            _dict['delivery_date'] = None
+
         # set to None if shipping (nullable) is None
         # and model_fields_set contains the field
         if self.shipping is None and "shipping" in self.model_fields_set:
@@ -230,6 +236,7 @@ class DocumentCreateRequest(BaseModel):
             "reason": obj.get("reason"),
             "ship_to": PostalAddress.from_dict(obj["ship_to"]) if obj.get("ship_to") is not None else None,
             "buyer_reference": obj.get("buyer_reference"),
+            "delivery_date": obj.get("delivery_date"),
             "line_items": [StandardLineItemInput.from_dict(_item) for _item in obj["line_items"]] if obj.get("line_items") is not None else None,
             "discounts": [LineItemDiscountInput.from_dict(_item) for _item in obj["discounts"]] if obj.get("discounts") is not None else None,
             "shipping": InvoiceShippingInput.from_dict(obj["shipping"]) if obj.get("shipping") is not None else None,

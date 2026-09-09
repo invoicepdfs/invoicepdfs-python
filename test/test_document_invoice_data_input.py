@@ -42,6 +42,7 @@ class TestDocumentInvoiceDataInput(unittest.TestCase):
                 seller = invoicepdfs.models.document_party_input.DocumentPartyInput(
                     name = 'Acme Corp', 
                     legal_name = '', 
+                    contact_name = '', 
                     email = '', 
                     phone = '', 
                     website = '', 
@@ -67,6 +68,7 @@ class TestDocumentInvoiceDataInput(unittest.TestCase):
                 buyer = invoicepdfs.models.document_party_input.DocumentPartyInput(
                     name = 'Acme Corp', 
                     legal_name = '', 
+                    contact_name = '', 
                     email = '', 
                     phone = '', 
                     website = '', 
@@ -92,6 +94,7 @@ class TestDocumentInvoiceDataInput(unittest.TestCase):
                 ship_to = invoicepdfs.models.document_party_input.DocumentPartyInput(
                     name = 'Acme Corp', 
                     legal_name = '', 
+                    contact_name = '', 
                     email = '', 
                     phone = '', 
                     website = '', 
@@ -114,6 +117,7 @@ class TestDocumentInvoiceDataInput(unittest.TestCase):
                     electronic_address = invoicepdfs.models.electronic_address.ElectronicAddress(
                         value = '9482348239', 
                         scheme_id = '0088', ), ),
+                delivery_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(),
                 buyer_reference = '',
                 preceding_invoice_number = '',
                 line_items = [
@@ -182,6 +186,7 @@ class TestDocumentInvoiceDataInput(unittest.TestCase):
                 seller = invoicepdfs.models.document_party_input.DocumentPartyInput(
                     name = 'Acme Corp', 
                     legal_name = '', 
+                    contact_name = '', 
                     email = '', 
                     phone = '', 
                     website = '', 
@@ -207,6 +212,7 @@ class TestDocumentInvoiceDataInput(unittest.TestCase):
                 buyer = invoicepdfs.models.document_party_input.DocumentPartyInput(
                     name = 'Acme Corp', 
                     legal_name = '', 
+                    contact_name = '', 
                     email = '', 
                     phone = '', 
                     website = '', 

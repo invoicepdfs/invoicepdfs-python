@@ -37,6 +37,7 @@ class TestCustomerResponse(unittest.TestCase):
             return CustomerResponse(
                 data = invoicepdfs.models.customer_out.CustomerOut(
                     name = 'Jane Smith', 
+                    contact_name = '', 
                     email = '', 
                     phone = '', 
                     tax_id = '', 
@@ -66,6 +67,7 @@ class TestCustomerResponse(unittest.TestCase):
             return CustomerResponse(
                 data = invoicepdfs.models.customer_out.CustomerOut(
                     name = 'Jane Smith', 
+                    contact_name = '', 
                     email = '', 
                     phone = '', 
                     tax_id = '', 

@@ -44,6 +44,7 @@ class TestDocumentRenderRequest(unittest.TestCase):
                     seller = invoicepdfs.models.document_party_input.DocumentPartyInput(
                         name = 'Acme Corp', 
                         legal_name = '', 
+                        contact_name = '', 
                         email = '', 
                         phone = '', 
                         website = '', 
@@ -69,12 +70,14 @@ class TestDocumentRenderRequest(unittest.TestCase):
                     buyer = invoicepdfs.models.document_party_input.DocumentPartyInput(
                         name = 'Acme Corp', 
                         legal_name = '', 
+                        contact_name = '', 
                         email = '', 
                         phone = '', 
                         website = '', 
                         tax_id = '', 
                         registration_number = '', ), 
                     ship_to = , 
+                    delivery_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
                     buyer_reference = '', 
                     preceding_invoice_number = '', 
                     line_items = [
@@ -144,6 +147,7 @@ class TestDocumentRenderRequest(unittest.TestCase):
                     seller = invoicepdfs.models.document_party_input.DocumentPartyInput(
                         name = 'Acme Corp', 
                         legal_name = '', 
+                        contact_name = '', 
                         email = '', 
                         phone = '', 
                         website = '', 
@@ -169,12 +173,14 @@ class TestDocumentRenderRequest(unittest.TestCase):
                     buyer = invoicepdfs.models.document_party_input.DocumentPartyInput(
                         name = 'Acme Corp', 
                         legal_name = '', 
+                        contact_name = '', 
                         email = '', 
                         phone = '', 
                         website = '', 
                         tax_id = '', 
                         registration_number = '', ), 
                     ship_to = , 
+                    delivery_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
                     buyer_reference = '', 
                     preceding_invoice_number = '', 
                     line_items = [

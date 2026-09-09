@@ -7,11 +7,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **legal_name** | **str** |  | [optional] 
 **display_name** | **str** |  | [optional] 
+**contact_name** | **str** |  | [optional] 
 **email** | **str** |  | [optional] 
 **phone** | **str** |  | [optional] 
 **website** | **str** |  | [optional] 
 **tax_id** | **str** |  | [optional] 
 **address** | [**PostalAddress**](PostalAddress.md) |  | [optional] 
+**bank_account** | [**InvoiceBankAccountInput**](InvoiceBankAccountInput.md) |  | [optional] 
 **electronic_address** | [**ElectronicAddress**](ElectronicAddress.md) |  | [optional] 
 **default_currency** | **str** |  | [optional] 
 **default_locale** | **str** |  | [optional] 

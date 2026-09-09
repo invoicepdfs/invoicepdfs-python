@@ -31,6 +31,7 @@ class DocumentPartyInput(BaseModel):
     """ # noqa: E501
     name: StrictStr
     legal_name: Optional[StrictStr] = None
+    contact_name: Optional[StrictStr] = None
     email: Optional[StrictStr] = None
     phone: Optional[StrictStr] = None
     website: Optional[StrictStr] = None
@@ -39,7 +40,7 @@ class DocumentPartyInput(BaseModel):
     address: Optional[PostalAddress] = None
     bank_account: Optional[InvoiceBankAccountInput] = None
     electronic_address: Optional[ElectronicAddress] = None
-    __properties: ClassVar[List[str]] = ["name", "legal_name", "email", "phone", "website", "tax_id", "registration_number", "address", "bank_account", "electronic_address"]
+    __properties: ClassVar[List[str]] = ["name", "legal_name", "contact_name", "email", "phone", "website", "tax_id", "registration_number", "address", "bank_account", "electronic_address"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -93,6 +94,11 @@ class DocumentPartyInput(BaseModel):
         # and model_fields_set contains the field
         if self.legal_name is None and "legal_name" in self.model_fields_set:
             _dict['legal_name'] = None
+
+        # set to None if contact_name (nullable) is None
+        # and model_fields_set contains the field
+        if self.contact_name is None and "contact_name" in self.model_fields_set:
+            _dict['contact_name'] = None
 
         # set to None if email (nullable) is None
         # and model_fields_set contains the field
@@ -148,6 +154,7 @@ class DocumentPartyInput(BaseModel):
         _obj = cls.model_validate({
             "name": obj.get("name"),
             "legal_name": obj.get("legal_name"),
+            "contact_name": obj.get("contact_name"),
             "email": obj.get("email"),
             "phone": obj.get("phone"),
             "website": obj.get("website"),

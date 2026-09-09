@@ -46,6 +46,7 @@ class InvoiceDraftRequest(BaseModel):
     customer_id: StrictStr
     ship_to: Optional[PostalAddress] = None
     buyer_reference: Optional[StrictStr] = None
+    delivery_date: Optional[date] = None
     preceding_invoice_number: Optional[StrictStr] = None
     line_items: List[InvoiceLineItemInput]
     discounts: Optional[List[InvoiceDiscountInput]] = None
@@ -55,7 +56,7 @@ class InvoiceDraftRequest(BaseModel):
     custom_fields: Optional[List[InvoiceCustomFieldInput]] = None
     payment: Optional[InvoicePaymentInput] = None
     branding: Optional[InvoiceBrandingInput] = None
-    __properties: ClassVar[List[str]] = ["invoice_number", "document_type", "issue_date", "due_date", "currency", "locale", "business_profile_id", "customer_id", "ship_to", "buyer_reference", "preceding_invoice_number", "line_items", "discounts", "shipping", "notes", "terms", "custom_fields", "payment", "branding"]
+    __properties: ClassVar[List[str]] = ["invoice_number", "document_type", "issue_date", "due_date", "currency", "locale", "business_profile_id", "customer_id", "ship_to", "buyer_reference", "delivery_date", "preceding_invoice_number", "line_items", "discounts", "shipping", "notes", "terms", "custom_fields", "payment", "branding"]
 
     @field_validator('document_type')
     def document_type_validate_enum(cls, value):
@@ -173,6 +174,11 @@ class InvoiceDraftRequest(BaseModel):
         if self.buyer_reference is None and "buyer_reference" in self.model_fields_set:
             _dict['buyer_reference'] = None
 
+        # set to None if delivery_date (nullable) is None
+        # and model_fields_set contains the field
+        if self.delivery_date is None and "delivery_date" in self.model_fields_set:
+            _dict['delivery_date'] = None
+
         # set to None if preceding_invoice_number (nullable) is None
         # and model_fields_set contains the field
         if self.preceding_invoice_number is None and "preceding_invoice_number" in self.model_fields_set:
@@ -215,6 +221,7 @@ class InvoiceDraftRequest(BaseModel):
             "customer_id": obj.get("customer_id"),
             "ship_to": PostalAddress.from_dict(obj["ship_to"]) if obj.get("ship_to") is not None else None,
             "buyer_reference": obj.get("buyer_reference"),
+            "delivery_date": obj.get("delivery_date"),
             "preceding_invoice_number": obj.get("preceding_invoice_number"),
             "line_items": [InvoiceLineItemInput.from_dict(_item) for _item in obj["line_items"]] if obj.get("line_items") is not None else None,
             "discounts": [InvoiceDiscountInput.from_dict(_item) for _item in obj["discounts"]] if obj.get("discounts") is not None else None,

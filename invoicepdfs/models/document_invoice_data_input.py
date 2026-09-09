@@ -41,6 +41,7 @@ class DocumentInvoiceDataInput(BaseModel):
     seller: DocumentPartyInput
     buyer: DocumentPartyInput
     ship_to: Optional[DocumentPartyInput] = None
+    delivery_date: Optional[date] = None
     buyer_reference: Optional[StrictStr] = None
     preceding_invoice_number: Optional[StrictStr] = None
     line_items: List[DocumentLineItemInput]
@@ -49,7 +50,7 @@ class DocumentInvoiceDataInput(BaseModel):
     custom_fields: Optional[List[DocumentCustomFieldInput]] = None
     payment: Optional[DocumentPaymentInput] = None
     branding: Optional[DocumentBrandingInput] = None
-    __properties: ClassVar[List[str]] = ["invoice_number", "issue_date", "due_date", "currency", "seller", "buyer", "ship_to", "buyer_reference", "preceding_invoice_number", "line_items", "discounts", "shipping", "custom_fields", "payment", "branding"]
+    __properties: ClassVar[List[str]] = ["invoice_number", "issue_date", "due_date", "currency", "seller", "buyer", "ship_to", "delivery_date", "buyer_reference", "preceding_invoice_number", "line_items", "discounts", "shipping", "custom_fields", "payment", "branding"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -139,6 +140,11 @@ class DocumentInvoiceDataInput(BaseModel):
         if self.ship_to is None and "ship_to" in self.model_fields_set:
             _dict['ship_to'] = None
 
+        # set to None if delivery_date (nullable) is None
+        # and model_fields_set contains the field
+        if self.delivery_date is None and "delivery_date" in self.model_fields_set:
+            _dict['delivery_date'] = None
+
         # set to None if buyer_reference (nullable) is None
         # and model_fields_set contains the field
         if self.buyer_reference is None and "buyer_reference" in self.model_fields_set:
@@ -183,6 +189,7 @@ class DocumentInvoiceDataInput(BaseModel):
             "seller": DocumentPartyInput.from_dict(obj["seller"]) if obj.get("seller") is not None else None,
             "buyer": DocumentPartyInput.from_dict(obj["buyer"]) if obj.get("buyer") is not None else None,
             "ship_to": DocumentPartyInput.from_dict(obj["ship_to"]) if obj.get("ship_to") is not None else None,
+            "delivery_date": obj.get("delivery_date"),
             "buyer_reference": obj.get("buyer_reference"),
             "preceding_invoice_number": obj.get("preceding_invoice_number"),
             "line_items": [DocumentLineItemInput.from_dict(_item) for _item in obj["line_items"]] if obj.get("line_items") is not None else None,

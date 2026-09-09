@@ -36,6 +36,7 @@ class TestCustomerCreate(unittest.TestCase):
         if include_optional:
             return CustomerCreate(
                 name = 'Jane Smith',
+                contact_name = '',
                 email = '',
                 phone = '',
                 tax_id = '',

@@ -61,6 +61,7 @@ class TestRecurringInvoiceCreateRequest(unittest.TestCase):
                         postal_code = '', 
                         country = '', ), 
                     buyer_reference = '', 
+                    delivery_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
                     preceding_invoice_number = '', 
                     line_items = [
                         invoicepdfs.models.invoice_line_item_input.InvoiceLineItemInput(
@@ -155,6 +156,7 @@ class TestRecurringInvoiceCreateRequest(unittest.TestCase):
                         postal_code = '', 
                         country = '', ), 
                     buyer_reference = '', 
+                    delivery_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
                     preceding_invoice_number = '', 
                     line_items = [
                         invoicepdfs.models.invoice_line_item_input.InvoiceLineItemInput(

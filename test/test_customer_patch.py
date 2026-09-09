@@ -36,6 +36,7 @@ class TestCustomerPatch(unittest.TestCase):
         if include_optional:
             return CustomerPatch(
                 name = '',
+                contact_name = '',
                 email = '',
                 phone = '',
                 tax_id = '',

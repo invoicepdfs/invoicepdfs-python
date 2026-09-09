@@ -37,6 +37,7 @@ class TestBusinessProfileOut(unittest.TestCase):
             return BusinessProfileOut(
                 legal_name = 'Acme Corp Inc.',
                 display_name = '',
+                contact_name = '',
                 email = '',
                 phone = '',
                 website = '',
@@ -48,6 +49,13 @@ class TestBusinessProfileOut(unittest.TestCase):
                     state = '', 
                     postal_code = '', 
                     country = '', ),
+                bank_account = invoicepdfs.models.invoice_bank_account_input.InvoiceBankAccountInput(
+                    bank_name = '', 
+                    account_name = '', 
+                    account_number = '', 
+                    routing_number = '', 
+                    swift = '', 
+                    iban = '', ),
                 electronic_address = invoicepdfs.models.electronic_address.ElectronicAddress(
                     value = '9482348239', 
                     scheme_id = '0088', ),

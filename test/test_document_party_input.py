@@ -37,6 +37,7 @@ class TestDocumentPartyInput(unittest.TestCase):
             return DocumentPartyInput(
                 name = 'Acme Corp',
                 legal_name = '',
+                contact_name = '',
                 email = '',
                 phone = '',
                 website = '',

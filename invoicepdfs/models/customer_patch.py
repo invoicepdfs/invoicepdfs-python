@@ -29,6 +29,7 @@ class CustomerPatch(BaseModel):
     CustomerPatch
     """ # noqa: E501
     name: Optional[StrictStr] = None
+    contact_name: Optional[StrictStr] = None
     email: Optional[StrictStr] = None
     phone: Optional[StrictStr] = None
     tax_id: Optional[StrictStr] = None
@@ -36,7 +37,7 @@ class CustomerPatch(BaseModel):
     shipping_address: Optional[PostalAddress] = None
     electronic_address: Optional[ElectronicAddress] = None
     metadata: Optional[Dict[str, Any]] = None
-    __properties: ClassVar[List[str]] = ["name", "email", "phone", "tax_id", "billing_address", "shipping_address", "electronic_address", "metadata"]
+    __properties: ClassVar[List[str]] = ["name", "contact_name", "email", "phone", "tax_id", "billing_address", "shipping_address", "electronic_address", "metadata"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -86,6 +87,11 @@ class CustomerPatch(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of electronic_address
         if self.electronic_address:
             _dict['electronic_address'] = self.electronic_address.to_dict()
+        # set to None if contact_name (nullable) is None
+        # and model_fields_set contains the field
+        if self.contact_name is None and "contact_name" in self.model_fields_set:
+            _dict['contact_name'] = None
+
         # set to None if email (nullable) is None
         # and model_fields_set contains the field
         if self.email is None and "email" in self.model_fields_set:
@@ -134,6 +140,7 @@ class CustomerPatch(BaseModel):
 
         _obj = cls.model_validate({
             "name": obj.get("name"),
+            "contact_name": obj.get("contact_name"),
             "email": obj.get("email"),
             "phone": obj.get("phone"),
             "tax_id": obj.get("tax_id"),

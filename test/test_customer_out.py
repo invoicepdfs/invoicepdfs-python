@@ -36,6 +36,7 @@ class TestCustomerOut(unittest.TestCase):
         if include_optional:
             return CustomerOut(
                 name = 'Jane Smith',
+                contact_name = '',
                 email = '',
                 phone = '',
                 tax_id = '',
