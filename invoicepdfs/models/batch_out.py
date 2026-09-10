@@ -30,13 +30,14 @@ class BatchOut(BaseModel):
     status: StrictStr
     operation: StrictStr
     template_id: StrictStr
+    template_version: Optional[StrictInt] = None
     total_items: StrictInt
     completed_items: StrictInt
     failed_items: StrictInt
     created_at: StrictStr
     updated_at: StrictStr
     completed_at: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["id", "status", "operation", "template_id", "total_items", "completed_items", "failed_items", "created_at", "updated_at", "completed_at"]
+    __properties: ClassVar[List[str]] = ["id", "status", "operation", "template_id", "template_version", "total_items", "completed_items", "failed_items", "created_at", "updated_at", "completed_at"]
 
     @field_validator('status')
     def status_validate_enum(cls, value):
@@ -84,6 +85,11 @@ class BatchOut(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if template_version (nullable) is None
+        # and model_fields_set contains the field
+        if self.template_version is None and "template_version" in self.model_fields_set:
+            _dict['template_version'] = None
+
         # set to None if completed_at (nullable) is None
         # and model_fields_set contains the field
         if self.completed_at is None and "completed_at" in self.model_fields_set:
@@ -105,6 +111,7 @@ class BatchOut(BaseModel):
             "status": obj.get("status"),
             "operation": obj.get("operation"),
             "template_id": obj.get("template_id"),
+            "template_version": obj.get("template_version"),
             "total_items": obj.get("total_items"),
             "completed_items": obj.get("completed_items"),
             "failed_items": obj.get("failed_items"),

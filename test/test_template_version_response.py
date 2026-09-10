@@ -41,7 +41,12 @@ class TestTemplateVersionResponse(unittest.TestCase):
                     version = 56, 
                     label = '', 
                     changelog = '', 
-                    config = { }, 
+                    config = invoicepdfs.models.template_config.TemplateConfig(
+                        primary_color = '#2ECB02', 
+                        accent_color = '#2ECB02', 
+                        font_family = '', 
+                        header_text = '', 
+                        footer_text = '', ), 
                     created_at = '', )
             )
         else:
@@ -52,7 +57,12 @@ class TestTemplateVersionResponse(unittest.TestCase):
                     version = 56, 
                     label = '', 
                     changelog = '', 
-                    config = { }, 
+                    config = invoicepdfs.models.template_config.TemplateConfig(
+                        primary_color = '#2ECB02', 
+                        accent_color = '#2ECB02', 
+                        font_family = '', 
+                        header_text = '', 
+                        footer_text = '', ), 
                     created_at = '', ),
         )
         """

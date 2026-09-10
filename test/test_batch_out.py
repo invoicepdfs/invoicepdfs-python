@@ -39,6 +39,7 @@ class TestBatchOut(unittest.TestCase):
                 status = 'queued',
                 operation = '',
                 template_id = '',
+                template_version = 56,
                 total_items = 56,
                 completed_items = 56,
                 failed_items = 56,

@@ -2137,6 +2137,7 @@ class TemplatesApi:
         self,
         template_id: StrictStr,
         document_render_request: DocumentRenderRequest,
+        version: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Preview the config this version recorded rather than the template's current config. Only a custom (`ctpl_`) template has versions.")] = None,
         idempotency_key: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
@@ -2158,6 +2159,8 @@ class TemplatesApi:
         :type template_id: str
         :param document_render_request: (required)
         :type document_render_request: DocumentRenderRequest
+        :param version: Preview the config this version recorded rather than the template's current config. Only a custom (`ctpl_`) template has versions.
+        :type version: int
         :param idempotency_key:
         :type idempotency_key: str
         :param _request_timeout: timeout setting for this request. If one
@@ -2185,6 +2188,7 @@ class TemplatesApi:
         _param = self._preview_template_serialize(
             template_id=template_id,
             document_render_request=document_render_request,
+            version=version,
             idempotency_key=idempotency_key,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2212,6 +2216,7 @@ class TemplatesApi:
         self,
         template_id: StrictStr,
         document_render_request: DocumentRenderRequest,
+        version: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Preview the config this version recorded rather than the template's current config. Only a custom (`ctpl_`) template has versions.")] = None,
         idempotency_key: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
@@ -2233,6 +2238,8 @@ class TemplatesApi:
         :type template_id: str
         :param document_render_request: (required)
         :type document_render_request: DocumentRenderRequest
+        :param version: Preview the config this version recorded rather than the template's current config. Only a custom (`ctpl_`) template has versions.
+        :type version: int
         :param idempotency_key:
         :type idempotency_key: str
         :param _request_timeout: timeout setting for this request. If one
@@ -2260,6 +2267,7 @@ class TemplatesApi:
         _param = self._preview_template_serialize(
             template_id=template_id,
             document_render_request=document_render_request,
+            version=version,
             idempotency_key=idempotency_key,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2287,6 +2295,7 @@ class TemplatesApi:
         self,
         template_id: StrictStr,
         document_render_request: DocumentRenderRequest,
+        version: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Preview the config this version recorded rather than the template's current config. Only a custom (`ctpl_`) template has versions.")] = None,
         idempotency_key: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
@@ -2308,6 +2317,8 @@ class TemplatesApi:
         :type template_id: str
         :param document_render_request: (required)
         :type document_render_request: DocumentRenderRequest
+        :param version: Preview the config this version recorded rather than the template's current config. Only a custom (`ctpl_`) template has versions.
+        :type version: int
         :param idempotency_key:
         :type idempotency_key: str
         :param _request_timeout: timeout setting for this request. If one
@@ -2335,6 +2346,7 @@ class TemplatesApi:
         _param = self._preview_template_serialize(
             template_id=template_id,
             document_render_request=document_render_request,
+            version=version,
             idempotency_key=idempotency_key,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2357,6 +2369,7 @@ class TemplatesApi:
         self,
         template_id,
         document_render_request,
+        version,
         idempotency_key,
         _request_auth,
         _content_type,
@@ -2380,6 +2393,10 @@ class TemplatesApi:
         if template_id is not None:
             _path_params['template_id'] = template_id
         # process the query parameters
+        if version is not None:
+            
+            _query_params.append(('version', version))
+            
         # process the header parameters
         if idempotency_key is not None:
             _header_params['Idempotency-Key'] = idempotency_key

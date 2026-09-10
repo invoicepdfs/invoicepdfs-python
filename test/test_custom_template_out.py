@@ -39,7 +39,12 @@ class TestCustomTemplateOut(unittest.TestCase):
                 name = '',
                 description = '',
                 base_template_id = '',
-                config = { },
+                config = invoicepdfs.models.template_config.TemplateConfig(
+                    primary_color = '#2ECB02', 
+                    accent_color = '#2ECB02', 
+                    font_family = '', 
+                    header_text = '', 
+                    footer_text = '', ),
                 status = '',
                 is_default = True,
                 created_at = '',

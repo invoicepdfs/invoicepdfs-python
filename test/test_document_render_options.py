@@ -36,6 +36,7 @@ class TestDocumentRenderOptions(unittest.TestCase):
         if include_optional:
             return DocumentRenderOptions(
                 template_id = 'tpl_modern',
+                template_version = 1,
                 page_size = 'LETTER',
                 expires_in = 56,
                 format = 'pdf'

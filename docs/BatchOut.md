@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **status** | **str** |  | 
 **operation** | **str** |  | 
 **template_id** | **str** |  | 
+**template_version** | **int** |  | [optional] 
 **total_items** | **int** |  | 
 **completed_items** | **int** |  | 
 **failed_items** | **int** |  | 

@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 **id** | **str** |  | 
 **status** | **str** |  | 
 **document_type** | **str** |  | 
+**template_id** | **str** |  | 
+**template_version** | **int** |  | [optional] 
 **format** | **str** |  | 
 **download_url** | **str** |  | 
 **expires_at** | **str** |  | 

@@ -28,8 +28,7 @@ class TemplateVersionCreateRequest(BaseModel):
     """ # noqa: E501
     label: Optional[StrictStr] = None
     changelog: Optional[StrictStr] = None
-    config: Optional[Dict[str, Any]] = None
-    __properties: ClassVar[List[str]] = ["label", "changelog", "config"]
+    __properties: ClassVar[List[str]] = ["label", "changelog"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -93,8 +92,7 @@ class TemplateVersionCreateRequest(BaseModel):
 
         _obj = cls.model_validate({
             "label": obj.get("label"),
-            "changelog": obj.get("changelog"),
-            "config": obj.get("config")
+            "changelog": obj.get("changelog")
         })
         return _obj
 

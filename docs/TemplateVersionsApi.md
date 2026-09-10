@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**create_template_version**](TemplateVersionsApi.md#create_template_version) | **POST** /api/v1/templates/{template_id}/versions | Create Template Version
 [**get_template_version**](TemplateVersionsApi.md#get_template_version) | **GET** /api/v1/templates/{template_id}/versions/{version} | Get Template Version
 [**list_template_versions**](TemplateVersionsApi.md#list_template_versions) | **GET** /api/v1/templates/{template_id}/versions | List Template Versions
+[**restore_template_version**](TemplateVersionsApi.md#restore_template_version) | **POST** /api/v1/templates/{template_id}/versions/{version}/restore | Restore Template Version
 
 
 # **create_template_version**
@@ -226,6 +227,87 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TemplateVersionsListResponse**](TemplateVersionsListResponse.md)
+
+### Authorization
+
+[HTTPBearer](../README.md#HTTPBearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**422** | Validation Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **restore_template_version**
+> TemplateVersionResponse restore_template_version(template_id, version)
+
+Restore Template Version
+
+Put a template back to the config a version recorded.  The template moves; the version does not. Restoring v1 over v3's config does not delete v3 or renumber anything — the next snapshot is v4, and the history stays a record of what happened rather than a record of the last decision. Take a version first if the config being replaced is worth keeping.
+
+### Example
+
+* Bearer Authentication (HTTPBearer):
+
+```python
+import invoicepdfs
+from invoicepdfs.models.template_version_response import TemplateVersionResponse
+from invoicepdfs.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = invoicepdfs.Configuration(
+    host = "http://localhost"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: HTTPBearer
+configuration = invoicepdfs.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with invoicepdfs.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = invoicepdfs.TemplateVersionsApi(api_client)
+    template_id = 'template_id_example' # str | 
+    version = 56 # int | 
+
+    try:
+        # Restore Template Version
+        api_response = api_instance.restore_template_version(template_id, version)
+        print("The response of TemplateVersionsApi->restore_template_version:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TemplateVersionsApi->restore_template_version: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **template_id** | **str**|  | 
+ **version** | **int**|  | 
+
+### Return type
+
+[**TemplateVersionResponse**](TemplateVersionResponse.md)
 
 ### Authorization
 

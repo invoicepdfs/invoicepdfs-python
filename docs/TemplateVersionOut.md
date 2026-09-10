@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **version** | **int** |  | 
 **label** | **str** |  | [optional] 
 **changelog** | **str** |  | [optional] 
-**config** | **Dict[str, object]** |  | 
+**config** | [**TemplateConfig**](TemplateConfig.md) |  | 
 **created_at** | **str** |  | 
 
 ## Example

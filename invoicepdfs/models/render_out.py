@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr, field_validator
-from typing import Any, ClassVar, Dict, List
+from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr, field_validator
+from typing import Any, ClassVar, Dict, List, Optional
 from invoicepdfs.models.calculation_breakdown import CalculationBreakdown
 from typing import Optional, Set
 from typing_extensions import Self
@@ -30,12 +30,14 @@ class RenderOut(BaseModel):
     id: StrictStr
     status: StrictStr
     document_type: StrictStr
+    template_id: StrictStr
+    template_version: Optional[StrictInt] = None
     format: StrictStr
     download_url: StrictStr
     expires_at: StrictStr
     calculation: CalculationBreakdown
     created_at: StrictStr
-    __properties: ClassVar[List[str]] = ["id", "status", "document_type", "format", "download_url", "expires_at", "calculation", "created_at"]
+    __properties: ClassVar[List[str]] = ["id", "status", "document_type", "template_id", "template_version", "format", "download_url", "expires_at", "calculation", "created_at"]
 
     @field_validator('status')
     def status_validate_enum(cls, value):
@@ -100,6 +102,11 @@ class RenderOut(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of calculation
         if self.calculation:
             _dict['calculation'] = self.calculation.to_dict()
+        # set to None if template_version (nullable) is None
+        # and model_fields_set contains the field
+        if self.template_version is None and "template_version" in self.model_fields_set:
+            _dict['template_version'] = None
+
         return _dict
 
     @classmethod
@@ -115,6 +122,8 @@ class RenderOut(BaseModel):
             "id": obj.get("id"),
             "status": obj.get("status"),
             "document_type": obj.get("document_type"),
+            "template_id": obj.get("template_id"),
+            "template_version": obj.get("template_version"),
             "format": obj.get("format"),
             "download_url": obj.get("download_url"),
             "expires_at": obj.get("expires_at"),

@@ -19,6 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
+from typing_extensions import Annotated
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,10 +28,11 @@ class DocumentRenderOptions(BaseModel):
     Render options for an already-stored document (``POST /documents/{id}/renders``).  Distinct from ``app.schemas.v1.DocumentRenderRequest``, which carries a full inline document for the stateless ``POST /documents/render``. Two classes sharing one name made FastAPI fall back to module-qualified schema names in the spec (``app__documents__schemas__DocumentRenderRequest``), which the SDK generators turned into ``AppDocumentsSchemasDocumentRenderRequest``.
     """ # noqa: E501
     template_id: Optional[StrictStr] = 'tpl_modern'
+    template_version: Optional[Annotated[int, Field(strict=True, ge=1)]] = None
     page_size: Optional[StrictStr] = 'LETTER'
     expires_in: Optional[StrictInt] = 3600
     format: Optional[StrictStr] = Field(default='pdf', description="`facturx_pdf` embeds the EN 16931 CII XML in a PDF/A-3, which is what a French or German counterparty means by Factur-X or ZUGFeRD.")
-    __properties: ClassVar[List[str]] = ["template_id", "page_size", "expires_in", "format"]
+    __properties: ClassVar[List[str]] = ["template_id", "template_version", "page_size", "expires_in", "format"]
 
     @field_validator('format')
     def format_validate_enum(cls, value):
@@ -81,6 +83,11 @@ class DocumentRenderOptions(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if template_version (nullable) is None
+        # and model_fields_set contains the field
+        if self.template_version is None and "template_version" in self.model_fields_set:
+            _dict['template_version'] = None
+
         return _dict
 
     @classmethod
@@ -94,6 +101,7 @@ class DocumentRenderOptions(BaseModel):
 
         _obj = cls.model_validate({
             "template_id": obj.get("template_id") if obj.get("template_id") is not None else 'tpl_modern',
+            "template_version": obj.get("template_version"),
             "page_size": obj.get("page_size") if obj.get("page_size") is not None else 'LETTER',
             "expires_in": obj.get("expires_in") if obj.get("expires_in") is not None else 3600,
             "format": obj.get("format") if obj.get("format") is not None else 'pdf'

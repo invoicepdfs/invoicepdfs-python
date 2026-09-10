@@ -43,6 +43,7 @@ class TestBatchCreateRequest(unittest.TestCase):
                         data = { }, )
                     ],
                 template_id = 'tpl_modern',
+                template_version = 1,
                 output = invoicepdfs.models.batch_output_options.BatchOutputOptions(
                     format = 'pdf', 
                     combine = True, 

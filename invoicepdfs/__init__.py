@@ -236,6 +236,7 @@ from invoicepdfs.models.tax_rate_out import TaxRateOut
 from invoicepdfs.models.tax_rate_patch_request import TaxRatePatchRequest
 from invoicepdfs.models.tax_rate_response import TaxRateResponse
 from invoicepdfs.models.tax_rates_list_response import TaxRatesListResponse
+from invoicepdfs.models.template_config import TemplateConfig
 from invoicepdfs.models.template_create_request import TemplateCreateRequest
 from invoicepdfs.models.template_detail import TemplateDetail
 from invoicepdfs.models.template_detail_response import TemplateDetailResponse

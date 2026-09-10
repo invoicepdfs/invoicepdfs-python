@@ -19,6 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from invoicepdfs.models.template_config import TemplateConfig
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -31,7 +32,7 @@ class TemplateVersionOut(BaseModel):
     version: StrictInt
     label: Optional[StrictStr] = None
     changelog: Optional[StrictStr] = None
-    config: Dict[str, Any]
+    config: TemplateConfig
     created_at: StrictStr
     __properties: ClassVar[List[str]] = ["id", "template_id", "version", "label", "changelog", "config", "created_at"]
 
@@ -74,6 +75,9 @@ class TemplateVersionOut(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of config
+        if self.config:
+            _dict['config'] = self.config.to_dict()
         # set to None if label (nullable) is None
         # and model_fields_set contains the field
         if self.label is None and "label" in self.model_fields_set:
@@ -101,7 +105,7 @@ class TemplateVersionOut(BaseModel):
             "version": obj.get("version"),
             "label": obj.get("label"),
             "changelog": obj.get("changelog"),
-            "config": obj.get("config"),
+            "config": TemplateConfig.from_dict(obj["config"]) if obj.get("config") is not None else None,
             "created_at": obj.get("created_at")
         })
         return _obj

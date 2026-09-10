@@ -19,6 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from invoicepdfs.models.template_config import TemplateConfig
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -30,7 +31,7 @@ class CustomTemplateOut(BaseModel):
     name: StrictStr
     description: Optional[StrictStr] = None
     base_template_id: StrictStr
-    config: Optional[Dict[str, Any]] = None
+    config: Optional[TemplateConfig] = None
     status: StrictStr
     is_default: Optional[StrictBool] = False
     created_at: StrictStr
@@ -77,6 +78,9 @@ class CustomTemplateOut(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of config
+        if self.config:
+            _dict['config'] = self.config.to_dict()
         # set to None if description (nullable) is None
         # and model_fields_set contains the field
         if self.description is None and "description" in self.model_fields_set:
@@ -103,7 +107,7 @@ class CustomTemplateOut(BaseModel):
             "name": obj.get("name"),
             "description": obj.get("description"),
             "base_template_id": obj.get("base_template_id"),
-            "config": obj.get("config"),
+            "config": TemplateConfig.from_dict(obj["config"]) if obj.get("config") is not None else None,
             "status": obj.get("status"),
             "is_default": obj.get("is_default") if obj.get("is_default") is not None else False,
             "created_at": obj.get("created_at"),

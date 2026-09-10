@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **name** | **str** |  | 
 **description** | **str** |  | [optional] 
 **base_template_id** | **str** |  | 
-**config** | **Dict[str, object]** |  | [optional] 
+**config** | [**TemplateConfig**](TemplateConfig.md) |  | [optional] 
 **status** | **str** |  | 
 **is_default** | **bool** |  | [optional] [default to False]
 **created_at** | **str** |  | 

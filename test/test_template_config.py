@@ -14,10 +14,10 @@
 
 import unittest
 
-from invoicepdfs.models.template_version_create_request import TemplateVersionCreateRequest
+from invoicepdfs.models.template_config import TemplateConfig
 
-class TestTemplateVersionCreateRequest(unittest.TestCase):
-    """TemplateVersionCreateRequest unit test stubs"""
+class TestTemplateConfig(unittest.TestCase):
+    """TemplateConfig unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,26 +25,29 @@ class TestTemplateVersionCreateRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> TemplateVersionCreateRequest:
-        """Test TemplateVersionCreateRequest
+    def make_instance(self, include_optional) -> TemplateConfig:
+        """Test TemplateConfig
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `TemplateVersionCreateRequest`
+        # uncomment below to create an instance of `TemplateConfig`
         """
-        model = TemplateVersionCreateRequest()
+        model = TemplateConfig()
         if include_optional:
-            return TemplateVersionCreateRequest(
-                label = '',
-                changelog = ''
+            return TemplateConfig(
+                primary_color = '#2ECB02',
+                accent_color = '#2ECB02',
+                font_family = '',
+                header_text = '',
+                footer_text = ''
             )
         else:
-            return TemplateVersionCreateRequest(
+            return TemplateConfig(
         )
         """
 
-    def testTemplateVersionCreateRequest(self):
-        """Test TemplateVersionCreateRequest"""
+    def testTemplateConfig(self):
+        """Test TemplateConfig"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **operation** | **str** |  | [optional] [default to 'render']
 **items** | [**List[BatchItemInput]**](BatchItemInput.md) |  | 
 **template_id** | **str** |  | [optional] [default to 'tpl_modern']
+**template_version** | **int** |  | [optional] 
 **output** | [**BatchOutputOptions**](BatchOutputOptions.md) |  | [optional] 
 
 ## Example

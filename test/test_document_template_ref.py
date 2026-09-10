@@ -35,7 +35,8 @@ class TestDocumentTemplateRef(unittest.TestCase):
         model = DocumentTemplateRef()
         if include_optional:
             return DocumentTemplateRef(
-                id = ''
+                id = '',
+                version = 1
             )
         else:
             return DocumentTemplateRef(

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **name** | **str** |  | 
 **description** | **str** |  | [optional] 
 **base_template_id** | **str** |  | [optional] [default to 'tpl_modern']
-**config** | **Dict[str, object]** |  | [optional] 
+**config** | [**TemplateConfig**](TemplateConfig.md) |  | [optional] 
 
 ## Example
 

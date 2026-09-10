@@ -629,7 +629,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **preview_template**
-> RenderResponse preview_template(template_id, document_render_request, idempotency_key=idempotency_key)
+> RenderResponse preview_template(template_id, document_render_request, version=version, idempotency_key=idempotency_key)
 
 Preview Template
 
@@ -666,11 +666,12 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     api_instance = invoicepdfs.TemplatesApi(api_client)
     template_id = 'template_id_example' # str | 
     document_render_request = invoicepdfs.DocumentRenderRequest() # DocumentRenderRequest | 
+    version = 56 # int | Preview the config this version recorded rather than the template's current config. Only a custom (`ctpl_`) template has versions. (optional)
     idempotency_key = 'idempotency_key_example' # str |  (optional)
 
     try:
         # Preview Template
-        api_response = api_instance.preview_template(template_id, document_render_request, idempotency_key=idempotency_key)
+        api_response = api_instance.preview_template(template_id, document_render_request, version=version, idempotency_key=idempotency_key)
         print("The response of TemplatesApi->preview_template:\n")
         pprint(api_response)
     except Exception as e:
@@ -686,6 +687,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **template_id** | **str**|  | 
  **document_render_request** | [**DocumentRenderRequest**](DocumentRenderRequest.md)|  | 
+ **version** | **int**| Preview the config this version recorded rather than the template&#39;s current config. Only a custom (&#x60;ctpl_&#x60;) template has versions. | [optional] 
  **idempotency_key** | **str**|  | [optional] 
 
 ### Return type

@@ -20,6 +20,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
+from invoicepdfs.models.template_config import TemplateConfig
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,7 +30,7 @@ class TemplatePatchRequest(BaseModel):
     """ # noqa: E501
     name: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=256)]] = None
     description: Optional[StrictStr] = None
-    config: Optional[Dict[str, Any]] = None
+    config: Optional[TemplateConfig] = None
     __properties: ClassVar[List[str]] = ["name", "description", "config"]
 
     model_config = ConfigDict(
@@ -71,6 +72,9 @@ class TemplatePatchRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of config
+        if self.config:
+            _dict['config'] = self.config.to_dict()
         # set to None if description (nullable) is None
         # and model_fields_set contains the field
         if self.description is None and "description" in self.model_fields_set:
@@ -90,7 +94,7 @@ class TemplatePatchRequest(BaseModel):
         _obj = cls.model_validate({
             "name": obj.get("name"),
             "description": obj.get("description"),
-            "config": obj.get("config")
+            "config": TemplateConfig.from_dict(obj["config"]) if obj.get("config") is not None else None
         })
         return _obj
 

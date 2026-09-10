@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **label** | **str** |  | [optional] 
 **changelog** | **str** |  | [optional] 
-**config** | **Dict[str, object]** |  | [optional] 
 
 ## Example
 

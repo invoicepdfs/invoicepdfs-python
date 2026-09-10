@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
-**config** | **Dict[str, object]** |  | [optional] 
+**config** | [**TemplateConfig**](TemplateConfig.md) |  | [optional] 
 
 ## Example
 

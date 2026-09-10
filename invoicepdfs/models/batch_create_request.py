@@ -32,8 +32,9 @@ class BatchCreateRequest(BaseModel):
     operation: Optional[StrictStr] = 'render'
     items: Annotated[List[BatchItemInput], Field(min_length=1, max_length=500)]
     template_id: Optional[StrictStr] = 'tpl_modern'
+    template_version: Optional[Annotated[int, Field(strict=True, ge=1)]] = None
     output: Optional[BatchOutputOptions] = None
-    __properties: ClassVar[List[str]] = ["operation", "items", "template_id", "output"]
+    __properties: ClassVar[List[str]] = ["operation", "items", "template_id", "template_version", "output"]
 
     @field_validator('operation')
     def operation_validate_enum(cls, value):
@@ -94,6 +95,11 @@ class BatchCreateRequest(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of output
         if self.output:
             _dict['output'] = self.output.to_dict()
+        # set to None if template_version (nullable) is None
+        # and model_fields_set contains the field
+        if self.template_version is None and "template_version" in self.model_fields_set:
+            _dict['template_version'] = None
+
         return _dict
 
     @classmethod
@@ -109,6 +115,7 @@ class BatchCreateRequest(BaseModel):
             "operation": obj.get("operation") if obj.get("operation") is not None else 'render',
             "items": [BatchItemInput.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
             "template_id": obj.get("template_id") if obj.get("template_id") is not None else 'tpl_modern',
+            "template_version": obj.get("template_version"),
             "output": BatchOutputOptions.from_dict(obj["output"]) if obj.get("output") is not None else None
         })
         return _obj

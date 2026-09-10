@@ -17,8 +17,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
+from typing_extensions import Annotated
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,7 +28,8 @@ class DocumentTemplateRef(BaseModel):
     DocumentTemplateRef
     """ # noqa: E501
     id: StrictStr
-    __properties: ClassVar[List[str]] = ["id"]
+    version: Optional[Annotated[int, Field(strict=True, ge=1)]] = None
+    __properties: ClassVar[List[str]] = ["id", "version"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -68,6 +70,11 @@ class DocumentTemplateRef(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if version (nullable) is None
+        # and model_fields_set contains the field
+        if self.version is None and "version" in self.model_fields_set:
+            _dict['version'] = None
+
         return _dict
 
     @classmethod
@@ -80,7 +87,8 @@ class DocumentTemplateRef(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id")
+            "id": obj.get("id"),
+            "version": obj.get("version")
         })
         return _obj
 

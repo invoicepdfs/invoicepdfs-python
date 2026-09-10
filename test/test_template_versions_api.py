@@ -47,6 +47,13 @@ class TestTemplateVersionsApi(unittest.TestCase):
         """
         pass
 
+    def test_restore_template_version(self) -> None:
+        """Test case for restore_template_version
+
+        Restore Template Version
+        """
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()
