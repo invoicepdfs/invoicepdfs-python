@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **customer_id** | **str** |  | 
 **ship_to** | [**PostalAddress**](PostalAddress.md) |  | [optional] 
 **buyer_reference** | **str** |  | [optional] 
+**tax_scheme** | **str** |  | [optional] 
 **delivery_date** | **date** |  | [optional] 
 **preceding_invoice_number** | **str** |  | [optional] 
 **line_items** | [**List[InvoiceLineItemInput]**](InvoiceLineItemInput.md) |  | 

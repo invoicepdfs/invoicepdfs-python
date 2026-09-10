@@ -39,6 +39,7 @@ class TestDocumentComplianceResponse(unittest.TestCase):
                     profile = 'peppol_bis_billing_3', 
                     ruleset_version = 'EN16931-UBL 1.3.16 + Peppol BIS Billing 3.0.20', 
                     valid = True, 
+                    in_scope = True, 
                     fully_checked = True, 
                     rulesets = [
                         invoicepdfs.models.compliance_ruleset_out.ComplianceRulesetOut(
@@ -63,6 +64,7 @@ class TestDocumentComplianceResponse(unittest.TestCase):
                     profile = 'peppol_bis_billing_3', 
                     ruleset_version = 'EN16931-UBL 1.3.16 + Peppol BIS Billing 3.0.20', 
                     valid = True, 
+                    in_scope = True, 
                     fully_checked = True, 
                     rulesets = [
                         invoicepdfs.models.compliance_ruleset_out.ComplianceRulesetOut(

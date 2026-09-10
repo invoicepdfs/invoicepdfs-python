@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **seller** | [**DocumentPartyInput**](DocumentPartyInput.md) |  | 
 **buyer** | [**DocumentPartyInput**](DocumentPartyInput.md) |  | 
 **ship_to** | [**DocumentPartyInput**](DocumentPartyInput.md) |  | [optional] 
+**tax_scheme** | **str** |  | [optional] 
 **delivery_date** | **date** |  | [optional] 
 **buyer_reference** | **str** |  | [optional] 
 **preceding_invoice_number** | **str** |  | [optional] 

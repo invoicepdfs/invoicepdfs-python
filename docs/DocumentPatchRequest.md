@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **reason** | **str** |  | [optional] 
 **ship_to** | [**PostalAddress**](PostalAddress.md) |  | [optional] 
 **buyer_reference** | **str** |  | [optional] 
+**tax_scheme** | **str** |  | [optional] 
 **delivery_date** | **date** |  | [optional] 
 **line_items** | [**List[StandardLineItemInput]**](StandardLineItemInput.md) |  | [optional] 
 **discounts** | [**List[LineItemDiscountInput]**](LineItemDiscountInput.md) |  | [optional] 

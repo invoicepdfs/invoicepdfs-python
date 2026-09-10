@@ -53,6 +53,7 @@ class TestDocumentPatchRequest(unittest.TestCase):
                     postal_code = '', 
                     country = '', ),
                 buyer_reference = '',
+                tax_scheme = '',
                 delivery_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(),
                 line_items = [
                     invoicepdfs.models.standard_line_item_input.StandardLineItemInput(

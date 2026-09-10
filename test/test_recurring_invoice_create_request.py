@@ -61,6 +61,7 @@ class TestRecurringInvoiceCreateRequest(unittest.TestCase):
                         postal_code = '', 
                         country = '', ), 
                     buyer_reference = '', 
+                    tax_scheme = '', 
                     delivery_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
                     preceding_invoice_number = '', 
                     line_items = [
@@ -156,6 +157,7 @@ class TestRecurringInvoiceCreateRequest(unittest.TestCase):
                         postal_code = '', 
                         country = '', ), 
                     buyer_reference = '', 
+                    tax_scheme = '', 
                     delivery_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
                     preceding_invoice_number = '', 
                     line_items = [

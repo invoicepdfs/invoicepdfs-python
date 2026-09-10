@@ -49,6 +49,7 @@ class DocumentPatchRequest(BaseModel):
     reason: Optional[StrictStr] = None
     ship_to: Optional[PostalAddress] = None
     buyer_reference: Optional[StrictStr] = None
+    tax_scheme: Optional[StrictStr] = None
     delivery_date: Optional[date] = None
     line_items: Optional[List[StandardLineItemInput]] = None
     discounts: Optional[List[LineItemDiscountInput]] = None
@@ -58,7 +59,7 @@ class DocumentPatchRequest(BaseModel):
     custom_fields: Optional[List[InvoiceCustomFieldInput]] = None
     payment: Optional[InvoicePaymentInput] = None
     branding: Optional[InvoiceBrandingInput] = None
-    __properties: ClassVar[List[str]] = ["number", "document_type", "issue_date", "due_date", "currency", "locale", "business_profile_id", "customer_id", "source_document_id", "reason", "ship_to", "buyer_reference", "delivery_date", "line_items", "discounts", "shipping", "notes", "terms", "custom_fields", "payment", "branding"]
+    __properties: ClassVar[List[str]] = ["number", "document_type", "issue_date", "due_date", "currency", "locale", "business_profile_id", "customer_id", "source_document_id", "reason", "ship_to", "buyer_reference", "tax_scheme", "delivery_date", "line_items", "discounts", "shipping", "notes", "terms", "custom_fields", "payment", "branding"]
 
     @field_validator('document_type')
     def document_type_validate_enum(cls, value):
@@ -216,6 +217,11 @@ class DocumentPatchRequest(BaseModel):
         if self.buyer_reference is None and "buyer_reference" in self.model_fields_set:
             _dict['buyer_reference'] = None
 
+        # set to None if tax_scheme (nullable) is None
+        # and model_fields_set contains the field
+        if self.tax_scheme is None and "tax_scheme" in self.model_fields_set:
+            _dict['tax_scheme'] = None
+
         # set to None if delivery_date (nullable) is None
         # and model_fields_set contains the field
         if self.delivery_date is None and "delivery_date" in self.model_fields_set:
@@ -285,6 +291,7 @@ class DocumentPatchRequest(BaseModel):
             "reason": obj.get("reason"),
             "ship_to": PostalAddress.from_dict(obj["ship_to"]) if obj.get("ship_to") is not None else None,
             "buyer_reference": obj.get("buyer_reference"),
+            "tax_scheme": obj.get("tax_scheme"),
             "delivery_date": obj.get("delivery_date"),
             "line_items": [StandardLineItemInput.from_dict(_item) for _item in obj["line_items"]] if obj.get("line_items") is not None else None,
             "discounts": [LineItemDiscountInput.from_dict(_item) for _item in obj["discounts"]] if obj.get("discounts") is not None else None,

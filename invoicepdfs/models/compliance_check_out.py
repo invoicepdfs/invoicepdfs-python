@@ -31,10 +31,11 @@ class ComplianceCheckOut(BaseModel):
     profile: StrictStr
     ruleset_version: StrictStr = Field(description="The version these rules came from. Worth recording alongside any document you file — rulesets revise, and 'which rules did this pass?' is what an audit asks years later. `rulesets` breaks the same answer down per ruleset.")
     valid: StrictBool = Field(description="Nothing fatal was found. Read it with `fully_checked` — on its own it says what was checked came back clean, not that everything was checked.")
+    in_scope: Optional[StrictBool] = Field(default=True, description="Whether any of these rulesets is likely to apply to this document at all. False when neither party is in a country that uses one — these are European e-invoicing rulesets, and for a wholly domestic US invoice, say, `valid` is answering a question nobody asked. Advisory: it never changes the verdict or withholds the check, because an open network means a US seller invoicing a Dutch buyer genuinely needs it.")
     fully_checked: Optional[StrictBool] = Field(default=True, description="Every ruleset that applies to this profile ran. False means at least one could not, and `rulesets` says which and why.")
     rulesets: Optional[List[ComplianceRulesetOut]] = Field(default=None, description="Every ruleset the document was held to, including the mandatory-field check, at the version that ran.")
     violations: Optional[List[ComplianceViolationOut]] = Field(default=None, description="Every violation found, not the first — fixing one field per round trip is the experience this avoids. Ordered mandatory-field findings first, since those name a field you can go and change.")
-    __properties: ClassVar[List[str]] = ["profile", "ruleset_version", "valid", "fully_checked", "rulesets", "violations"]
+    __properties: ClassVar[List[str]] = ["profile", "ruleset_version", "valid", "in_scope", "fully_checked", "rulesets", "violations"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -104,6 +105,7 @@ class ComplianceCheckOut(BaseModel):
             "profile": obj.get("profile"),
             "ruleset_version": obj.get("ruleset_version"),
             "valid": obj.get("valid"),
+            "in_scope": obj.get("in_scope") if obj.get("in_scope") is not None else True,
             "fully_checked": obj.get("fully_checked") if obj.get("fully_checked") is not None else True,
             "rulesets": [ComplianceRulesetOut.from_dict(_item) for _item in obj["rulesets"]] if obj.get("rulesets") is not None else None,
             "violations": [ComplianceViolationOut.from_dict(_item) for _item in obj["violations"]] if obj.get("violations") is not None else None
