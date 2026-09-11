@@ -17,40 +17,18 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
-from typing import Any, ClassVar, Dict, List, Optional
-from typing_extensions import Annotated
+from pydantic import BaseModel, ConfigDict, StrictStr
+from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
 
-class DocumentOutputOptions(BaseModel):
+class CodeOut(BaseModel):
     """
-    DocumentOutputOptions
+    CodeOut
     """ # noqa: E501
-    format: Optional[StrictStr] = 'pdf'
-    delivery: Optional[StrictStr] = 'url'
-    expires_in: Optional[Annotated[int, Field(le=604800, strict=True, ge=60)]] = Field(default=3600, description="How long the render stays downloadable, in seconds (1 minute to 7 days). It is also the lifetime of the signature in `download_url`, which is why it is bounded: an unbounded value meant an unbounded grant. A value below the floor used to be accepted and produced a render that had already expired.")
-    __properties: ClassVar[List[str]] = ["format", "delivery", "expires_in"]
-
-    @field_validator('format')
-    def format_validate_enum(cls, value):
-        """Validates the enum"""
-        if value is None:
-            return value
-
-        if value not in set(['pdf', 'facturx_pdf']):
-            raise ValueError("must be one of enum values ('pdf', 'facturx_pdf')")
-        return value
-
-    @field_validator('delivery')
-    def delivery_validate_enum(cls, value):
-        """Validates the enum"""
-        if value is None:
-            return value
-
-        if value not in set(['url', 'binary']):
-            raise ValueError("must be one of enum values ('url', 'binary')")
-        return value
+    code: StrictStr
+    label: StrictStr
+    __properties: ClassVar[List[str]] = ["code", "label"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -70,7 +48,7 @@ class DocumentOutputOptions(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of DocumentOutputOptions from a JSON string"""
+        """Create an instance of CodeOut from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -95,7 +73,7 @@ class DocumentOutputOptions(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of DocumentOutputOptions from a dict"""
+        """Create an instance of CodeOut from a dict"""
         if obj is None:
             return None
 
@@ -103,9 +81,8 @@ class DocumentOutputOptions(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "format": obj.get("format") if obj.get("format") is not None else 'pdf',
-            "delivery": obj.get("delivery") if obj.get("delivery") is not None else 'url',
-            "expires_in": obj.get("expires_in") if obj.get("expires_in") is not None else 3600
+            "code": obj.get("code"),
+            "label": obj.get("label")
         })
         return _obj
 

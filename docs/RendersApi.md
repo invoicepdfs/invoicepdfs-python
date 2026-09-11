@@ -9,9 +9,11 @@ Method | HTTP request | Description
 
 
 # **download_render**
-> bytearray download_render(render_id)
+> bytearray download_render(render_id, token=token)
 
 Download Render
+
+Fetch the PDF, by signature or by API key.  Two ways in, and the signature is checked *first* — before the row is looked up — so a forged token cannot be used to tell a real render id from an invented one. It also means the token path costs no auth work at all, which matters because this is the one endpoint a browser hits directly.
 
 ### Example
 
@@ -43,10 +45,11 @@ with invoicepdfs.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = invoicepdfs.RendersApi(api_client)
     render_id = 'render_id_example' # str | 
+    token = 'token_example' # str | The signature from this render's `download_url`. Present it and no API key is needed — that is what makes the URL a link. Omit it and the request authenticates normally. (optional)
 
     try:
         # Download Render
-        api_response = api_instance.download_render(render_id)
+        api_response = api_instance.download_render(render_id, token=token)
         print("The response of RendersApi->download_render:\n")
         pprint(api_response)
     except Exception as e:
@@ -61,6 +64,7 @@ with invoicepdfs.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **render_id** | **str**|  | 
+ **token** | **str**| The signature from this render&#39;s &#x60;download_url&#x60;. Present it and no API key is needed — that is what makes the URL a link. Omit it and the request authenticates normally. | [optional] 
 
 ### Return type
 

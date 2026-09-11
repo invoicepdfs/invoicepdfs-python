@@ -70,6 +70,8 @@ docs/BusinessProfileResponse.md
 docs/BusinessProfilesApi.md
 docs/BusinessProfilesListResponse.md
 docs/CalculationBreakdown.md
+docs/CodeListResponse.md
+docs/CodeOut.md
 docs/ComplianceCheckOut.md
 docs/ComplianceRulesetOut.md
 docs/ComplianceViolationOut.md
@@ -348,6 +350,8 @@ invoicepdfs/models/business_profile_patch.py
 invoicepdfs/models/business_profile_response.py
 invoicepdfs/models/business_profiles_list_response.py
 invoicepdfs/models/calculation_breakdown.py
+invoicepdfs/models/code_list_response.py
+invoicepdfs/models/code_out.py
 invoicepdfs/models/compliance_check_out.py
 invoicepdfs/models/compliance_ruleset_out.py
 invoicepdfs/models/compliance_violation_out.py
@@ -584,6 +588,8 @@ test/test_business_profile_response.py
 test/test_business_profiles_api.py
 test/test_business_profiles_list_response.py
 test/test_calculation_breakdown.py
+test/test_code_list_response.py
+test/test_code_out.py
 test/test_compliance_check_out.py
 test/test_compliance_ruleset_out.py
 test/test_compliance_violation_out.py

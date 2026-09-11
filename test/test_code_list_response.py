@@ -14,10 +14,10 @@
 
 import unittest
 
-from invoicepdfs.models.document_output_options import DocumentOutputOptions
+from invoicepdfs.models.code_list_response import CodeListResponse
 
-class TestDocumentOutputOptions(unittest.TestCase):
-    """DocumentOutputOptions unit test stubs"""
+class TestCodeListResponse(unittest.TestCase):
+    """CodeListResponse unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,27 +25,38 @@ class TestDocumentOutputOptions(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> DocumentOutputOptions:
-        """Test DocumentOutputOptions
+    def make_instance(self, include_optional) -> CodeListResponse:
+        """Test CodeListResponse
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `DocumentOutputOptions`
+        # uncomment below to create an instance of `CodeListResponse`
         """
-        model = DocumentOutputOptions()
+        model = CodeListResponse()
         if include_optional:
-            return DocumentOutputOptions(
-                format = 'pdf',
-                delivery = 'url',
-                expires_in = 60
+            return CodeListResponse(
+                data = [
+                    invoicepdfs.models.code_out.CodeOut(
+                        code = 'HUR', 
+                        label = 'Hour', )
+                    ],
+                standard = 'UN/ECE Recommendation 20',
+                exhaustive = True
             )
         else:
-            return DocumentOutputOptions(
+            return CodeListResponse(
+                data = [
+                    invoicepdfs.models.code_out.CodeOut(
+                        code = 'HUR', 
+                        label = 'Hour', )
+                    ],
+                standard = 'UN/ECE Recommendation 20',
+                exhaustive = True,
         )
         """
 
-    def testDocumentOutputOptions(self):
-        """Test DocumentOutputOptions"""
+    def testCodeListResponse(self):
+        """Test CodeListResponse"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

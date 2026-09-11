@@ -137,7 +137,7 @@ class TestDocumentRenderRequest(unittest.TestCase):
                 output = invoicepdfs.models.document_output_options.DocumentOutputOptions(
                     format = 'pdf', 
                     delivery = 'url', 
-                    expires_in = 56, )
+                    expires_in = 60, )
             )
         else:
             return DocumentRenderRequest(

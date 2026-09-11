@@ -16,8 +16,9 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import StrictBytes, StrictStr
-from typing import Union
+from pydantic import Field, StrictBytes, StrictStr
+from typing import Optional, Union
+from typing_extensions import Annotated
 from invoicepdfs.models.render_response import RenderResponse
 
 from invoicepdfs.api_client import ApiClient, RequestSerialized
@@ -42,6 +43,7 @@ class RendersApi:
     def download_render(
         self,
         render_id: StrictStr,
+        token: Annotated[Optional[StrictStr], Field(description="The signature from this render's `download_url`. Present it and no API key is needed — that is what makes the URL a link. Omit it and the request authenticates normally.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -57,9 +59,12 @@ class RendersApi:
     ) -> bytearray:
         """Download Render
 
+        Fetch the PDF, by signature or by API key.  Two ways in, and the signature is checked *first* — before the row is looked up — so a forged token cannot be used to tell a real render id from an invented one. It also means the token path costs no auth work at all, which matters because this is the one endpoint a browser hits directly.
 
         :param render_id: (required)
         :type render_id: str
+        :param token: The signature from this render's `download_url`. Present it and no API key is needed — that is what makes the URL a link. Omit it and the request authenticates normally.
+        :type token: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -84,6 +89,7 @@ class RendersApi:
 
         _param = self._download_render_serialize(
             render_id=render_id,
+            token=token,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -109,6 +115,7 @@ class RendersApi:
     def download_render_with_http_info(
         self,
         render_id: StrictStr,
+        token: Annotated[Optional[StrictStr], Field(description="The signature from this render's `download_url`. Present it and no API key is needed — that is what makes the URL a link. Omit it and the request authenticates normally.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -124,9 +131,12 @@ class RendersApi:
     ) -> ApiResponse[bytearray]:
         """Download Render
 
+        Fetch the PDF, by signature or by API key.  Two ways in, and the signature is checked *first* — before the row is looked up — so a forged token cannot be used to tell a real render id from an invented one. It also means the token path costs no auth work at all, which matters because this is the one endpoint a browser hits directly.
 
         :param render_id: (required)
         :type render_id: str
+        :param token: The signature from this render's `download_url`. Present it and no API key is needed — that is what makes the URL a link. Omit it and the request authenticates normally.
+        :type token: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -151,6 +161,7 @@ class RendersApi:
 
         _param = self._download_render_serialize(
             render_id=render_id,
+            token=token,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -176,6 +187,7 @@ class RendersApi:
     def download_render_without_preload_content(
         self,
         render_id: StrictStr,
+        token: Annotated[Optional[StrictStr], Field(description="The signature from this render's `download_url`. Present it and no API key is needed — that is what makes the URL a link. Omit it and the request authenticates normally.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -191,9 +203,12 @@ class RendersApi:
     ) -> RESTResponseType:
         """Download Render
 
+        Fetch the PDF, by signature or by API key.  Two ways in, and the signature is checked *first* — before the row is looked up — so a forged token cannot be used to tell a real render id from an invented one. It also means the token path costs no auth work at all, which matters because this is the one endpoint a browser hits directly.
 
         :param render_id: (required)
         :type render_id: str
+        :param token: The signature from this render's `download_url`. Present it and no API key is needed — that is what makes the URL a link. Omit it and the request authenticates normally.
+        :type token: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -218,6 +233,7 @@ class RendersApi:
 
         _param = self._download_render_serialize(
             render_id=render_id,
+            token=token,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -238,6 +254,7 @@ class RendersApi:
     def _download_render_serialize(
         self,
         render_id,
+        token,
         _request_auth,
         _content_type,
         _headers,
@@ -260,6 +277,10 @@ class RendersApi:
         if render_id is not None:
             _path_params['render_id'] = render_id
         # process the query parameters
+        if token is not None:
+            
+            _query_params.append(('token', token))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter

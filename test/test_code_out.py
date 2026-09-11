@@ -14,10 +14,10 @@
 
 import unittest
 
-from invoicepdfs.models.document_output_options import DocumentOutputOptions
+from invoicepdfs.models.code_out import CodeOut
 
-class TestDocumentOutputOptions(unittest.TestCase):
-    """DocumentOutputOptions unit test stubs"""
+class TestCodeOut(unittest.TestCase):
+    """CodeOut unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,27 +25,28 @@ class TestDocumentOutputOptions(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> DocumentOutputOptions:
-        """Test DocumentOutputOptions
+    def make_instance(self, include_optional) -> CodeOut:
+        """Test CodeOut
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `DocumentOutputOptions`
+        # uncomment below to create an instance of `CodeOut`
         """
-        model = DocumentOutputOptions()
+        model = CodeOut()
         if include_optional:
-            return DocumentOutputOptions(
-                format = 'pdf',
-                delivery = 'url',
-                expires_in = 60
+            return CodeOut(
+                code = 'HUR',
+                label = 'Hour'
             )
         else:
-            return DocumentOutputOptions(
+            return CodeOut(
+                code = 'HUR',
+                label = 'Hour',
         )
         """
 
-    def testDocumentOutputOptions(self):
-        """Test DocumentOutputOptions"""
+    def testCodeOut(self):
+        """Test CodeOut"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

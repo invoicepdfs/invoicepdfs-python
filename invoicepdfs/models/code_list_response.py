@@ -17,40 +17,20 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
-from typing import Any, ClassVar, Dict, List, Optional
-from typing_extensions import Annotated
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
+from typing import Any, ClassVar, Dict, List
+from invoicepdfs.models.code_out import CodeOut
 from typing import Optional, Set
 from typing_extensions import Self
 
-class DocumentOutputOptions(BaseModel):
+class CodeListResponse(BaseModel):
     """
-    DocumentOutputOptions
+    A coded list from a standard, and whether it is the whole of one.  `exhaustive` is the field that changes what a client does. `true` means a value outside `data` is wrong, so the list can back a picker with no escape hatch. `false` means `data` is a shortlist of the codes an invoice usually needs — the API accepts any code, nothing validates against this, and treating it as closed rejects values that are perfectly valid.
     """ # noqa: E501
-    format: Optional[StrictStr] = 'pdf'
-    delivery: Optional[StrictStr] = 'url'
-    expires_in: Optional[Annotated[int, Field(le=604800, strict=True, ge=60)]] = Field(default=3600, description="How long the render stays downloadable, in seconds (1 minute to 7 days). It is also the lifetime of the signature in `download_url`, which is why it is bounded: an unbounded value meant an unbounded grant. A value below the floor used to be accepted and produced a render that had already expired.")
-    __properties: ClassVar[List[str]] = ["format", "delivery", "expires_in"]
-
-    @field_validator('format')
-    def format_validate_enum(cls, value):
-        """Validates the enum"""
-        if value is None:
-            return value
-
-        if value not in set(['pdf', 'facturx_pdf']):
-            raise ValueError("must be one of enum values ('pdf', 'facturx_pdf')")
-        return value
-
-    @field_validator('delivery')
-    def delivery_validate_enum(cls, value):
-        """Validates the enum"""
-        if value is None:
-            return value
-
-        if value not in set(['url', 'binary']):
-            raise ValueError("must be one of enum values ('url', 'binary')")
-        return value
+    data: List[CodeOut]
+    standard: StrictStr = Field(description="The code list these values come from.")
+    exhaustive: StrictBool = Field(description="Whether `data` is the complete list. When false it is a shortlist and other codes remain valid.")
+    __properties: ClassVar[List[str]] = ["data", "standard", "exhaustive"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -70,7 +50,7 @@ class DocumentOutputOptions(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of DocumentOutputOptions from a JSON string"""
+        """Create an instance of CodeListResponse from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -91,11 +71,18 @@ class DocumentOutputOptions(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in data (list)
+        _items = []
+        if self.data:
+            for _item in self.data:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['data'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of DocumentOutputOptions from a dict"""
+        """Create an instance of CodeListResponse from a dict"""
         if obj is None:
             return None
 
@@ -103,9 +90,9 @@ class DocumentOutputOptions(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "format": obj.get("format") if obj.get("format") is not None else 'pdf',
-            "delivery": obj.get("delivery") if obj.get("delivery") is not None else 'url',
-            "expires_in": obj.get("expires_in") if obj.get("expires_in") is not None else 3600
+            "data": [CodeOut.from_dict(_item) for _item in obj["data"]] if obj.get("data") is not None else None,
+            "standard": obj.get("standard"),
+            "exhaustive": obj.get("exhaustive")
         })
         return _obj
 

@@ -61,10 +61,31 @@ class TestReferenceApi(unittest.TestCase):
         """
         pass
 
+    def test_list_tax_categories(self) -> None:
+        """Test case for list_tax_categories
+
+        List Tax Categories
+        """
+        pass
+
+    def test_list_tax_schemes(self) -> None:
+        """Test case for list_tax_schemes
+
+        List Tax Schemes
+        """
+        pass
+
     def test_list_timezones(self) -> None:
         """Test case for list_timezones
 
         List Timezones
+        """
+        pass
+
+    def test_list_unit_codes(self) -> None:
+        """Test case for list_unit_codes
+
+        List Unit Codes
         """
         pass
 

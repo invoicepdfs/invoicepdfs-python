@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
+from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from typing import Optional, Set
@@ -30,7 +30,7 @@ class DocumentRenderOptions(BaseModel):
     template_id: Optional[StrictStr] = 'tpl_modern'
     template_version: Optional[Annotated[int, Field(strict=True, ge=1)]] = None
     page_size: Optional[StrictStr] = 'LETTER'
-    expires_in: Optional[StrictInt] = 3600
+    expires_in: Optional[Annotated[int, Field(le=604800, strict=True, ge=60)]] = Field(default=3600, description="How long the render stays downloadable, in seconds (1 minute to 7 days). It is also the lifetime of the signature in `download_url`, which is why it is bounded: an unbounded value meant an unbounded grant. A value below the floor used to be accepted and produced a render that had already expired.")
     format: Optional[StrictStr] = Field(default='pdf', description="`facturx_pdf` embeds the EN 16931 CII XML in a PDF/A-3, which is what a French or German counterparty means by Factur-X or ZUGFeRD.")
     __properties: ClassVar[List[str]] = ["template_id", "template_version", "page_size", "expires_in", "format"]
 
