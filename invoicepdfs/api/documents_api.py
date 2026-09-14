@@ -1229,6 +1229,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SimpleBoolResponse",
+            '409': "ApiErrorResponse",
             '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -1296,6 +1297,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SimpleBoolResponse",
+            '409': "ApiErrorResponse",
             '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -1363,6 +1365,7 @@ class DocumentsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SimpleBoolResponse",
+            '409': "ApiErrorResponse",
             '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
