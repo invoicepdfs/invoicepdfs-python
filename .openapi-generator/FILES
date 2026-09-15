@@ -187,6 +187,7 @@ docs/RecurringInvoiceResponse.md
 docs/RecurringInvoicesApi.md
 docs/RecurringInvoicesListResponse.md
 docs/ReferenceApi.md
+docs/RenderComplianceOut.md
 docs/RenderOut.md
 docs/RenderResponse.md
 docs/RendersApi.md
@@ -454,6 +455,7 @@ invoicepdfs/models/recurring_invoice_out.py
 invoicepdfs/models/recurring_invoice_patch_request.py
 invoicepdfs/models/recurring_invoice_response.py
 invoicepdfs/models/recurring_invoices_list_response.py
+invoicepdfs/models/render_compliance_out.py
 invoicepdfs/models/render_out.py
 invoicepdfs/models/render_response.py
 invoicepdfs/models/simple_bool_response.py
@@ -705,6 +707,7 @@ test/test_recurring_invoice_response.py
 test/test_recurring_invoices_api.py
 test/test_recurring_invoices_list_response.py
 test/test_reference_api.py
+test/test_render_compliance_out.py
 test/test_render_out.py
 test/test_render_response.py
 test/test_renders_api.py

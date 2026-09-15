@@ -20,6 +20,7 @@ import json
 from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from invoicepdfs.models.calculation_breakdown import CalculationBreakdown
+from invoicepdfs.models.render_compliance_out import RenderComplianceOut
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -37,7 +38,8 @@ class RenderOut(BaseModel):
     expires_at: StrictStr
     calculation: CalculationBreakdown
     created_at: StrictStr
-    __properties: ClassVar[List[str]] = ["id", "status", "document_type", "template_id", "template_version", "format", "download_url", "expires_at", "calculation", "created_at"]
+    compliance: Optional[RenderComplianceOut] = None
+    __properties: ClassVar[List[str]] = ["id", "status", "document_type", "template_id", "template_version", "format", "download_url", "expires_at", "calculation", "created_at", "compliance"]
 
     @field_validator('status')
     def status_validate_enum(cls, value):
@@ -102,10 +104,18 @@ class RenderOut(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of calculation
         if self.calculation:
             _dict['calculation'] = self.calculation.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of compliance
+        if self.compliance:
+            _dict['compliance'] = self.compliance.to_dict()
         # set to None if template_version (nullable) is None
         # and model_fields_set contains the field
         if self.template_version is None and "template_version" in self.model_fields_set:
             _dict['template_version'] = None
+
+        # set to None if compliance (nullable) is None
+        # and model_fields_set contains the field
+        if self.compliance is None and "compliance" in self.model_fields_set:
+            _dict['compliance'] = None
 
         return _dict
 
@@ -128,7 +138,8 @@ class RenderOut(BaseModel):
             "download_url": obj.get("download_url"),
             "expires_at": obj.get("expires_at"),
             "calculation": CalculationBreakdown.from_dict(obj["calculation"]) if obj.get("calculation") is not None else None,
-            "created_at": obj.get("created_at")
+            "created_at": obj.get("created_at"),
+            "compliance": RenderComplianceOut.from_dict(obj["compliance"]) if obj.get("compliance") is not None else None
         })
         return _obj
 

@@ -224,6 +224,7 @@ from invoicepdfs.models.recurring_invoice_out import RecurringInvoiceOut
 from invoicepdfs.models.recurring_invoice_patch_request import RecurringInvoicePatchRequest
 from invoicepdfs.models.recurring_invoice_response import RecurringInvoiceResponse
 from invoicepdfs.models.recurring_invoices_list_response import RecurringInvoicesListResponse
+from invoicepdfs.models.render_compliance_out import RenderComplianceOut
 from invoicepdfs.models.render_out import RenderOut
 from invoicepdfs.models.render_response import RenderResponse
 from invoicepdfs.models.simple_bool_response import SimpleBoolResponse

@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **expires_at** | **str** |  | 
 **calculation** | [**CalculationBreakdown**](CalculationBreakdown.md) |  | 
 **created_at** | **str** |  | 
+**compliance** | [**RenderComplianceOut**](RenderComplianceOut.md) |  | [optional] 
 
 ## Example
 

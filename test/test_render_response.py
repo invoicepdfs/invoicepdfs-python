@@ -55,7 +55,19 @@ class TestRenderResponse(unittest.TestCase):
                         tax_total = , 
                         shipping_total = , 
                         total = , ), 
-                    created_at = '', )
+                    created_at = '', 
+                    compliance = invoicepdfs.models.render_compliance_out.RenderComplianceOut(
+                        profile = 'factur_x_en16931', 
+                        ruleset_version = 'en16931-1.3.16', 
+                        fully_checked = True, 
+                        advisories = [
+                            invoicepdfs.models.compliance_violation_out.ComplianceViolationOut(
+                                rule = 'BT-130', 
+                                path = 'lines[1].unit_code', 
+                                message = 'A coded unit is required.', 
+                                severity = 'fatal', 
+                                ruleset = 'semantic', )
+                            ], ), )
             )
         else:
             return RenderResponse(
@@ -79,7 +91,19 @@ class TestRenderResponse(unittest.TestCase):
                         tax_total = , 
                         shipping_total = , 
                         total = , ), 
-                    created_at = '', ),
+                    created_at = '', 
+                    compliance = invoicepdfs.models.render_compliance_out.RenderComplianceOut(
+                        profile = 'factur_x_en16931', 
+                        ruleset_version = 'en16931-1.3.16', 
+                        fully_checked = True, 
+                        advisories = [
+                            invoicepdfs.models.compliance_violation_out.ComplianceViolationOut(
+                                rule = 'BT-130', 
+                                path = 'lines[1].unit_code', 
+                                message = 'A coded unit is required.', 
+                                severity = 'fatal', 
+                                ruleset = 'semantic', )
+                            ], ), ),
         )
         """
 
