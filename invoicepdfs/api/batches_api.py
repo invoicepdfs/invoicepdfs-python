@@ -354,7 +354,7 @@ class BatchesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "BatchResponse",
+            '202': "BatchResponse",
             '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -421,7 +421,7 @@ class BatchesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "BatchResponse",
+            '202': "BatchResponse",
             '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -488,7 +488,7 @@ class BatchesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "BatchResponse",
+            '202': "BatchResponse",
             '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(

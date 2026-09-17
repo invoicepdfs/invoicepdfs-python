@@ -152,6 +152,7 @@ from invoicepdfs.models.invoices_list_response import InvoicesListResponse
 from invoicepdfs.models.job_out import JobOut
 from invoicepdfs.models.job_progress_out import JobProgressOut
 from invoicepdfs.models.job_response import JobResponse
+from invoicepdfs.models.jobs_list_response import JobsListResponse
 from invoicepdfs.models.line_item_discount_input import LineItemDiscountInput
 from invoicepdfs.models.line_item_tax_input import LineItemTaxInput
 from invoicepdfs.models.locale_out import LocaleOut

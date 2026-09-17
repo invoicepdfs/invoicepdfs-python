@@ -155,6 +155,7 @@ docs/JobOut.md
 docs/JobProgressOut.md
 docs/JobResponse.md
 docs/JobsApi.md
+docs/JobsListResponse.md
 docs/LineItemDiscountInput.md
 docs/LineItemTaxInput.md
 docs/LocaleOut.md
@@ -429,6 +430,7 @@ invoicepdfs/models/invoices_list_response.py
 invoicepdfs/models/job_out.py
 invoicepdfs/models/job_progress_out.py
 invoicepdfs/models/job_response.py
+invoicepdfs/models/jobs_list_response.py
 invoicepdfs/models/line_item_discount_input.py
 invoicepdfs/models/line_item_tax_input.py
 invoicepdfs/models/locale_out.py
@@ -677,6 +679,7 @@ test/test_job_out.py
 test/test_job_progress_out.py
 test/test_job_response.py
 test/test_jobs_api.py
+test/test_jobs_list_response.py
 test/test_line_item_discount_input.py
 test/test_line_item_tax_input.py
 test/test_locale_out.py

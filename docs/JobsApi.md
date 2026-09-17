@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**cancel_job**](JobsApi.md#cancel_job) | **POST** /api/v1/jobs/{job_id}/cancel | Cancel Job
 [**get_job**](JobsApi.md#get_job) | **GET** /api/v1/jobs/{job_id} | Get Job
+[**list_jobs**](JobsApi.md#list_jobs) | **GET** /api/v1/jobs | List Jobs
 [**retry_job**](JobsApi.md#retry_job) | **POST** /api/v1/jobs/{job_id}/retry | Retry Job
 
 
@@ -144,6 +145,87 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**JobResponse**](JobResponse.md)
+
+### Authorization
+
+[HTTPBearer](../README.md#HTTPBearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**422** | Validation Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_jobs**
+> JobsListResponse list_jobs(limit=limit, cursor=cursor)
+
+List Jobs
+
+This account's jobs, newest first.  Without it the other three routes here were unreachable: a job id was never returned by anything, so there was no way to arrive at one.
+
+### Example
+
+* Bearer Authentication (HTTPBearer):
+
+```python
+import invoicepdfs
+from invoicepdfs.models.jobs_list_response import JobsListResponse
+from invoicepdfs.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = invoicepdfs.Configuration(
+    host = "http://localhost"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: HTTPBearer
+configuration = invoicepdfs.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with invoicepdfs.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = invoicepdfs.JobsApi(api_client)
+    limit = 50 # int |  (optional) (default to 50)
+    cursor = 'cursor_example' # str |  (optional)
+
+    try:
+        # List Jobs
+        api_response = api_instance.list_jobs(limit=limit, cursor=cursor)
+        print("The response of JobsApi->list_jobs:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling JobsApi->list_jobs: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **limit** | **int**|  | [optional] [default to 50]
+ **cursor** | **str**|  | [optional] 
+
+### Return type
+
+[**JobsListResponse**](JobsListResponse.md)
 
 ### Authorization
 
