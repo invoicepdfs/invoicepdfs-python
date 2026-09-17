@@ -24,6 +24,7 @@ from invoicepdfs.api.batches_api import BatchesApi
 from invoicepdfs.api.billing_api import BillingApi
 from invoicepdfs.api.branding_profiles_api import BrandingProfilesApi
 from invoicepdfs.api.business_profiles_api import BusinessProfilesApi
+from invoicepdfs.api.compliance_api import ComplianceApi
 from invoicepdfs.api.customers_api import CustomersApi
 from invoicepdfs.api.deliveries_api import DeliveriesApi
 from invoicepdfs.api.document_attachments_api import DocumentAttachmentsApi

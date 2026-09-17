@@ -61,13 +61,6 @@ class TestDocumentsApi(unittest.TestCase):
         """
         pass
 
-    def test_download_document_xml(self) -> None:
-        """Test case for download_document_xml
-
-        Download Document Xml
-        """
-        pass
-
     def test_duplicate_document(self) -> None:
         """Test case for duplicate_document
 
@@ -131,13 +124,6 @@ class TestDocumentsApi(unittest.TestCase):
         """
         pass
 
-    def test_render_document_xml(self) -> None:
-        """Test case for render_document_xml
-
-        Render Document Xml
-        """
-        pass
-
     def test_restore_document(self) -> None:
         """Test case for restore_document
 
@@ -156,13 +142,6 @@ class TestDocumentsApi(unittest.TestCase):
         """Test case for update_document
 
         Update Document
-        """
-        pass
-
-    def test_validate_compliance(self) -> None:
-        """Test case for validate_compliance
-
-        Validate Compliance
         """
         pass
 
