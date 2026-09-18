@@ -14,10 +14,10 @@
 
 import unittest
 
-from invoicepdfs.models.document_output_options import DocumentOutputOptions
+from invoicepdfs.models.render_failure_out import RenderFailureOut
 
-class TestDocumentOutputOptions(unittest.TestCase):
-    """DocumentOutputOptions unit test stubs"""
+class TestRenderFailureOut(unittest.TestCase):
+    """RenderFailureOut unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,28 +25,29 @@ class TestDocumentOutputOptions(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> DocumentOutputOptions:
-        """Test DocumentOutputOptions
+    def make_instance(self, include_optional) -> RenderFailureOut:
+        """Test RenderFailureOut
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `DocumentOutputOptions`
+        # uncomment below to create an instance of `RenderFailureOut`
         """
-        model = DocumentOutputOptions()
+        model = RenderFailureOut()
         if include_optional:
-            return DocumentOutputOptions(
-                format = 'pdf',
-                delivery = 'url',
-                mode = 'sync',
-                expires_in = 60
+            return RenderFailureOut(
+                code = 'compliance_failed',
+                message = '',
+                details = { }
             )
         else:
-            return DocumentOutputOptions(
+            return RenderFailureOut(
+                code = 'compliance_failed',
+                message = '',
         )
         """
 
-    def testDocumentOutputOptions(self):
-        """Test DocumentOutputOptions"""
+    def testRenderFailureOut(self):
+        """Test RenderFailureOut"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

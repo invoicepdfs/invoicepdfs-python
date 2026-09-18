@@ -37,7 +37,7 @@ class TestRenderResponse(unittest.TestCase):
             return RenderResponse(
                 data = invoicepdfs.models.render_out.RenderOut(
                     id = '', 
-                    status = 'completed', 
+                    status = 'queued', 
                     document_type = 'invoice', 
                     template_id = '', 
                     template_version = 56, 
@@ -67,13 +67,17 @@ class TestRenderResponse(unittest.TestCase):
                                 message = 'A coded unit is required.', 
                                 severity = 'fatal', 
                                 ruleset = 'semantic', )
-                            ], ), )
+                            ], ), 
+                    failure = invoicepdfs.models.render_failure_out.RenderFailureOut(
+                        code = 'compliance_failed', 
+                        message = '', 
+                        details = { }, ), )
             )
         else:
             return RenderResponse(
                 data = invoicepdfs.models.render_out.RenderOut(
                     id = '', 
-                    status = 'completed', 
+                    status = 'queued', 
                     document_type = 'invoice', 
                     template_id = '', 
                     template_version = 56, 
@@ -103,7 +107,11 @@ class TestRenderResponse(unittest.TestCase):
                                 message = 'A coded unit is required.', 
                                 severity = 'fatal', 
                                 ruleset = 'semantic', )
-                            ], ), ),
+                            ], ), 
+                    failure = invoicepdfs.models.render_failure_out.RenderFailureOut(
+                        code = 'compliance_failed', 
+                        message = '', 
+                        details = { }, ), ),
         )
         """
 

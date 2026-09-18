@@ -11,11 +11,12 @@ Name | Type | Description | Notes
 **template_id** | **str** |  | 
 **template_version** | **int** |  | [optional] 
 **format** | **str** |  | 
-**download_url** | **str** |  | 
-**expires_at** | **str** |  | 
+**download_url** | **str** |  | [optional] 
+**expires_at** | **str** |  | [optional] 
 **calculation** | [**CalculationBreakdown**](CalculationBreakdown.md) |  | 
 **created_at** | **str** |  | 
 **compliance** | [**RenderComplianceOut**](RenderComplianceOut.md) |  | [optional] 
+**failure** | [**RenderFailureOut**](RenderFailureOut.md) |  | [optional] 
 
 ## Example
 

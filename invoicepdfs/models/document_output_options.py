@@ -29,8 +29,9 @@ class DocumentOutputOptions(BaseModel):
     """ # noqa: E501
     format: Optional[StrictStr] = 'pdf'
     delivery: Optional[StrictStr] = 'url'
+    mode: Optional[StrictStr] = Field(default='sync', description="`sync` renders inside the request and answers with the finished document. `async` returns `202` with a `queued` render a worker picks up; follow it with `GET /renders/{id}`. Use it for bursts — rendering is CPU-bound, so a hundred at once queue behind each other whichever mode you ask for, and only one of the two holds a connection open while they do.")
     expires_in: Optional[Annotated[int, Field(le=604800, strict=True, ge=60)]] = Field(default=3600, description="How long the render stays downloadable, in seconds (1 minute to 7 days). It is also the lifetime of the signature in `download_url`, which is why it is bounded: an unbounded value meant an unbounded grant. A value below the floor used to be accepted and produced a render that had already expired.")
-    __properties: ClassVar[List[str]] = ["format", "delivery", "expires_in"]
+    __properties: ClassVar[List[str]] = ["format", "delivery", "mode", "expires_in"]
 
     @field_validator('format')
     def format_validate_enum(cls, value):
@@ -50,6 +51,16 @@ class DocumentOutputOptions(BaseModel):
 
         if value not in set(['url', 'binary']):
             raise ValueError("must be one of enum values ('url', 'binary')")
+        return value
+
+    @field_validator('mode')
+    def mode_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['sync', 'async']):
+            raise ValueError("must be one of enum values ('sync', 'async')")
         return value
 
     model_config = ConfigDict(
@@ -105,6 +116,7 @@ class DocumentOutputOptions(BaseModel):
         _obj = cls.model_validate({
             "format": obj.get("format") if obj.get("format") is not None else 'pdf',
             "delivery": obj.get("delivery") if obj.get("delivery") is not None else 'url',
+            "mode": obj.get("mode") if obj.get("mode") is not None else 'sync',
             "expires_in": obj.get("expires_in") if obj.get("expires_in") is not None else 3600
         })
         return _obj

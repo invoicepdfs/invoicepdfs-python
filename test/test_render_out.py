@@ -36,7 +36,7 @@ class TestRenderOut(unittest.TestCase):
         if include_optional:
             return RenderOut(
                 id = '',
-                status = 'completed',
+                status = 'queued',
                 document_type = 'invoice',
                 template_id = '',
                 template_version = 56,
@@ -66,17 +66,19 @@ class TestRenderOut(unittest.TestCase):
                             message = 'A coded unit is required.', 
                             severity = 'fatal', 
                             ruleset = 'semantic', )
-                        ], )
+                        ], ),
+                failure = invoicepdfs.models.render_failure_out.RenderFailureOut(
+                    code = 'compliance_failed', 
+                    message = '', 
+                    details = { }, )
             )
         else:
             return RenderOut(
                 id = '',
-                status = 'completed',
+                status = 'queued',
                 document_type = 'invoice',
                 template_id = '',
                 format = 'pdf',
-                download_url = '',
-                expires_at = '',
                 calculation = invoicepdfs.models.calculation_breakdown.CalculationBreakdown(
                     subtotal = invoicepdfs.models.money.Money(
                         amount = '', 
