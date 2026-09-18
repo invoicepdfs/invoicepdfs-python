@@ -1208,6 +1208,8 @@ Name | Type | Description  | Notes
 
 Send Document
 
+Queue the document to be emailed.  Returns 202 with the delivery in `queued`. The mail is sent in the background and retried on transient failure; poll `GET /deliveries/{id}` for the outcome.
+
 ### Example
 
 * Bearer Authentication (HTTPBearer):
@@ -1278,7 +1280,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful Response |  -  |
+**202** | Successful Response |  -  |
 **422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -4161,6 +4161,7 @@ class DocumentsApi:
     ) -> DeliveryResponse:
         """Send Document
 
+        Queue the document to be emailed.  Returns 202 with the delivery in `queued`. The mail is sent in the background and retried on transient failure; poll `GET /deliveries/{id}` for the outcome.
 
         :param document_id: (required)
         :type document_id: str
@@ -4198,7 +4199,7 @@ class DocumentsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DeliveryResponse",
+            '202': "DeliveryResponse",
             '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -4232,6 +4233,7 @@ class DocumentsApi:
     ) -> ApiResponse[DeliveryResponse]:
         """Send Document
 
+        Queue the document to be emailed.  Returns 202 with the delivery in `queued`. The mail is sent in the background and retried on transient failure; poll `GET /deliveries/{id}` for the outcome.
 
         :param document_id: (required)
         :type document_id: str
@@ -4269,7 +4271,7 @@ class DocumentsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DeliveryResponse",
+            '202': "DeliveryResponse",
             '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -4303,6 +4305,7 @@ class DocumentsApi:
     ) -> RESTResponseType:
         """Send Document
 
+        Queue the document to be emailed.  Returns 202 with the delivery in `queued`. The mail is sent in the background and retried on transient failure; poll `GET /deliveries/{id}` for the outcome.
 
         :param document_id: (required)
         :type document_id: str
@@ -4340,7 +4343,7 @@ class DocumentsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DeliveryResponse",
+            '202': "DeliveryResponse",
             '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(

@@ -315,6 +315,7 @@ class DeliveriesApi:
     ) -> DeliveryResponse:
         """Retry Delivery
 
+        Queue a fresh delivery copying a failed one.  Returns 202 with the new delivery in `queued`. Transient failures are already retried automatically; this is for after those are exhausted.
 
         :param delivery_id: (required)
         :type delivery_id: str
@@ -349,7 +350,7 @@ class DeliveriesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DeliveryResponse",
+            '202': "DeliveryResponse",
             '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -382,6 +383,7 @@ class DeliveriesApi:
     ) -> ApiResponse[DeliveryResponse]:
         """Retry Delivery
 
+        Queue a fresh delivery copying a failed one.  Returns 202 with the new delivery in `queued`. Transient failures are already retried automatically; this is for after those are exhausted.
 
         :param delivery_id: (required)
         :type delivery_id: str
@@ -416,7 +418,7 @@ class DeliveriesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DeliveryResponse",
+            '202': "DeliveryResponse",
             '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -449,6 +451,7 @@ class DeliveriesApi:
     ) -> RESTResponseType:
         """Retry Delivery
 
+        Queue a fresh delivery copying a failed one.  Returns 202 with the new delivery in `queued`. Transient failures are already retried automatically; this is for after those are exhausted.
 
         :param delivery_id: (required)
         :type delivery_id: str
@@ -483,7 +486,7 @@ class DeliveriesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DeliveryResponse",
+            '202': "DeliveryResponse",
             '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(

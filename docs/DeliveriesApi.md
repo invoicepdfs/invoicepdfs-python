@@ -90,6 +90,8 @@ Name | Type | Description  | Notes
 
 Retry Delivery
 
+Queue a fresh delivery copying a failed one.  Returns 202 with the new delivery in `queued`. Transient failures are already retried automatically; this is for after those are exhausted.
+
 ### Example
 
 * Bearer Authentication (HTTPBearer):
@@ -157,7 +159,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful Response |  -  |
+**202** | Successful Response |  -  |
 **422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
