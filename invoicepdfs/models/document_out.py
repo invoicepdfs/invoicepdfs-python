@@ -20,6 +20,7 @@ import json
 from datetime import date
 from pydantic import BaseModel, ConfigDict, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
+from invoicepdfs.models.document_status import DocumentStatus
 from invoicepdfs.models.invoice_totals_out import InvoiceTotalsOut
 from typing import Optional, Set
 from typing_extensions import Self
@@ -31,7 +32,7 @@ class DocumentOut(BaseModel):
     id: StrictStr
     document_type: StrictStr
     number: StrictStr
-    status: StrictStr
+    status: DocumentStatus
     issue_date: date
     due_date: Optional[date] = None
     currency: StrictStr

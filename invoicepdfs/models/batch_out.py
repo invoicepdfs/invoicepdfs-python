@@ -17,8 +17,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr, field_validator
+from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from invoicepdfs.models.batch_status import BatchStatus
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,7 +28,7 @@ class BatchOut(BaseModel):
     BatchOut
     """ # noqa: E501
     id: StrictStr
-    status: StrictStr
+    status: BatchStatus
     operation: StrictStr
     template_id: StrictStr
     template_version: Optional[StrictInt] = None
@@ -38,13 +39,6 @@ class BatchOut(BaseModel):
     updated_at: StrictStr
     completed_at: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["id", "status", "operation", "template_id", "template_version", "total_items", "completed_items", "failed_items", "created_at", "updated_at", "completed_at"]
-
-    @field_validator('status')
-    def status_validate_enum(cls, value):
-        """Validates the enum"""
-        if value not in set(['queued', 'processing', 'completed', 'failed', 'cancelled']):
-            raise ValueError("must be one of enum values ('queued', 'processing', 'completed', 'failed', 'cancelled')")
-        return value
 
     model_config = ConfigDict(
         populate_by_name=True,

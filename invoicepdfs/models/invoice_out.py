@@ -20,6 +20,7 @@ import json
 from datetime import date
 from pydantic import BaseModel, ConfigDict, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
+from invoicepdfs.models.document_status import DocumentStatus
 from invoicepdfs.models.invoice_totals_out import InvoiceTotalsOut
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,7 +30,7 @@ class InvoiceOut(BaseModel):
     InvoiceOut
     """ # noqa: E501
     id: StrictStr
-    status: StrictStr
+    status: DocumentStatus
     invoice_number: StrictStr
     document_type: StrictStr
     issue_date: date
@@ -44,13 +45,6 @@ class InvoiceOut(BaseModel):
     updated_at: StrictStr
     finalized_at: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["id", "status", "invoice_number", "document_type", "issue_date", "due_date", "currency", "locale", "business_profile_id", "customer_id", "invoice", "totals", "created_at", "updated_at", "finalized_at"]
-
-    @field_validator('status')
-    def status_validate_enum(cls, value):
-        """Validates the enum"""
-        if value not in set(['draft', 'finalized', 'sent', 'paid', 'void', 'archived']):
-            raise ValueError("must be one of enum values ('draft', 'finalized', 'sent', 'paid', 'void', 'archived')")
-        return value
 
     @field_validator('document_type')
     def document_type_validate_enum(cls, value):

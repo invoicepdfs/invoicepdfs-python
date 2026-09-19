@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | 
 **source_format** | **str** |  | 
-**status** | **str** |  | 
+**status** | [**ImportStatus**](ImportStatus.md) |  | 
 **total_rows** | **int** |  | 
 **imported_rows** | **int** |  | 
 **failed_rows** | **int** |  | 

@@ -17,9 +17,10 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr, field_validator
+from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from invoicepdfs.models.job_progress_out import JobProgressOut
+from invoicepdfs.models.job_status import JobStatus
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,7 +30,7 @@ class JobOut(BaseModel):
     """ # noqa: E501
     id: StrictStr
     type: StrictStr
-    status: StrictStr
+    status: JobStatus
     progress: JobProgressOut
     result: Optional[Dict[str, Any]] = None
     error: Optional[StrictStr] = None
@@ -37,13 +38,6 @@ class JobOut(BaseModel):
     started_at: Optional[StrictStr] = None
     completed_at: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["id", "type", "status", "progress", "result", "error", "created_at", "started_at", "completed_at"]
-
-    @field_validator('status')
-    def status_validate_enum(cls, value):
-        """Validates the enum"""
-        if value not in set(['queued', 'processing', 'completed', 'failed', 'cancelled']):
-            raise ValueError("must be one of enum values ('queued', 'processing', 'completed', 'failed', 'cancelled')")
-        return value
 
     model_config = ConfigDict(
         populate_by_name=True,

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **id** | **str** |  | 
 **document_type** | **str** |  | 
 **number** | **str** |  | 
-**status** | **str** |  | 
+**status** | [**DocumentStatus**](DocumentStatus.md) |  | 
 **issue_date** | **date** |  | 
 **due_date** | **date** |  | [optional] 
 **currency** | **str** |  | 

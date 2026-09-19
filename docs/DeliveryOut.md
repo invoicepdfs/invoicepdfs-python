@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **subject** | **str** |  | 
 **message** | **str** |  | [optional] 
 **attach_pdf** | **bool** |  | 
-**status** | **str** |  | 
+**status** | [**DeliveryStatus**](DeliveryStatus.md) |  | 
 **created_at** | **str** |  | 
 **sent_at** | **str** |  | [optional] 
 

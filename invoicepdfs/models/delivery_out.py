@@ -17,8 +17,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr, field_validator
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from invoicepdfs.models.delivery_status import DeliveryStatus
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -34,17 +35,10 @@ class DeliveryOut(BaseModel):
     subject: StrictStr
     message: Optional[StrictStr] = None
     attach_pdf: StrictBool
-    status: StrictStr
+    status: DeliveryStatus
     created_at: StrictStr
     sent_at: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["id", "invoice_id", "to", "cc", "bcc", "subject", "message", "attach_pdf", "status", "created_at", "sent_at"]
-
-    @field_validator('status')
-    def status_validate_enum(cls, value):
-        """Validates the enum"""
-        if value not in set(['queued', 'sent', 'failed']):
-            raise ValueError("must be one of enum values ('queued', 'sent', 'failed')")
-        return value
 
     model_config = ConfigDict(
         populate_by_name=True,

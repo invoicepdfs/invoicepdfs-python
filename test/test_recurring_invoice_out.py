@@ -36,7 +36,7 @@ class TestRecurringInvoiceOut(unittest.TestCase):
         if include_optional:
             return RecurringInvoiceOut(
                 id = '',
-                status = '',
+                status = 'active',
                 business_profile_id = '',
                 customer_id = '',
                 frequency = '',
@@ -53,7 +53,7 @@ class TestRecurringInvoiceOut(unittest.TestCase):
         else:
             return RecurringInvoiceOut(
                 id = '',
-                status = '',
+                status = 'active',
                 business_profile_id = '',
                 customer_id = '',
                 frequency = '',

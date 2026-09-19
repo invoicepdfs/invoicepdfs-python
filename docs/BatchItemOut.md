@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **id** | **str** |  | 
 **external_id** | **str** |  | [optional] 
 **document_type** | **str** |  | 
-**status** | **str** |  | 
+**status** | [**BatchItemStatus**](BatchItemStatus.md) |  | 
 **render_id** | **str** |  | [optional] 
 **error_message** | **str** |  | [optional] 
 **created_at** | **str** |  | 

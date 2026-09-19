@@ -22,6 +22,7 @@ from typing import Any, ClassVar, Dict, List, Optional
 from invoicepdfs.models.calculation_breakdown import CalculationBreakdown
 from invoicepdfs.models.render_compliance_out import RenderComplianceOut
 from invoicepdfs.models.render_failure_out import RenderFailureOut
+from invoicepdfs.models.render_status import RenderStatus
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -30,7 +31,7 @@ class RenderOut(BaseModel):
     RenderOut
     """ # noqa: E501
     id: StrictStr
-    status: StrictStr
+    status: RenderStatus
     document_type: StrictStr
     template_id: StrictStr
     template_version: Optional[StrictInt] = None
@@ -42,13 +43,6 @@ class RenderOut(BaseModel):
     compliance: Optional[RenderComplianceOut] = None
     failure: Optional[RenderFailureOut] = None
     __properties: ClassVar[List[str]] = ["id", "status", "document_type", "template_id", "template_version", "format", "download_url", "expires_at", "calculation", "created_at", "compliance", "failure"]
-
-    @field_validator('status')
-    def status_validate_enum(cls, value):
-        """Validates the enum"""
-        if value not in set(['queued', 'processing', 'completed', 'failed']):
-            raise ValueError("must be one of enum values ('queued', 'processing', 'completed', 'failed')")
-        return value
 
     @field_validator('document_type')
     def document_type_validate_enum(cls, value):

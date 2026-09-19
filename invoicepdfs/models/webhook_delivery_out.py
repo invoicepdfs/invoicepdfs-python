@@ -17,8 +17,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr, field_validator
+from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from invoicepdfs.models.webhook_delivery_status import WebhookDeliveryStatus
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -30,20 +31,13 @@ class WebhookDeliveryOut(BaseModel):
     endpoint_id: StrictStr
     event_id: StrictStr
     event_type: StrictStr
-    status: StrictStr
+    status: WebhookDeliveryStatus
     http_status: Optional[StrictInt] = None
     attempts: StrictInt
     error_message: Optional[StrictStr] = None
     created_at: StrictStr
     delivered_at: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["id", "endpoint_id", "event_id", "event_type", "status", "http_status", "attempts", "error_message", "created_at", "delivered_at"]
-
-    @field_validator('status')
-    def status_validate_enum(cls, value):
-        """Validates the enum"""
-        if value not in set(['pending', 'retrying', 'delivered', 'failed']):
-            raise ValueError("must be one of enum values ('pending', 'retrying', 'delivered', 'failed')")
-        return value
 
     model_config = ConfigDict(
         populate_by_name=True,

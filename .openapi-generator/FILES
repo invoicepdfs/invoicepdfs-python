@@ -38,10 +38,12 @@ docs/AuthTokenResponse.md
 docs/BatchCreateRequest.md
 docs/BatchItemInput.md
 docs/BatchItemOut.md
+docs/BatchItemStatus.md
 docs/BatchItemsListResponse.md
 docs/BatchOut.md
 docs/BatchOutputOptions.md
 docs/BatchResponse.md
+docs/BatchStatus.md
 docs/BatchesApi.md
 docs/BatchesListResponse.md
 docs/BillingApi.md
@@ -95,6 +97,7 @@ docs/DeliveriesListResponse.md
 docs/DeliveryOut.md
 docs/DeliveryResponse.md
 docs/DeliverySendRequest.md
+docs/DeliveryStatus.md
 docs/DocumentAttachmentsApi.md
 docs/DocumentBrandingInput.md
 docs/DocumentCalculateRequest.md
@@ -116,6 +119,7 @@ docs/DocumentRenderOptions.md
 docs/DocumentRenderRequest.md
 docs/DocumentResponse.md
 docs/DocumentShippingInput.md
+docs/DocumentStatus.md
 docs/DocumentTemplateRef.md
 docs/DocumentTypeOut.md
 docs/DocumentTypesListResponse.md
@@ -132,6 +136,7 @@ docs/HealthResponse.md
 docs/ImportCreateRequest.md
 docs/ImportOut.md
 docs/ImportResponse.md
+docs/ImportStatus.md
 docs/ImportsApi.md
 docs/InvoiceAttachmentCreateRequest.md
 docs/InvoiceAttachmentOut.md
@@ -154,6 +159,7 @@ docs/InvoicesListResponse.md
 docs/JobOut.md
 docs/JobProgressOut.md
 docs/JobResponse.md
+docs/JobStatus.md
 docs/JobsApi.md
 docs/JobsListResponse.md
 docs/LineItemDiscountInput.md
@@ -186,6 +192,7 @@ docs/RecurringInvoiceCreateRequest.md
 docs/RecurringInvoiceOut.md
 docs/RecurringInvoicePatchRequest.md
 docs/RecurringInvoiceResponse.md
+docs/RecurringInvoiceStatus.md
 docs/RecurringInvoicesApi.md
 docs/RecurringInvoicesListResponse.md
 docs/ReferenceApi.md
@@ -193,6 +200,7 @@ docs/RenderComplianceOut.md
 docs/RenderFailureOut.md
 docs/RenderOut.md
 docs/RenderResponse.md
+docs/RenderStatus.md
 docs/RendersApi.md
 docs/SimpleBoolResponse.md
 docs/StandardLineItemInput.md
@@ -239,6 +247,7 @@ docs/VersionResponse.md
 docs/WebhookDeliveriesListResponse.md
 docs/WebhookDeliveryOut.md
 docs/WebhookDeliveryResponse.md
+docs/WebhookDeliveryStatus.md
 docs/WebhookEndpointCreateRequest.md
 docs/WebhookEndpointOut.md
 docs/WebhookEndpointPatchRequest.md
@@ -327,10 +336,12 @@ invoicepdfs/models/auth_token_response.py
 invoicepdfs/models/batch_create_request.py
 invoicepdfs/models/batch_item_input.py
 invoicepdfs/models/batch_item_out.py
+invoicepdfs/models/batch_item_status.py
 invoicepdfs/models/batch_items_list_response.py
 invoicepdfs/models/batch_out.py
 invoicepdfs/models/batch_output_options.py
 invoicepdfs/models/batch_response.py
+invoicepdfs/models/batch_status.py
 invoicepdfs/models/batches_list_response.py
 invoicepdfs/models/billing_checkout_data.py
 invoicepdfs/models/billing_checkout_request.py
@@ -377,6 +388,7 @@ invoicepdfs/models/deliveries_list_response.py
 invoicepdfs/models/delivery_out.py
 invoicepdfs/models/delivery_response.py
 invoicepdfs/models/delivery_send_request.py
+invoicepdfs/models/delivery_status.py
 invoicepdfs/models/document_branding_input.py
 invoicepdfs/models/document_calculate_request.py
 invoicepdfs/models/document_calculate_response.py
@@ -397,6 +409,7 @@ invoicepdfs/models/document_render_options.py
 invoicepdfs/models/document_render_request.py
 invoicepdfs/models/document_response.py
 invoicepdfs/models/document_shipping_input.py
+invoicepdfs/models/document_status.py
 invoicepdfs/models/document_template_ref.py
 invoicepdfs/models/document_type_out.py
 invoicepdfs/models/document_types_list_response.py
@@ -410,6 +423,7 @@ invoicepdfs/models/health_response.py
 invoicepdfs/models/import_create_request.py
 invoicepdfs/models/import_out.py
 invoicepdfs/models/import_response.py
+invoicepdfs/models/import_status.py
 invoicepdfs/models/invoice_attachment_create_request.py
 invoicepdfs/models/invoice_attachment_out.py
 invoicepdfs/models/invoice_attachment_response.py
@@ -431,6 +445,7 @@ invoicepdfs/models/invoices_list_response.py
 invoicepdfs/models/job_out.py
 invoicepdfs/models/job_progress_out.py
 invoicepdfs/models/job_response.py
+invoicepdfs/models/job_status.py
 invoicepdfs/models/jobs_list_response.py
 invoicepdfs/models/line_item_discount_input.py
 invoicepdfs/models/line_item_tax_input.py
@@ -459,11 +474,13 @@ invoicepdfs/models/recurring_invoice_create_request.py
 invoicepdfs/models/recurring_invoice_out.py
 invoicepdfs/models/recurring_invoice_patch_request.py
 invoicepdfs/models/recurring_invoice_response.py
+invoicepdfs/models/recurring_invoice_status.py
 invoicepdfs/models/recurring_invoices_list_response.py
 invoicepdfs/models/render_compliance_out.py
 invoicepdfs/models/render_failure_out.py
 invoicepdfs/models/render_out.py
 invoicepdfs/models/render_response.py
+invoicepdfs/models/render_status.py
 invoicepdfs/models/simple_bool_response.py
 invoicepdfs/models/standard_line_item_input.py
 invoicepdfs/models/stats_counts.py
@@ -504,6 +521,7 @@ invoicepdfs/models/version_response.py
 invoicepdfs/models/webhook_deliveries_list_response.py
 invoicepdfs/models/webhook_delivery_out.py
 invoicepdfs/models/webhook_delivery_response.py
+invoicepdfs/models/webhook_delivery_status.py
 invoicepdfs/models/webhook_endpoint_create_request.py
 invoicepdfs/models/webhook_endpoint_out.py
 invoicepdfs/models/webhook_endpoint_patch_request.py
@@ -564,10 +582,12 @@ test/test_auth_token_response.py
 test/test_batch_create_request.py
 test/test_batch_item_input.py
 test/test_batch_item_out.py
+test/test_batch_item_status.py
 test/test_batch_items_list_response.py
 test/test_batch_out.py
 test/test_batch_output_options.py
 test/test_batch_response.py
+test/test_batch_status.py
 test/test_batches_api.py
 test/test_batches_list_response.py
 test/test_billing_api.py
@@ -621,6 +641,7 @@ test/test_deliveries_list_response.py
 test/test_delivery_out.py
 test/test_delivery_response.py
 test/test_delivery_send_request.py
+test/test_delivery_status.py
 test/test_document_attachments_api.py
 test/test_document_branding_input.py
 test/test_document_calculate_request.py
@@ -642,6 +663,7 @@ test/test_document_render_options.py
 test/test_document_render_request.py
 test/test_document_response.py
 test/test_document_shipping_input.py
+test/test_document_status.py
 test/test_document_template_ref.py
 test/test_document_type_out.py
 test/test_document_types_list_response.py
@@ -658,6 +680,7 @@ test/test_health_response.py
 test/test_import_create_request.py
 test/test_import_out.py
 test/test_import_response.py
+test/test_import_status.py
 test/test_imports_api.py
 test/test_invoice_attachment_create_request.py
 test/test_invoice_attachment_out.py
@@ -680,6 +703,7 @@ test/test_invoices_list_response.py
 test/test_job_out.py
 test/test_job_progress_out.py
 test/test_job_response.py
+test/test_job_status.py
 test/test_jobs_api.py
 test/test_jobs_list_response.py
 test/test_line_item_discount_input.py
@@ -712,6 +736,7 @@ test/test_recurring_invoice_create_request.py
 test/test_recurring_invoice_out.py
 test/test_recurring_invoice_patch_request.py
 test/test_recurring_invoice_response.py
+test/test_recurring_invoice_status.py
 test/test_recurring_invoices_api.py
 test/test_recurring_invoices_list_response.py
 test/test_reference_api.py
@@ -719,6 +744,7 @@ test/test_render_compliance_out.py
 test/test_render_failure_out.py
 test/test_render_out.py
 test/test_render_response.py
+test/test_render_status.py
 test/test_renders_api.py
 test/test_simple_bool_response.py
 test/test_standard_line_item_input.py
@@ -765,6 +791,7 @@ test/test_version_response.py
 test/test_webhook_deliveries_list_response.py
 test/test_webhook_delivery_out.py
 test/test_webhook_delivery_response.py
+test/test_webhook_delivery_status.py
 test/test_webhook_endpoint_create_request.py
 test/test_webhook_endpoint_out.py
 test/test_webhook_endpoint_patch_request.py

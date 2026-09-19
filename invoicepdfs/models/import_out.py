@@ -17,8 +17,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr, field_validator
+from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from invoicepdfs.models.import_status import ImportStatus
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,7 +29,7 @@ class ImportOut(BaseModel):
     """ # noqa: E501
     id: StrictStr
     source_format: StrictStr
-    status: StrictStr
+    status: ImportStatus
     total_rows: StrictInt
     imported_rows: StrictInt
     failed_rows: StrictInt
@@ -37,13 +38,6 @@ class ImportOut(BaseModel):
     updated_at: StrictStr
     completed_at: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["id", "source_format", "status", "total_rows", "imported_rows", "failed_rows", "errors", "created_at", "updated_at", "completed_at"]
-
-    @field_validator('status')
-    def status_validate_enum(cls, value):
-        """Validates the enum"""
-        if value not in set(['pending', 'processing', 'completed', 'failed', 'cancelled']):
-            raise ValueError("must be one of enum values ('pending', 'processing', 'completed', 'failed', 'cancelled')")
-        return value
 
     model_config = ConfigDict(
         populate_by_name=True,

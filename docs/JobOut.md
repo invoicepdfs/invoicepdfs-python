@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | 
 **type** | **str** |  | 
-**status** | **str** |  | 
+**status** | [**JobStatus**](JobStatus.md) |  | 
 **progress** | [**JobProgressOut**](JobProgressOut.md) |  | 
 **result** | **Dict[str, object]** |  | [optional] 
 **error** | **str** |  | [optional] 

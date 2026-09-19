@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | 
-**status** | **str** |  | 
+**status** | [**RecurringInvoiceStatus**](RecurringInvoiceStatus.md) |  | 
 **business_profile_id** | **str** |  | 
 **customer_id** | **str** |  | 
 **frequency** | **str** |  | 

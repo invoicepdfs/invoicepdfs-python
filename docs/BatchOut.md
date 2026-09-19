@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | 
-**status** | **str** |  | 
+**status** | [**BatchStatus**](BatchStatus.md) |  | 
 **operation** | **str** |  | 
 **template_id** | **str** |  | 
 **template_version** | **int** |  | [optional] 

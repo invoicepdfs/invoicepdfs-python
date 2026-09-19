@@ -20,6 +20,7 @@ import json
 from datetime import date
 from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from invoicepdfs.models.recurring_invoice_status import RecurringInvoiceStatus
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,7 +29,7 @@ class RecurringInvoiceOut(BaseModel):
     RecurringInvoiceOut
     """ # noqa: E501
     id: StrictStr
-    status: StrictStr
+    status: RecurringInvoiceStatus
     business_profile_id: StrictStr
     customer_id: StrictStr
     frequency: StrictStr

@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | 
-**status** | **str** |  | 
+**status** | [**DocumentStatus**](DocumentStatus.md) |  | 
 **invoice_number** | **str** |  | 
 **document_type** | **str** |  | 
 **issue_date** | **date** |  | 

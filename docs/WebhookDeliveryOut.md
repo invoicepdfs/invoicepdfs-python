@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **endpoint_id** | **str** |  | 
 **event_id** | **str** |  | 
 **event_type** | **str** |  | 
-**status** | **str** |  | 
+**status** | [**WebhookDeliveryStatus**](WebhookDeliveryStatus.md) |  | 
 **http_status** | **int** |  | [optional] 
 **attempts** | **int** |  | 
 **error_message** | **str** |  | [optional] 

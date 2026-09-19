@@ -38,7 +38,7 @@ class TestRecurringInvoicesListResponse(unittest.TestCase):
                 data = [
                     invoicepdfs.models.recurring_invoice_out.RecurringInvoiceOut(
                         id = '', 
-                        status = '', 
+                        status = 'active', 
                         business_profile_id = '', 
                         customer_id = '', 
                         frequency = '', 
@@ -61,7 +61,7 @@ class TestRecurringInvoicesListResponse(unittest.TestCase):
                 data = [
                     invoicepdfs.models.recurring_invoice_out.RecurringInvoiceOut(
                         id = '', 
-                        status = '', 
+                        status = 'active', 
                         business_profile_id = '', 
                         customer_id = '', 
                         frequency = '', 

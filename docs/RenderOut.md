@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | 
-**status** | **str** |  | 
+**status** | [**RenderStatus**](RenderStatus.md) |  | 
 **document_type** | **str** |  | 
 **template_id** | **str** |  | 
 **template_version** | **int** |  | [optional] 
