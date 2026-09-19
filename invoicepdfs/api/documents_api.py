@@ -72,6 +72,7 @@ class DocumentsApi:
     ) -> DocumentResponse:
         """Archive Document
 
+        Move a document out of the active list.  Archiving hides a document from the default listing without destroying it; `restore_document` brings it back. Drafts are deleted rather than archived.
 
         :param document_id: (required)
         :type document_id: str
@@ -139,6 +140,7 @@ class DocumentsApi:
     ) -> ApiResponse[DocumentResponse]:
         """Archive Document
 
+        Move a document out of the active list.  Archiving hides a document from the default listing without destroying it; `restore_document` brings it back. Drafts are deleted rather than archived.
 
         :param document_id: (required)
         :type document_id: str
@@ -206,6 +208,7 @@ class DocumentsApi:
     ) -> RESTResponseType:
         """Archive Document
 
+        Move a document out of the active list.  Archiving hides a document from the default listing without destroying it; `restore_document` brings it back. Drafts are deleted rather than archived.
 
         :param document_id: (required)
         :type document_id: str
@@ -331,6 +334,7 @@ class DocumentsApi:
     ) -> DocumentCalculateResponse:
         """Calculate Document
 
+        Compute the totals for a document without storing or rendering it.  Returns the same breakdown — subtotal, discounts, tax, shipping, total — that a render would print, so a checkout page can show a figure before committing to one.
 
         :param document_calculate_request: (required)
         :type document_calculate_request: DocumentCalculateRequest
@@ -398,6 +402,7 @@ class DocumentsApi:
     ) -> ApiResponse[DocumentCalculateResponse]:
         """Calculate Document
 
+        Compute the totals for a document without storing or rendering it.  Returns the same breakdown — subtotal, discounts, tax, shipping, total — that a render would print, so a checkout page can show a figure before committing to one.
 
         :param document_calculate_request: (required)
         :type document_calculate_request: DocumentCalculateRequest
@@ -465,6 +470,7 @@ class DocumentsApi:
     ) -> RESTResponseType:
         """Calculate Document
 
+        Compute the totals for a document without storing or rendering it.  Returns the same breakdown — subtotal, discounts, tax, shipping, total — that a render would print, so a checkout page can show a figure before committing to one.
 
         :param document_calculate_request: (required)
         :type document_calculate_request: DocumentCalculateRequest
@@ -604,6 +610,7 @@ class DocumentsApi:
     ) -> DocumentResponse:
         """Create Document
 
+        Create a document in `draft`.  Totals are computed and stored at creation, so the figures you read back are the ones that were issued rather than a recalculation. Nothing is rendered — use `create_document_render` once the document is final.
 
         :param document_create_request: (required)
         :type document_create_request: DocumentCreateRequest
@@ -675,6 +682,7 @@ class DocumentsApi:
     ) -> ApiResponse[DocumentResponse]:
         """Create Document
 
+        Create a document in `draft`.  Totals are computed and stored at creation, so the figures you read back are the ones that were issued rather than a recalculation. Nothing is rendered — use `create_document_render` once the document is final.
 
         :param document_create_request: (required)
         :type document_create_request: DocumentCreateRequest
@@ -746,6 +754,7 @@ class DocumentsApi:
     ) -> RESTResponseType:
         """Create Document
 
+        Create a document in `draft`.  Totals are computed and stored at creation, so the figures you read back are the ones that were issued rather than a recalculation. Nothing is rendered — use `create_document_render` once the document is final.
 
         :param document_create_request: (required)
         :type document_create_request: DocumentCreateRequest
@@ -892,6 +901,7 @@ class DocumentsApi:
     ) -> RenderResponse:
         """Create Document Render
 
+        Render a stored document to a PDF.  Use this when the document lives here. To render one you hold yourself, without storing it, use `render_document`.  The response carries a signed `download_url` that needs no API key, valid until `expires_at`.
 
         :param document_id: (required)
         :type document_id: str
@@ -967,6 +977,7 @@ class DocumentsApi:
     ) -> ApiResponse[RenderResponse]:
         """Create Document Render
 
+        Render a stored document to a PDF.  Use this when the document lives here. To render one you hold yourself, without storing it, use `render_document`.  The response carries a signed `download_url` that needs no API key, valid until `expires_at`.
 
         :param document_id: (required)
         :type document_id: str
@@ -1042,6 +1053,7 @@ class DocumentsApi:
     ) -> RESTResponseType:
         """Create Document Render
 
+        Render a stored document to a PDF.  Use this when the document lives here. To render one you hold yourself, without storing it, use `render_document`.  The response carries a signed `download_url` that needs no API key, valid until `expires_at`.
 
         :param document_id: (required)
         :type document_id: str
@@ -1192,6 +1204,7 @@ class DocumentsApi:
     ) -> SimpleBoolResponse:
         """Delete Document
 
+        Permanently remove a `draft`.  `409` if anything still points at it — a render, a delivery or a payment — naming what does. Finalized documents are voided or archived, not deleted.
 
         :param document_id: (required)
         :type document_id: str
@@ -1260,6 +1273,7 @@ class DocumentsApi:
     ) -> ApiResponse[SimpleBoolResponse]:
         """Delete Document
 
+        Permanently remove a `draft`.  `409` if anything still points at it — a render, a delivery or a payment — naming what does. Finalized documents are voided or archived, not deleted.
 
         :param document_id: (required)
         :type document_id: str
@@ -1328,6 +1342,7 @@ class DocumentsApi:
     ) -> RESTResponseType:
         """Delete Document
 
+        Permanently remove a `draft`.  `409` if anything still points at it — a render, a delivery or a payment — naming what does. Finalized documents are voided or archived, not deleted.
 
         :param document_id: (required)
         :type document_id: str
@@ -1454,6 +1469,7 @@ class DocumentsApi:
     ) -> DocumentResponse:
         """Duplicate Document
 
+        Copy a document into a new `draft`.  The copy gets the next available number rather than the original's, so it can be finalized without colliding with the document it came from.
 
         :param document_id: (required)
         :type document_id: str
@@ -1521,6 +1537,7 @@ class DocumentsApi:
     ) -> ApiResponse[DocumentResponse]:
         """Duplicate Document
 
+        Copy a document into a new `draft`.  The copy gets the next available number rather than the original's, so it can be finalized without colliding with the document it came from.
 
         :param document_id: (required)
         :type document_id: str
@@ -1588,6 +1605,7 @@ class DocumentsApi:
     ) -> RESTResponseType:
         """Duplicate Document
 
+        Copy a document into a new `draft`.  The copy gets the next available number rather than the original's, so it can be finalized without colliding with the document it came from.
 
         :param document_id: (required)
         :type document_id: str
@@ -1713,6 +1731,7 @@ class DocumentsApi:
     ) -> DocumentResponse:
         """Finalize Document
 
+        Issue a `draft`: fix its number and totals.  From here the document is a record. It can be sent, marked paid, voided or archived, but not edited — `update_document` returns `409` afterwards.
 
         :param document_id: (required)
         :type document_id: str
@@ -1780,6 +1799,7 @@ class DocumentsApi:
     ) -> ApiResponse[DocumentResponse]:
         """Finalize Document
 
+        Issue a `draft`: fix its number and totals.  From here the document is a record. It can be sent, marked paid, voided or archived, but not edited — `update_document` returns `409` afterwards.
 
         :param document_id: (required)
         :type document_id: str
@@ -1847,6 +1867,7 @@ class DocumentsApi:
     ) -> RESTResponseType:
         """Finalize Document
 
+        Issue a `draft`: fix its number and totals.  From here the document is a record. It can be sent, marked paid, voided or archived, but not edited — `update_document` returns `409` afterwards.
 
         :param document_id: (required)
         :type document_id: str
@@ -1972,6 +1993,7 @@ class DocumentsApi:
     ) -> DocumentResponse:
         """Get Document
 
+        One document, with the totals stored when it was created.
 
         :param document_id: (required)
         :type document_id: str
@@ -2039,6 +2061,7 @@ class DocumentsApi:
     ) -> ApiResponse[DocumentResponse]:
         """Get Document
 
+        One document, with the totals stored when it was created.
 
         :param document_id: (required)
         :type document_id: str
@@ -2106,6 +2129,7 @@ class DocumentsApi:
     ) -> RESTResponseType:
         """Get Document
 
+        One document, with the totals stored when it was created.
 
         :param document_id: (required)
         :type document_id: str
@@ -2233,6 +2257,7 @@ class DocumentsApi:
     ) -> DeliveriesListResponse:
         """List Document Deliveries
 
+        Every email delivery attempted for this document.  One row per attempt, newest first, including the ones that failed — which is where to look when a customer says the invoice never arrived.
 
         :param document_id: (required)
         :type document_id: str
@@ -2308,6 +2333,7 @@ class DocumentsApi:
     ) -> ApiResponse[DeliveriesListResponse]:
         """List Document Deliveries
 
+        Every email delivery attempted for this document.  One row per attempt, newest first, including the ones that failed — which is where to look when a customer says the invoice never arrived.
 
         :param document_id: (required)
         :type document_id: str
@@ -2383,6 +2409,7 @@ class DocumentsApi:
     ) -> RESTResponseType:
         """List Document Deliveries
 
+        Every email delivery attempted for this document.  One row per attempt, newest first, including the ones that failed — which is where to look when a customer says the invoice never arrived.
 
         :param document_id: (required)
         :type document_id: str
@@ -2527,6 +2554,7 @@ class DocumentsApi:
     ) -> DocumentsListResponse:
         """List Documents
 
+        Every document on the account, newest first.  Cursor-paginated: pass the `next_cursor` from a response to fetch the page after it. Filter by `document_type` or `status` to narrow the list.
 
         :param limit:
         :type limit: int
@@ -2606,6 +2634,7 @@ class DocumentsApi:
     ) -> ApiResponse[DocumentsListResponse]:
         """List Documents
 
+        Every document on the account, newest first.  Cursor-paginated: pass the `next_cursor` from a response to fetch the page after it. Filter by `document_type` or `status` to narrow the list.
 
         :param limit:
         :type limit: int
@@ -2685,6 +2714,7 @@ class DocumentsApi:
     ) -> RESTResponseType:
         """List Documents
 
+        Every document on the account, newest first.  Cursor-paginated: pass the `next_cursor` from a response to fetch the page after it. Filter by `document_type` or `status` to narrow the list.
 
         :param limit:
         :type limit: int
@@ -2836,6 +2866,7 @@ class DocumentsApi:
     ) -> DocumentResponse:
         """Mark Paid
 
+        Record that the document was paid in full.
 
         :param document_id: (required)
         :type document_id: str
@@ -2903,6 +2934,7 @@ class DocumentsApi:
     ) -> ApiResponse[DocumentResponse]:
         """Mark Paid
 
+        Record that the document was paid in full.
 
         :param document_id: (required)
         :type document_id: str
@@ -2970,6 +3002,7 @@ class DocumentsApi:
     ) -> RESTResponseType:
         """Mark Paid
 
+        Record that the document was paid in full.
 
         :param document_id: (required)
         :type document_id: str
@@ -3095,6 +3128,7 @@ class DocumentsApi:
     ) -> DocumentResponse:
         """Mark Sent
 
+        Record that the document reached the customer.  **This does not send anything** — it only moves the status, for when the document was delivered by some means of your own. Use `send_document` to have us email it.
 
         :param document_id: (required)
         :type document_id: str
@@ -3162,6 +3196,7 @@ class DocumentsApi:
     ) -> ApiResponse[DocumentResponse]:
         """Mark Sent
 
+        Record that the document reached the customer.  **This does not send anything** — it only moves the status, for when the document was delivered by some means of your own. Use `send_document` to have us email it.
 
         :param document_id: (required)
         :type document_id: str
@@ -3229,6 +3264,7 @@ class DocumentsApi:
     ) -> RESTResponseType:
         """Mark Sent
 
+        Record that the document reached the customer.  **This does not send anything** — it only moves the status, for when the document was delivered by some means of your own. Use `send_document` to have us email it.
 
         :param document_id: (required)
         :type document_id: str
@@ -3354,6 +3390,7 @@ class DocumentsApi:
     ) -> DocumentResponse:
         """Mark Unpaid
 
+        Undo `mark_paid`, returning the document to `sent`.  For a payment that was recorded in error or later reversed.
 
         :param document_id: (required)
         :type document_id: str
@@ -3421,6 +3458,7 @@ class DocumentsApi:
     ) -> ApiResponse[DocumentResponse]:
         """Mark Unpaid
 
+        Undo `mark_paid`, returning the document to `sent`.  For a payment that was recorded in error or later reversed.
 
         :param document_id: (required)
         :type document_id: str
@@ -3488,6 +3526,7 @@ class DocumentsApi:
     ) -> RESTResponseType:
         """Mark Unpaid
 
+        Undo `mark_paid`, returning the document to `sent`.  For a payment that was recorded in error or later reversed.
 
         :param document_id: (required)
         :type document_id: str
@@ -3614,6 +3653,7 @@ class DocumentsApi:
     ) -> RenderResponse:
         """Render Document
 
+        Render a document supplied inline, storing nothing but the PDF.  The stateless path: pass the whole document in the body and get a PDF back, with no customer, business profile or stored document required. To render a document that already lives here, use `create_document_render`.  Returns JSON with a signed `download_url` by default. Ask for the bytes directly with `output.delivery: \"binary\"` or `Accept: application/pdf`.
 
         :param document_render_request: (required)
         :type document_render_request: DocumentRenderRequest
@@ -3686,6 +3726,7 @@ class DocumentsApi:
     ) -> ApiResponse[RenderResponse]:
         """Render Document
 
+        Render a document supplied inline, storing nothing but the PDF.  The stateless path: pass the whole document in the body and get a PDF back, with no customer, business profile or stored document required. To render a document that already lives here, use `create_document_render`.  Returns JSON with a signed `download_url` by default. Ask for the bytes directly with `output.delivery: \"binary\"` or `Accept: application/pdf`.
 
         :param document_render_request: (required)
         :type document_render_request: DocumentRenderRequest
@@ -3758,6 +3799,7 @@ class DocumentsApi:
     ) -> RESTResponseType:
         """Render Document
 
+        Render a document supplied inline, storing nothing but the PDF.  The stateless path: pass the whole document in the body and get a PDF back, with no customer, business profile or stored document required. To render a document that already lives here, use `create_document_render`.  Returns JSON with a signed `download_url` by default. Ask for the bytes directly with `output.delivery: \"binary\"` or `Accept: application/pdf`.
 
         :param document_render_request: (required)
         :type document_render_request: DocumentRenderRequest
@@ -3904,6 +3946,7 @@ class DocumentsApi:
     ) -> DocumentResponse:
         """Restore Document
 
+        Bring an archived document back to `finalized`.
 
         :param document_id: (required)
         :type document_id: str
@@ -3971,6 +4014,7 @@ class DocumentsApi:
     ) -> ApiResponse[DocumentResponse]:
         """Restore Document
 
+        Bring an archived document back to `finalized`.
 
         :param document_id: (required)
         :type document_id: str
@@ -4038,6 +4082,7 @@ class DocumentsApi:
     ) -> RESTResponseType:
         """Restore Document
 
+        Bring an archived document back to `finalized`.
 
         :param document_id: (required)
         :type document_id: str
@@ -4454,6 +4499,7 @@ class DocumentsApi:
     ) -> DocumentResponse:
         """Update Document
 
+        Change a document that is still a `draft`.  A finalized document is a record of what was issued and cannot be edited; `409` if it has moved past `draft`. Only the fields you send are changed — omit one to leave it alone, and send `null` to clear it.
 
         :param document_id: (required)
         :type document_id: str
@@ -4525,6 +4571,7 @@ class DocumentsApi:
     ) -> ApiResponse[DocumentResponse]:
         """Update Document
 
+        Change a document that is still a `draft`.  A finalized document is a record of what was issued and cannot be edited; `409` if it has moved past `draft`. Only the fields you send are changed — omit one to leave it alone, and send `null` to clear it.
 
         :param document_id: (required)
         :type document_id: str
@@ -4596,6 +4643,7 @@ class DocumentsApi:
     ) -> RESTResponseType:
         """Update Document
 
+        Change a document that is still a `draft`.  A finalized document is a record of what was issued and cannot be edited; `409` if it has moved past `draft`. Only the fields you send are changed — omit one to leave it alone, and send `null` to clear it.
 
         :param document_id: (required)
         :type document_id: str
@@ -4740,6 +4788,7 @@ class DocumentsApi:
     ) -> DocumentValidateResponse:
         """Validate Document
 
+        Check that a document body is well-formed, without pricing it.  The cheapest of the three stateless operations: no totals are computed and no PDF is produced. Use `calculate_document` for the money and `render_document` for the document.
 
         :param document_validate_request: (required)
         :type document_validate_request: DocumentValidateRequest
@@ -4807,6 +4856,7 @@ class DocumentsApi:
     ) -> ApiResponse[DocumentValidateResponse]:
         """Validate Document
 
+        Check that a document body is well-formed, without pricing it.  The cheapest of the three stateless operations: no totals are computed and no PDF is produced. Use `calculate_document` for the money and `render_document` for the document.
 
         :param document_validate_request: (required)
         :type document_validate_request: DocumentValidateRequest
@@ -4874,6 +4924,7 @@ class DocumentsApi:
     ) -> RESTResponseType:
         """Validate Document
 
+        Check that a document body is well-formed, without pricing it.  The cheapest of the three stateless operations: no totals are computed and no PDF is produced. Use `calculate_document` for the money and `render_document` for the document.
 
         :param document_validate_request: (required)
         :type document_validate_request: DocumentValidateRequest
@@ -5012,6 +5063,7 @@ class DocumentsApi:
     ) -> DocumentResponse:
         """Void Document
 
+        Cancel a document that was issued.  Voiding is how a finalized document is withdrawn, since it cannot be deleted. The PDF renders with a `VOID` mark from then on, so a copy already sent is distinguishable from the live one.
 
         :param document_id: (required)
         :type document_id: str
@@ -5079,6 +5131,7 @@ class DocumentsApi:
     ) -> ApiResponse[DocumentResponse]:
         """Void Document
 
+        Cancel a document that was issued.  Voiding is how a finalized document is withdrawn, since it cannot be deleted. The PDF renders with a `VOID` mark from then on, so a copy already sent is distinguishable from the live one.
 
         :param document_id: (required)
         :type document_id: str
@@ -5146,6 +5199,7 @@ class DocumentsApi:
     ) -> RESTResponseType:
         """Void Document
 
+        Cancel a document that was issued.  Voiding is how a finalized document is withdrawn, since it cannot be deleted. The PDF renders with a `VOID` mark from then on, so a copy already sent is distinguishable from the live one.
 
         :param document_id: (required)
         :type document_id: str

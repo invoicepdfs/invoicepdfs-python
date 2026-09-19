@@ -338,6 +338,7 @@ class RendersApi:
     ) -> RenderResponse:
         """Get Render
 
+        One render: its status, its totals, and how to download it.  `download_url` and `expires_at` are `null` until the render is `completed`, and a `failed` render carries a `failure` explaining why. Poll this after an asynchronous render.
 
         :param render_id: (required)
         :type render_id: str
@@ -405,6 +406,7 @@ class RendersApi:
     ) -> ApiResponse[RenderResponse]:
         """Get Render
 
+        One render: its status, its totals, and how to download it.  `download_url` and `expires_at` are `null` until the render is `completed`, and a `failed` render carries a `failure` explaining why. Poll this after an asynchronous render.
 
         :param render_id: (required)
         :type render_id: str
@@ -472,6 +474,7 @@ class RendersApi:
     ) -> RESTResponseType:
         """Get Render
 
+        One render: its status, its totals, and how to download it.  `download_url` and `expires_at` are `null` until the render is `completed`, and a `failed` render carries a `failure` explaining why. Poll this after an asynchronous render.
 
         :param render_id: (required)
         :type render_id: str

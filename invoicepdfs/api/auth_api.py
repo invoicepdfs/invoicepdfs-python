@@ -338,6 +338,7 @@ class AuthApi:
     ) -> AuthMeResponse:
         """Get Current User
 
+        The account behind the current credential, and the plan it is on.  Works with either an API key or a Firebase token, so it is the cheapest way to confirm a credential is live and see what it can reach.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -400,6 +401,7 @@ class AuthApi:
     ) -> ApiResponse[AuthMeResponse]:
         """Get Current User
 
+        The account behind the current credential, and the plan it is on.  Works with either an API key or a Firebase token, so it is the cheapest way to confirm a credential is live and see what it can reach.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -462,6 +464,7 @@ class AuthApi:
     ) -> RESTResponseType:
         """Get Current User
 
+        The account behind the current credential, and the plan it is on.  Works with either an API key or a Firebase token, so it is the cheapest way to confirm a credential is live and see what it can reach.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
