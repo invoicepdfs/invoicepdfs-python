@@ -14,6 +14,8 @@ Method | HTTP request | Description
 
 Delete File
 
+Remove a stored file.  `409` if a branding profile or a document attachment still references it.
+
 ### Example
 
 * Bearer Authentication (HTTPBearer):
@@ -91,6 +93,8 @@ Name | Type | Description  | Notes
 
 Get File
 
+A stored file's metadata — name, type and size.
+
 ### Example
 
 * Bearer Authentication (HTTPBearer):
@@ -167,6 +171,8 @@ Name | Type | Description  | Notes
 > FileResponse upload_file(file, idempotency_key=idempotency_key)
 
 Upload File
+
+Store a file and get an id for it.  Where logos and document attachments come from: upload once, then reference the returned `file_id` from a branding profile or an attachment.
 
 ### Example
 

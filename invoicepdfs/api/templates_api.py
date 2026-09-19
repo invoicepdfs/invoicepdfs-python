@@ -65,6 +65,7 @@ class TemplatesApi:
     ) -> CustomTemplateResponse:
         """Create Template
 
+        Design a template of your own, starting as a `draft`.  A custom template is a built-in plus your own configuration — it does not replace the layout, it adjusts it. Drafts can be rendered while you iterate; publish it when you want a version pinned.
 
         :param template_create_request: (required)
         :type template_create_request: TemplateCreateRequest
@@ -132,6 +133,7 @@ class TemplatesApi:
     ) -> ApiResponse[CustomTemplateResponse]:
         """Create Template
 
+        Design a template of your own, starting as a `draft`.  A custom template is a built-in plus your own configuration — it does not replace the layout, it adjusts it. Drafts can be rendered while you iterate; publish it when you want a version pinned.
 
         :param template_create_request: (required)
         :type template_create_request: TemplateCreateRequest
@@ -199,6 +201,7 @@ class TemplatesApi:
     ) -> RESTResponseType:
         """Create Template
 
+        Design a template of your own, starting as a `draft`.  A custom template is a built-in plus your own configuration — it does not replace the layout, it adjusts it. Drafts can be rendered while you iterate; publish it when you want a version pinned.
 
         :param template_create_request: (required)
         :type template_create_request: TemplateCreateRequest
@@ -337,6 +340,7 @@ class TemplatesApi:
     ) -> None:
         """Delete Template
 
+        Remove a custom template.  `409` if a document or a recurring schedule still names it.
 
         :param template_id: (required)
         :type template_id: str
@@ -404,6 +408,7 @@ class TemplatesApi:
     ) -> ApiResponse[None]:
         """Delete Template
 
+        Remove a custom template.  `409` if a document or a recurring schedule still names it.
 
         :param template_id: (required)
         :type template_id: str
@@ -471,6 +476,7 @@ class TemplatesApi:
     ) -> RESTResponseType:
         """Delete Template
 
+        Remove a custom template.  `409` if a document or a recurring schedule still names it.
 
         :param template_id: (required)
         :type template_id: str
@@ -596,6 +602,7 @@ class TemplatesApi:
     ) -> CustomTemplateResponse:
         """Duplicate Template
 
+        Copy a custom template into a new `draft`, to change without affecting the original.
 
         :param template_id: (required)
         :type template_id: str
@@ -663,6 +670,7 @@ class TemplatesApi:
     ) -> ApiResponse[CustomTemplateResponse]:
         """Duplicate Template
 
+        Copy a custom template into a new `draft`, to change without affecting the original.
 
         :param template_id: (required)
         :type template_id: str
@@ -730,6 +738,7 @@ class TemplatesApi:
     ) -> RESTResponseType:
         """Duplicate Template
 
+        Copy a custom template into a new `draft`, to change without affecting the original.
 
         :param template_id: (required)
         :type template_id: str
@@ -855,6 +864,7 @@ class TemplatesApi:
     ) -> TemplateDetailResponse:
         """Get Builtin Template
 
+        One built-in template: its id, name and the options it accepts.
 
         :param template_id: (required)
         :type template_id: str
@@ -922,6 +932,7 @@ class TemplatesApi:
     ) -> ApiResponse[TemplateDetailResponse]:
         """Get Builtin Template
 
+        One built-in template: its id, name and the options it accepts.
 
         :param template_id: (required)
         :type template_id: str
@@ -989,6 +1000,7 @@ class TemplatesApi:
     ) -> RESTResponseType:
         """Get Builtin Template
 
+        One built-in template: its id, name and the options it accepts.
 
         :param template_id: (required)
         :type template_id: str
@@ -1114,6 +1126,7 @@ class TemplatesApi:
     ) -> CustomTemplateResponse:
         """Get Custom Template
 
+        One of this account's templates.
 
         :param template_id: (required)
         :type template_id: str
@@ -1181,6 +1194,7 @@ class TemplatesApi:
     ) -> ApiResponse[CustomTemplateResponse]:
         """Get Custom Template
 
+        One of this account's templates.
 
         :param template_id: (required)
         :type template_id: str
@@ -1248,6 +1262,7 @@ class TemplatesApi:
     ) -> RESTResponseType:
         """Get Custom Template
 
+        One of this account's templates.
 
         :param template_id: (required)
         :type template_id: str
@@ -1373,6 +1388,7 @@ class TemplatesApi:
     ) -> TemplateDetailResponse:
         """Get Template
 
+        One built-in template: its id, name and the options it accepts.
 
         :param template_id: (required)
         :type template_id: str
@@ -1440,6 +1456,7 @@ class TemplatesApi:
     ) -> ApiResponse[TemplateDetailResponse]:
         """Get Template
 
+        One built-in template: its id, name and the options it accepts.
 
         :param template_id: (required)
         :type template_id: str
@@ -1507,6 +1524,7 @@ class TemplatesApi:
     ) -> RESTResponseType:
         """Get Template
 
+        One built-in template: its id, name and the options it accepts.
 
         :param template_id: (required)
         :type template_id: str
@@ -1633,6 +1651,7 @@ class TemplatesApi:
     ) -> CustomTemplatesListResponse:
         """List Custom Templates
 
+        Templates this account has designed, newest first. Cursor-paginated.
 
         :param limit:
         :type limit: int
@@ -1704,6 +1723,7 @@ class TemplatesApi:
     ) -> ApiResponse[CustomTemplatesListResponse]:
         """List Custom Templates
 
+        Templates this account has designed, newest first. Cursor-paginated.
 
         :param limit:
         :type limit: int
@@ -1775,6 +1795,7 @@ class TemplatesApi:
     ) -> RESTResponseType:
         """List Custom Templates
 
+        Templates this account has designed, newest first. Cursor-paginated.
 
         :param limit:
         :type limit: int
@@ -1909,6 +1930,7 @@ class TemplatesApi:
     ) -> TemplatesListResponse:
         """List Templates
 
+        The built-in templates every account can render with.  Your own designs are listed separately by `list_custom_templates`.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1971,6 +1993,7 @@ class TemplatesApi:
     ) -> ApiResponse[TemplatesListResponse]:
         """List Templates
 
+        The built-in templates every account can render with.  Your own designs are listed separately by `list_custom_templates`.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2033,6 +2056,7 @@ class TemplatesApi:
     ) -> RESTResponseType:
         """List Templates
 
+        The built-in templates every account can render with.  Your own designs are listed separately by `list_custom_templates`.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2154,6 +2178,7 @@ class TemplatesApi:
     ) -> RenderResponse:
         """Preview Template
 
+        Render a template against sample data to see how it looks.  **This is a real render**: it counts against the monthly quota and is metered like any other, because it does the same work. Use it to check a design, not as a way to render documents.
 
         :param template_id: (required)
         :type template_id: str
@@ -2233,6 +2258,7 @@ class TemplatesApi:
     ) -> ApiResponse[RenderResponse]:
         """Preview Template
 
+        Render a template against sample data to see how it looks.  **This is a real render**: it counts against the monthly quota and is metered like any other, because it does the same work. Use it to check a design, not as a way to render documents.
 
         :param template_id: (required)
         :type template_id: str
@@ -2312,6 +2338,7 @@ class TemplatesApi:
     ) -> RESTResponseType:
         """Preview Template
 
+        Render a template against sample data to see how it looks.  **This is a real render**: it counts against the monthly quota and is metered like any other, because it does the same work. Use it to check a design, not as a way to render documents.
 
         :param template_id: (required)
         :type template_id: str
@@ -2471,6 +2498,7 @@ class TemplatesApi:
     ) -> CustomTemplateResponse:
         """Publish Template
 
+        Mark a custom template `published`.  `409` if it is published already. Publishing is what makes a version pinnable, so a document rendered months from now can still be reproduced.
 
         :param template_id: (required)
         :type template_id: str
@@ -2538,6 +2566,7 @@ class TemplatesApi:
     ) -> ApiResponse[CustomTemplateResponse]:
         """Publish Template
 
+        Mark a custom template `published`.  `409` if it is published already. Publishing is what makes a version pinnable, so a document rendered months from now can still be reproduced.
 
         :param template_id: (required)
         :type template_id: str
@@ -2605,6 +2634,7 @@ class TemplatesApi:
     ) -> RESTResponseType:
         """Publish Template
 
+        Mark a custom template `published`.  `409` if it is published already. Publishing is what makes a version pinnable, so a document rendered months from now can still be reproduced.
 
         :param template_id: (required)
         :type template_id: str
@@ -2731,6 +2761,7 @@ class TemplatesApi:
     ) -> CustomTemplateResponse:
         """Update Template
 
+        Change a custom template. Only the fields you send are changed.
 
         :param template_id: (required)
         :type template_id: str
@@ -2802,6 +2833,7 @@ class TemplatesApi:
     ) -> ApiResponse[CustomTemplateResponse]:
         """Update Template
 
+        Change a custom template. Only the fields you send are changed.
 
         :param template_id: (required)
         :type template_id: str
@@ -2873,6 +2905,7 @@ class TemplatesApi:
     ) -> RESTResponseType:
         """Update Template
 
+        Change a custom template. Only the fields you send are changed.
 
         :param template_id: (required)
         :type template_id: str

@@ -60,6 +60,7 @@ class DocumentAttachmentsApi:
     ) -> InvoiceAttachmentResponse:
         """Create Document Attachment
 
+        Attach an already-uploaded file to a document.  Takes the `file_id` from `upload_file` rather than the bytes, so one upload can be attached to several documents.
 
         :param document_id: (required)
         :type document_id: str
@@ -131,6 +132,7 @@ class DocumentAttachmentsApi:
     ) -> ApiResponse[InvoiceAttachmentResponse]:
         """Create Document Attachment
 
+        Attach an already-uploaded file to a document.  Takes the `file_id` from `upload_file` rather than the bytes, so one upload can be attached to several documents.
 
         :param document_id: (required)
         :type document_id: str
@@ -202,6 +204,7 @@ class DocumentAttachmentsApi:
     ) -> RESTResponseType:
         """Create Document Attachment
 
+        Attach an already-uploaded file to a document.  Takes the `file_id` from `upload_file` rather than the bytes, so one upload can be attached to several documents.
 
         :param document_id: (required)
         :type document_id: str
@@ -347,6 +350,7 @@ class DocumentAttachmentsApi:
     ) -> SimpleBoolResponse:
         """Delete Document Attachment
 
+        Detach a file from this document. The file itself is kept.
 
         :param document_id: (required)
         :type document_id: str
@@ -418,6 +422,7 @@ class DocumentAttachmentsApi:
     ) -> ApiResponse[SimpleBoolResponse]:
         """Delete Document Attachment
 
+        Detach a file from this document. The file itself is kept.
 
         :param document_id: (required)
         :type document_id: str
@@ -489,6 +494,7 @@ class DocumentAttachmentsApi:
     ) -> RESTResponseType:
         """Delete Document Attachment
 
+        Detach a file from this document. The file itself is kept.
 
         :param document_id: (required)
         :type document_id: str
@@ -620,6 +626,7 @@ class DocumentAttachmentsApi:
     ) -> InvoiceAttachmentsListResponse:
         """List Document Attachments
 
+        Files attached to this document.
 
         :param document_id: (required)
         :type document_id: str
@@ -687,6 +694,7 @@ class DocumentAttachmentsApi:
     ) -> ApiResponse[InvoiceAttachmentsListResponse]:
         """List Document Attachments
 
+        Files attached to this document.
 
         :param document_id: (required)
         :type document_id: str
@@ -754,6 +762,7 @@ class DocumentAttachmentsApi:
     ) -> RESTResponseType:
         """List Document Attachments
 
+        Files attached to this document.
 
         :param document_id: (required)
         :type document_id: str

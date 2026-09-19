@@ -61,6 +61,7 @@ class BatchesApi:
     ) -> BatchResponse:
         """Cancel Batch
 
+        Stop a batch that has not finished.  Items not yet started are cancelled. An item already rendering completes — the work is done and cancelling it would waste it.
 
         :param batch_id: (required)
         :type batch_id: str
@@ -128,6 +129,7 @@ class BatchesApi:
     ) -> ApiResponse[BatchResponse]:
         """Cancel Batch
 
+        Stop a batch that has not finished.  Items not yet started are cancelled. An item already rendering completes — the work is done and cancelling it would waste it.
 
         :param batch_id: (required)
         :type batch_id: str
@@ -195,6 +197,7 @@ class BatchesApi:
     ) -> RESTResponseType:
         """Cancel Batch
 
+        Stop a batch that has not finished.  Items not yet started are cancelled. An item already rendering completes — the work is done and cancelling it would waste it.
 
         :param batch_id: (required)
         :type batch_id: str
@@ -320,6 +323,7 @@ class BatchesApi:
     ) -> BatchResponse:
         """Create Batch
 
+        Queue many documents to be rendered at once.  Returns `202` — the batch is recorded and a worker renders it; nothing is rendered inside this request. Poll `get_batch` for progress, then `download_batch` for the results.  The whole batch is refused if it would exceed the monthly quota, rather than rendering part of it.
 
         :param batch_create_request: (required)
         :type batch_create_request: BatchCreateRequest
@@ -387,6 +391,7 @@ class BatchesApi:
     ) -> ApiResponse[BatchResponse]:
         """Create Batch
 
+        Queue many documents to be rendered at once.  Returns `202` — the batch is recorded and a worker renders it; nothing is rendered inside this request. Poll `get_batch` for progress, then `download_batch` for the results.  The whole batch is refused if it would exceed the monthly quota, rather than rendering part of it.
 
         :param batch_create_request: (required)
         :type batch_create_request: BatchCreateRequest
@@ -454,6 +459,7 @@ class BatchesApi:
     ) -> RESTResponseType:
         """Create Batch
 
+        Queue many documents to be rendered at once.  Returns `202` — the batch is recorded and a worker renders it; nothing is rendered inside this request. Poll `get_batch` for progress, then `download_batch` for the results.  The whole batch is refused if it would exceed the monthly quota, rather than rendering part of it.
 
         :param batch_create_request: (required)
         :type batch_create_request: BatchCreateRequest
@@ -592,6 +598,7 @@ class BatchesApi:
     ) -> bytearray:
         """Download Batch
 
+        Every completed render in the batch, as a ZIP.  `409` until the batch is `completed`. Items that failed are simply absent, so check `failed_items` rather than counting files.
 
         :param batch_id: (required)
         :type batch_id: str
@@ -659,6 +666,7 @@ class BatchesApi:
     ) -> ApiResponse[bytearray]:
         """Download Batch
 
+        Every completed render in the batch, as a ZIP.  `409` until the batch is `completed`. Items that failed are simply absent, so check `failed_items` rather than counting files.
 
         :param batch_id: (required)
         :type batch_id: str
@@ -726,6 +734,7 @@ class BatchesApi:
     ) -> RESTResponseType:
         """Download Batch
 
+        Every completed render in the batch, as a ZIP.  `409` until the batch is `completed`. Items that failed are simply absent, so check `failed_items` rather than counting files.
 
         :param batch_id: (required)
         :type batch_id: str
@@ -852,6 +861,7 @@ class BatchesApi:
     ) -> BatchResponse:
         """Get Batch
 
+        A batch's status and its per-item counts.  The poll surface: `total_items`, `completed_items` and `failed_items` say how far it has got without listing every item.
 
         :param batch_id: (required)
         :type batch_id: str
@@ -919,6 +929,7 @@ class BatchesApi:
     ) -> ApiResponse[BatchResponse]:
         """Get Batch
 
+        A batch's status and its per-item counts.  The poll surface: `total_items`, `completed_items` and `failed_items` say how far it has got without listing every item.
 
         :param batch_id: (required)
         :type batch_id: str
@@ -986,6 +997,7 @@ class BatchesApi:
     ) -> RESTResponseType:
         """Get Batch
 
+        A batch's status and its per-item counts.  The poll surface: `total_items`, `completed_items` and `failed_items` say how far it has got without listing every item.
 
         :param batch_id: (required)
         :type batch_id: str
@@ -1113,6 +1125,7 @@ class BatchesApi:
     ) -> BatchItemsListResponse:
         """List Batch Items
 
+        Every item in a batch with its own status, newest first.  Where to look when `failed_items` is not zero: each row carries its error and, once rendered, its `render_id`.
 
         :param batch_id: (required)
         :type batch_id: str
@@ -1188,6 +1201,7 @@ class BatchesApi:
     ) -> ApiResponse[BatchItemsListResponse]:
         """List Batch Items
 
+        Every item in a batch with its own status, newest first.  Where to look when `failed_items` is not zero: each row carries its error and, once rendered, its `render_id`.
 
         :param batch_id: (required)
         :type batch_id: str
@@ -1263,6 +1277,7 @@ class BatchesApi:
     ) -> RESTResponseType:
         """List Batch Items
 
+        Every item in a batch with its own status, newest first.  Where to look when `failed_items` is not zero: each row carries its error and, once rendered, its `render_id`.
 
         :param batch_id: (required)
         :type batch_id: str
@@ -1405,6 +1420,7 @@ class BatchesApi:
     ) -> BatchesListResponse:
         """List Batches
 
+        Batch jobs on this account, newest first.
 
         :param limit:
         :type limit: int
@@ -1476,6 +1492,7 @@ class BatchesApi:
     ) -> ApiResponse[BatchesListResponse]:
         """List Batches
 
+        Batch jobs on this account, newest first.
 
         :param limit:
         :type limit: int
@@ -1547,6 +1564,7 @@ class BatchesApi:
     ) -> RESTResponseType:
         """List Batches
 
+        Batch jobs on this account, newest first.
 
         :param limit:
         :type limit: int

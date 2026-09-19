@@ -15,6 +15,8 @@ Method | HTTP request | Description
 
 Cancel Job
 
+Stop a job that has not finished.
+
 ### Example
 
 * Bearer Authentication (HTTPBearer):
@@ -91,6 +93,8 @@ Name | Type | Description  | Notes
 > JobResponse get_job(job_id)
 
 Get Job
+
+One job's status and progress.
 
 ### Example
 
@@ -249,6 +253,8 @@ Name | Type | Description  | Notes
 > JobResponse retry_job(job_id)
 
 Retry Job
+
+Return a `failed` or `cancelled` job to `queued`, clearing its progress and error.  `409` from any other status.
 
 ### Example
 

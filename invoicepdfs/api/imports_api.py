@@ -57,6 +57,7 @@ class ImportsApi:
     ) -> ImportResponse:
         """Cancel Import
 
+        Discard an import without creating anything. Only while it is `pending` or `processing`.
 
         :param import_id: (required)
         :type import_id: str
@@ -124,6 +125,7 @@ class ImportsApi:
     ) -> ApiResponse[ImportResponse]:
         """Cancel Import
 
+        Discard an import without creating anything. Only while it is `pending` or `processing`.
 
         :param import_id: (required)
         :type import_id: str
@@ -191,6 +193,7 @@ class ImportsApi:
     ) -> RESTResponseType:
         """Cancel Import
 
+        Discard an import without creating anything. Only while it is `pending` or `processing`.
 
         :param import_id: (required)
         :type import_id: str
@@ -316,6 +319,7 @@ class ImportsApi:
     ) -> ImportResponse:
         """Confirm Import
 
+        Commit a reviewed import, creating its documents.  Only from `pending` — an import already confirmed or cancelled returns `409`.
 
         :param import_id: (required)
         :type import_id: str
@@ -383,6 +387,7 @@ class ImportsApi:
     ) -> ApiResponse[ImportResponse]:
         """Confirm Import
 
+        Commit a reviewed import, creating its documents.  Only from `pending` — an import already confirmed or cancelled returns `409`.
 
         :param import_id: (required)
         :type import_id: str
@@ -450,6 +455,7 @@ class ImportsApi:
     ) -> RESTResponseType:
         """Confirm Import
 
+        Commit a reviewed import, creating its documents.  Only from `pending` — an import already confirmed or cancelled returns `409`.
 
         :param import_id: (required)
         :type import_id: str
@@ -575,6 +581,7 @@ class ImportsApi:
     ) -> ImportResponse:
         """Create Import
 
+        Upload rows to be turned into documents, for review first.  Nothing is created yet: the rows are parsed and held so you can check them. `confirm_import` commits them, `cancel_import` discards them.
 
         :param import_create_request: (required)
         :type import_create_request: ImportCreateRequest
@@ -642,6 +649,7 @@ class ImportsApi:
     ) -> ApiResponse[ImportResponse]:
         """Create Import
 
+        Upload rows to be turned into documents, for review first.  Nothing is created yet: the rows are parsed and held so you can check them. `confirm_import` commits them, `cancel_import` discards them.
 
         :param import_create_request: (required)
         :type import_create_request: ImportCreateRequest
@@ -709,6 +717,7 @@ class ImportsApi:
     ) -> RESTResponseType:
         """Create Import
 
+        Upload rows to be turned into documents, for review first.  Nothing is created yet: the rows are parsed and held so you can check them. `confirm_import` commits them, `cancel_import` discards them.
 
         :param import_create_request: (required)
         :type import_create_request: ImportCreateRequest
@@ -847,6 +856,7 @@ class ImportsApi:
     ) -> ImportResponse:
         """Get Import
 
+        An import's status and how many rows it holds.
 
         :param import_id: (required)
         :type import_id: str
@@ -914,6 +924,7 @@ class ImportsApi:
     ) -> ApiResponse[ImportResponse]:
         """Get Import
 
+        An import's status and how many rows it holds.
 
         :param import_id: (required)
         :type import_id: str
@@ -981,6 +992,7 @@ class ImportsApi:
     ) -> RESTResponseType:
         """Get Import
 
+        An import's status and how many rows it holds.
 
         :param import_id: (required)
         :type import_id: str

@@ -58,6 +58,7 @@ class FilesApi:
     ) -> SimpleBoolResponse:
         """Delete File
 
+        Remove a stored file.  `409` if a branding profile or a document attachment still references it.
 
         :param file_id: (required)
         :type file_id: str
@@ -125,6 +126,7 @@ class FilesApi:
     ) -> ApiResponse[SimpleBoolResponse]:
         """Delete File
 
+        Remove a stored file.  `409` if a branding profile or a document attachment still references it.
 
         :param file_id: (required)
         :type file_id: str
@@ -192,6 +194,7 @@ class FilesApi:
     ) -> RESTResponseType:
         """Delete File
 
+        Remove a stored file.  `409` if a branding profile or a document attachment still references it.
 
         :param file_id: (required)
         :type file_id: str
@@ -317,6 +320,7 @@ class FilesApi:
     ) -> FileResponse:
         """Get File
 
+        A stored file's metadata — name, type and size.
 
         :param file_id: (required)
         :type file_id: str
@@ -384,6 +388,7 @@ class FilesApi:
     ) -> ApiResponse[FileResponse]:
         """Get File
 
+        A stored file's metadata — name, type and size.
 
         :param file_id: (required)
         :type file_id: str
@@ -451,6 +456,7 @@ class FilesApi:
     ) -> RESTResponseType:
         """Get File
 
+        A stored file's metadata — name, type and size.
 
         :param file_id: (required)
         :type file_id: str
@@ -577,6 +583,7 @@ class FilesApi:
     ) -> FileResponse:
         """Upload File
 
+        Store a file and get an id for it.  Where logos and document attachments come from: upload once, then reference the returned `file_id` from a branding profile or an attachment.
 
         :param file: (required)
         :type file: bytearray
@@ -648,6 +655,7 @@ class FilesApi:
     ) -> ApiResponse[FileResponse]:
         """Upload File
 
+        Store a file and get an id for it.  Where logos and document attachments come from: upload once, then reference the returned `file_id` from a branding profile or an attachment.
 
         :param file: (required)
         :type file: bytearray
@@ -719,6 +727,7 @@ class FilesApi:
     ) -> RESTResponseType:
         """Upload File
 
+        Store a file and get an id for it.  Where logos and document attachments come from: upload once, then reference the returned `file_id` from a branding profile or an attachment.
 
         :param file: (required)
         :type file: bytearray

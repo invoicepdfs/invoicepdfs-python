@@ -15,6 +15,8 @@ Method | HTTP request | Description
 
 Cancel Import
 
+Discard an import without creating anything. Only while it is `pending` or `processing`.
+
 ### Example
 
 * Bearer Authentication (HTTPBearer):
@@ -91,6 +93,8 @@ Name | Type | Description  | Notes
 > ImportResponse confirm_import(import_id)
 
 Confirm Import
+
+Commit a reviewed import, creating its documents.  Only from `pending` — an import already confirmed or cancelled returns `409`.
 
 ### Example
 
@@ -169,6 +173,8 @@ Name | Type | Description  | Notes
 
 Create Import
 
+Upload rows to be turned into documents, for review first.  Nothing is created yet: the rows are parsed and held so you can check them. `confirm_import` commits them, `cancel_import` discards them.
+
 ### Example
 
 * Bearer Authentication (HTTPBearer):
@@ -246,6 +252,8 @@ Name | Type | Description  | Notes
 > ImportResponse get_import(import_id)
 
 Get Import
+
+An import's status and how many rows it holds.
 
 ### Example
 

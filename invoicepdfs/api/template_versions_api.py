@@ -59,6 +59,7 @@ class TemplateVersionsApi:
     ) -> TemplateVersionResponse:
         """Create Template Version
 
+        Snapshot a template's current configuration as a new version.  A document can pin a version, so a render months later reproduces the design that was live when it was issued rather than today's.
 
         :param template_id: (required)
         :type template_id: str
@@ -130,6 +131,7 @@ class TemplateVersionsApi:
     ) -> ApiResponse[TemplateVersionResponse]:
         """Create Template Version
 
+        Snapshot a template's current configuration as a new version.  A document can pin a version, so a render months later reproduces the design that was live when it was issued rather than today's.
 
         :param template_id: (required)
         :type template_id: str
@@ -201,6 +203,7 @@ class TemplateVersionsApi:
     ) -> RESTResponseType:
         """Create Template Version
 
+        Snapshot a template's current configuration as a new version.  A document can pin a version, so a render months later reproduces the design that was live when it was issued rather than today's.
 
         :param template_id: (required)
         :type template_id: str
@@ -346,6 +349,7 @@ class TemplateVersionsApi:
     ) -> TemplateVersionResponse:
         """Get Template Version
 
+        One version's stored configuration.
 
         :param template_id: (required)
         :type template_id: str
@@ -417,6 +421,7 @@ class TemplateVersionsApi:
     ) -> ApiResponse[TemplateVersionResponse]:
         """Get Template Version
 
+        One version's stored configuration.
 
         :param template_id: (required)
         :type template_id: str
@@ -488,6 +493,7 @@ class TemplateVersionsApi:
     ) -> RESTResponseType:
         """Get Template Version
 
+        One version's stored configuration.
 
         :param template_id: (required)
         :type template_id: str
@@ -619,6 +625,7 @@ class TemplateVersionsApi:
     ) -> TemplateVersionsListResponse:
         """List Template Versions
 
+        Every published version of a custom template, newest first.
 
         :param template_id: (required)
         :type template_id: str
@@ -686,6 +693,7 @@ class TemplateVersionsApi:
     ) -> ApiResponse[TemplateVersionsListResponse]:
         """List Template Versions
 
+        Every published version of a custom template, newest first.
 
         :param template_id: (required)
         :type template_id: str
@@ -753,6 +761,7 @@ class TemplateVersionsApi:
     ) -> RESTResponseType:
         """List Template Versions
 
+        Every published version of a custom template, newest first.
 
         :param template_id: (required)
         :type template_id: str

@@ -22,6 +22,8 @@ Method | HTTP request | Description
 
 Create Template
 
+Design a template of your own, starting as a `draft`.  A custom template is a built-in plus your own configuration — it does not replace the layout, it adjusts it. Drafts can be rendered while you iterate; publish it when you want a version pinned.
+
 ### Example
 
 * Bearer Authentication (HTTPBearer):
@@ -100,6 +102,8 @@ Name | Type | Description  | Notes
 
 Delete Template
 
+Remove a custom template.  `409` if a document or a recurring schedule still names it.
+
 ### Example
 
 * Bearer Authentication (HTTPBearer):
@@ -173,6 +177,8 @@ void (empty response body)
 > CustomTemplateResponse duplicate_template(template_id)
 
 Duplicate Template
+
+Copy a custom template into a new `draft`, to change without affecting the original.
 
 ### Example
 
@@ -251,6 +257,8 @@ Name | Type | Description  | Notes
 
 Get Builtin Template
 
+One built-in template: its id, name and the options it accepts.
+
 ### Example
 
 * Bearer Authentication (HTTPBearer):
@@ -327,6 +335,8 @@ Name | Type | Description  | Notes
 > CustomTemplateResponse get_custom_template(template_id)
 
 Get Custom Template
+
+One of this account's templates.
 
 ### Example
 
@@ -405,6 +415,8 @@ Name | Type | Description  | Notes
 
 Get Template
 
+One built-in template: its id, name and the options it accepts.
+
 ### Example
 
 * Bearer Authentication (HTTPBearer):
@@ -481,6 +493,8 @@ Name | Type | Description  | Notes
 > CustomTemplatesListResponse list_custom_templates(limit=limit, cursor=cursor)
 
 List Custom Templates
+
+Templates this account has designed, newest first. Cursor-paginated.
 
 ### Example
 
@@ -561,6 +575,8 @@ Name | Type | Description  | Notes
 
 List Templates
 
+The built-in templates every account can render with.  Your own designs are listed separately by `list_custom_templates`.
+
 ### Example
 
 * Bearer Authentication (HTTPBearer):
@@ -632,6 +648,8 @@ This endpoint does not need any parameter.
 > RenderResponse preview_template(template_id, document_render_request, version=version, idempotency_key=idempotency_key)
 
 Preview Template
+
+Render a template against sample data to see how it looks.  **This is a real render**: it counts against the monthly quota and is metered like any other, because it does the same work. Use it to check a design, not as a way to render documents.
 
 ### Example
 
@@ -717,6 +735,8 @@ Name | Type | Description  | Notes
 
 Publish Template
 
+Mark a custom template `published`.  `409` if it is published already. Publishing is what makes a version pinnable, so a document rendered months from now can still be reproduced.
+
 ### Example
 
 * Bearer Authentication (HTTPBearer):
@@ -793,6 +813,8 @@ Name | Type | Description  | Notes
 > CustomTemplateResponse update_template(template_id, template_patch_request)
 
 Update Template
+
+Change a custom template. Only the fields you send are changed.
 
 ### Example
 

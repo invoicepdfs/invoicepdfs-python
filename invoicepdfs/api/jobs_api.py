@@ -59,6 +59,7 @@ class JobsApi:
     ) -> JobResponse:
         """Cancel Job
 
+        Stop a job that has not finished.
 
         :param job_id: (required)
         :type job_id: str
@@ -126,6 +127,7 @@ class JobsApi:
     ) -> ApiResponse[JobResponse]:
         """Cancel Job
 
+        Stop a job that has not finished.
 
         :param job_id: (required)
         :type job_id: str
@@ -193,6 +195,7 @@ class JobsApi:
     ) -> RESTResponseType:
         """Cancel Job
 
+        Stop a job that has not finished.
 
         :param job_id: (required)
         :type job_id: str
@@ -318,6 +321,7 @@ class JobsApi:
     ) -> JobResponse:
         """Get Job
 
+        One job's status and progress.
 
         :param job_id: (required)
         :type job_id: str
@@ -385,6 +389,7 @@ class JobsApi:
     ) -> ApiResponse[JobResponse]:
         """Get Job
 
+        One job's status and progress.
 
         :param job_id: (required)
         :type job_id: str
@@ -452,6 +457,7 @@ class JobsApi:
     ) -> RESTResponseType:
         """Get Job
 
+        One job's status and progress.
 
         :param job_id: (required)
         :type job_id: str
@@ -858,6 +864,7 @@ class JobsApi:
     ) -> JobResponse:
         """Retry Job
 
+        Return a `failed` or `cancelled` job to `queued`, clearing its progress and error.  `409` from any other status.
 
         :param job_id: (required)
         :type job_id: str
@@ -925,6 +932,7 @@ class JobsApi:
     ) -> ApiResponse[JobResponse]:
         """Retry Job
 
+        Return a `failed` or `cancelled` job to `queued`, clearing its progress and error.  `409` from any other status.
 
         :param job_id: (required)
         :type job_id: str
@@ -992,6 +1000,7 @@ class JobsApi:
     ) -> RESTResponseType:
         """Retry Job
 
+        Return a `failed` or `cancelled` job to `queued`, clearing its progress and error.  `409` from any other status.
 
         :param job_id: (required)
         :type job_id: str

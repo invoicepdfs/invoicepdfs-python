@@ -14,6 +14,8 @@ Method | HTTP request | Description
 
 Create Document Attachment
 
+Attach an already-uploaded file to a document.  Takes the `file_id` from `upload_file` rather than the bytes, so one upload can be attached to several documents.
+
 ### Example
 
 * Bearer Authentication (HTTPBearer):
@@ -94,6 +96,8 @@ Name | Type | Description  | Notes
 
 Delete Document Attachment
 
+Detach a file from this document. The file itself is kept.
+
 ### Example
 
 * Bearer Authentication (HTTPBearer):
@@ -172,6 +176,8 @@ Name | Type | Description  | Notes
 > InvoiceAttachmentsListResponse list_document_attachments(document_id)
 
 List Document Attachments
+
+Files attached to this document.
 
 ### Example
 
