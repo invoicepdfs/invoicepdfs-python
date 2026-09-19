@@ -63,6 +63,7 @@ class BusinessProfilesApi:
     ) -> BusinessProfileResponse:
         """Create Business Profile
 
+        Create an identity to issue documents as: the seller side.  `legal_name`, `tax_id`, address and bank details are what appears as the issuer, and what an e-invoicing ruleset checks. Distinct from a branding profile, which sets colours and a logo and says nothing about who you are.
 
         :param business_profile_create: (required)
         :type business_profile_create: BusinessProfileCreate
@@ -134,6 +135,7 @@ class BusinessProfilesApi:
     ) -> ApiResponse[BusinessProfileResponse]:
         """Create Business Profile
 
+        Create an identity to issue documents as: the seller side.  `legal_name`, `tax_id`, address and bank details are what appears as the issuer, and what an e-invoicing ruleset checks. Distinct from a branding profile, which sets colours and a logo and says nothing about who you are.
 
         :param business_profile_create: (required)
         :type business_profile_create: BusinessProfileCreate
@@ -205,6 +207,7 @@ class BusinessProfilesApi:
     ) -> RESTResponseType:
         """Create Business Profile
 
+        Create an identity to issue documents as: the seller side.  `legal_name`, `tax_id`, address and bank details are what appears as the issuer, and what an e-invoicing ruleset checks. Distinct from a branding profile, which sets colours and a logo and says nothing about who you are.
 
         :param business_profile_create: (required)
         :type business_profile_create: BusinessProfileCreate
@@ -349,6 +352,7 @@ class BusinessProfilesApi:
     ) -> SimpleBoolResponse:
         """Delete Business Profile
 
+        Remove a business profile.  `409` if any document was issued under it, naming what still points at it.
 
         :param business_profile_id: (required)
         :type business_profile_id: str
@@ -417,6 +421,7 @@ class BusinessProfilesApi:
     ) -> ApiResponse[SimpleBoolResponse]:
         """Delete Business Profile
 
+        Remove a business profile.  `409` if any document was issued under it, naming what still points at it.
 
         :param business_profile_id: (required)
         :type business_profile_id: str
@@ -485,6 +490,7 @@ class BusinessProfilesApi:
     ) -> RESTResponseType:
         """Delete Business Profile
 
+        Remove a business profile.  `409` if any document was issued under it, naming what still points at it.
 
         :param business_profile_id: (required)
         :type business_profile_id: str
@@ -611,6 +617,7 @@ class BusinessProfilesApi:
     ) -> BusinessProfileResponse:
         """Get Business Profile
 
+        One business profile.
 
         :param business_profile_id: (required)
         :type business_profile_id: str
@@ -678,6 +685,7 @@ class BusinessProfilesApi:
     ) -> ApiResponse[BusinessProfileResponse]:
         """Get Business Profile
 
+        One business profile.
 
         :param business_profile_id: (required)
         :type business_profile_id: str
@@ -745,6 +753,7 @@ class BusinessProfilesApi:
     ) -> RESTResponseType:
         """Get Business Profile
 
+        One business profile.
 
         :param business_profile_id: (required)
         :type business_profile_id: str
@@ -871,6 +880,7 @@ class BusinessProfilesApi:
     ) -> BusinessProfilesListResponse:
         """List Business Profiles
 
+        The identities you issue documents *as*, newest first.  One per entity you bill from — a business with two trading names or two tax registrations needs two. For how documents *look* rather than who issues them, see the branding profiles.
 
         :param limit:
         :type limit: int
@@ -942,6 +952,7 @@ class BusinessProfilesApi:
     ) -> ApiResponse[BusinessProfilesListResponse]:
         """List Business Profiles
 
+        The identities you issue documents *as*, newest first.  One per entity you bill from — a business with two trading names or two tax registrations needs two. For how documents *look* rather than who issues them, see the branding profiles.
 
         :param limit:
         :type limit: int
@@ -1013,6 +1024,7 @@ class BusinessProfilesApi:
     ) -> RESTResponseType:
         """List Business Profiles
 
+        The identities you issue documents *as*, newest first.  One per entity you bill from — a business with two trading names or two tax registrations needs two. For how documents *look* rather than who issues them, see the branding profiles.
 
         :param limit:
         :type limit: int
@@ -1150,6 +1162,7 @@ class BusinessProfilesApi:
     ) -> BusinessProfileResponse:
         """Update Business Profile
 
+        Change a business profile.  Only the fields you send are changed. Documents already issued keep the issuer details they carried at the time.
 
         :param business_profile_id: (required)
         :type business_profile_id: str
@@ -1225,6 +1238,7 @@ class BusinessProfilesApi:
     ) -> ApiResponse[BusinessProfileResponse]:
         """Update Business Profile
 
+        Change a business profile.  Only the fields you send are changed. Documents already issued keep the issuer details they carried at the time.
 
         :param business_profile_id: (required)
         :type business_profile_id: str
@@ -1300,6 +1314,7 @@ class BusinessProfilesApi:
     ) -> RESTResponseType:
         """Update Business Profile
 
+        Change a business profile.  Only the fields you send are changed. Documents already issued keep the issuer details they carried at the time.
 
         :param business_profile_id: (required)
         :type business_profile_id: str

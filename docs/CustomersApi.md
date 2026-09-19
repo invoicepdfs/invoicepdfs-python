@@ -16,6 +16,8 @@ Method | HTTP request | Description
 
 Create Customer
 
+Store a customer you can bill repeatedly.  `tax_id` and `electronic_address` are what e-invoicing needs: a buyer VAT number and the Peppol identifier a receiver is addressed by. Neither is required for a plain PDF.
+
 ### Example
 
 * Bearer Authentication (HTTPBearer):
@@ -96,6 +98,8 @@ Name | Type | Description  | Notes
 
 Delete Customer
 
+Remove a customer.  `409` if any document still references them, naming what does. History is kept rather than rewritten.
+
 ### Example
 
 * Bearer Authentication (HTTPBearer):
@@ -174,6 +178,8 @@ Name | Type | Description  | Notes
 
 Get Customer
 
+One stored customer.
+
 ### Example
 
 * Bearer Authentication (HTTPBearer):
@@ -250,6 +256,8 @@ Name | Type | Description  | Notes
 > CustomersListResponse list_customers(limit=limit, cursor=cursor)
 
 List Customers
+
+The people and companies you bill, newest first.  Cursor-paginated. A customer is optional — the stateless render endpoints take a buyer inline — but storing one lets a document reference it by id.
 
 ### Example
 
@@ -329,6 +337,8 @@ Name | Type | Description  | Notes
 > CustomerResponse update_customer(customer_id, customer_patch, idempotency_key=idempotency_key)
 
 Update Customer
+
+Change a stored customer.  Only the fields you send are changed — omit one to leave it alone, send `null` to clear it. Documents already issued keep the details they were issued with; this does not rewrite them.
 
 ### Example
 

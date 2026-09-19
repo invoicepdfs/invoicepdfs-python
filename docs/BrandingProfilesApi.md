@@ -19,6 +19,8 @@ Method | HTTP request | Description
 
 Create Branding Profile
 
+Create a look: colours, logo, fonts and footer.  Applies on top of whichever template a render names, so one template can serve several brands. Mark one as the default and documents that name no profile will use it.
+
 ### Example
 
 * Bearer Authentication (HTTPBearer):
@@ -97,6 +99,8 @@ Name | Type | Description  | Notes
 
 Delete Branding Logo
 
+Remove this profile's logo, leaving its colours and text intact.
+
 ### Example
 
 * Bearer Authentication (HTTPBearer):
@@ -173,6 +177,8 @@ Name | Type | Description  | Notes
 > SimpleBoolResponse delete_branding_profile(profile_id)
 
 Delete Branding Profile
+
+Remove a branding profile.  Deleting the default is allowed: the oldest remaining profile becomes the default in its place, so documents that name no profile keep rendering.
 
 ### Example
 
@@ -251,6 +257,8 @@ Name | Type | Description  | Notes
 
 Get Branding Profile
 
+One branding profile.
+
 ### Example
 
 * Bearer Authentication (HTTPBearer):
@@ -328,6 +336,8 @@ Name | Type | Description  | Notes
 
 List Branding Profiles
 
+The looks a document can be rendered in, newest first.  Colours, logo, fonts and footer text — how a document appears. Who it is issued by is a business profile, which is a different thing.
+
 ### Example
 
 * Bearer Authentication (HTTPBearer):
@@ -399,6 +409,8 @@ This endpoint does not need any parameter.
 > BrandingProfileResponse set_default_branding_profile(profile_id)
 
 Set Default Branding Profile
+
+Make this the profile used when a document names none.  Exactly one profile is the default; setting a new one clears the previous.
 
 ### Example
 
@@ -476,6 +488,8 @@ Name | Type | Description  | Notes
 > BrandingProfileResponse update_branding_profile(profile_id, branding_profile_patch_request)
 
 Update Branding Profile
+
+Change a branding profile.  Only the fields you send are changed. `hide_invoicepdfs_branding` is stored on any plan but only honoured on a plan that includes it — it is applied when a document renders, not validated here, so setting it on a plan without it is accepted and has no effect.
 
 ### Example
 
@@ -556,6 +570,8 @@ Name | Type | Description  | Notes
 > BrandingProfileResponse upload_branding_logo(profile_id, file)
 
 Upload Branding Logo
+
+Attach a logo image to this branding profile.  Replaces whatever logo the profile carried. The image is embedded when a document renders, so a later change applies to future renders and leaves PDFs already produced as they were.
 
 ### Example
 

@@ -63,6 +63,7 @@ class CustomersApi:
     ) -> CustomerResponse:
         """Create Customer
 
+        Store a customer you can bill repeatedly.  `tax_id` and `electronic_address` are what e-invoicing needs: a buyer VAT number and the Peppol identifier a receiver is addressed by. Neither is required for a plain PDF.
 
         :param customer_create: (required)
         :type customer_create: CustomerCreate
@@ -134,6 +135,7 @@ class CustomersApi:
     ) -> ApiResponse[CustomerResponse]:
         """Create Customer
 
+        Store a customer you can bill repeatedly.  `tax_id` and `electronic_address` are what e-invoicing needs: a buyer VAT number and the Peppol identifier a receiver is addressed by. Neither is required for a plain PDF.
 
         :param customer_create: (required)
         :type customer_create: CustomerCreate
@@ -205,6 +207,7 @@ class CustomersApi:
     ) -> RESTResponseType:
         """Create Customer
 
+        Store a customer you can bill repeatedly.  `tax_id` and `electronic_address` are what e-invoicing needs: a buyer VAT number and the Peppol identifier a receiver is addressed by. Neither is required for a plain PDF.
 
         :param customer_create: (required)
         :type customer_create: CustomerCreate
@@ -349,6 +352,7 @@ class CustomersApi:
     ) -> SimpleBoolResponse:
         """Delete Customer
 
+        Remove a customer.  `409` if any document still references them, naming what does. History is kept rather than rewritten.
 
         :param customer_id: (required)
         :type customer_id: str
@@ -417,6 +421,7 @@ class CustomersApi:
     ) -> ApiResponse[SimpleBoolResponse]:
         """Delete Customer
 
+        Remove a customer.  `409` if any document still references them, naming what does. History is kept rather than rewritten.
 
         :param customer_id: (required)
         :type customer_id: str
@@ -485,6 +490,7 @@ class CustomersApi:
     ) -> RESTResponseType:
         """Delete Customer
 
+        Remove a customer.  `409` if any document still references them, naming what does. History is kept rather than rewritten.
 
         :param customer_id: (required)
         :type customer_id: str
@@ -611,6 +617,7 @@ class CustomersApi:
     ) -> CustomerResponse:
         """Get Customer
 
+        One stored customer.
 
         :param customer_id: (required)
         :type customer_id: str
@@ -678,6 +685,7 @@ class CustomersApi:
     ) -> ApiResponse[CustomerResponse]:
         """Get Customer
 
+        One stored customer.
 
         :param customer_id: (required)
         :type customer_id: str
@@ -745,6 +753,7 @@ class CustomersApi:
     ) -> RESTResponseType:
         """Get Customer
 
+        One stored customer.
 
         :param customer_id: (required)
         :type customer_id: str
@@ -871,6 +880,7 @@ class CustomersApi:
     ) -> CustomersListResponse:
         """List Customers
 
+        The people and companies you bill, newest first.  Cursor-paginated. A customer is optional — the stateless render endpoints take a buyer inline — but storing one lets a document reference it by id.
 
         :param limit:
         :type limit: int
@@ -942,6 +952,7 @@ class CustomersApi:
     ) -> ApiResponse[CustomersListResponse]:
         """List Customers
 
+        The people and companies you bill, newest first.  Cursor-paginated. A customer is optional — the stateless render endpoints take a buyer inline — but storing one lets a document reference it by id.
 
         :param limit:
         :type limit: int
@@ -1013,6 +1024,7 @@ class CustomersApi:
     ) -> RESTResponseType:
         """List Customers
 
+        The people and companies you bill, newest first.  Cursor-paginated. A customer is optional — the stateless render endpoints take a buyer inline — but storing one lets a document reference it by id.
 
         :param limit:
         :type limit: int
@@ -1150,6 +1162,7 @@ class CustomersApi:
     ) -> CustomerResponse:
         """Update Customer
 
+        Change a stored customer.  Only the fields you send are changed — omit one to leave it alone, send `null` to clear it. Documents already issued keep the details they were issued with; this does not rewrite them.
 
         :param customer_id: (required)
         :type customer_id: str
@@ -1225,6 +1238,7 @@ class CustomersApi:
     ) -> ApiResponse[CustomerResponse]:
         """Update Customer
 
+        Change a stored customer.  Only the fields you send are changed — omit one to leave it alone, send `null` to clear it. Documents already issued keep the details they were issued with; this does not rewrite them.
 
         :param customer_id: (required)
         :type customer_id: str
@@ -1300,6 +1314,7 @@ class CustomersApi:
     ) -> RESTResponseType:
         """Update Customer
 
+        Change a stored customer.  Only the fields you send are changed — omit one to leave it alone, send `null` to clear it. Documents already issued keep the details they were issued with; this does not rewrite them.
 
         :param customer_id: (required)
         :type customer_id: str

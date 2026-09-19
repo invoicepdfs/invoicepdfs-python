@@ -326,6 +326,7 @@ class NumberingSequencesApi:
     ) -> NumberingSequenceResponse:
         """Create Sequence
 
+        Define how a document type's numbers are built.  A prefix, an optional date pattern, and a zero-padded counter — `INV-2026-0001`. `reset` decides whether the counter returns to one each year.
 
         :param numbering_sequence_create_request: (required)
         :type numbering_sequence_create_request: NumberingSequenceCreateRequest
@@ -393,6 +394,7 @@ class NumberingSequencesApi:
     ) -> ApiResponse[NumberingSequenceResponse]:
         """Create Sequence
 
+        Define how a document type's numbers are built.  A prefix, an optional date pattern, and a zero-padded counter — `INV-2026-0001`. `reset` decides whether the counter returns to one each year.
 
         :param numbering_sequence_create_request: (required)
         :type numbering_sequence_create_request: NumberingSequenceCreateRequest
@@ -460,6 +462,7 @@ class NumberingSequencesApi:
     ) -> RESTResponseType:
         """Create Sequence
 
+        Define how a document type's numbers are built.  A prefix, an optional date pattern, and a zero-padded counter — `INV-2026-0001`. `reset` decides whether the counter returns to one each year.
 
         :param numbering_sequence_create_request: (required)
         :type numbering_sequence_create_request: NumberingSequenceCreateRequest
@@ -598,6 +601,7 @@ class NumberingSequencesApi:
     ) -> SimpleBoolResponse:
         """Delete Sequence
 
+        Remove a numbering scheme.  Documents of that type then need their number supplied explicitly.
 
         :param sequence_id: (required)
         :type sequence_id: str
@@ -665,6 +669,7 @@ class NumberingSequencesApi:
     ) -> ApiResponse[SimpleBoolResponse]:
         """Delete Sequence
 
+        Remove a numbering scheme.  Documents of that type then need their number supplied explicitly.
 
         :param sequence_id: (required)
         :type sequence_id: str
@@ -732,6 +737,7 @@ class NumberingSequencesApi:
     ) -> RESTResponseType:
         """Delete Sequence
 
+        Remove a numbering scheme.  Documents of that type then need their number supplied explicitly.
 
         :param sequence_id: (required)
         :type sequence_id: str
@@ -857,6 +863,7 @@ class NumberingSequencesApi:
     ) -> NumberingSequenceResponse:
         """Get Sequence
 
+        One numbering sequence, including the number it will issue next.
 
         :param sequence_id: (required)
         :type sequence_id: str
@@ -924,6 +931,7 @@ class NumberingSequencesApi:
     ) -> ApiResponse[NumberingSequenceResponse]:
         """Get Sequence
 
+        One numbering sequence, including the number it will issue next.
 
         :param sequence_id: (required)
         :type sequence_id: str
@@ -991,6 +999,7 @@ class NumberingSequencesApi:
     ) -> RESTResponseType:
         """Get Sequence
 
+        One numbering sequence, including the number it will issue next.
 
         :param sequence_id: (required)
         :type sequence_id: str
@@ -1117,6 +1126,7 @@ class NumberingSequencesApi:
     ) -> NumberingSequencesListResponse:
         """List Sequences
 
+        The numbering schemes that produce document numbers, newest first.  Each names the document type it numbers, so invoices and credit notes can run on separate counters.
 
         :param limit:
         :type limit: int
@@ -1188,6 +1198,7 @@ class NumberingSequencesApi:
     ) -> ApiResponse[NumberingSequencesListResponse]:
         """List Sequences
 
+        The numbering schemes that produce document numbers, newest first.  Each names the document type it numbers, so invoices and credit notes can run on separate counters.
 
         :param limit:
         :type limit: int
@@ -1259,6 +1270,7 @@ class NumberingSequencesApi:
     ) -> RESTResponseType:
         """List Sequences
 
+        The numbering schemes that produce document numbers, newest first.  Each names the document type it numbers, so invoices and credit notes can run on separate counters.
 
         :param limit:
         :type limit: int
@@ -1394,6 +1406,7 @@ class NumberingSequencesApi:
     ) -> NumberingSequencePreviewResponse:
         """Preview Sequence
 
+        Show the next number **without consuming it**.  Nothing is claimed, so calling this twice returns the same number and the number stays available. Use `consume_sequence_number` to take it.
 
         :param sequence_id: (required)
         :type sequence_id: str
@@ -1461,6 +1474,7 @@ class NumberingSequencesApi:
     ) -> ApiResponse[NumberingSequencePreviewResponse]:
         """Preview Sequence
 
+        Show the next number **without consuming it**.  Nothing is claimed, so calling this twice returns the same number and the number stays available. Use `consume_sequence_number` to take it.
 
         :param sequence_id: (required)
         :type sequence_id: str
@@ -1528,6 +1542,7 @@ class NumberingSequencesApi:
     ) -> RESTResponseType:
         """Preview Sequence
 
+        Show the next number **without consuming it**.  Nothing is claimed, so calling this twice returns the same number and the number stays available. Use `consume_sequence_number` to take it.
 
         :param sequence_id: (required)
         :type sequence_id: str
@@ -1654,6 +1669,7 @@ class NumberingSequencesApi:
     ) -> NumberingSequenceResponse:
         """Update Sequence
 
+        Change a numbering scheme.  Numbers already issued are not rewritten, so a change takes effect from the next document. Moving the counter backwards can collide with a number already used.
 
         :param sequence_id: (required)
         :type sequence_id: str
@@ -1725,6 +1741,7 @@ class NumberingSequencesApi:
     ) -> ApiResponse[NumberingSequenceResponse]:
         """Update Sequence
 
+        Change a numbering scheme.  Numbers already issued are not rewritten, so a change takes effect from the next document. Moving the counter backwards can collide with a number already used.
 
         :param sequence_id: (required)
         :type sequence_id: str
@@ -1796,6 +1813,7 @@ class NumberingSequencesApi:
     ) -> RESTResponseType:
         """Update Sequence
 
+        Change a numbering scheme.  Numbers already issued are not rewritten, so a change takes effect from the next document. Moving the counter backwards can collide with a number already used.
 
         :param sequence_id: (required)
         :type sequence_id: str

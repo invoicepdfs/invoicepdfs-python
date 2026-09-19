@@ -61,6 +61,7 @@ class BrandingProfilesApi:
     ) -> BrandingProfileResponse:
         """Create Branding Profile
 
+        Create a look: colours, logo, fonts and footer.  Applies on top of whichever template a render names, so one template can serve several brands. Mark one as the default and documents that name no profile will use it.
 
         :param branding_profile_create_request: (required)
         :type branding_profile_create_request: BrandingProfileCreateRequest
@@ -128,6 +129,7 @@ class BrandingProfilesApi:
     ) -> ApiResponse[BrandingProfileResponse]:
         """Create Branding Profile
 
+        Create a look: colours, logo, fonts and footer.  Applies on top of whichever template a render names, so one template can serve several brands. Mark one as the default and documents that name no profile will use it.
 
         :param branding_profile_create_request: (required)
         :type branding_profile_create_request: BrandingProfileCreateRequest
@@ -195,6 +197,7 @@ class BrandingProfilesApi:
     ) -> RESTResponseType:
         """Create Branding Profile
 
+        Create a look: colours, logo, fonts and footer.  Applies on top of whichever template a render names, so one template can serve several brands. Mark one as the default and documents that name no profile will use it.
 
         :param branding_profile_create_request: (required)
         :type branding_profile_create_request: BrandingProfileCreateRequest
@@ -333,6 +336,7 @@ class BrandingProfilesApi:
     ) -> SimpleBoolResponse:
         """Delete Branding Logo
 
+        Remove this profile's logo, leaving its colours and text intact.
 
         :param profile_id: (required)
         :type profile_id: str
@@ -400,6 +404,7 @@ class BrandingProfilesApi:
     ) -> ApiResponse[SimpleBoolResponse]:
         """Delete Branding Logo
 
+        Remove this profile's logo, leaving its colours and text intact.
 
         :param profile_id: (required)
         :type profile_id: str
@@ -467,6 +472,7 @@ class BrandingProfilesApi:
     ) -> RESTResponseType:
         """Delete Branding Logo
 
+        Remove this profile's logo, leaving its colours and text intact.
 
         :param profile_id: (required)
         :type profile_id: str
@@ -592,6 +598,7 @@ class BrandingProfilesApi:
     ) -> SimpleBoolResponse:
         """Delete Branding Profile
 
+        Remove a branding profile.  Deleting the default is allowed: the oldest remaining profile becomes the default in its place, so documents that name no profile keep rendering.
 
         :param profile_id: (required)
         :type profile_id: str
@@ -659,6 +666,7 @@ class BrandingProfilesApi:
     ) -> ApiResponse[SimpleBoolResponse]:
         """Delete Branding Profile
 
+        Remove a branding profile.  Deleting the default is allowed: the oldest remaining profile becomes the default in its place, so documents that name no profile keep rendering.
 
         :param profile_id: (required)
         :type profile_id: str
@@ -726,6 +734,7 @@ class BrandingProfilesApi:
     ) -> RESTResponseType:
         """Delete Branding Profile
 
+        Remove a branding profile.  Deleting the default is allowed: the oldest remaining profile becomes the default in its place, so documents that name no profile keep rendering.
 
         :param profile_id: (required)
         :type profile_id: str
@@ -851,6 +860,7 @@ class BrandingProfilesApi:
     ) -> BrandingProfileResponse:
         """Get Branding Profile
 
+        One branding profile.
 
         :param profile_id: (required)
         :type profile_id: str
@@ -918,6 +928,7 @@ class BrandingProfilesApi:
     ) -> ApiResponse[BrandingProfileResponse]:
         """Get Branding Profile
 
+        One branding profile.
 
         :param profile_id: (required)
         :type profile_id: str
@@ -985,6 +996,7 @@ class BrandingProfilesApi:
     ) -> RESTResponseType:
         """Get Branding Profile
 
+        One branding profile.
 
         :param profile_id: (required)
         :type profile_id: str
@@ -1109,6 +1121,7 @@ class BrandingProfilesApi:
     ) -> BrandingProfilesListResponse:
         """List Branding Profiles
 
+        The looks a document can be rendered in, newest first.  Colours, logo, fonts and footer text — how a document appears. Who it is issued by is a business profile, which is a different thing.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1171,6 +1184,7 @@ class BrandingProfilesApi:
     ) -> ApiResponse[BrandingProfilesListResponse]:
         """List Branding Profiles
 
+        The looks a document can be rendered in, newest first.  Colours, logo, fonts and footer text — how a document appears. Who it is issued by is a business profile, which is a different thing.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1233,6 +1247,7 @@ class BrandingProfilesApi:
     ) -> RESTResponseType:
         """List Branding Profiles
 
+        The looks a document can be rendered in, newest first.  Colours, logo, fonts and footer text — how a document appears. Who it is issued by is a business profile, which is a different thing.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1351,6 +1366,7 @@ class BrandingProfilesApi:
     ) -> BrandingProfileResponse:
         """Set Default Branding Profile
 
+        Make this the profile used when a document names none.  Exactly one profile is the default; setting a new one clears the previous.
 
         :param profile_id: (required)
         :type profile_id: str
@@ -1418,6 +1434,7 @@ class BrandingProfilesApi:
     ) -> ApiResponse[BrandingProfileResponse]:
         """Set Default Branding Profile
 
+        Make this the profile used when a document names none.  Exactly one profile is the default; setting a new one clears the previous.
 
         :param profile_id: (required)
         :type profile_id: str
@@ -1485,6 +1502,7 @@ class BrandingProfilesApi:
     ) -> RESTResponseType:
         """Set Default Branding Profile
 
+        Make this the profile used when a document names none.  Exactly one profile is the default; setting a new one clears the previous.
 
         :param profile_id: (required)
         :type profile_id: str
@@ -1611,6 +1629,7 @@ class BrandingProfilesApi:
     ) -> BrandingProfileResponse:
         """Update Branding Profile
 
+        Change a branding profile.  Only the fields you send are changed. `hide_invoicepdfs_branding` is stored on any plan but only honoured on a plan that includes it — it is applied when a document renders, not validated here, so setting it on a plan without it is accepted and has no effect.
 
         :param profile_id: (required)
         :type profile_id: str
@@ -1682,6 +1701,7 @@ class BrandingProfilesApi:
     ) -> ApiResponse[BrandingProfileResponse]:
         """Update Branding Profile
 
+        Change a branding profile.  Only the fields you send are changed. `hide_invoicepdfs_branding` is stored on any plan but only honoured on a plan that includes it — it is applied when a document renders, not validated here, so setting it on a plan without it is accepted and has no effect.
 
         :param profile_id: (required)
         :type profile_id: str
@@ -1753,6 +1773,7 @@ class BrandingProfilesApi:
     ) -> RESTResponseType:
         """Update Branding Profile
 
+        Change a branding profile.  Only the fields you send are changed. `hide_invoicepdfs_branding` is stored on any plan but only honoured on a plan that includes it — it is applied when a document renders, not validated here, so setting it on a plan without it is accepted and has no effect.
 
         :param profile_id: (required)
         :type profile_id: str
@@ -1898,6 +1919,7 @@ class BrandingProfilesApi:
     ) -> BrandingProfileResponse:
         """Upload Branding Logo
 
+        Attach a logo image to this branding profile.  Replaces whatever logo the profile carried. The image is embedded when a document renders, so a later change applies to future renders and leaves PDFs already produced as they were.
 
         :param profile_id: (required)
         :type profile_id: str
@@ -1969,6 +1991,7 @@ class BrandingProfilesApi:
     ) -> ApiResponse[BrandingProfileResponse]:
         """Upload Branding Logo
 
+        Attach a logo image to this branding profile.  Replaces whatever logo the profile carried. The image is embedded when a document renders, so a later change applies to future renders and leaves PDFs already produced as they were.
 
         :param profile_id: (required)
         :type profile_id: str
@@ -2040,6 +2063,7 @@ class BrandingProfilesApi:
     ) -> RESTResponseType:
         """Upload Branding Logo
 
+        Attach a logo image to this branding profile.  Replaces whatever logo the profile carried. The image is embedded when a document renders, so a later change applies to future renders and leaves PDFs already produced as they were.
 
         :param profile_id: (required)
         :type profile_id: str

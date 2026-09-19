@@ -62,6 +62,7 @@ class TaxRatesApi:
     ) -> TaxRateResponse:
         """Create Tax Rate
 
+        Store a reusable tax rate.  `inclusive` decides whether the rate is already inside the unit price or added to it — the difference is the total, so it is worth being sure. The tax `category` travels with the rate into e-invoicing XML.
 
         :param tax_rate_create_request: (required)
         :type tax_rate_create_request: TaxRateCreateRequest
@@ -129,6 +130,7 @@ class TaxRatesApi:
     ) -> ApiResponse[TaxRateResponse]:
         """Create Tax Rate
 
+        Store a reusable tax rate.  `inclusive` decides whether the rate is already inside the unit price or added to it — the difference is the total, so it is worth being sure. The tax `category` travels with the rate into e-invoicing XML.
 
         :param tax_rate_create_request: (required)
         :type tax_rate_create_request: TaxRateCreateRequest
@@ -196,6 +198,7 @@ class TaxRatesApi:
     ) -> RESTResponseType:
         """Create Tax Rate
 
+        Store a reusable tax rate.  `inclusive` decides whether the rate is already inside the unit price or added to it — the difference is the total, so it is worth being sure. The tax `category` travels with the rate into e-invoicing XML.
 
         :param tax_rate_create_request: (required)
         :type tax_rate_create_request: TaxRateCreateRequest
@@ -334,6 +337,7 @@ class TaxRatesApi:
     ) -> SimpleBoolResponse:
         """Delete Tax Rate
 
+        Remove a stored tax rate. Documents already issued are unaffected.
 
         :param tax_rate_id: (required)
         :type tax_rate_id: str
@@ -401,6 +405,7 @@ class TaxRatesApi:
     ) -> ApiResponse[SimpleBoolResponse]:
         """Delete Tax Rate
 
+        Remove a stored tax rate. Documents already issued are unaffected.
 
         :param tax_rate_id: (required)
         :type tax_rate_id: str
@@ -468,6 +473,7 @@ class TaxRatesApi:
     ) -> RESTResponseType:
         """Delete Tax Rate
 
+        Remove a stored tax rate. Documents already issued are unaffected.
 
         :param tax_rate_id: (required)
         :type tax_rate_id: str
@@ -593,6 +599,7 @@ class TaxRatesApi:
     ) -> TaxRateResponse:
         """Get Tax Rate
 
+        One stored tax rate.
 
         :param tax_rate_id: (required)
         :type tax_rate_id: str
@@ -660,6 +667,7 @@ class TaxRatesApi:
     ) -> ApiResponse[TaxRateResponse]:
         """Get Tax Rate
 
+        One stored tax rate.
 
         :param tax_rate_id: (required)
         :type tax_rate_id: str
@@ -727,6 +735,7 @@ class TaxRatesApi:
     ) -> RESTResponseType:
         """Get Tax Rate
 
+        One stored tax rate.
 
         :param tax_rate_id: (required)
         :type tax_rate_id: str
@@ -853,6 +862,7 @@ class TaxRatesApi:
     ) -> TaxRatesListResponse:
         """List Tax Rates
 
+        Named tax rates you can apply by reference, newest first.  A convenience, not a requirement: a line item can state its rate inline instead. Storing one means a rate change is made in a single place.
 
         :param limit:
         :type limit: int
@@ -924,6 +934,7 @@ class TaxRatesApi:
     ) -> ApiResponse[TaxRatesListResponse]:
         """List Tax Rates
 
+        Named tax rates you can apply by reference, newest first.  A convenience, not a requirement: a line item can state its rate inline instead. Storing one means a rate change is made in a single place.
 
         :param limit:
         :type limit: int
@@ -995,6 +1006,7 @@ class TaxRatesApi:
     ) -> RESTResponseType:
         """List Tax Rates
 
+        Named tax rates you can apply by reference, newest first.  A convenience, not a requirement: a line item can state its rate inline instead. Storing one means a rate change is made in a single place.
 
         :param limit:
         :type limit: int
@@ -1131,6 +1143,7 @@ class TaxRatesApi:
     ) -> TaxRateResponse:
         """Update Tax Rate
 
+        Change a stored tax rate.  Documents already issued keep the rate they were calculated with. This affects future documents only.
 
         :param tax_rate_id: (required)
         :type tax_rate_id: str
@@ -1202,6 +1215,7 @@ class TaxRatesApi:
     ) -> ApiResponse[TaxRateResponse]:
         """Update Tax Rate
 
+        Change a stored tax rate.  Documents already issued keep the rate they were calculated with. This affects future documents only.
 
         :param tax_rate_id: (required)
         :type tax_rate_id: str
@@ -1273,6 +1287,7 @@ class TaxRatesApi:
     ) -> RESTResponseType:
         """Update Tax Rate
 
+        Change a stored tax rate.  Documents already issued keep the rate they were calculated with. This affects future documents only.
 
         :param tax_rate_id: (required)
         :type tax_rate_id: str

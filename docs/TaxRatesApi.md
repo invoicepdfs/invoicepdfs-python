@@ -16,6 +16,8 @@ Method | HTTP request | Description
 
 Create Tax Rate
 
+Store a reusable tax rate.  `inclusive` decides whether the rate is already inside the unit price or added to it — the difference is the total, so it is worth being sure. The tax `category` travels with the rate into e-invoicing XML.
+
 ### Example
 
 * Bearer Authentication (HTTPBearer):
@@ -94,6 +96,8 @@ Name | Type | Description  | Notes
 
 Delete Tax Rate
 
+Remove a stored tax rate. Documents already issued are unaffected.
+
 ### Example
 
 * Bearer Authentication (HTTPBearer):
@@ -171,6 +175,8 @@ Name | Type | Description  | Notes
 
 Get Tax Rate
 
+One stored tax rate.
+
 ### Example
 
 * Bearer Authentication (HTTPBearer):
@@ -247,6 +253,8 @@ Name | Type | Description  | Notes
 > TaxRatesListResponse list_tax_rates(limit=limit, cursor=cursor)
 
 List Tax Rates
+
+Named tax rates you can apply by reference, newest first.  A convenience, not a requirement: a line item can state its rate inline instead. Storing one means a rate change is made in a single place.
 
 ### Example
 
@@ -326,6 +334,8 @@ Name | Type | Description  | Notes
 > TaxRateResponse update_tax_rate(tax_rate_id, tax_rate_patch_request)
 
 Update Tax Rate
+
+Change a stored tax rate.  Documents already issued keep the rate they were calculated with. This affects future documents only.
 
 ### Example
 
