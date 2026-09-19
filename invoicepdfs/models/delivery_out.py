@@ -42,8 +42,8 @@ class DeliveryOut(BaseModel):
     @field_validator('status')
     def status_validate_enum(cls, value):
         """Validates the enum"""
-        if value not in set(['queued', 'sent', 'delivered', 'bounced', 'failed']):
-            raise ValueError("must be one of enum values ('queued', 'sent', 'delivered', 'bounced', 'failed')")
+        if value not in set(['queued', 'sent', 'failed']):
+            raise ValueError("must be one of enum values ('queued', 'sent', 'failed')")
         return value
 
     model_config = ConfigDict(

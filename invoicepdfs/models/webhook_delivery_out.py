@@ -41,8 +41,8 @@ class WebhookDeliveryOut(BaseModel):
     @field_validator('status')
     def status_validate_enum(cls, value):
         """Validates the enum"""
-        if value not in set(['pending', 'delivered', 'failed']):
-            raise ValueError("must be one of enum values ('pending', 'delivered', 'failed')")
+        if value not in set(['pending', 'retrying', 'delivered', 'failed']):
+            raise ValueError("must be one of enum values ('pending', 'retrying', 'delivered', 'failed')")
         return value
 
     model_config = ConfigDict(
