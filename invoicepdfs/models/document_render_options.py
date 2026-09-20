@@ -25,7 +25,7 @@ from typing_extensions import Self
 
 class DocumentRenderOptions(BaseModel):
     """
-    Render options for an already-stored document (``POST /documents/{id}/renders``).  Distinct from ``app.schemas.v1.DocumentRenderRequest``, which carries a full inline document for the stateless ``POST /documents/render``. Two classes sharing one name made FastAPI fall back to module-qualified schema names in the spec (``app__documents__schemas__DocumentRenderRequest``), which the SDK generators turned into ``AppDocumentsSchemasDocumentRenderRequest``.
+    Render options for a document that is already stored.  For ``POST /documents/{id}/renders``. The stateless ``POST /documents/render`` takes the whole document inline instead.
     """ # noqa: E501
     template_id: Optional[StrictStr] = 'tpl_modern'
     template_version: Optional[Annotated[int, Field(strict=True, ge=1)]] = None
