@@ -13,6 +13,8 @@ Method | HTTP request | Description
 
 Get Audit Event
 
+One audit event by id.
+
 ### Example
 
 * Bearer Authentication (HTTPBearer):
@@ -89,6 +91,8 @@ Name | Type | Description  | Notes
 > AuditEventsListResponse list_audit_events(limit=limit, cursor=cursor, action=action, resource_type=resource_type, resource_id=resource_id)
 
 List Audit Events
+
+Who changed what on this account, newest first.  Filter by `action`, `resource_type` and `resource_id` to follow a single object's history.
 
 ### Example
 

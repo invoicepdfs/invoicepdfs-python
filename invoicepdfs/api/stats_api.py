@@ -54,6 +54,7 @@ class StatsApi:
     ) -> StatsResponse:
         """Get Stats
 
+        Counts and recent activity for the account, in one call.  Totals for documents, customers and business profiles, a breakdown of documents by status, and the ten most recent documents — cheaper than paging each collection to build a dashboard.  The `invoice`-prefixed fields cover every document type, not only invoices.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -116,6 +117,7 @@ class StatsApi:
     ) -> ApiResponse[StatsResponse]:
         """Get Stats
 
+        Counts and recent activity for the account, in one call.  Totals for documents, customers and business profiles, a breakdown of documents by status, and the ten most recent documents — cheaper than paging each collection to build a dashboard.  The `invoice`-prefixed fields cover every document type, not only invoices.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -178,6 +180,7 @@ class StatsApi:
     ) -> RESTResponseType:
         """Get Stats
 
+        Counts and recent activity for the account, in one call.  Totals for documents, customers and business profiles, a breakdown of documents by status, and the ten most recent documents — cheaper than paging each collection to build a dashboard.  The `invoice`-prefixed fields cover every document type, not only invoices.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request

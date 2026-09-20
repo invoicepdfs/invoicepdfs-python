@@ -65,6 +65,7 @@ class WebhooksApi:
     ) -> WebhookEndpointResponse:
         """Create Webhook Endpoint
 
+        Register a URL to receive events.  The endpoint starts active and begins receiving the events you list.  A signing secret is generated but is **not** returned here. Call `rotate_webhook_secret` to obtain one before you can verify signatures.
 
         :param webhook_endpoint_create_request: (required)
         :type webhook_endpoint_create_request: WebhookEndpointCreateRequest
@@ -132,6 +133,7 @@ class WebhooksApi:
     ) -> ApiResponse[WebhookEndpointResponse]:
         """Create Webhook Endpoint
 
+        Register a URL to receive events.  The endpoint starts active and begins receiving the events you list.  A signing secret is generated but is **not** returned here. Call `rotate_webhook_secret` to obtain one before you can verify signatures.
 
         :param webhook_endpoint_create_request: (required)
         :type webhook_endpoint_create_request: WebhookEndpointCreateRequest
@@ -199,6 +201,7 @@ class WebhooksApi:
     ) -> RESTResponseType:
         """Create Webhook Endpoint
 
+        Register a URL to receive events.  The endpoint starts active and begins receiving the events you list.  A signing secret is generated but is **not** returned here. Call `rotate_webhook_secret` to obtain one before you can verify signatures.
 
         :param webhook_endpoint_create_request: (required)
         :type webhook_endpoint_create_request: WebhookEndpointCreateRequest
@@ -337,6 +340,7 @@ class WebhooksApi:
     ) -> SimpleBoolResponse:
         """Delete Webhook Endpoint
 
+        Remove an endpoint and its delivery history.  The endpoint's delivery records are deleted with it, including any still waiting to be retried. To stop deliveries without losing the history, set `is_active` to false instead.
 
         :param endpoint_id: (required)
         :type endpoint_id: str
@@ -404,6 +408,7 @@ class WebhooksApi:
     ) -> ApiResponse[SimpleBoolResponse]:
         """Delete Webhook Endpoint
 
+        Remove an endpoint and its delivery history.  The endpoint's delivery records are deleted with it, including any still waiting to be retried. To stop deliveries without losing the history, set `is_active` to false instead.
 
         :param endpoint_id: (required)
         :type endpoint_id: str
@@ -471,6 +476,7 @@ class WebhooksApi:
     ) -> RESTResponseType:
         """Delete Webhook Endpoint
 
+        Remove an endpoint and its delivery history.  The endpoint's delivery records are deleted with it, including any still waiting to be retried. To stop deliveries without losing the history, set `is_active` to false instead.
 
         :param endpoint_id: (required)
         :type endpoint_id: str
@@ -596,6 +602,7 @@ class WebhooksApi:
     ) -> WebhookDeliveryResponse:
         """Get Webhook Delivery
 
+        One webhook delivery by id — an HTTP POST to one of your endpoints.  Not to be confused with `get_delivery`, which is an email sent to a customer.
 
         :param delivery_id: (required)
         :type delivery_id: str
@@ -663,6 +670,7 @@ class WebhooksApi:
     ) -> ApiResponse[WebhookDeliveryResponse]:
         """Get Webhook Delivery
 
+        One webhook delivery by id — an HTTP POST to one of your endpoints.  Not to be confused with `get_delivery`, which is an email sent to a customer.
 
         :param delivery_id: (required)
         :type delivery_id: str
@@ -730,6 +738,7 @@ class WebhooksApi:
     ) -> RESTResponseType:
         """Get Webhook Delivery
 
+        One webhook delivery by id — an HTTP POST to one of your endpoints.  Not to be confused with `get_delivery`, which is an email sent to a customer.
 
         :param delivery_id: (required)
         :type delivery_id: str
@@ -855,6 +864,7 @@ class WebhooksApi:
     ) -> WebhookEndpointResponse:
         """Get Webhook Endpoint
 
+        One webhook endpoint by id.
 
         :param endpoint_id: (required)
         :type endpoint_id: str
@@ -922,6 +932,7 @@ class WebhooksApi:
     ) -> ApiResponse[WebhookEndpointResponse]:
         """Get Webhook Endpoint
 
+        One webhook endpoint by id.
 
         :param endpoint_id: (required)
         :type endpoint_id: str
@@ -989,6 +1000,7 @@ class WebhooksApi:
     ) -> RESTResponseType:
         """Get Webhook Endpoint
 
+        One webhook endpoint by id.
 
         :param endpoint_id: (required)
         :type endpoint_id: str
@@ -1115,6 +1127,7 @@ class WebhooksApi:
     ) -> WebhookDeliveriesListResponse:
         """List Webhook Deliveries
 
+        Every webhook delivery attempt on the account, newest first.  One row per attempt to POST an event to one of your endpoints, with the HTTP status and attempt count. For emails sent to your customers, see `get_delivery`.
 
         :param limit:
         :type limit: int
@@ -1186,6 +1199,7 @@ class WebhooksApi:
     ) -> ApiResponse[WebhookDeliveriesListResponse]:
         """List Webhook Deliveries
 
+        Every webhook delivery attempt on the account, newest first.  One row per attempt to POST an event to one of your endpoints, with the HTTP status and attempt count. For emails sent to your customers, see `get_delivery`.
 
         :param limit:
         :type limit: int
@@ -1257,6 +1271,7 @@ class WebhooksApi:
     ) -> RESTResponseType:
         """List Webhook Deliveries
 
+        Every webhook delivery attempt on the account, newest first.  One row per attempt to POST an event to one of your endpoints, with the HTTP status and attempt count. For emails sent to your customers, see `get_delivery`.
 
         :param limit:
         :type limit: int
@@ -1393,6 +1408,7 @@ class WebhooksApi:
     ) -> WebhookEndpointsListResponse:
         """List Webhook Endpoints
 
+        Every webhook endpoint registered on the account, newest first.
 
         :param limit:
         :type limit: int
@@ -1464,6 +1480,7 @@ class WebhooksApi:
     ) -> ApiResponse[WebhookEndpointsListResponse]:
         """List Webhook Endpoints
 
+        Every webhook endpoint registered on the account, newest first.
 
         :param limit:
         :type limit: int
@@ -1535,6 +1552,7 @@ class WebhooksApi:
     ) -> RESTResponseType:
         """List Webhook Endpoints
 
+        Every webhook endpoint registered on the account, newest first.
 
         :param limit:
         :type limit: int
@@ -1670,6 +1688,7 @@ class WebhooksApi:
     ) -> WebhookDeliveryResponse:
         """Retry Webhook Delivery
 
+        Send a failed or pending webhook delivery again, immediately.  Resets the attempt counter on the same delivery and dispatches it without waiting for the retry schedule. Failed deliveries are already retried automatically with backoff, so this is for after those are exhausted — or to send a delivery created by `test_webhook_endpoint`.  Refused with 409 in any other status. To re-send an email, use `retry_delivery`.
 
         :param delivery_id: (required)
         :type delivery_id: str
@@ -1737,6 +1756,7 @@ class WebhooksApi:
     ) -> ApiResponse[WebhookDeliveryResponse]:
         """Retry Webhook Delivery
 
+        Send a failed or pending webhook delivery again, immediately.  Resets the attempt counter on the same delivery and dispatches it without waiting for the retry schedule. Failed deliveries are already retried automatically with backoff, so this is for after those are exhausted — or to send a delivery created by `test_webhook_endpoint`.  Refused with 409 in any other status. To re-send an email, use `retry_delivery`.
 
         :param delivery_id: (required)
         :type delivery_id: str
@@ -1804,6 +1824,7 @@ class WebhooksApi:
     ) -> RESTResponseType:
         """Retry Webhook Delivery
 
+        Send a failed or pending webhook delivery again, immediately.  Resets the attempt counter on the same delivery and dispatches it without waiting for the retry schedule. Failed deliveries are already retried automatically with backoff, so this is for after those are exhausted — or to send a delivery created by `test_webhook_endpoint`.  Refused with 409 in any other status. To re-send an email, use `retry_delivery`.
 
         :param delivery_id: (required)
         :type delivery_id: str
@@ -1929,6 +1950,7 @@ class WebhooksApi:
     ) -> WebhookSecretResponse:
         """Rotate Webhook Secret
 
+        Issue a new signing secret and return it.  This is the only response that contains the secret, so it is also how you obtain the first one after creating an endpoint. The previous secret stops being accepted immediately: signatures computed with it will not verify.
 
         :param endpoint_id: (required)
         :type endpoint_id: str
@@ -1996,6 +2018,7 @@ class WebhooksApi:
     ) -> ApiResponse[WebhookSecretResponse]:
         """Rotate Webhook Secret
 
+        Issue a new signing secret and return it.  This is the only response that contains the secret, so it is also how you obtain the first one after creating an endpoint. The previous secret stops being accepted immediately: signatures computed with it will not verify.
 
         :param endpoint_id: (required)
         :type endpoint_id: str
@@ -2063,6 +2086,7 @@ class WebhooksApi:
     ) -> RESTResponseType:
         """Rotate Webhook Secret
 
+        Issue a new signing secret and return it.  This is the only response that contains the secret, so it is also how you obtain the first one after creating an endpoint. The previous secret stops being accepted immediately: signatures computed with it will not verify.
 
         :param endpoint_id: (required)
         :type endpoint_id: str
@@ -2188,6 +2212,7 @@ class WebhooksApi:
     ) -> WebhookDeliveryResponse:
         """Test Webhook Endpoint
 
+        Record a test event against this endpoint.  Creates a `test` event and a delivery in `pending`, which you can inspect with `get_webhook_delivery`.  This call does not send the delivery. Pass the returned delivery id to `retry_webhook_delivery` to have it dispatched.
 
         :param endpoint_id: (required)
         :type endpoint_id: str
@@ -2255,6 +2280,7 @@ class WebhooksApi:
     ) -> ApiResponse[WebhookDeliveryResponse]:
         """Test Webhook Endpoint
 
+        Record a test event against this endpoint.  Creates a `test` event and a delivery in `pending`, which you can inspect with `get_webhook_delivery`.  This call does not send the delivery. Pass the returned delivery id to `retry_webhook_delivery` to have it dispatched.
 
         :param endpoint_id: (required)
         :type endpoint_id: str
@@ -2322,6 +2348,7 @@ class WebhooksApi:
     ) -> RESTResponseType:
         """Test Webhook Endpoint
 
+        Record a test event against this endpoint.  Creates a `test` event and a delivery in `pending`, which you can inspect with `get_webhook_delivery`.  This call does not send the delivery. Pass the returned delivery id to `retry_webhook_delivery` to have it dispatched.
 
         :param endpoint_id: (required)
         :type endpoint_id: str
@@ -2448,6 +2475,7 @@ class WebhooksApi:
     ) -> WebhookEndpointResponse:
         """Update Webhook Endpoint
 
+        Change an endpoint's URL, description, event list or active flag.  Only the fields you send are changed. Setting `is_active` to false stops new deliveries while keeping the endpoint and its history, which is the reversible alternative to deleting it.
 
         :param endpoint_id: (required)
         :type endpoint_id: str
@@ -2519,6 +2547,7 @@ class WebhooksApi:
     ) -> ApiResponse[WebhookEndpointResponse]:
         """Update Webhook Endpoint
 
+        Change an endpoint's URL, description, event list or active flag.  Only the fields you send are changed. Setting `is_active` to false stops new deliveries while keeping the endpoint and its history, which is the reversible alternative to deleting it.
 
         :param endpoint_id: (required)
         :type endpoint_id: str
@@ -2590,6 +2619,7 @@ class WebhooksApi:
     ) -> RESTResponseType:
         """Update Webhook Endpoint
 
+        Change an endpoint's URL, description, event list or active flag.  Only the fields you send are changed. Setting `is_active` to false stops new deliveries while keeping the endpoint and its history, which is the reversible alternative to deleting it.
 
         :param endpoint_id: (required)
         :type endpoint_id: str

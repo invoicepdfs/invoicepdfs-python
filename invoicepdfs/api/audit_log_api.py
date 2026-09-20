@@ -59,6 +59,7 @@ class AuditLogApi:
     ) -> AuditEventResponse:
         """Get Audit Event
 
+        One audit event by id.
 
         :param audit_event_id: (required)
         :type audit_event_id: str
@@ -126,6 +127,7 @@ class AuditLogApi:
     ) -> ApiResponse[AuditEventResponse]:
         """Get Audit Event
 
+        One audit event by id.
 
         :param audit_event_id: (required)
         :type audit_event_id: str
@@ -193,6 +195,7 @@ class AuditLogApi:
     ) -> RESTResponseType:
         """Get Audit Event
 
+        One audit event by id.
 
         :param audit_event_id: (required)
         :type audit_event_id: str
@@ -322,6 +325,7 @@ class AuditLogApi:
     ) -> AuditEventsListResponse:
         """List Audit Events
 
+        Who changed what on this account, newest first.  Filter by `action`, `resource_type` and `resource_id` to follow a single object's history.
 
         :param limit:
         :type limit: int
@@ -405,6 +409,7 @@ class AuditLogApi:
     ) -> ApiResponse[AuditEventsListResponse]:
         """List Audit Events
 
+        Who changed what on this account, newest first.  Filter by `action`, `resource_type` and `resource_id` to follow a single object's history.
 
         :param limit:
         :type limit: int
@@ -488,6 +493,7 @@ class AuditLogApi:
     ) -> RESTResponseType:
         """List Audit Events
 
+        Who changed what on this account, newest first.  Filter by `action`, `resource_type` and `resource_id` to follow a single object's history.
 
         :param limit:
         :type limit: int

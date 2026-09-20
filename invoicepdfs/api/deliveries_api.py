@@ -56,6 +56,7 @@ class DeliveriesApi:
     ) -> DeliveryResponse:
         """Get Delivery
 
+        One email delivery by id — an email sent to a customer.  Not to be confused with `get_webhook_delivery`, which is an HTTP POST to one of your webhook endpoints.
 
         :param delivery_id: (required)
         :type delivery_id: str
@@ -123,6 +124,7 @@ class DeliveriesApi:
     ) -> ApiResponse[DeliveryResponse]:
         """Get Delivery
 
+        One email delivery by id — an email sent to a customer.  Not to be confused with `get_webhook_delivery`, which is an HTTP POST to one of your webhook endpoints.
 
         :param delivery_id: (required)
         :type delivery_id: str
@@ -190,6 +192,7 @@ class DeliveriesApi:
     ) -> RESTResponseType:
         """Get Delivery
 
+        One email delivery by id — an email sent to a customer.  Not to be confused with `get_webhook_delivery`, which is an HTTP POST to one of your webhook endpoints.
 
         :param delivery_id: (required)
         :type delivery_id: str

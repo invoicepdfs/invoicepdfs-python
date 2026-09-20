@@ -63,6 +63,7 @@ class PaymentsApi:
     ) -> PaymentResponse:
         """Create Document Payment
 
+        Record a payment received against an invoice.  The currency is taken from the invoice rather than from the request, so a payment can never disagree with what was billed.  Refused with 409 while the invoice is still a draft. Recording a payment does not move the invoice to `paid` — use `mark_paid` for that.
 
         :param document_id: (required)
         :type document_id: str
@@ -134,6 +135,7 @@ class PaymentsApi:
     ) -> ApiResponse[PaymentResponse]:
         """Create Document Payment
 
+        Record a payment received against an invoice.  The currency is taken from the invoice rather than from the request, so a payment can never disagree with what was billed.  Refused with 409 while the invoice is still a draft. Recording a payment does not move the invoice to `paid` — use `mark_paid` for that.
 
         :param document_id: (required)
         :type document_id: str
@@ -205,6 +207,7 @@ class PaymentsApi:
     ) -> RESTResponseType:
         """Create Document Payment
 
+        Record a payment received against an invoice.  The currency is taken from the invoice rather than from the request, so a payment can never disagree with what was billed.  Refused with 409 while the invoice is still a draft. Recording a payment does not move the invoice to `paid` — use `mark_paid` for that.
 
         :param document_id: (required)
         :type document_id: str
@@ -349,6 +352,7 @@ class PaymentsApi:
     ) -> SimpleBoolResponse:
         """Delete Payment
 
+        Remove a recorded payment.  The payment is deleted outright rather than reversed, and the invoice's status is left alone. The deletion is kept in the audit log.
 
         :param payment_id: (required)
         :type payment_id: str
@@ -416,6 +420,7 @@ class PaymentsApi:
     ) -> ApiResponse[SimpleBoolResponse]:
         """Delete Payment
 
+        Remove a recorded payment.  The payment is deleted outright rather than reversed, and the invoice's status is left alone. The deletion is kept in the audit log.
 
         :param payment_id: (required)
         :type payment_id: str
@@ -483,6 +488,7 @@ class PaymentsApi:
     ) -> RESTResponseType:
         """Delete Payment
 
+        Remove a recorded payment.  The payment is deleted outright rather than reversed, and the invoice's status is left alone. The deletion is kept in the audit log.
 
         :param payment_id: (required)
         :type payment_id: str
@@ -608,6 +614,7 @@ class PaymentsApi:
     ) -> PaymentResponse:
         """Get Payment
 
+        One recorded payment by id.
 
         :param payment_id: (required)
         :type payment_id: str
@@ -675,6 +682,7 @@ class PaymentsApi:
     ) -> ApiResponse[PaymentResponse]:
         """Get Payment
 
+        One recorded payment by id.
 
         :param payment_id: (required)
         :type payment_id: str
@@ -742,6 +750,7 @@ class PaymentsApi:
     ) -> RESTResponseType:
         """Get Payment
 
+        One recorded payment by id.
 
         :param payment_id: (required)
         :type payment_id: str
@@ -869,6 +878,7 @@ class PaymentsApi:
     ) -> PaymentsListResponse:
         """List Document Payments
 
+        Payments recorded against one document, newest first.
 
         :param document_id: (required)
         :type document_id: str
@@ -944,6 +954,7 @@ class PaymentsApi:
     ) -> ApiResponse[PaymentsListResponse]:
         """List Document Payments
 
+        Payments recorded against one document, newest first.
 
         :param document_id: (required)
         :type document_id: str
@@ -1019,6 +1030,7 @@ class PaymentsApi:
     ) -> RESTResponseType:
         """List Document Payments
 
+        Payments recorded against one document, newest first.
 
         :param document_id: (required)
         :type document_id: str
@@ -1161,6 +1173,7 @@ class PaymentsApi:
     ) -> PaymentResponse:
         """Update Payment
 
+        Correct a payment that was already recorded.  Only the fields you send are changed. The invoice's status and totals are left alone.
 
         :param payment_id: (required)
         :type payment_id: str
@@ -1232,6 +1245,7 @@ class PaymentsApi:
     ) -> ApiResponse[PaymentResponse]:
         """Update Payment
 
+        Correct a payment that was already recorded.  Only the fields you send are changed. The invoice's status and totals are left alone.
 
         :param payment_id: (required)
         :type payment_id: str
@@ -1303,6 +1317,7 @@ class PaymentsApi:
     ) -> RESTResponseType:
         """Update Payment
 
+        Correct a payment that was already recorded.  Only the fields you send are changed. The invoice's status and totals are left alone.
 
         :param payment_id: (required)
         :type payment_id: str

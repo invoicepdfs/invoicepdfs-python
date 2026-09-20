@@ -59,6 +59,7 @@ class UsageApi:
     ) -> UsageResponse:
         """Get Usage
 
+        Renders used this calendar month, against the plan's quota.  The period starts at midnight UTC on the first of the month.  For rate limits, log retention and overage, use `get_usage_limits`; for the individual renders behind the count, `list_usage_events`.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -121,6 +122,7 @@ class UsageApi:
     ) -> ApiResponse[UsageResponse]:
         """Get Usage
 
+        Renders used this calendar month, against the plan's quota.  The period starts at midnight UTC on the first of the month.  For rate limits, log retention and overage, use `get_usage_limits`; for the individual renders behind the count, `list_usage_events`.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -183,6 +185,7 @@ class UsageApi:
     ) -> RESTResponseType:
         """Get Usage
 
+        Renders used this calendar month, against the plan's quota.  The period starts at midnight UTC on the first of the month.  For rate limits, log retention and overage, use `get_usage_limits`; for the individual renders behind the count, `list_usage_events`.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -300,6 +303,7 @@ class UsageApi:
     ) -> UsageLimitsResponse:
         """Get Usage Limits
 
+        Every ceiling on the account, and how close you are to each.  A superset of `get_usage`: the render quota and what is left of it, plus requests per second, how long API logs are kept, and overage — whether it is enabled and available on the plan, how many renders have gone over, and what they have cost so far.  The cost estimate is rounded up, so it is never lower than the invoice.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -362,6 +366,7 @@ class UsageApi:
     ) -> ApiResponse[UsageLimitsResponse]:
         """Get Usage Limits
 
+        Every ceiling on the account, and how close you are to each.  A superset of `get_usage`: the render quota and what is left of it, plus requests per second, how long API logs are kept, and overage — whether it is enabled and available on the plan, how many renders have gone over, and what they have cost so far.  The cost estimate is rounded up, so it is never lower than the invoice.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -424,6 +429,7 @@ class UsageApi:
     ) -> RESTResponseType:
         """Get Usage Limits
 
+        Every ceiling on the account, and how close you are to each.  A superset of `get_usage`: the render quota and what is left of it, plus requests per second, how long API logs are kept, and overage — whether it is enabled and available on the plan, how many renders have gone over, and what they have cost so far.  The cost estimate is rounded up, so it is never lower than the invoice.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -543,6 +549,7 @@ class UsageApi:
     ) -> UsageEventsListResponse:
         """List Usage Events
 
+        One row per metered render, newest first.  The detail behind the count `get_usage` returns, each row naming the render that produced it.
 
         :param limit:
         :type limit: int
@@ -614,6 +621,7 @@ class UsageApi:
     ) -> ApiResponse[UsageEventsListResponse]:
         """List Usage Events
 
+        One row per metered render, newest first.  The detail behind the count `get_usage` returns, each row naming the render that produced it.
 
         :param limit:
         :type limit: int
@@ -685,6 +693,7 @@ class UsageApi:
     ) -> RESTResponseType:
         """List Usage Events
 
+        One row per metered render, newest first.  The detail behind the count `get_usage` returns, each row naming the render that produced it.
 
         :param limit:
         :type limit: int
