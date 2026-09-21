@@ -14,6 +14,8 @@ Method | HTTP request | Description
 
 Get Health
 
+Is the API process alive.  Answers as long as the process can serve a request; it checks nothing behind it. For whether the service can actually do work, use `get_readiness`.
+
 ### Example
 
 
@@ -76,6 +78,8 @@ No authorization required
 
 Get Readiness
 
+Can the API serve real traffic — dependencies included.  Checks the database, storage, and the separate render service, and reports each one. `status` is `ready` only when all three are `ok`, so this is the check to point a load balancer at. `get_health` answers sooner but proves less.
+
 ### Example
 
 
@@ -137,6 +141,8 @@ No authorization required
 > VersionResponse get_version()
 
 Get Version
+
+Which build is deployed.
 
 ### Example
 

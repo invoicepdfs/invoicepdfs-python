@@ -68,6 +68,7 @@ class WorkspacesApi:
     ) -> WorkspaceMembersListResponse:
         """Add Workspace Member
 
+        Add someone to a workspace by email address.  Refused with 409 if that email is already a member. The address does not have to belong to an existing account.
 
         :param workspace_id: (required)
         :type workspace_id: str
@@ -143,6 +144,7 @@ class WorkspacesApi:
     ) -> ApiResponse[WorkspaceMembersListResponse]:
         """Add Workspace Member
 
+        Add someone to a workspace by email address.  Refused with 409 if that email is already a member. The address does not have to belong to an existing account.
 
         :param workspace_id: (required)
         :type workspace_id: str
@@ -218,6 +220,7 @@ class WorkspacesApi:
     ) -> RESTResponseType:
         """Add Workspace Member
 
+        Add someone to a workspace by email address.  Refused with 409 if that email is already a member. The address does not have to belong to an existing account.
 
         :param workspace_id: (required)
         :type workspace_id: str
@@ -369,6 +372,7 @@ class WorkspacesApi:
     ) -> WorkspaceResponse:
         """Create Workspace
 
+        Create a workspace, owned by this account.  The creating account is added as its first member with the `owner` role.  Send an `Idempotency-Key` header to make retrying safe: a repeat with the same key and body returns the original workspace instead of a second one.
 
         :param workspace_create_request: (required)
         :type workspace_create_request: WorkspaceCreateRequest
@@ -440,6 +444,7 @@ class WorkspacesApi:
     ) -> ApiResponse[WorkspaceResponse]:
         """Create Workspace
 
+        Create a workspace, owned by this account.  The creating account is added as its first member with the `owner` role.  Send an `Idempotency-Key` header to make retrying safe: a repeat with the same key and body returns the original workspace instead of a second one.
 
         :param workspace_create_request: (required)
         :type workspace_create_request: WorkspaceCreateRequest
@@ -511,6 +516,7 @@ class WorkspacesApi:
     ) -> RESTResponseType:
         """Create Workspace
 
+        Create a workspace, owned by this account.  The creating account is added as its first member with the `owner` role.  Send an `Idempotency-Key` header to make retrying safe: a repeat with the same key and body returns the original workspace instead of a second one.
 
         :param workspace_create_request: (required)
         :type workspace_create_request: WorkspaceCreateRequest
@@ -655,6 +661,7 @@ class WorkspacesApi:
     ) -> SimpleBoolResponse:
         """Delete Workspace
 
+        Delete a workspace and its membership list.  Every member record goes with it. This cannot be undone, and documents are unaffected — they belong to the account, not the workspace.
 
         :param workspace_id: (required)
         :type workspace_id: str
@@ -722,6 +729,7 @@ class WorkspacesApi:
     ) -> ApiResponse[SimpleBoolResponse]:
         """Delete Workspace
 
+        Delete a workspace and its membership list.  Every member record goes with it. This cannot be undone, and documents are unaffected — they belong to the account, not the workspace.
 
         :param workspace_id: (required)
         :type workspace_id: str
@@ -789,6 +797,7 @@ class WorkspacesApi:
     ) -> RESTResponseType:
         """Delete Workspace
 
+        Delete a workspace and its membership list.  Every member record goes with it. This cannot be undone, and documents are unaffected — they belong to the account, not the workspace.
 
         :param workspace_id: (required)
         :type workspace_id: str
@@ -914,6 +923,7 @@ class WorkspacesApi:
     ) -> WorkspaceResponse:
         """Get Workspace
 
+        One workspace by id.
 
         :param workspace_id: (required)
         :type workspace_id: str
@@ -981,6 +991,7 @@ class WorkspacesApi:
     ) -> ApiResponse[WorkspaceResponse]:
         """Get Workspace
 
+        One workspace by id.
 
         :param workspace_id: (required)
         :type workspace_id: str
@@ -1048,6 +1059,7 @@ class WorkspacesApi:
     ) -> RESTResponseType:
         """Get Workspace
 
+        One workspace by id.
 
         :param workspace_id: (required)
         :type workspace_id: str
@@ -1173,6 +1185,7 @@ class WorkspacesApi:
     ) -> WorkspaceMembersListResponse:
         """List Workspace Members
 
+        Everyone on a workspace, with their role.
 
         :param workspace_id: (required)
         :type workspace_id: str
@@ -1240,6 +1253,7 @@ class WorkspacesApi:
     ) -> ApiResponse[WorkspaceMembersListResponse]:
         """List Workspace Members
 
+        Everyone on a workspace, with their role.
 
         :param workspace_id: (required)
         :type workspace_id: str
@@ -1307,6 +1321,7 @@ class WorkspacesApi:
     ) -> RESTResponseType:
         """List Workspace Members
 
+        Everyone on a workspace, with their role.
 
         :param workspace_id: (required)
         :type workspace_id: str
@@ -1433,6 +1448,7 @@ class WorkspacesApi:
     ) -> WorkspacesListResponse:
         """List Workspaces
 
+        Workspaces this account owns, newest first.
 
         :param limit:
         :type limit: int
@@ -1504,6 +1520,7 @@ class WorkspacesApi:
     ) -> ApiResponse[WorkspacesListResponse]:
         """List Workspaces
 
+        Workspaces this account owns, newest first.
 
         :param limit:
         :type limit: int
@@ -1575,6 +1592,7 @@ class WorkspacesApi:
     ) -> RESTResponseType:
         """List Workspaces
 
+        Workspaces this account owns, newest first.
 
         :param limit:
         :type limit: int
@@ -1711,6 +1729,7 @@ class WorkspacesApi:
     ) -> SimpleBoolResponse:
         """Remove Workspace Member
 
+        Remove someone from a workspace.  Removes the membership only; nothing they created is affected.
 
         :param workspace_id: (required)
         :type workspace_id: str
@@ -1782,6 +1801,7 @@ class WorkspacesApi:
     ) -> ApiResponse[SimpleBoolResponse]:
         """Remove Workspace Member
 
+        Remove someone from a workspace.  Removes the membership only; nothing they created is affected.
 
         :param workspace_id: (required)
         :type workspace_id: str
@@ -1853,6 +1873,7 @@ class WorkspacesApi:
     ) -> RESTResponseType:
         """Remove Workspace Member
 
+        Remove someone from a workspace.  Removes the membership only; nothing they created is affected.
 
         :param workspace_id: (required)
         :type workspace_id: str
@@ -1986,6 +2007,7 @@ class WorkspacesApi:
     ) -> WorkspaceResponse:
         """Update Workspace
 
+        Rename a workspace.  Only the fields you send are changed.
 
         :param workspace_id: (required)
         :type workspace_id: str
@@ -2061,6 +2083,7 @@ class WorkspacesApi:
     ) -> ApiResponse[WorkspaceResponse]:
         """Update Workspace
 
+        Rename a workspace.  Only the fields you send are changed.
 
         :param workspace_id: (required)
         :type workspace_id: str
@@ -2136,6 +2159,7 @@ class WorkspacesApi:
     ) -> RESTResponseType:
         """Update Workspace
 
+        Rename a workspace.  Only the fields you send are changed.
 
         :param workspace_id: (required)
         :type workspace_id: str
@@ -2288,6 +2312,7 @@ class WorkspacesApi:
     ) -> WorkspaceMemberOut:
         """Update Workspace Member
 
+        Change a member's role.
 
         :param workspace_id: (required)
         :type workspace_id: str
@@ -2363,6 +2388,7 @@ class WorkspacesApi:
     ) -> ApiResponse[WorkspaceMemberOut]:
         """Update Workspace Member
 
+        Change a member's role.
 
         :param workspace_id: (required)
         :type workspace_id: str
@@ -2438,6 +2464,7 @@ class WorkspacesApi:
     ) -> RESTResponseType:
         """Update Workspace Member
 
+        Change a member's role.
 
         :param workspace_id: (required)
         :type workspace_id: str

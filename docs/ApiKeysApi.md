@@ -17,6 +17,8 @@ Method | HTTP request | Description
 
 Create Api Key
 
+Create an API key and return it once.  The response is the only place the key appears — it is stored hashed, so a lost key cannot be recovered, only replaced.  Keys are not scoped: any key can do anything this account can, including creating further keys and deleting data. Treat one as a full credential.
+
 ### Example
 
 * Bearer Authentication (HTTPBearer):
@@ -95,6 +97,8 @@ Name | Type | Description  | Notes
 
 Get Api Key
 
+One API key's details by id, without the key itself.
+
 ### Example
 
 * Bearer Authentication (HTTPBearer):
@@ -172,6 +176,8 @@ Name | Type | Description  | Notes
 
 List Api Keys
 
+Every API key on the account, including revoked ones.  Shows only the last four characters: the key itself is stored hashed and cannot be recovered.
+
 ### Example
 
 * Bearer Authentication (HTTPBearer):
@@ -243,6 +249,8 @@ This endpoint does not need any parameter.
 > ApiKeyRevokeResponse revoke_api_key(api_key_id)
 
 Revoke Api Key
+
+Stop an API key working, permanently.  Takes effect immediately and cannot be undone — issue a new key with `create_api_key` instead. The record is kept, so the key still appears in `list_api_keys` with a revoked date and the audit log stays readable.  Revoking an already-revoked key succeeds and changes nothing.
 
 ### Example
 
@@ -399,6 +407,8 @@ Name | Type | Description  | Notes
 > ApiKeyDetailResponse update_api_key(api_key_id, api_key_patch_request)
 
 Update Api Key
+
+Rename an API key.  The key itself is unchanged and keeps working. To replace the secret while keeping the record, use `rotate_api_key`.
 
 ### Example
 

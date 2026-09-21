@@ -62,6 +62,7 @@ class RecurringInvoicesApi:
     ) -> RecurringInvoiceResponse:
         """Cancel Recurring Invoice
 
+        End a schedule permanently.  Terminal: it cannot be resumed or edited afterwards, and cancelling twice is refused with 409. To stop issuing temporarily, use `pause_recurring_invoice` instead.  Invoices already issued are left alone.
 
         :param recurring_id: (required)
         :type recurring_id: str
@@ -129,6 +130,7 @@ class RecurringInvoicesApi:
     ) -> ApiResponse[RecurringInvoiceResponse]:
         """Cancel Recurring Invoice
 
+        End a schedule permanently.  Terminal: it cannot be resumed or edited afterwards, and cancelling twice is refused with 409. To stop issuing temporarily, use `pause_recurring_invoice` instead.  Invoices already issued are left alone.
 
         :param recurring_id: (required)
         :type recurring_id: str
@@ -196,6 +198,7 @@ class RecurringInvoicesApi:
     ) -> RESTResponseType:
         """Cancel Recurring Invoice
 
+        End a schedule permanently.  Terminal: it cannot be resumed or edited afterwards, and cancelling twice is refused with 409. To stop issuing temporarily, use `pause_recurring_invoice` instead.  Invoices already issued are left alone.
 
         :param recurring_id: (required)
         :type recurring_id: str
@@ -321,6 +324,7 @@ class RecurringInvoicesApi:
     ) -> RecurringInvoiceResponse:
         """Create Recurring Invoice
 
+        Set up a schedule that issues invoices on its own.  Starts `active`, so the first invoice is issued when the schedule next falls due. The invoices it produces are ordinary documents — read them with `list_generated_invoices`.
 
         :param recurring_invoice_create_request: (required)
         :type recurring_invoice_create_request: RecurringInvoiceCreateRequest
@@ -388,6 +392,7 @@ class RecurringInvoicesApi:
     ) -> ApiResponse[RecurringInvoiceResponse]:
         """Create Recurring Invoice
 
+        Set up a schedule that issues invoices on its own.  Starts `active`, so the first invoice is issued when the schedule next falls due. The invoices it produces are ordinary documents — read them with `list_generated_invoices`.
 
         :param recurring_invoice_create_request: (required)
         :type recurring_invoice_create_request: RecurringInvoiceCreateRequest
@@ -455,6 +460,7 @@ class RecurringInvoicesApi:
     ) -> RESTResponseType:
         """Create Recurring Invoice
 
+        Set up a schedule that issues invoices on its own.  Starts `active`, so the first invoice is issued when the schedule next falls due. The invoices it produces are ordinary documents — read them with `list_generated_invoices`.
 
         :param recurring_invoice_create_request: (required)
         :type recurring_invoice_create_request: RecurringInvoiceCreateRequest
@@ -593,6 +599,7 @@ class RecurringInvoicesApi:
     ) -> RecurringInvoiceResponse:
         """Get Recurring Invoice
 
+        One recurring schedule by id.
 
         :param recurring_id: (required)
         :type recurring_id: str
@@ -660,6 +667,7 @@ class RecurringInvoicesApi:
     ) -> ApiResponse[RecurringInvoiceResponse]:
         """Get Recurring Invoice
 
+        One recurring schedule by id.
 
         :param recurring_id: (required)
         :type recurring_id: str
@@ -727,6 +735,7 @@ class RecurringInvoicesApi:
     ) -> RESTResponseType:
         """Get Recurring Invoice
 
+        One recurring schedule by id.
 
         :param recurring_id: (required)
         :type recurring_id: str
@@ -854,6 +863,7 @@ class RecurringInvoicesApi:
     ) -> InvoicesListResponse:
         """List Generated Invoices
 
+        The invoices one schedule has actually issued, newest first.  The documents produced by this schedule, as opposed to `list_recurring_invoices`, which lists the schedules themselves.
 
         :param recurring_id: (required)
         :type recurring_id: str
@@ -929,6 +939,7 @@ class RecurringInvoicesApi:
     ) -> ApiResponse[InvoicesListResponse]:
         """List Generated Invoices
 
+        The invoices one schedule has actually issued, newest first.  The documents produced by this schedule, as opposed to `list_recurring_invoices`, which lists the schedules themselves.
 
         :param recurring_id: (required)
         :type recurring_id: str
@@ -1004,6 +1015,7 @@ class RecurringInvoicesApi:
     ) -> RESTResponseType:
         """List Generated Invoices
 
+        The invoices one schedule has actually issued, newest first.  The documents produced by this schedule, as opposed to `list_recurring_invoices`, which lists the schedules themselves.
 
         :param recurring_id: (required)
         :type recurring_id: str
@@ -1147,6 +1159,7 @@ class RecurringInvoicesApi:
     ) -> RecurringInvoicesListResponse:
         """List Recurring Invoices
 
+        The schedules on this account, newest first.  These are the recurring definitions, not the invoices they produce; for those, use `list_generated_invoices`. Narrow with `status`.
 
         :param limit:
         :type limit: int
@@ -1222,6 +1235,7 @@ class RecurringInvoicesApi:
     ) -> ApiResponse[RecurringInvoicesListResponse]:
         """List Recurring Invoices
 
+        The schedules on this account, newest first.  These are the recurring definitions, not the invoices they produce; for those, use `list_generated_invoices`. Narrow with `status`.
 
         :param limit:
         :type limit: int
@@ -1297,6 +1311,7 @@ class RecurringInvoicesApi:
     ) -> RESTResponseType:
         """List Recurring Invoices
 
+        The schedules on this account, newest first.  These are the recurring definitions, not the invoices they produce; for those, use `list_generated_invoices`. Narrow with `status`.
 
         :param limit:
         :type limit: int
@@ -1440,6 +1455,7 @@ class RecurringInvoicesApi:
     ) -> RecurringInvoiceResponse:
         """Pause Recurring Invoice
 
+        Stop a schedule issuing invoices, for now.  Only an `active` schedule can be paused; anything else is refused with 409. Nothing already issued changes. Restart it with `resume_recurring_invoice`.
 
         :param recurring_id: (required)
         :type recurring_id: str
@@ -1507,6 +1523,7 @@ class RecurringInvoicesApi:
     ) -> ApiResponse[RecurringInvoiceResponse]:
         """Pause Recurring Invoice
 
+        Stop a schedule issuing invoices, for now.  Only an `active` schedule can be paused; anything else is refused with 409. Nothing already issued changes. Restart it with `resume_recurring_invoice`.
 
         :param recurring_id: (required)
         :type recurring_id: str
@@ -1574,6 +1591,7 @@ class RecurringInvoicesApi:
     ) -> RESTResponseType:
         """Pause Recurring Invoice
 
+        Stop a schedule issuing invoices, for now.  Only an `active` schedule can be paused; anything else is refused with 409. Nothing already issued changes. Restart it with `resume_recurring_invoice`.
 
         :param recurring_id: (required)
         :type recurring_id: str
@@ -1699,6 +1717,7 @@ class RecurringInvoicesApi:
     ) -> RecurringInvoiceResponse:
         """Resume Recurring Invoice
 
+        Start a paused schedule issuing again.  Only a `paused` schedule can be resumed; anything else is refused with 409. A cancelled schedule cannot be brought back — create a new one.
 
         :param recurring_id: (required)
         :type recurring_id: str
@@ -1766,6 +1785,7 @@ class RecurringInvoicesApi:
     ) -> ApiResponse[RecurringInvoiceResponse]:
         """Resume Recurring Invoice
 
+        Start a paused schedule issuing again.  Only a `paused` schedule can be resumed; anything else is refused with 409. A cancelled schedule cannot be brought back — create a new one.
 
         :param recurring_id: (required)
         :type recurring_id: str
@@ -1833,6 +1853,7 @@ class RecurringInvoicesApi:
     ) -> RESTResponseType:
         """Resume Recurring Invoice
 
+        Start a paused schedule issuing again.  Only a `paused` schedule can be resumed; anything else is refused with 409. A cancelled schedule cannot be brought back — create a new one.
 
         :param recurring_id: (required)
         :type recurring_id: str
@@ -1959,6 +1980,7 @@ class RecurringInvoicesApi:
     ) -> RecurringInvoiceResponse:
         """Update Recurring Invoice
 
+        Change a recurring schedule.  Only the fields you send are changed. Refused with 409 once the schedule is cancelled, which is terminal. Invoices already issued are not revisited.
 
         :param recurring_id: (required)
         :type recurring_id: str
@@ -2030,6 +2052,7 @@ class RecurringInvoicesApi:
     ) -> ApiResponse[RecurringInvoiceResponse]:
         """Update Recurring Invoice
 
+        Change a recurring schedule.  Only the fields you send are changed. Refused with 409 once the schedule is cancelled, which is terminal. Invoices already issued are not revisited.
 
         :param recurring_id: (required)
         :type recurring_id: str
@@ -2101,6 +2124,7 @@ class RecurringInvoicesApi:
     ) -> RESTResponseType:
         """Update Recurring Invoice
 
+        Change a recurring schedule.  Only the fields you send are changed. Refused with 409 once the schedule is cancelled, which is terminal. Invoices already issued are not revisited.
 
         :param recurring_id: (required)
         :type recurring_id: str

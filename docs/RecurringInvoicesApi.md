@@ -19,6 +19,8 @@ Method | HTTP request | Description
 
 Cancel Recurring Invoice
 
+End a schedule permanently.  Terminal: it cannot be resumed or edited afterwards, and cancelling twice is refused with 409. To stop issuing temporarily, use `pause_recurring_invoice` instead.  Invoices already issued are left alone.
+
 ### Example
 
 * Bearer Authentication (HTTPBearer):
@@ -95,6 +97,8 @@ Name | Type | Description  | Notes
 > RecurringInvoiceResponse create_recurring_invoice(recurring_invoice_create_request)
 
 Create Recurring Invoice
+
+Set up a schedule that issues invoices on its own.  Starts `active`, so the first invoice is issued when the schedule next falls due. The invoices it produces are ordinary documents — read them with `list_generated_invoices`.
 
 ### Example
 
@@ -174,6 +178,8 @@ Name | Type | Description  | Notes
 
 Get Recurring Invoice
 
+One recurring schedule by id.
+
 ### Example
 
 * Bearer Authentication (HTTPBearer):
@@ -250,6 +256,8 @@ Name | Type | Description  | Notes
 > InvoicesListResponse list_generated_invoices(recurring_id, limit=limit, cursor=cursor)
 
 List Generated Invoices
+
+The invoices one schedule has actually issued, newest first.  The documents produced by this schedule, as opposed to `list_recurring_invoices`, which lists the schedules themselves.
 
 ### Example
 
@@ -332,6 +340,8 @@ Name | Type | Description  | Notes
 
 List Recurring Invoices
 
+The schedules on this account, newest first.  These are the recurring definitions, not the invoices they produce; for those, use `list_generated_invoices`. Narrow with `status`.
+
 ### Example
 
 * Bearer Authentication (HTTPBearer):
@@ -413,6 +423,8 @@ Name | Type | Description  | Notes
 
 Pause Recurring Invoice
 
+Stop a schedule issuing invoices, for now.  Only an `active` schedule can be paused; anything else is refused with 409. Nothing already issued changes. Restart it with `resume_recurring_invoice`.
+
 ### Example
 
 * Bearer Authentication (HTTPBearer):
@@ -490,6 +502,8 @@ Name | Type | Description  | Notes
 
 Resume Recurring Invoice
 
+Start a paused schedule issuing again.  Only a `paused` schedule can be resumed; anything else is refused with 409. A cancelled schedule cannot be brought back — create a new one.
+
 ### Example
 
 * Bearer Authentication (HTTPBearer):
@@ -566,6 +580,8 @@ Name | Type | Description  | Notes
 > RecurringInvoiceResponse update_recurring_invoice(recurring_id, recurring_invoice_patch_request)
 
 Update Recurring Invoice
+
+Change a recurring schedule.  Only the fields you send are changed. Refused with 409 once the schedule is cancelled, which is terminal. Invoices already issued are not revisited.
 
 ### Example
 

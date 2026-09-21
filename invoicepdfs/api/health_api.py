@@ -56,6 +56,7 @@ class HealthApi:
     ) -> HealthResponse:
         """Get Health
 
+        Is the API process alive.  Answers as long as the process can serve a request; it checks nothing behind it. For whether the service can actually do work, use `get_readiness`.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -118,6 +119,7 @@ class HealthApi:
     ) -> ApiResponse[HealthResponse]:
         """Get Health
 
+        Is the API process alive.  Answers as long as the process can serve a request; it checks nothing behind it. For whether the service can actually do work, use `get_readiness`.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -180,6 +182,7 @@ class HealthApi:
     ) -> RESTResponseType:
         """Get Health
 
+        Is the API process alive.  Answers as long as the process can serve a request; it checks nothing behind it. For whether the service can actually do work, use `get_readiness`.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -296,6 +299,7 @@ class HealthApi:
     ) -> ReadyResponse:
         """Get Readiness
 
+        Can the API serve real traffic — dependencies included.  Checks the database, storage, and the separate render service, and reports each one. `status` is `ready` only when all three are `ok`, so this is the check to point a load balancer at. `get_health` answers sooner but proves less.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -358,6 +362,7 @@ class HealthApi:
     ) -> ApiResponse[ReadyResponse]:
         """Get Readiness
 
+        Can the API serve real traffic — dependencies included.  Checks the database, storage, and the separate render service, and reports each one. `status` is `ready` only when all three are `ok`, so this is the check to point a load balancer at. `get_health` answers sooner but proves less.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -420,6 +425,7 @@ class HealthApi:
     ) -> RESTResponseType:
         """Get Readiness
 
+        Can the API serve real traffic — dependencies included.  Checks the database, storage, and the separate render service, and reports each one. `status` is `ready` only when all three are `ok`, so this is the check to point a load balancer at. `get_health` answers sooner but proves less.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -536,6 +542,7 @@ class HealthApi:
     ) -> VersionResponse:
         """Get Version
 
+        Which build is deployed.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -598,6 +605,7 @@ class HealthApi:
     ) -> ApiResponse[VersionResponse]:
         """Get Version
 
+        Which build is deployed.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -660,6 +668,7 @@ class HealthApi:
     ) -> RESTResponseType:
         """Get Version
 
+        Which build is deployed.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request

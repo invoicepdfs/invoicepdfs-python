@@ -60,6 +60,7 @@ class ReferenceApi:
     ) -> CountriesListResponse:
         """List Countries
 
+        The country codes accepted anywhere an address is given.  ISO 3166-1 alpha-2.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -122,6 +123,7 @@ class ReferenceApi:
     ) -> ApiResponse[CountriesListResponse]:
         """List Countries
 
+        The country codes accepted anywhere an address is given.  ISO 3166-1 alpha-2.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -184,6 +186,7 @@ class ReferenceApi:
     ) -> RESTResponseType:
         """List Countries
 
+        The country codes accepted anywhere an address is given.  ISO 3166-1 alpha-2.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -300,6 +303,7 @@ class ReferenceApi:
     ) -> CurrenciesListResponse:
         """List Currencies
 
+        The currency codes a document may be issued in.  ISO 4217, with the minor-unit count each one uses — the amounts in this API are integers in the currency's smallest unit, so that figure is what says where the decimal point goes.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -362,6 +366,7 @@ class ReferenceApi:
     ) -> ApiResponse[CurrenciesListResponse]:
         """List Currencies
 
+        The currency codes a document may be issued in.  ISO 4217, with the minor-unit count each one uses — the amounts in this API are integers in the currency's smallest unit, so that figure is what says where the decimal point goes.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -424,6 +429,7 @@ class ReferenceApi:
     ) -> RESTResponseType:
         """List Currencies
 
+        The currency codes a document may be issued in.  ISO 4217, with the minor-unit count each one uses — the amounts in this API are integers in the currency's smallest unit, so that figure is what says where the decimal point goes.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -783,6 +789,7 @@ class ReferenceApi:
     ) -> LocalesListResponse:
         """List Locales
 
+        The locale codes accepted on a document or business profile.  The value is stored and returned as given; it is not currently applied to anything a render produces.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -845,6 +852,7 @@ class ReferenceApi:
     ) -> ApiResponse[LocalesListResponse]:
         """List Locales
 
+        The locale codes accepted on a document or business profile.  The value is stored and returned as given; it is not currently applied to anything a render produces.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -907,6 +915,7 @@ class ReferenceApi:
     ) -> RESTResponseType:
         """List Locales
 
+        The locale codes accepted on a document or business profile.  The value is stored and returned as given; it is not currently applied to anything a render produces.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1023,6 +1032,7 @@ class ReferenceApi:
     ) -> PageSizesListResponse:
         """List Page Sizes
 
+        The page sizes a render can use.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1085,6 +1095,7 @@ class ReferenceApi:
     ) -> ApiResponse[PageSizesListResponse]:
         """List Page Sizes
 
+        The page sizes a render can use.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1147,6 +1158,7 @@ class ReferenceApi:
     ) -> RESTResponseType:
         """List Page Sizes
 
+        The page sizes a render can use.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1749,6 +1761,7 @@ class ReferenceApi:
     ) -> TimezonesListResponse:
         """List Timezones
 
+        The time zone names accepted on a business profile.  IANA names. Stored and returned as given: recurring schedules are evaluated in UTC and do not consult it.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1811,6 +1824,7 @@ class ReferenceApi:
     ) -> ApiResponse[TimezonesListResponse]:
         """List Timezones
 
+        The time zone names accepted on a business profile.  IANA names. Stored and returned as given: recurring schedules are evaluated in UTC and do not consult it.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1873,6 +1887,7 @@ class ReferenceApi:
     ) -> RESTResponseType:
         """List Timezones
 
+        The time zone names accepted on a business profile.  IANA names. Stored and returned as given: recurring schedules are evaluated in UTC and do not consult it.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request

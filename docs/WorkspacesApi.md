@@ -20,6 +20,8 @@ Method | HTTP request | Description
 
 Add Workspace Member
 
+Add someone to a workspace by email address.  Refused with 409 if that email is already a member. The address does not have to belong to an existing account.
+
 ### Example
 
 * Bearer Authentication (HTTPBearer):
@@ -102,6 +104,8 @@ Name | Type | Description  | Notes
 
 Create Workspace
 
+Create a workspace, owned by this account.  The creating account is added as its first member with the `owner` role.  Send an `Idempotency-Key` header to make retrying safe: a repeat with the same key and body returns the original workspace instead of a second one.
+
 ### Example
 
 * Bearer Authentication (HTTPBearer):
@@ -182,6 +186,8 @@ Name | Type | Description  | Notes
 
 Delete Workspace
 
+Delete a workspace and its membership list.  Every member record goes with it. This cannot be undone, and documents are unaffected — they belong to the account, not the workspace.
+
 ### Example
 
 * Bearer Authentication (HTTPBearer):
@@ -258,6 +264,8 @@ Name | Type | Description  | Notes
 > WorkspaceResponse get_workspace(workspace_id)
 
 Get Workspace
+
+One workspace by id.
 
 ### Example
 
@@ -336,6 +344,8 @@ Name | Type | Description  | Notes
 
 List Workspace Members
 
+Everyone on a workspace, with their role.
+
 ### Example
 
 * Bearer Authentication (HTTPBearer):
@@ -412,6 +422,8 @@ Name | Type | Description  | Notes
 > WorkspacesListResponse list_workspaces(limit=limit, cursor=cursor)
 
 List Workspaces
+
+Workspaces this account owns, newest first.
 
 ### Example
 
@@ -492,6 +504,8 @@ Name | Type | Description  | Notes
 
 Remove Workspace Member
 
+Remove someone from a workspace.  Removes the membership only; nothing they created is affected.
+
 ### Example
 
 * Bearer Authentication (HTTPBearer):
@@ -570,6 +584,8 @@ Name | Type | Description  | Notes
 > WorkspaceResponse update_workspace(workspace_id, workspace_patch_request, idempotency_key=idempotency_key)
 
 Update Workspace
+
+Rename a workspace.  Only the fields you send are changed.
 
 ### Example
 
@@ -652,6 +668,8 @@ Name | Type | Description  | Notes
 > WorkspaceMemberOut update_workspace_member(workspace_id, member_id, workspace_member_patch_request)
 
 Update Workspace Member
+
+Change a member's role.
 
 ### Example
 

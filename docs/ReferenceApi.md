@@ -20,6 +20,8 @@ Method | HTTP request | Description
 
 List Countries
 
+The country codes accepted anywhere an address is given.  ISO 3166-1 alpha-2.
+
 ### Example
 
 
@@ -81,6 +83,8 @@ No authorization required
 > CurrenciesListResponse list_currencies()
 
 List Currencies
+
+The currency codes a document may be issued in.  ISO 4217, with the minor-unit count each one uses — the amounts in this API are integers in the currency's smallest unit, so that figure is what says where the decimal point goes.
 
 ### Example
 
@@ -208,6 +212,8 @@ No authorization required
 
 List Locales
 
+The locale codes accepted on a document or business profile.  The value is stored and returned as given; it is not currently applied to anything a render produces.
+
 ### Example
 
 
@@ -269,6 +275,8 @@ No authorization required
 > PageSizesListResponse list_page_sizes()
 
 List Page Sizes
+
+The page sizes a render can use.
 
 ### Example
 
@@ -459,6 +467,8 @@ No authorization required
 > TimezonesListResponse list_timezones()
 
 List Timezones
+
+The time zone names accepted on a business profile.  IANA names. Stored and returned as given: recurring schedules are evaluated in UTC and do not consult it.
 
 ### Example
 
