@@ -23,6 +23,7 @@ from invoicepdfs.models.simple_bool_response import SimpleBoolResponse
 from invoicepdfs.models.webhook_deliveries_list_response import WebhookDeliveriesListResponse
 from invoicepdfs.models.webhook_delivery_response import WebhookDeliveryResponse
 from invoicepdfs.models.webhook_endpoint_create_request import WebhookEndpointCreateRequest
+from invoicepdfs.models.webhook_endpoint_created_response import WebhookEndpointCreatedResponse
 from invoicepdfs.models.webhook_endpoint_patch_request import WebhookEndpointPatchRequest
 from invoicepdfs.models.webhook_endpoint_response import WebhookEndpointResponse
 from invoicepdfs.models.webhook_endpoints_list_response import WebhookEndpointsListResponse
@@ -62,10 +63,10 @@ class WebhooksApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> WebhookEndpointResponse:
+    ) -> WebhookEndpointCreatedResponse:
         """Create Webhook Endpoint
 
-        Register a URL to receive events.  The endpoint starts active and begins receiving the events you list.  A signing secret is generated but is **not** returned here. Call `rotate_webhook_secret` to obtain one before you can verify signatures.
+        Register a URL to receive events.  The endpoint starts active and begins receiving the events you list.  The response carries the signing secret, and is the only one that ever will — store it now. Reading or listing endpoints never returns it, and the only way to get another is `rotate_webhook_secret`, which stops this one working.
 
         :param webhook_endpoint_create_request: (required)
         :type webhook_endpoint_create_request: WebhookEndpointCreateRequest
@@ -100,7 +101,7 @@ class WebhooksApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "WebhookEndpointResponse",
+            '200': "WebhookEndpointCreatedResponse",
             '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -130,10 +131,10 @@ class WebhooksApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[WebhookEndpointResponse]:
+    ) -> ApiResponse[WebhookEndpointCreatedResponse]:
         """Create Webhook Endpoint
 
-        Register a URL to receive events.  The endpoint starts active and begins receiving the events you list.  A signing secret is generated but is **not** returned here. Call `rotate_webhook_secret` to obtain one before you can verify signatures.
+        Register a URL to receive events.  The endpoint starts active and begins receiving the events you list.  The response carries the signing secret, and is the only one that ever will — store it now. Reading or listing endpoints never returns it, and the only way to get another is `rotate_webhook_secret`, which stops this one working.
 
         :param webhook_endpoint_create_request: (required)
         :type webhook_endpoint_create_request: WebhookEndpointCreateRequest
@@ -168,7 +169,7 @@ class WebhooksApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "WebhookEndpointResponse",
+            '200': "WebhookEndpointCreatedResponse",
             '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -201,7 +202,7 @@ class WebhooksApi:
     ) -> RESTResponseType:
         """Create Webhook Endpoint
 
-        Register a URL to receive events.  The endpoint starts active and begins receiving the events you list.  A signing secret is generated but is **not** returned here. Call `rotate_webhook_secret` to obtain one before you can verify signatures.
+        Register a URL to receive events.  The endpoint starts active and begins receiving the events you list.  The response carries the signing secret, and is the only one that ever will — store it now. Reading or listing endpoints never returns it, and the only way to get another is `rotate_webhook_secret`, which stops this one working.
 
         :param webhook_endpoint_create_request: (required)
         :type webhook_endpoint_create_request: WebhookEndpointCreateRequest
@@ -236,7 +237,7 @@ class WebhooksApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "WebhookEndpointResponse",
+            '200': "WebhookEndpointCreatedResponse",
             '422': "ApiErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -2212,7 +2213,7 @@ class WebhooksApi:
     ) -> WebhookDeliveryResponse:
         """Test Webhook Endpoint
 
-        Record a test event against this endpoint.  Creates a `test` event and a delivery in `pending`, which you can inspect with `get_webhook_delivery`.  This call does not send the delivery. Pass the returned delivery id to `retry_webhook_delivery` to have it dispatched.
+        Send a test event to this endpoint.  Delivers a `test` event immediately, so you can confirm the URL is reachable and your signature check works before real events depend on it.  Returns straight away with the delivery in `pending`; follow it with `get_webhook_delivery` to see whether it arrived.
 
         :param endpoint_id: (required)
         :type endpoint_id: str
@@ -2280,7 +2281,7 @@ class WebhooksApi:
     ) -> ApiResponse[WebhookDeliveryResponse]:
         """Test Webhook Endpoint
 
-        Record a test event against this endpoint.  Creates a `test` event and a delivery in `pending`, which you can inspect with `get_webhook_delivery`.  This call does not send the delivery. Pass the returned delivery id to `retry_webhook_delivery` to have it dispatched.
+        Send a test event to this endpoint.  Delivers a `test` event immediately, so you can confirm the URL is reachable and your signature check works before real events depend on it.  Returns straight away with the delivery in `pending`; follow it with `get_webhook_delivery` to see whether it arrived.
 
         :param endpoint_id: (required)
         :type endpoint_id: str
@@ -2348,7 +2349,7 @@ class WebhooksApi:
     ) -> RESTResponseType:
         """Test Webhook Endpoint
 
-        Record a test event against this endpoint.  Creates a `test` event and a delivery in `pending`, which you can inspect with `get_webhook_delivery`.  This call does not send the delivery. Pass the returned delivery id to `retry_webhook_delivery` to have it dispatched.
+        Send a test event to this endpoint.  Delivers a `test` event immediately, so you can confirm the URL is reachable and your signature check works before real events depend on it.  Returns straight away with the delivery in `pending`; follow it with `get_webhook_delivery` to see whether it arrived.
 
         :param endpoint_id: (required)
         :type endpoint_id: str

@@ -249,6 +249,8 @@ docs/WebhookDeliveryOut.md
 docs/WebhookDeliveryResponse.md
 docs/WebhookDeliveryStatus.md
 docs/WebhookEndpointCreateRequest.md
+docs/WebhookEndpointCreatedOut.md
+docs/WebhookEndpointCreatedResponse.md
 docs/WebhookEndpointOut.md
 docs/WebhookEndpointPatchRequest.md
 docs/WebhookEndpointResponse.md
@@ -523,6 +525,8 @@ invoicepdfs/models/webhook_delivery_out.py
 invoicepdfs/models/webhook_delivery_response.py
 invoicepdfs/models/webhook_delivery_status.py
 invoicepdfs/models/webhook_endpoint_create_request.py
+invoicepdfs/models/webhook_endpoint_created_out.py
+invoicepdfs/models/webhook_endpoint_created_response.py
 invoicepdfs/models/webhook_endpoint_out.py
 invoicepdfs/models/webhook_endpoint_patch_request.py
 invoicepdfs/models/webhook_endpoint_response.py
@@ -793,6 +797,8 @@ test/test_webhook_delivery_out.py
 test/test_webhook_delivery_response.py
 test/test_webhook_delivery_status.py
 test/test_webhook_endpoint_create_request.py
+test/test_webhook_endpoint_created_out.py
+test/test_webhook_endpoint_created_response.py
 test/test_webhook_endpoint_out.py
 test/test_webhook_endpoint_patch_request.py
 test/test_webhook_endpoint_response.py
