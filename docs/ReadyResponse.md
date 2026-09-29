@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | **str** |  | 
 **dependencies** | **Dict[str, str]** |  | 
+**workers** | **Dict[str, str]** |  | [optional] 
+**degraded** | **List[str]** |  | [optional] 
 
 ## Example
 

@@ -18,7 +18,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr, field_validator
-from typing import Any, ClassVar, Dict, List
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,7 +28,9 @@ class ReadyResponse(BaseModel):
     """ # noqa: E501
     status: StrictStr
     dependencies: Dict[str, StrictStr]
-    __properties: ClassVar[List[str]] = ["status", "dependencies"]
+    workers: Optional[Dict[str, StrictStr]] = None
+    degraded: Optional[List[StrictStr]] = None
+    __properties: ClassVar[List[str]] = ["status", "dependencies", "workers", "degraded"]
 
     @field_validator('status')
     def status_validate_enum(cls, value):
@@ -83,6 +85,11 @@ class ReadyResponse(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if degraded (nullable) is None
+        # and model_fields_set contains the field
+        if self.degraded is None and "degraded" in self.model_fields_set:
+            _dict['degraded'] = None
+
         return _dict
 
     @classmethod
@@ -96,7 +103,9 @@ class ReadyResponse(BaseModel):
 
         _obj = cls.model_validate({
             "status": obj.get("status"),
-            "dependencies": obj.get("dependencies")
+            "dependencies": obj.get("dependencies"),
+            "workers": obj.get("workers"),
+            "degraded": obj.get("degraded")
         })
         return _obj
 

@@ -38,7 +38,13 @@ class TestReadyResponse(unittest.TestCase):
                 status = 'ready',
                 dependencies = {
                     'ok' : 'ok'
-                    }
+                    },
+                workers = {
+                    'key' : ''
+                    },
+                degraded = [
+                    ''
+                    ]
             )
         else:
             return ReadyResponse(
